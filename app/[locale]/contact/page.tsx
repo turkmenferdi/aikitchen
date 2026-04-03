@@ -122,11 +122,11 @@ export default async function Contact({ params }: PageProps) {
       </section>
 
       {/* Map Placeholder */}
-      <section className="py-12 bg-background border-t border-border">
+      <section className="py-12 bg-surface border-t border-outline/20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-primary-50 to-primary-100 rounded-lg border border-border h-96 flex items-center justify-center">
-            <div className="text-center text-muted">
-              <MapPin className="w-12 h-12 mx-auto mb-4 text-accent-teal/50" />
+          <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg border border-primary/20 h-96 flex items-center justify-center">
+            <div className="text-center text-on-surface-variant">
+              <MapPin className="w-12 h-12 mx-auto mb-4 text-primary/50" />
               <p className="text-sm">Map - Global Presence</p>
             </div>
           </div>
@@ -134,12 +134,12 @@ export default async function Contact({ params }: PageProps) {
       </section>
 
       {/* Trust Message */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-20 md:py-32 bg-surface-container-low">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-on-surface mb-6">
             {dictionary.contact.cta.heading}
           </h2>
-          <p className="text-lg text-muted mb-8 leading-relaxed">
+          <p className="text-lg text-on-surface-variant mb-8 leading-relaxed">
             {dictionary.contact.cta.description}
           </p>
           <Link href={`/${locale}/contact`}>

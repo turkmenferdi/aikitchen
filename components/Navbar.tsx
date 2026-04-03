@@ -85,13 +85,13 @@ export function Navbar({ dictionary }: NavbarProps) {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden border-t border-border py-4 space-y-2">
+          <div className="md:hidden border-t border-outline/20 py-4 space-y-2">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className="block px-4 py-2 text-sm font-medium text-foreground hover:text-accent-teal hover:bg-primary-50 rounded-lg transition-colors"
+                className="block px-4 py-2 text-sm font-medium text-on-surface hover:text-primary hover:bg-primary/10 rounded-lg transition-colors"
               >
                 {item.label}
               </Link>

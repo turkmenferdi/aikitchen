@@ -51,9 +51,9 @@ export default async function Services({ params }: PageProps) {
       </section>
 
       {/* Intro */}
-      <section className="py-12 bg-white border-b border-border">
+      <section className="py-12 bg-surface-container-low border-b border-outline/20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-lg text-muted leading-relaxed">
+          <p className="text-lg text-on-surface-variant leading-relaxed">
             {dictionary.services.index.intro}
           </p>
         </div>
@@ -107,18 +107,18 @@ export default async function Services({ params }: PageProps) {
       </section>
 
       {/* Service Details Callout */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-20 md:py-32 bg-surface-container-low">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-on-surface mb-6">
             A Proven Implementation Methodology
           </h2>
-          <p className="text-lg text-muted mb-8 leading-relaxed">
+          <p className="text-lg text-on-surface-variant mb-8 leading-relaxed">
             From discovery through scaling, our methodology ensures successful transformation and
             internal capability building at every stage.
           </p>
 
-          <div className="bg-gradient-to-br from-accent-teal/10 to-accent-teal/5 rounded-lg border border-accent-teal/20 p-8">
-            <p className="text-foreground font-semibold mb-4">
+          <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg border border-primary/20 p-8">
+            <p className="text-on-surface font-semibold mb-4">
               Timeline Overview: 6 months from discovery to production at scale
             </p>
             <div className="grid grid-cols-2 md:grid-cols-6 gap-4 text-sm">
@@ -130,8 +130,8 @@ export default async function Services({ params }: PageProps) {
                 'Variable Integration',
                 'Ongoing Support',
               ].map((phase, idx) => (
-                <div key={idx} className="bg-white rounded border border-border p-3 text-center">
-                  <p className="text-muted font-medium">{phase}</p>
+                <div key={idx} className="bg-surface-container-high rounded border border-outline/20 p-3 text-center">
+                  <p className="text-on-surface-variant font-medium">{phase}</p>
                 </div>
               ))}
             </div>

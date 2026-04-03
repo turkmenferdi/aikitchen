@@ -32,7 +32,7 @@ export function CaseStudyCard({
             <p className="text-4xl font-bold text-primary">{metric}</p>
           </div>
           <div>
-            <p className="text-sm font-medium text-foreground">{metricLabel}</p>
+            <p className="text-sm font-medium text-on-surface">{metricLabel}</p>
           </div>
         </div>
       </div>

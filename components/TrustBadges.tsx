@@ -15,17 +15,17 @@ interface TrustBadgesProps {
 export function TrustBadges({ badges, className = '' }: TrustBadgesProps) {
   const defaultBadges: TrustBadge[] = badges || [
     {
-      icon: <Shield className="w-6 h-6 text-accent-teal" />,
+      icon: <Shield className="w-6 h-6 text-primary" />,
       label: 'Enterprise Security',
       value: 'On-premises deployment',
     },
     {
-      icon: <Lock className="w-6 h-6 text-accent-teal" />,
+      icon: <Lock className="w-6 h-6 text-primary" />,
       label: 'Compliant',
       value: 'SOC2, HIPAA, GDPR ready',
     },
     {
-      icon: <Zap className="w-6 h-6 text-accent-teal" />,
+      icon: <Zap className="w-6 h-6 text-primary" />,
       label: 'Proven Track Record',
       value: 'Deployed across industries',
     },
@@ -37,10 +37,10 @@ export function TrustBadges({ badges, className = '' }: TrustBadgesProps) {
         <div key={idx} className="flex items-center gap-4">
           <div className="flex-shrink-0">{badge.icon}</div>
           <div>
-            <p className="font-semibold text-foreground text-sm uppercase tracking-wider">
+            <p className="font-semibold text-on-surface text-sm uppercase tracking-wider">
               {badge.label}
             </p>
-            <p className="text-muted text-sm mt-1">{badge.value}</p>
+            <p className="text-on-surface-variant text-sm mt-1">{badge.value}</p>
           </div>
         </div>
       ))}

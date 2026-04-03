@@ -148,27 +148,27 @@ export default async function Platform({ params }: PageProps) {
       </section>
 
       {/* On-Prem Deployment */}
-      <section className="py-20 md:py-32 bg-background">
+      <section className="py-20 md:py-32 bg-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="bg-white rounded-lg border border-border p-8 flex items-center justify-center min-h-96 order-2 md:order-1">
-              <div className="text-center text-muted">
-                <Lock className="w-16 h-16 mx-auto mb-4 text-accent-teal/50" />
+            <div className="bg-surface-container-high rounded-lg border border-outline/20 p-8 flex items-center justify-center min-h-96 order-2 md:order-1">
+              <div className="text-center text-on-surface-variant">
+                <Lock className="w-16 h-16 mx-auto mb-4 text-primary/50" />
                 <p className="text-sm">On-Premises Infrastructure</p>
               </div>
             </div>
             <div className="order-1 md:order-2">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-on-surface mb-6">
                 {dictionary.platform.onPrem.heading}
               </h2>
-              <p className="text-lg text-muted mb-8 leading-relaxed">
+              <p className="text-lg text-on-surface-variant mb-8 leading-relaxed">
                 {dictionary.platform.onPrem.description}
               </p>
               <ul className="space-y-4">
                 {dictionary.platform.onPrem.points.map((point, idx) => (
                   <li key={idx} className="flex items-start gap-3">
-                    <Shield className="w-5 h-5 text-accent-teal flex-shrink-0 mt-0.5" />
-                    <span className="text-muted">{point}</span>
+                    <Shield className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-on-surface-variant">{point}</span>
                   </li>
                 ))}
               </ul>
@@ -178,7 +178,7 @@ export default async function Platform({ params }: PageProps) {
       </section>
 
       {/* Architecture Strengths */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-20 md:py-32 bg-surface-container-low">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             title={dictionary.platform.architecture.heading}
@@ -200,20 +200,20 @@ export default async function Platform({ params }: PageProps) {
       </section>
 
       {/* Execution */}
-      <section className="py-20 md:py-32 bg-background">
+      <section className="py-20 md:py-32 bg-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-lg border border-border p-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+          <div className="bg-surface-container-high rounded-lg border border-outline/20 p-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-on-surface mb-6">
               {dictionary.platform.execution.heading}
             </h2>
-            <p className="text-lg text-muted mb-8 leading-relaxed">
+            <p className="text-lg text-on-surface-variant mb-8 leading-relaxed">
               {dictionary.platform.execution.description}
             </p>
             <Grid columns={2} gap="lg">
               {dictionary.platform.execution.points.map((point, idx) => (
                 <div key={idx} className="flex items-start gap-3">
-                  <BarChart3 className="w-5 h-5 text-accent-teal flex-shrink-0 mt-0.5" />
-                  <span className="text-muted">{point}</span>
+                  <BarChart3 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-on-surface-variant">{point}</span>
                 </div>
               ))}
             </Grid>
@@ -222,7 +222,7 @@ export default async function Platform({ params }: PageProps) {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-20 md:py-32 bg-surface-container-low">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <CTABanner
             heading="Ready to explore our platform?"

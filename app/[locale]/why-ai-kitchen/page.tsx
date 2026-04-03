@@ -51,18 +51,18 @@ export default async function WhyAiKitchen({ params }: PageProps) {
       </section>
 
       {/* Intro */}
-      <section className="py-12 bg-white border-b border-border">
+      <section className="py-12 bg-surface-container-low border-b border-outline/20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-lg text-muted leading-relaxed">{dictionary.whyAiKitchen.intro}</p>
+          <p className="text-lg text-on-surface-variant leading-relaxed">{dictionary.whyAiKitchen.intro}</p>
         </div>
       </section>
 
       {/* Why Items */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-20 md:py-32 bg-surface-container-low">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-16">
             {dictionary.whyAiKitchen.items.map((item: any, idx: number) => (
-              <div key={idx} className="bg-background rounded-lg border border-border p-8 md:p-12">
+              <div key={idx} className="bg-surface-container-high rounded-lg border border-outline/20 p-8 md:p-12">
                 <div className="flex items-start gap-6">
                   <div className="flex-shrink-0">
                     {[Zap, Shield, Lock, Cpu, TrendingUp, DollarSign][idx % 6] &&
@@ -70,14 +70,14 @@ export default async function WhyAiKitchen({ params }: PageProps) {
                         const icons = [Zap, Shield, Lock, Cpu, TrendingUp, DollarSign];
                         const Icon = icons[idx % 6];
                         return (
-                          <Icon className="w-8 h-8 text-accent-teal" />
+                          <Icon className="w-8 h-8 text-primary" />
                         );
                       })()}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-foreground mb-3">{item.title}</h3>
-                    <p className="text-muted leading-relaxed mb-4">{item.description}</p>
-                    <p className="text-accent-teal font-semibold">💡 {item.benefit}</p>
+                    <h3 className="text-2xl font-bold text-on-surface mb-3">{item.title}</h3>
+                    <p className="text-on-surface-variant leading-relaxed mb-4">{item.description}</p>
+                    <p className="text-primary font-semibold">💡 {item.benefit}</p>
                   </div>
                 </div>
               </div>
@@ -87,30 +87,30 @@ export default async function WhyAiKitchen({ params }: PageProps) {
       </section>
 
       {/* Comparison */}
-      <section className="py-20 md:py-32 bg-background">
+      <section className="py-20 md:py-32 bg-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-on-surface mb-12 text-center">
             {dictionary.whyAiKitchen.comparison.heading}
           </h2>
 
           <div className="overflow-x-auto">
-            <table className="w-full bg-white rounded-lg border border-border">
+            <table className="w-full bg-surface-container-high rounded-lg border border-outline/20">
               <thead>
-                <tr className="border-b border-border">
-                  <th className="px-6 py-4 text-left font-semibold text-foreground">Aspect</th>
-                  <th className="px-6 py-4 text-left font-semibold text-muted">Traditional RPA</th>
-                  <th className="px-6 py-4 text-left font-semibold text-accent-teal">
+                <tr className="border-b border-outline/20">
+                  <th className="px-6 py-4 text-left font-semibold text-on-surface">Aspect</th>
+                  <th className="px-6 py-4 text-left font-semibold text-on-surface-variant">Traditional RPA</th>
+                  <th className="px-6 py-4 text-left font-semibold text-primary">
                     AI Kitchen
                   </th>
                 </tr>
               </thead>
               <tbody>
                 {dictionary.whyAiKitchen.comparison.rows.map((row: any, idx: number) => (
-                  <tr key={idx} className="border-b border-border hover:bg-background">
-                    <td className="px-6 py-4 font-semibold text-foreground">{row.aspect}</td>
-                    <td className="px-6 py-4 text-muted">{row.traditional}</td>
-                    <td className="px-6 py-4 text-muted flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-accent-teal flex-shrink-0" />
+                  <tr key={idx} className="border-b border-outline/20 hover:bg-surface-container-low">
+                    <td className="px-6 py-4 font-semibold text-on-surface">{row.aspect}</td>
+                    <td className="px-6 py-4 text-on-surface-variant">{row.traditional}</td>
+                    <td className="px-6 py-4 text-on-surface-variant flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
                       {row.aiKitchen}
                     </td>
                   </tr>
@@ -122,7 +122,7 @@ export default async function WhyAiKitchen({ params }: PageProps) {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-20 md:py-32 bg-surface-container-low">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <CTABanner
             heading="Ready to see the difference?"

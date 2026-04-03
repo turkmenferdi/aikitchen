@@ -102,7 +102,7 @@ export function ContactForm({ dictionary }: ContactFormProps) {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="fullName" className="block text-sm font-medium text-foreground mb-2">
+          <label htmlFor="fullName" className="block text-sm font-medium text-on-surface mb-2">
             {dictionary.contact.form.fullName}
             <span className="text-red-500">*</span>
           </label>
@@ -113,13 +113,13 @@ export function ContactForm({ dictionary }: ContactFormProps) {
             value={formData.fullName}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 rounded-lg border border-border bg-white text-foreground placeholder-muted focus:outline-none focus:border-accent-teal transition-colors"
+            className="w-full px-4 py-3 rounded-lg border border-outline/20 bg-surface-container text-on-surface placeholder-on-surface-variant focus:outline-none focus:border-primary transition-colors"
             placeholder="Your name"
           />
         </div>
 
         <div>
-          <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
+          <label htmlFor="company" className="block text-sm font-medium text-on-surface mb-2">
             {dictionary.contact.form.company}
             <span className="text-red-500">*</span>
           </label>
@@ -130,7 +130,7 @@ export function ContactForm({ dictionary }: ContactFormProps) {
             value={formData.company}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 rounded-lg border border-border bg-white text-foreground placeholder-muted focus:outline-none focus:border-accent-teal transition-colors"
+            className="w-full px-4 py-3 rounded-lg border border-outline/20 bg-surface-container text-on-surface placeholder-on-surface-variant focus:outline-none focus:border-primary transition-colors"
             placeholder="Company name"
           />
         </div>
@@ -138,7 +138,7 @@ export function ContactForm({ dictionary }: ContactFormProps) {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+          <label htmlFor="email" className="block text-sm font-medium text-on-surface mb-2">
             {dictionary.contact.form.email}
             <span className="text-red-500">*</span>
           </label>
@@ -149,13 +149,13 @@ export function ContactForm({ dictionary }: ContactFormProps) {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 rounded-lg border border-border bg-white text-foreground placeholder-muted focus:outline-none focus:border-accent-teal transition-colors"
+            className="w-full px-4 py-3 rounded-lg border border-outline/20 bg-surface-container text-on-surface placeholder-on-surface-variant focus:outline-none focus:border-primary transition-colors"
             placeholder="your@company.com"
           />
         </div>
 
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
+          <label htmlFor="phone" className="block text-sm font-medium text-on-surface mb-2">
             {dictionary.contact.form.phone}
           </label>
           <input
@@ -164,14 +164,14 @@ export function ContactForm({ dictionary }: ContactFormProps) {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg border border-border bg-white text-foreground placeholder-muted focus:outline-none focus:border-accent-teal transition-colors"
+            className="w-full px-4 py-3 rounded-lg border border-outline/20 bg-surface-container text-on-surface placeholder-on-surface-variant focus:outline-none focus:border-primary transition-colors"
             placeholder="+1 (555) 123-4567"
           />
         </div>
       </div>
 
       <div>
-        <label htmlFor="solution" className="block text-sm font-medium text-foreground mb-2">
+        <label htmlFor="solution" className="block text-sm font-medium text-on-surface mb-2">
           {dictionary.contact.form.solution}
         </label>
         <select
@@ -179,7 +179,7 @@ export function ContactForm({ dictionary }: ContactFormProps) {
           name="solution"
           value={formData.solution}
           onChange={handleChange}
-          className="w-full px-4 py-3 rounded-lg border border-border bg-white text-foreground focus:outline-none focus:border-accent-teal transition-colors"
+          className="w-full px-4 py-3 rounded-lg border border-outline/20 bg-surface-container text-on-surface focus:outline-none focus:border-primary transition-colors"
         >
           <option value="other">{dictionary.contact.form.selectSolution}</option>
           <option value="financial">Financial Automation</option>
@@ -191,7 +191,7 @@ export function ContactForm({ dictionary }: ContactFormProps) {
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+        <label htmlFor="message" className="block text-sm font-medium text-on-surface mb-2">
           {dictionary.contact.form.message}
           <span className="text-red-500">*</span>
         </label>
@@ -202,7 +202,7 @@ export function ContactForm({ dictionary }: ContactFormProps) {
           onChange={handleChange}
           required
           rows={5}
-          className="w-full px-4 py-3 rounded-lg border border-border bg-white text-foreground placeholder-muted focus:outline-none focus:border-accent-teal transition-colors resize-none"
+          className="w-full px-4 py-3 rounded-lg border border-outline/20 bg-surface-container text-on-surface placeholder-on-surface-variant focus:outline-none focus:border-primary transition-colors resize-none"
           placeholder="Tell us about your automation needs..."
         />
       </div>
