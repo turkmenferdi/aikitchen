@@ -46,22 +46,22 @@ export default async function Home({ params }: PageProps) {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-20 pb-20 md:pt-32 md:pb-32 bg-[radial-gradient(circle_at_top_right,_rgba(8,145,178,0.14),_transparent_25%),radial-gradient(circle_at_bottom_left,_rgba(72,204,226,0.08),_transparent_20%)]">
+      <section className="relative overflow-hidden pt-20 pb-20 md:pt-32 md:pb-32 bg-surface">
         {/* Background accent */}
-        <div className="absolute inset-0 -z-10 opacity-80">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-accent-teal/20 to-transparent rounded-full -mr-48 -mt-48" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-accent-teal/10 to-transparent rounded-full -ml-48 -mb-48" />
+        <div className="absolute inset-0 -z-10 opacity-40">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-primary/20 to-transparent rounded-full -mr-48 -mt-48" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-secondary/10 to-transparent rounded-full -ml-48 -mb-48" />
         </div>
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto mb-12">
-            <div className="inline-block mb-6 px-4 py-2 rounded-full bg-accent-teal/10 text-accent-teal text-sm font-semibold uppercase tracking-wider">
+            <div className="inline-block mb-6 px-4 py-2 rounded-full bg-secondary-container text-on-secondary-container text-sm font-semibold uppercase tracking-wider">
               {dictionary.home.hero.subHeading}
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
+            <h1 className="text-4xl md:text-6xl font-bold text-on-surface mb-6 leading-tight">
               {dictionary.home.hero.title}
             </h1>
-            <p className="text-lg md:text-xl text-muted mb-12 leading-relaxed">
+            <p className="text-lg md:text-xl text-on-surface-variant mb-12 leading-relaxed">
               {dictionary.home.hero.description}
             </p>
 
@@ -81,23 +81,23 @@ export default async function Home({ params }: PageProps) {
           </div>
 
           {/* Hero Image Placeholder */}
-          <div className="mt-16 rounded-[2rem] border border-white/60 bg-white/85 p-2 shadow-2xl shadow-slate-300/30 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1">
-            <div className="bg-gradient-to-br from-slate-50 via-white to-slate-100 rounded-[1.75rem] p-10 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="mt-16 rounded-[2rem] border border-outline/30 bg-surface-container/60 p-2 shadow-2xl shadow-primary/10 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1">
+            <div className="bg-surface-container-high rounded-[1.75rem] p-10 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full">
-                <div className="flex flex-col items-center gap-4 rounded-[1.5rem] bg-white p-6 shadow-sm border border-slate-200">
-                  <div className="inline-flex h-16 w-16 items-center justify-center rounded-3xl bg-accent-teal/10 text-accent-teal shadow-sm shadow-accent-teal/10">
+                <div className="flex flex-col items-center gap-4 rounded-[1.5rem] bg-surface-container p-6 shadow-sm border border-outline/20">
+                  <div className="inline-flex h-16 w-16 items-center justify-center rounded-3xl bg-secondary-container text-on-secondary-container shadow-sm shadow-secondary/20">
                     <Brain className="w-8 h-8" />
                   </div>
-                  <span className="text-sm font-semibold text-foreground">AI Agents</span>
+                  <span className="text-sm font-semibold text-on-surface">AI Agents</span>
                 </div>
-                <div className="flex flex-col items-center gap-4 rounded-[1.5rem] bg-white p-6 shadow-sm border border-slate-200">
-                  <div className="inline-flex h-16 w-16 items-center justify-center rounded-3xl bg-accent-teal/10 text-accent-teal shadow-sm shadow-accent-teal/10">
+                <div className="flex flex-col items-center gap-4 rounded-[1.5rem] bg-surface-container p-6 shadow-sm border border-outline/20">
+                  <div className="inline-flex h-16 w-16 items-center justify-center rounded-3xl bg-tertiary-container text-on-tertiary-container shadow-sm shadow-tertiary/20">
                     <Workflow className="w-8 h-8" />
                   </div>
-                  <span className="text-sm font-semibold text-foreground">RPA</span>
+                  <span className="text-sm font-semibold text-on-surface">RPA</span>
                 </div>
-                <div className="flex flex-col items-center gap-4 rounded-[1.5rem] bg-white p-6 shadow-sm border border-slate-200">
-                  <div className="inline-flex h-16 w-16 items-center justify-center rounded-3xl bg-accent-teal/10 text-accent-teal shadow-sm shadow-accent-teal/10">
+                <div className="flex flex-col items-center gap-4 rounded-[1.5rem] bg-surface-container p-6 shadow-sm border border-outline/20">
+                  <div className="inline-flex h-16 w-16 items-center justify-center rounded-3xl bg-primary-container text-on-primary-container shadow-sm shadow-primary/20">
                     <Zap className="w-8 h-8" />
                   </div>
                   <span className="text-sm font-semibold text-foreground">Digital Workforce</span>
@@ -109,7 +109,7 @@ export default async function Home({ params }: PageProps) {
       </section>
 
       {/* Value Proposition Section */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-20 md:py-32 bg-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             title={dictionary.home.valueProposition.heading}
@@ -131,10 +131,10 @@ export default async function Home({ params }: PageProps) {
       </section>
 
       {/* Platform Overview Section */}
-      <section className="py-20 md:py-32 bg-background">
+      <section className="py-20 md:py-32 bg-surface-container-low">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="rounded-[2rem] border border-border/70 bg-white shadow-xl shadow-slate-200/40 p-8 animate-slide-up">
+            <div className="rounded-[2rem] border border-outline/20 bg-surface-container shadow-xl shadow-primary/10 p-8 animate-slide-up">
               <SectionHeading
                 title={dictionary.home.platformOverview.heading}
                 description={dictionary.home.platformOverview.description}
@@ -144,17 +144,17 @@ export default async function Home({ params }: PageProps) {
               <ul className="space-y-4">
                 {dictionary.home.platformOverview.points.map((point, idx) => (
                   <li key={idx} className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-accent-teal/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <div className="w-2 h-2 bg-accent-teal rounded-full" />
+                    <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <div className="w-2 h-2 bg-primary rounded-full" />
                     </div>
-                    <span className="text-muted leading-relaxed">{point}</span>
+                    <span className="text-on-surface-variant leading-relaxed">{point}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="bg-white rounded-lg border border-border p-8 shadow-sm flex items-center justify-center min-h-96">
-              <div className="text-center text-muted">
-                <Cpu className="w-16 h-16 mx-auto mb-4 text-accent-teal/50" />
+            <div className="bg-surface-container-high rounded-lg border border-outline/20 p-8 shadow-sm flex items-center justify-center min-h-96">
+              <div className="text-center text-on-surface-variant">
+                <Cpu className="w-16 h-16 mx-auto mb-4 text-primary/50" />
                 <p className="text-sm">Platform Architecture Diagram</p>
               </div>
             </div>
@@ -163,7 +163,7 @@ export default async function Home({ params }: PageProps) {
       </section>
 
       {/* Core Capabilities Section */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-20 md:py-32 bg-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             title={dictionary.home.coreCapabilities.heading}
@@ -185,7 +185,7 @@ export default async function Home({ params }: PageProps) {
       </section>
 
       {/* Business Outcomes Section */}
-      <section className="py-20 md:py-32 bg-gradient-to-br from-foreground to-foreground/95 text-white">
+      <section className="py-20 md:py-32 bg-gradient-to-br from-surface-container-highest to-surface-container-high text-on-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
@@ -197,12 +197,12 @@ export default async function Home({ params }: PageProps) {
             {dictionary.home.businessOutcomes.items.map((item, idx) => (
               <div
                 key={idx}
-                className="bg-white/10 backdrop-blur rounded-lg border border-white/20 p-8 text-center hover:border-white/40 transition-colors"
+                className="bg-surface-container/50 backdrop-blur rounded-lg border border-outline/30 p-8 text-center hover:border-outline/50 transition-colors"
               >
-                <p className="text-5xl md:text-6xl font-bold text-accent-teal mb-4">
+                <p className="text-5xl md:text-6xl font-bold text-primary mb-4">
                   {item.metric}
                 </p>
-                <p className="text-white/90 text-lg">{item.description}</p>
+                <p className="text-on-surface/90 text-lg">{item.description}</p>
               </div>
             ))}
           </Grid>
@@ -210,12 +210,12 @@ export default async function Home({ params }: PageProps) {
       </section>
 
       {/* Security Section */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-20 md:py-32 bg-surface-container-low">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="bg-gradient-to-br from-primary-50 to-primary-100 rounded-lg border border-border p-8 shadow-sm flex items-center justify-center min-h-96">
-              <div className="text-center text-muted">
-                <Lock className="w-16 h-16 mx-auto mb-4 text-accent-teal/50" />
+            <div className="bg-surface-container-highest rounded-lg border border-outline/20 p-8 shadow-sm flex items-center justify-center min-h-96">
+              <div className="text-center text-on-surface-variant">
+                <Lock className="w-16 h-16 mx-auto mb-4 text-primary/50" />
                 <p className="text-sm">Security & Compliance Illustration</p>
               </div>
             </div>
@@ -229,8 +229,8 @@ export default async function Home({ params }: PageProps) {
               <ul className="space-y-4 mb-8">
                 {dictionary.home.securitySection.items.map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3">
-                    <Lock className="w-5 h-5 text-accent-teal flex-shrink-0 mt-0.5" />
-                    <span className="text-muted">{item}</span>
+                    <Lock className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-on-surface-variant">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -240,7 +240,7 @@ export default async function Home({ params }: PageProps) {
       </section>
 
       {/* Case Study Preview */}
-      <section className="py-20 md:py-32 bg-background">
+      <section className="py-20 md:py-32 bg-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-12">
             <SectionHeading
@@ -273,7 +273,7 @@ export default async function Home({ params }: PageProps) {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-20 md:py-32 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <CTABanner
             heading={dictionary.home.finalCTA.heading}

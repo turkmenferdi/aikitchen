@@ -23,15 +23,15 @@ export function CTABanner({
   secondaryCTA,
 }: CTABannerProps) {
   return (
-    <div className="relative bg-gradient-to-br from-accent-teal/95 to-accent-teal-dark/95 text-white py-16 md:py-24 rounded-lg overflow-hidden">
+    <div className="relative bg-gradient-to-br from-primary to-secondary-container text-on-primary py-16 md:py-24 rounded-3xl overflow-hidden">
       {/* Subtle background accent */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full -mr-48 -mt-48" />
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary-fixed rounded-full -mr-48 -mt-48" />
       </div>
 
       <div className="relative z-10 max-w-3xl mx-auto text-center px-6">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">{heading}</h2>
-        {description && <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed">{description}</p>}
+        {description && <p className="text-lg md:text-xl text-on-primary/90 mb-8 leading-relaxed">{description}</p>}
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           {primaryCTA.href ? (
@@ -50,7 +50,7 @@ export function CTABanner({
             <>
               {secondaryCTA.href ? (
                 <a href={secondaryCTA.href}>
-                  <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-accent-teal">
+                  <Button variant="outline" size="lg" className="border-on-primary text-on-primary hover:bg-on-primary hover:text-primary">
                     {secondaryCTA.text}
                   </Button>
                 </a>
@@ -58,7 +58,7 @@ export function CTABanner({
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-white text-white hover:bg-white hover:text-accent-teal"
+                  className="border-on-primary text-on-primary hover:bg-on-primary hover:text-primary"
                   onClick={secondaryCTA.onClick}
                 >
                   {secondaryCTA.text}
