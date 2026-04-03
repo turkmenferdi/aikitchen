@@ -180,7 +180,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 const msg = {
   to: process.env.CONTACT_EMAIL,
-  from: 'noreply@aikitchen.io',
+  from: 'noreply@aikitchen.com.tr',
   subject: `New contact request from ${formData.fullName}`,
   html: `<p>Name: ${formData.fullName}</p>...`
 };
@@ -228,7 +228,7 @@ Proprietary - AI Kitchen
 
 ## Support
 
-For questions or support, contact: hello@aikitchen.io
+For questions or support, contact: elena@aikitchen.com.tr or ferdi@aikitchen.com.tr
 
 ---
 

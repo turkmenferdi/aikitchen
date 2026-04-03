@@ -35,8 +35,8 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
     },
     alternates: {
       languages: {
-        'en': `https://aikitchen.io/en`,
-        'tr': `https://aikitchen.io/tr`,
+        'en': `https://aikitchen.com.tr/en`,
+        'tr': `https://aikitchen.com.tr/tr`,
       },
     },
   };

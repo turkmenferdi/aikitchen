@@ -40,12 +40,12 @@ export function Navbar({ dictionary }: NavbarProps) {
   ];
 
   return (
-    <nav className="sticky top-0 z-40 bg-white border-b border-border">
+    <nav className="sticky top-0 z-40 bg-white/95 backdrop-blur-xl shadow-sm border-b border-border/70">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href={`/${locale}`} className="flex items-center gap-2 font-bold text-2xl">
-            <div className="w-10 h-10 bg-gradient-to-br from-accent-teal to-accent-teal-dark rounded-lg flex items-center justify-center text-white font-bold text-xl">
+          <Link href={`/${locale}`} className="flex items-center gap-3 font-semibold text-lg">
+            <div className="w-10 h-10 bg-gradient-to-br from-accent-teal to-accent-teal-dark rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-accent-teal/20">
               AK
             </div>
             <span className="text-foreground hidden sm:inline">AI Kitchen</span>

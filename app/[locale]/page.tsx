@@ -46,11 +46,11 @@ export default async function Home({ params }: PageProps) {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-background via-white to-primary-50 pt-20 pb-20 md:pt-32 md:pb-32 overflow-hidden">
+      <section className="relative overflow-hidden pt-20 pb-20 md:pt-32 md:pb-32 bg-[radial-gradient(circle_at_top_right,_rgba(8,145,178,0.14),_transparent_25%),radial-gradient(circle_at_bottom_left,_rgba(72,204,226,0.08),_transparent_20%)]">
         {/* Background accent */}
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-accent-teal/5 rounded-full -mr-48 -mt-48" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent-teal/5 rounded-full -ml-48 -mb-48" />
+        <div className="absolute inset-0 -z-10 opacity-80">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-accent-teal/20 to-transparent rounded-full -mr-48 -mt-48" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-accent-teal/10 to-transparent rounded-full -ml-48 -mb-48" />
         </div>
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -81,27 +81,27 @@ export default async function Home({ params }: PageProps) {
           </div>
 
           {/* Hero Image Placeholder */}
-          <div className="mt-16 bg-gradient-to-b from-white/50 to-transparent rounded-2xl border border-border p-1 shadow-2xl">
-            <div className="bg-gradient-to-br from-primary-50 to-primary-100 rounded-lg p-12 md:p-16 flex items-center justify-center gap-8">
-              <div className="hidden md:flex flex-col items-center gap-4">
-                <div className="w-24 h-24 bg-white rounded-lg shadow-lg flex items-center justify-center border border-border">
-                  <Brain className="w-12 h-12 text-accent-teal" />
+          <div className="mt-16 rounded-[2rem] border border-white/60 bg-white/85 p-2 shadow-2xl shadow-slate-300/30 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1">
+            <div className="bg-gradient-to-br from-slate-50 via-white to-slate-100 rounded-[1.75rem] p-10 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full">
+                <div className="flex flex-col items-center gap-4 rounded-[1.5rem] bg-white p-6 shadow-sm border border-slate-200">
+                  <div className="inline-flex h-16 w-16 items-center justify-center rounded-3xl bg-accent-teal/10 text-accent-teal shadow-sm shadow-accent-teal/10">
+                    <Brain className="w-8 h-8" />
+                  </div>
+                  <span className="text-sm font-semibold text-foreground">AI Agents</span>
                 </div>
-                <span className="text-sm font-medium text-foreground">AI Agents</span>
-              </div>
-              <Plus className="text-muted/50 hidden md:block w-8 h-8" />
-              <div className="hidden md:flex flex-col items-center gap-4">
-                <div className="w-24 h-24 bg-white rounded-lg shadow-lg flex items-center justify-center border border-border">
-                  <Workflow className="w-12 h-12 text-accent-teal" />
+                <div className="flex flex-col items-center gap-4 rounded-[1.5rem] bg-white p-6 shadow-sm border border-slate-200">
+                  <div className="inline-flex h-16 w-16 items-center justify-center rounded-3xl bg-accent-teal/10 text-accent-teal shadow-sm shadow-accent-teal/10">
+                    <Workflow className="w-8 h-8" />
+                  </div>
+                  <span className="text-sm font-semibold text-foreground">RPA</span>
                 </div>
-                <span className="text-sm font-medium text-foreground">RPA</span>
-              </div>
-              <Equals className="text-muted/50 hidden md:block w-8 h-8" />
-              <div className="flex flex-col items-center gap-4">
-                <div className="w-24 h-24 bg-white rounded-lg shadow-lg flex items-center justify-center border border-border">
-                  <Zap className="w-12 h-12 text-accent-teal" />
+                <div className="flex flex-col items-center gap-4 rounded-[1.5rem] bg-white p-6 shadow-sm border border-slate-200">
+                  <div className="inline-flex h-16 w-16 items-center justify-center rounded-3xl bg-accent-teal/10 text-accent-teal shadow-sm shadow-accent-teal/10">
+                    <Zap className="w-8 h-8" />
+                  </div>
+                  <span className="text-sm font-semibold text-foreground">Digital Workforce</span>
                 </div>
-                <span className="text-sm font-medium text-foreground">Digital Workforce</span>
               </div>
             </div>
           </div>
@@ -134,7 +134,7 @@ export default async function Home({ params }: PageProps) {
       <section className="py-20 md:py-32 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className="rounded-[2rem] border border-border/70 bg-white shadow-xl shadow-slate-200/40 p-8 animate-slide-up">
               <SectionHeading
                 title={dictionary.home.platformOverview.heading}
                 description={dictionary.home.platformOverview.description}
@@ -286,24 +286,5 @@ export default async function Home({ params }: PageProps) {
         </div>
       </section>
     </>
-  );
-}
-
-// Simple icon components for SVG
-function Plus(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} {...props}>
-      <line x1="12" y1="5" x2="12" y2="19" />
-      <line x1="5" y1="12" x2="19" y2="12" />
-    </svg>
-  );
-}
-
-function Equals(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} {...props}>
-      <line x1="4" y1="9" x2="20" y2="9" />
-      <line x1="4" y1="15" x2="20" y2="15" />
-    </svg>
   );
 }
