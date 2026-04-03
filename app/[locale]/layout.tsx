@@ -54,12 +54,12 @@ export default async function RootLayout({ children, params }: LayoutProps) {
   const dictionary = await getDictionary(validLocale);
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className="dark">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body>
+      <body className="bg-surface text-on-surface selection:bg-primary selection:text-on-primary">
         <Navbar dictionary={dictionary} />
         <main className="flex-1">{children}</main>
         <Footer dictionary={dictionary} locale={locale} />

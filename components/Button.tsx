@@ -28,11 +28,11 @@ export function Button({
 
   const variantStyles = {
     primary:
-      'bg-gradient-to-r from-accent-teal to-accent-teal-dark text-white shadow-lg shadow-accent-teal/20 hover:shadow-xl',
+      'bg-gradient-to-r from-primary to-secondary-container text-on-primary rounded-xl shadow-lg shadow-primary/30 hover:shadow-xl',
     secondary:
-      'bg-white text-foreground border border-border hover:bg-gray-50 shadow-sm hover:shadow-md',
+      'bg-surface-container text-on-surface border border-outline hover:bg-surface-container-high shadow-sm hover:shadow-md',
     outline:
-      'border-2 border-accent-teal text-accent-teal hover:bg-accent-teal hover:text-white hover:border-accent-teal',
+      'border-2 border-primary text-primary hover:bg-primary/10 hover:text-on-primary',
   };
 
   return (
