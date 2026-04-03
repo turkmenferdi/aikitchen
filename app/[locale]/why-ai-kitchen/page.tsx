@@ -39,12 +39,12 @@ export default async function WhyAiKitchen({ params }: PageProps) {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-background via-white to-primary-50 py-20 md:py-32">
+      <section className="bg-surface py-20 md:py-32">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-on-surface mb-6">
             {dictionary.whyAiKitchen.hero.title}
           </h1>
-          <p className="text-xl text-muted leading-relaxed">
+          <p className="text-xl text-on-surface-variant leading-relaxed">
             {dictionary.whyAiKitchen.hero.description}
           </p>
         </div>

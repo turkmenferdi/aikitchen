@@ -32,19 +32,19 @@ export default async function Solutions({ params }: PageProps) {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-background via-white to-primary-50 py-20 md:py-32">
+      <section className="bg-surface py-20 md:py-32">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-on-surface mb-6">
             {dictionary.solutions.index.hero.title}
           </h1>
-          <p className="text-xl text-muted leading-relaxed">
+          <p className="text-xl text-on-surface-variant leading-relaxed">
             {dictionary.solutions.index.hero.description}
           </p>
         </div>
       </section>
 
       {/* Solutions Grid */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-20 md:py-32 bg-surface-container-low">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Grid columns={2} gap="lg">
             {[
@@ -52,25 +52,25 @@ export default async function Solutions({ params }: PageProps) {
                 title: dictionary.solutions.financial.name,
                 description: 'Automate financial operations with AI-powered accuracy and governance',
                 href: `/${locale}/solutions/financial`,
-                icon: <BarChart3 className="w-8 h-8 text-accent-teal" />,
+                icon: <BarChart3 className="w-8 h-8 text-primary" />,
               },
               {
                 title: dictionary.solutions.accountsPayable.name,
                 description: 'Transform AP from manual process to intelligent, compliant automation',
                 href: `/${locale}/solutions/accounts-payable`,
-                icon: <Zap className="w-8 h-8 text-accent-teal" />,
+                icon: <Zap className="w-8 h-8 text-primary" />,
               },
               {
                 title: dictionary.solutions.legal.name,
                 description: 'Automate high-value legal processes with AI-powered document understanding',
                 href: `/${locale}/solutions/legal`,
-                icon: <FileText className="w-8 h-8 text-accent-teal" />,
+                icon: <FileText className="w-8 h-8 text-primary" />,
               },
               {
                 title: dictionary.solutions.tourism.name,
                 description: 'Streamline hospitality operations with intelligent automation',
                 href: `/${locale}/solutions/tourism`,
-                icon: <MapPin className="w-8 h-8 text-accent-teal" />,
+                icon: <MapPin className="w-8 h-8 text-primary" />,
               },
             ].map((solution, idx) => (
               <SolutionCard

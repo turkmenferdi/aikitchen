@@ -33,45 +33,45 @@ export default async function Contact({ params }: PageProps) {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-background via-white to-primary-50 py-20 md:py-32">
+      <section className="bg-surface py-20 md:py-32">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-on-surface mb-6">
             {dictionary.contact.hero.title}
           </h1>
-          <p className="text-xl text-muted leading-relaxed">
+          <p className="text-xl text-on-surface-variant leading-relaxed">
             {dictionary.contact.hero.description}
           </p>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-20 md:py-32 bg-surface-container-low">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Form */}
             <div>
-              <h2 className="text-3xl font-bold text-foreground mb-8">Send us a message</h2>
+              <h2 className="text-3xl font-bold text-on-surface mb-8">Send us a message</h2>
               <ContactForm dictionary={dictionary} />
             </div>
 
             {/* Contact Info */}
             <div>
-              <h2 className="text-3xl font-bold text-foreground mb-8">
+              <h2 className="text-3xl font-bold text-on-surface mb-8">
                 {dictionary.contact.info.contact}
               </h2>
 
               <div className="space-y-8">
                 {/* Email */}
-                <div className="bg-background rounded-lg border border-border p-6">
+                <div className="bg-surface-container rounded-lg border border-outline/20 p-6">
                   <div className="flex items-start gap-4">
-                    <Mail className="w-6 h-6 text-accent-teal flex-shrink-0 mt-1" />
+                    <Mail className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                     <div>
-                      <p className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">
+                      <p className="text-sm font-semibold text-on-surface uppercase tracking-wider mb-2">
                         {dictionary.contact.info.emailLabel}
                       </p>
                       <a
                         href={`mailto:${dictionary.contact.info.email}`}
-                        className="text-accent-teal hover:text-accent-teal-dark font-medium transition-colors"
+                        className="text-primary hover:text-secondary-fixed font-medium transition-colors"
                       >
                         {dictionary.contact.info.email}
                       </a>
@@ -80,16 +80,16 @@ export default async function Contact({ params }: PageProps) {
                 </div>
 
                 {/* Phone */}
-                <div className="bg-background rounded-lg border border-border p-6">
+                <div className="bg-surface-container rounded-lg border border-outline/20 p-6">
                   <div className="flex items-start gap-4">
-                    <Phone className="w-6 h-6 text-accent-teal flex-shrink-0 mt-1" />
+                    <Phone className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                     <div>
-                      <p className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">
+                      <p className="text-sm font-semibold text-on-surface uppercase tracking-wider mb-2">
                         {dictionary.contact.info.phoneLabel}
                       </p>
                       <a
                         href={`tel:${dictionary.contact.info.phone}`}
-                        className="text-accent-teal hover:text-accent-teal-dark font-medium transition-colors"
+                        className="text-primary hover:text-secondary-fixed font-medium transition-colors"
                       >
                         {dictionary.contact.info.phone}
                       </a>
@@ -98,22 +98,22 @@ export default async function Contact({ params }: PageProps) {
                 </div>
 
                 {/* Address */}
-                <div className="bg-background rounded-lg border border-border p-6">
+                <div className="bg-surface-container rounded-lg border border-outline/20 p-6">
                   <div className="flex items-start gap-4">
-                    <MapPin className="w-6 h-6 text-accent-teal flex-shrink-0 mt-1" />
+                    <MapPin className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                     <div>
-                      <p className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">
+                      <p className="text-sm font-semibold text-on-surface uppercase tracking-wider mb-2">
                         {dictionary.contact.info.addressLabel}
                       </p>
-                      <p className="text-foreground font-medium">{dictionary.contact.info.address}</p>
+                      <p className="text-on-surface font-medium">{dictionary.contact.info.address}</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Hours */}
-                <div className="bg-gradient-to-br from-accent-teal/10 to-accent-teal/5 rounded-lg border border-accent-teal/20 p-6">
-                  <p className="text-sm font-semibold text-foreground mb-2">Response Time</p>
-                  <p className="text-muted text-sm">{dictionary.contact.info.response}</p>
+                <div className="bg-primary/10 rounded-lg border border-primary/20 p-6">
+                  <p className="text-sm font-semibold text-on-surface mb-2">Response Time</p>
+                  <p className="text-on-surface-variant text-sm">{dictionary.contact.info.response}</p>
                 </div>
               </div>
             </div>

@@ -58,6 +58,28 @@ export default async function RootLayout({ children, params }: LayoutProps) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'AI Kitchen',
+              url: 'https://aikitchen.com.tr',
+              logo: 'https://aikitchen.com.tr/logo.png',
+              description: 'Enterprise AI-supported RPA platform for digital workforce automation',
+              sameAs: [
+                'https://twitter.com/aikitchen',
+                'https://linkedin.com/company/aikitchen',
+              ],
+              contactPoint: {
+                '@type': 'ContactPoint',
+                contactType: 'Sales',
+                email: 'info@aikitchen.com.tr',
+              },
+            }),
+          }}
+        />
       </head>
       <body className="bg-surface text-on-surface selection:bg-primary selection:text-on-primary">
         <Navbar dictionary={dictionary} />

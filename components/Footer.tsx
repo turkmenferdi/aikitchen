@@ -26,19 +26,19 @@ export function Footer({ dictionary, locale }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-foreground text-white pt-20 pb-8">
+    <footer className="bg-surface-container text-on-surface pt-20 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-accent-teal to-accent-teal-dark rounded-lg flex items-center justify-center font-bold text-lg">
+              <div className="w-10 h-10 bg-gradient-to-br from-primary-fixed to-secondary-container rounded-lg flex items-center justify-center font-bold text-lg text-on-secondary-container">
                 AK
               </div>
               <span className="text-xl font-bold">{dictionary.footer.company}</span>
             </div>
-            <p className="text-white/70 leading-relaxed text-sm">{dictionary.footer.description}</p>
+            <p className="text-on-surface/70 leading-relaxed text-sm">{dictionary.footer.description}</p>
           </div>
 
           {/* Product */}
@@ -50,7 +50,7 @@ export function Footer({ dictionary, locale }: FooterProps) {
               <li>
                 <Link
                   href={`/${locale}/platform`}
-                  className="text-white/70 hover:text-white text-sm transition-colors"
+                  className="text-on-surface/70 hover:text-on-surface text-sm transition-colors"
                 >
                   Platform
                 </Link>
@@ -58,7 +58,7 @@ export function Footer({ dictionary, locale }: FooterProps) {
               <li>
                 <Link
                   href={`/${locale}/solutions`}
-                  className="text-white/70 hover:text-white text-sm transition-colors"
+                  className="text-on-surface/70 hover:text-on-surface text-sm transition-colors"
                 >
                   {dictionary.footer.solutions}
                 </Link>
@@ -66,7 +66,7 @@ export function Footer({ dictionary, locale }: FooterProps) {
               <li>
                 <Link
                   href={`/${locale}/services`}
-                  className="text-white/70 hover:text-white text-sm transition-colors"
+                  className="text-on-surface/70 hover:text-on-surface text-sm transition-colors"
                 >
                   {dictionary.footer.services}
                 </Link>
@@ -83,7 +83,7 @@ export function Footer({ dictionary, locale }: FooterProps) {
               <li>
                 <Link
                   href={`/${locale}/about`}
-                  className="text-white/70 hover:text-white text-sm transition-colors"
+                  className="text-on-surface/70 hover:text-on-surface text-sm transition-colors"
                 >
                   About
                 </Link>
@@ -91,7 +91,7 @@ export function Footer({ dictionary, locale }: FooterProps) {
               <li>
                 <Link
                   href={`/${locale}/why-ai-kitchen`}
-                  className="text-white/70 hover:text-white text-sm transition-colors"
+                  className="text-on-surface/70 hover:text-on-surface text-sm transition-colors"
                 >
                   Why AI Kitchen
                 </Link>
@@ -99,7 +99,7 @@ export function Footer({ dictionary, locale }: FooterProps) {
               <li>
                 <Link
                   href={`/${locale}/case-studies`}
-                  className="text-white/70 hover:text-white text-sm transition-colors"
+                  className="text-on-surface/70 hover:text-on-surface text-sm transition-colors"
                 >
                   {dictionary.footer.contact}
                 </Link>
@@ -116,7 +116,7 @@ export function Footer({ dictionary, locale }: FooterProps) {
               <li>
                 <a
                   href="#"
-                  className="text-white/70 hover:text-white text-sm transition-colors"
+                  className="text-on-surface/70 hover:text-on-surface text-sm transition-colors"
                 >
                   {dictionary.footer.privacy}
                 </a>
@@ -124,7 +124,7 @@ export function Footer({ dictionary, locale }: FooterProps) {
               <li>
                 <a
                   href="#"
-                  className="text-white/70 hover:text-white text-sm transition-colors"
+                  className="text-on-surface/70 hover:text-on-surface text-sm transition-colors"
                 >
                   {dictionary.footer.terms}
                 </a>
@@ -134,25 +134,25 @@ export function Footer({ dictionary, locale }: FooterProps) {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-white/20 pt-8">
+        <div className="border-t border-outline/20 pt-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <div>
-              <p className="text-white/70 text-sm mb-2">{dictionary.footer.contact}</p>
+              <p className="text-on-surface/70 text-sm mb-2">{dictionary.footer.contact}</p>
               <a
                 href={`mailto:${dictionary.footer.email}`}
-                className="text-accent-teal hover:text-white text-sm font-medium transition-colors"
+                className="text-primary hover:text-on-surface text-sm font-medium transition-colors"
               >
                 {dictionary.footer.email}
               </a>
             </div>
             <div>
-              <p className="text-white/70 text-sm mb-2">{dictionary.footer.address}</p>
-              <p className="text-white text-sm font-medium">Enterprise Automation Platform</p>
+              <p className="text-on-surface/70 text-sm mb-2">{dictionary.footer.address}</p>
+              <p className="text-on-surface text-sm font-medium">Enterprise Automation Platform</p>
             </div>
           </div>
 
           {/* Copyright */}
-          <div className="text-center text-white/60 text-sm">
+          <div className="text-center text-on-surface/60 text-sm">
             <p>{dictionary.footer.copyright.replace('2026', currentYear.toString())}</p>
           </div>
         </div>

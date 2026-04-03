@@ -44,42 +44,42 @@ export default async function Platform({ params }: PageProps) {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-background via-white to-primary-50 py-20 md:py-32">
+      <section className="bg-surface py-20 md:py-32">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-on-surface mb-6">
             {dictionary.platform.hero.title}
           </h1>
-          <p className="text-xl text-muted leading-relaxed">
+          <p className="text-xl text-on-surface-variant leading-relaxed">
             {dictionary.platform.hero.description}
           </p>
         </div>
       </section>
 
       {/* Digital Workforce */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-20 md:py-32 bg-surface-container-low">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-on-surface mb-6">
                 {dictionary.platform.digitalWorkforce.heading}
               </h2>
-              <p className="text-lg text-muted mb-8 leading-relaxed">
+              <p className="text-lg text-on-surface-variant mb-8 leading-relaxed">
                 {dictionary.platform.digitalWorkforce.description}
               </p>
               <ul className="space-y-4">
                 {dictionary.platform.digitalWorkforce.points.map((point, idx) => (
                   <li key={idx} className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-accent-teal/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <div className="w-2 h-2 bg-accent-teal rounded-full" />
+                    <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <div className="w-2 h-2 bg-primary rounded-full" />
                     </div>
-                    <span className="text-muted">{point}</span>
+                    <span className="text-on-surface-variant">{point}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="bg-gradient-to-br from-primary-50 to-primary-100 rounded-lg border border-border p-8 flex items-center justify-center min-h-96">
-              <div className="text-center text-muted">
-                <Brain className="w-16 h-16 mx-auto mb-4 text-accent-teal/50" />
+            <div className="bg-surface-container-highest rounded-lg border border-outline/20 p-8 flex items-center justify-center min-h-96">
+              <div className="text-center text-on-surface-variant">
+                <Brain className="w-16 h-16 mx-auto mb-4 text-primary/50" />
                 <p className="text-sm">Digital Workers Architecture</p>
               </div>
             </div>
@@ -88,27 +88,27 @@ export default async function Platform({ params }: PageProps) {
       </section>
 
       {/* Agentic AI + RPA */}
-      <section className="py-20 md:py-32 bg-background">
+      <section className="py-20 md:py-32 bg-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="bg-white rounded-lg border border-border p-8 flex items-center justify-center min-h-96 order-2 md:order-1">
-              <div className="text-center text-muted">
-                <Cpu className="w-16 h-16 mx-auto mb-4 text-accent-teal/50" />
+            <div className="bg-surface-container-high rounded-lg border border-outline/20 p-8 flex items-center justify-center min-h-96 order-2 md:order-1">
+              <div className="text-center text-on-surface-variant">
+                <Cpu className="w-16 h-16 mx-auto mb-4 text-primary/50" />
                 <p className="text-sm">Integration Architecture</p>
               </div>
             </div>
             <div className="order-1 md:order-2">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-on-surface mb-6">
                 {dictionary.platform.agentic.heading}
               </h2>
-              <p className="text-lg text-muted mb-8 leading-relaxed">
+              <p className="text-lg text-on-surface-variant mb-8 leading-relaxed">
                 {dictionary.platform.agentic.description}
               </p>
               <ul className="space-y-4">
                 {dictionary.platform.agentic.points.map((point, idx) => (
                   <li key={idx} className="flex items-start gap-3">
-                    <Zap className="w-5 h-5 text-accent-teal flex-shrink-0 mt-0.5" />
-                    <span className="text-muted">{point}</span>
+                    <Zap className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-on-surface-variant">{point}</span>
                   </li>
                 ))}
               </ul>
@@ -118,28 +118,28 @@ export default async function Platform({ params }: PageProps) {
       </section>
 
       {/* Orchestration */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-20 md:py-32 bg-surface-container-low">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-on-surface mb-6">
                 {dictionary.platform.orchestration.heading}
               </h2>
-              <p className="text-lg text-muted mb-8 leading-relaxed">
+              <p className="text-lg text-on-surface-variant mb-8 leading-relaxed">
                 {dictionary.platform.orchestration.description}
               </p>
               <ul className="space-y-4">
                 {dictionary.platform.orchestration.points.map((point, idx) => (
                   <li key={idx} className="flex items-start gap-3">
-                    <Workflow className="w-5 h-5 text-accent-teal flex-shrink-0 mt-0.5" />
-                    <span className="text-muted">{point}</span>
+                    <Workflow className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-on-surface-variant">{point}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="bg-gradient-to-br from-primary-50 to-primary-100 rounded-lg border border-border p-8 flex items-center justify-center min-h-96">
-              <div className="text-center text-muted">
-                <Workflow className="w-16 h-16 mx-auto mb-4 text-accent-teal/50" />
+            <div className="bg-surface-container-highest rounded-lg border border-outline/20 p-8 flex items-center justify-center min-h-96">
+              <div className="text-center text-on-surface-variant">
+                <Workflow className="w-16 h-16 mx-auto mb-4 text-primary/50" />
                 <p className="text-sm">Process Orchestration Flow</p>
               </div>
             </div>
