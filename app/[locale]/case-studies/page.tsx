@@ -32,19 +32,19 @@ export default async function CaseStudies({ params }: PageProps) {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-background via-white to-primary-50 py-20 md:py-32">
+      <section className="bg-surface py-20 md:py-32">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-on-surface mb-6">
             {dictionary.caseStudies.hero.title}
           </h1>
-          <p className="text-xl text-muted leading-relaxed">
+          <p className="text-xl text-on-surface-variant leading-relaxed">
             {dictionary.caseStudies.hero.description}
           </p>
         </div>
       </section>
 
       {/* Case Studies Grid */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-20 md:py-32 bg-surface-container-low">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Grid columns={1} gap="lg">
             {dictionary.caseStudies.items.map((item: any, idx: number) => (
@@ -63,7 +63,7 @@ export default async function CaseStudies({ params }: PageProps) {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 md:py-32 bg-background">
+      <section className="py-20 md:py-32 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <CTABanner
             heading="Ready to achieve similar results?"
