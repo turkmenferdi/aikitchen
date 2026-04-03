@@ -100,7 +100,7 @@ export default async function Home({ params }: PageProps) {
                   <div className="inline-flex h-16 w-16 items-center justify-center rounded-3xl bg-primary-container text-on-primary-container shadow-sm shadow-primary/20">
                     <Zap className="w-8 h-8" />
                   </div>
-                  <span className="text-sm font-semibold text-foreground">Digital Workforce</span>
+                  <span className="text-sm font-semibold text-on-surface">Digital Workforce</span>
                 </div>
               </div>
             </div>

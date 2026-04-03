@@ -18,7 +18,7 @@ export function Button({
   ...props
 }: ButtonProps) {
   const baseStyles =
-    'font-medium transition-all duration-200 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-teal disabled:opacity-50 disabled:cursor-not-allowed';
+    'font-medium transition-all duration-200 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:opacity-50 disabled:cursor-not-allowed';
 
   const sizeStyles = {
     sm: 'px-4 py-2 text-sm',
