@@ -39,7 +39,6 @@ export const en = {
     solutions: 'Solutions',
     services: 'Services',
     resources: 'Resources',
-    company: 'Company',
     legal: 'Legal',
     privacy: 'Privacy Policy',
     terms: 'Terms of Service',
@@ -446,7 +445,7 @@ export const en = {
       title: 'Why AI Kitchen',
       description: 'The complete platform for enterprise digital workforce automation',
     },
-    intro: 'AI Kitchen is built differently—combining AI intelligence with RPA reliability in one enterprise platform. Here's why leading organizations choose us.',
+    intro: 'AI Kitchen is built differently - combining AI intelligence with RPA reliability in one enterprise platform. Here\'s why leading organizations choose us.',
     items: [
       {
         title: 'AI + RPA Integrated',
@@ -575,7 +574,7 @@ export const en = {
   contact: {
     hero: {
       title: 'Get in Touch',
-      description: 'Let's explore how AI Kitchen can transform your enterprise automation',
+      description: 'Let\'s explore how AI Kitchen can transform your enterprise automation',
     },
     form: {
       fullName: 'Full Name',

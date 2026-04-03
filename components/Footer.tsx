@@ -10,7 +10,6 @@ interface FooterProps {
       solutions: string;
       services: string;
       resources: string;
-      company: string;
       legal: string;
       privacy: string;
       terms: string;

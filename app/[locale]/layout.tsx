@@ -7,16 +7,16 @@ import '@/app/globals.css';
 
 interface LayoutProps {
   children: React.ReactNode;
-  params: {
+  params: Promise<{
     locale: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({ params }: LayoutProps): Promise<Metadata> {
-  const locale = isValidLanguage(params.locale) ? params.locale : 'en';
-  const dictionary = await getDictionary(locale);
+  const { locale } = await params;
+  const validLocale = isValidLanguage(locale) ? locale : 'en';
 
-  const isEnglish = locale === 'en';
+  const isEnglish = validLocale === 'en';
   const title = isEnglish
     ? 'AI Kitchen - Enterprise AI-Supported RPA Platform'
     : 'AI Kitchen - Kurumsal AI Destekli RPA Platformu';
@@ -49,8 +49,9 @@ export function generateStaticParams() {
 }
 
 export default async function RootLayout({ children, params }: LayoutProps) {
-  const locale = isValidLanguage(params.locale) ? params.locale : 'en';
-  const dictionary = await getDictionary(locale);
+  const { locale } = await params;
+  const validLocale = isValidLanguage(locale) ? locale : 'en';
+  const dictionary = await getDictionary(validLocale);
 
   return (
     <html lang={locale}>

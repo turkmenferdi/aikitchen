@@ -39,7 +39,6 @@ export const tr = {
     solutions: 'Çözümler',
     services: 'Hizmetler',
     resources: 'Kaynaklar',
-    company: 'Şirket',
     legal: 'Yasal',
     privacy: 'Gizlilik Politikası',
     terms: 'Kullanım Şartları',

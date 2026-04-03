@@ -1,10 +1,7 @@
 import type { Metadata } from 'next';
 import { isValidLanguage } from '@/i18n/config';
 import { getDictionary } from '@/lib/i18n';
-import { FeatureCard } from '@/components/FeatureCard';
 import { CTABanner } from '@/components/CTABanner';
-import { Grid } from '@/components/Grid';
-import Link from 'next/link';
 import {
   Zap,
   Shield,
@@ -16,14 +13,15 @@ import {
 } from 'lucide-react';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     locale: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const locale = isValidLanguage(params.locale) ? params.locale : 'en';
-  const isEnglish = locale === 'en';
+  const { locale } = await params;
+  const validLocale = isValidLanguage(locale) ? locale : 'en';
+  const isEnglish = validLocale === 'en';
 
   return {
     title: isEnglish ? 'Why AI Kitchen' : 'Neden AI Kitchen',
@@ -34,8 +32,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function WhyAiKitchen({ params }: PageProps) {
-  const locale = isValidLanguage(params.locale) ? params.locale : 'en';
-  const dictionary = await getDictionary(locale);
+  const { locale } = await params;
+  const validLocale = isValidLanguage(locale) ? locale : 'en';
+  const dictionary = await getDictionary(validLocale);
 
   return (
     <>

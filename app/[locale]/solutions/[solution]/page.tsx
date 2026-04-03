@@ -2,22 +2,20 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { isValidLanguage } from '@/i18n/config';
 import { getDictionary } from '@/lib/i18n';
-import { Button } from '@/components/Button';
-import { FeatureCard } from '@/components/FeatureCard';
 import { CTABanner } from '@/components/CTABanner';
 import { Grid } from '@/components/Grid';
 import Link from 'next/link';
 import { CheckCircle, BarChart3, ArrowLeft } from 'lucide-react';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     locale: string;
     solution: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { solution } = params;
+  const { solution } = await params;
   const solutionMap: { [key: string]: string } = {
     financial: 'Financial Automation',
     'accounts-payable': 'Accounts Payable',
@@ -31,19 +29,24 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export async function generateStaticParams({ params }: { params: { locale: string } }) {
-  return [
-    { locale: params.locale, solution: 'financial' },
-    { locale: params.locale, solution: 'accounts-payable' },
-    { locale: params.locale, solution: 'legal' },
-    { locale: params.locale, solution: 'tourism' },
-  ];
+export async function generateStaticParams() {
+  const locales = ['en', 'tr'];
+  const solutions = ['financial', 'accounts-payable', 'legal', 'tourism'];
+  
+  const params = [];
+  for (const locale of locales) {
+    for (const solution of solutions) {
+      params.push({ locale, solution });
+    }
+  }
+  
+  return params;
 }
 
 export default async function SolutionDetail({ params }: PageProps) {
-  const locale = isValidLanguage(params.locale) ? params.locale : 'en';
-  const dictionary = await getDictionary(locale);
-  const { solution } = params;
+  const { locale, solution } = await params;
+  const validLocale = isValidLanguage(locale) ? locale : 'en';
+  const dictionary = await getDictionary(validLocale);
 
   const solutionData: { [key: string]: any } = {
     financial: dictionary.solutions.financial,

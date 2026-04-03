@@ -4,23 +4,22 @@ import { getDictionary } from '@/lib/i18n';
 import { Button } from '@/components/Button';
 import { SectionHeading } from '@/components/SectionHeading';
 import { FeatureCard } from '@/components/FeatureCard';
-import { SolutionCard } from '@/components/SolutionCard';
 import { CaseStudyCard } from '@/components/CaseStudyCard';
 import { CTABanner } from '@/components/CTABanner';
-import { TrustBadges } from '@/components/TrustBadges';
 import { Grid } from '@/components/Grid';
 import Link from 'next/link';
 import { Zap, Lock, Brain, Cpu, ArrowRight, BarChart3, Shield, Workflow } from 'lucide-react';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     locale: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const locale = isValidLanguage(params.locale) ? params.locale : 'en';
-  const isEnglish = locale === 'en';
+  const { locale } = await params;
+  const validLocale = isValidLanguage(locale) ? locale : 'en';
+  const isEnglish = validLocale === 'en';
 
   return {
     title: isEnglish
@@ -41,9 +40,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function Home({ params }: PageProps) {
-  const locale = isValidLanguage(params.locale) ? params.locale : 'en';
-  const dictionary = await getDictionary(locale);
-
+  const { locale } = await params;
+  const validLocale = isValidLanguage(locale) ? locale : 'en';
+  const dictionary = await getDictionary(validLocale);
   return (
     <>
       {/* Hero Section */}
@@ -90,14 +89,14 @@ export default async function Home({ params }: PageProps) {
                 </div>
                 <span className="text-sm font-medium text-foreground">AI Agents</span>
               </div>
-              <Plus className="text-muted/50 hidden md:block" size={32} />
+              <Plus className="text-muted/50 hidden md:block w-8 h-8" />
               <div className="hidden md:flex flex-col items-center gap-4">
                 <div className="w-24 h-24 bg-white rounded-lg shadow-lg flex items-center justify-center border border-border">
                   <Workflow className="w-12 h-12 text-accent-teal" />
                 </div>
                 <span className="text-sm font-medium text-foreground">RPA</span>
               </div>
-              <Equals className="text-muted/50 hidden md:block" size={32} />
+              <Equals className="text-muted/50 hidden md:block w-8 h-8" />
               <div className="flex flex-col items-center gap-4">
                 <div className="w-24 h-24 bg-white rounded-lg shadow-lg flex items-center justify-center border border-border">
                   <Zap className="w-12 h-12 text-accent-teal" />
