@@ -43,7 +43,7 @@ export const tr = {
     privacy: 'Gizlilik Politikası',
     terms: 'Kullanım Şartları',
     contact: 'Bize Ulaşın',
-    email: 'hello@aikitchen.com.tr',
+    email: 'support@aikitchen.com.tr',
     supportEmail: 'support@aikitchen.com.tr',
     salesEmail: 'sales@aikitchen.com.tr',
     address: 'Kurumsal Otomasyon Platformu',
@@ -625,7 +625,7 @@ export const tr = {
     },
     info: {
       contact: 'İletişim Bilgileri',
-      email: 'elena@aikitchen.com.tr',
+      email: 'support@aikitchen.com.tr',
       emailLabel: 'E-posta',
       phone: '+1 (555) 123-4567',
       phoneLabel: 'Telefon',

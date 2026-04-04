@@ -43,7 +43,7 @@ export const en = {
     privacy: 'Privacy Policy',
     terms: 'Terms of Service',
     contact: 'Contact Us',
-    email: 'hello@aikitchen.com.tr',
+    email: 'support@aikitchen.com.tr',
     supportEmail: 'support@aikitchen.com.tr',
     salesEmail: 'sales@aikitchen.com.tr',
     address: 'Enterprise Automation Platform',
@@ -595,7 +595,7 @@ export const en = {
     },
     info: {
       contact: 'Contact Information',
-      email: 'elena@aikitchen.com.tr',
+      email: 'support@aikitchen.com.tr',
       emailLabel: 'Email',
       phone: '+1 (555) 123-4567',
       phoneLabel: 'Phone',
