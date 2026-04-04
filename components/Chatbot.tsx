@@ -52,49 +52,65 @@ export function Chatbot() {
       const reader = response.body.getReader();
       const decoder = new TextDecoder();
       let assistantMessage = '';
+      let buffer = '';
 
       while (true) {
         const { done, value } = await reader.read();
         if (done) break;
 
-        const chunk = decoder.decode(value);
-        const lines = chunk.split('\n');
-
-        for (const line of lines) {
-          if (line.startsWith('0:')) {
-            const content = line.substring(2).trim();
-            if (content) {
-              try {
-                const parsed = JSON.parse(content);
-                if (parsed.type === 'text-delta') {
-                  assistantMessage += parsed.delta;
-                  setMessages((prev) => {
-                    const updated = [...prev];
-                    if (updated[updated.length - 1]?.role === 'assistant') {
-                      updated[updated.length - 1].content = assistantMessage;
-                    } else {
-                      updated.push({ role: 'assistant', content: assistantMessage });
-                    }
-                    return updated;
-                  });
-                }
-              } catch (e) {
-                // Ignore parse errors
+        buffer += decoder.decode(value, { stream: true });
+        const parts = buffer.split('\n\n');
+        
+        // Keep the last part in buffer in case it's incomplete
+        buffer = parts[parts.length - 1];
+        
+        for (let i = 0; i < parts.length - 1; i++) {
+          const part = parts[i].trim();
+          if (part.startsWith('data: ')) {
+            try {
+              const jsonStr = part.substring(6);
+              const data = JSON.parse(jsonStr);
+              if (data.content) {
+                assistantMessage += data.content;
+                setMessages((prev) => {
+                  const updated = [...prev];
+                  const lastMsg = updated[updated.length - 1];
+                  if (lastMsg?.role === 'assistant') {
+                    lastMsg.content = assistantMessage;
+                  } else {
+                    updated.push({ role: 'assistant', content: assistantMessage });
+                  }
+                  return updated;
+                });
               }
+            } catch (e) {
+              console.error('Parse error:', e);
             }
           }
         }
       }
-
-      if (assistantMessage && !messages.some((m) => m.role === 'assistant' && m.content === assistantMessage)) {
-        setMessages((prev) => {
-          const updated = [...prev];
-          if (updated[updated.length - 1]?.role === 'assistant') {
-            return updated;
-          } else {
-            return [...updated, { role: 'assistant', content: assistantMessage }];
+      
+      // Handle any remaining buffer data
+      if (buffer.trim().startsWith('data: ')) {
+        try {
+          const jsonStr = buffer.trim().substring(6);
+          const data = JSON.parse(jsonStr);
+          if (data.content) {
+            assistantMessage += data.content;
+            setMessages((prev) => {
+              const updated = [...prev];
+              const lastMsg = updated[updated.length - 1];
+              if (lastMsg?.role === 'assistant') {
+                lastMsg.content = assistantMessage;
+              } else {
+                updated.push({ role: 'assistant', content: assistantMessage });
+              }
+              return updated;
+            });
           }
-        });
+        } catch (e) {
+          console.error('Parse error:', e);
+        }
       }
     } catch (error) {
       console.error('Chat error:', error);

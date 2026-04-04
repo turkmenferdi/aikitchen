@@ -35,8 +35,7 @@ Be professional, helpful, and concise. Answer questions about AI Kitchen's platf
           for await (const chunk of response) {
             const content = chunk.choices[0]?.delta?.content || '';
             if (content) {
-              const message = JSON.stringify({ type: 'text-delta', delta: content });
-              controller.enqueue(encoder.encode(`0:${message}\n`));
+              controller.enqueue(encoder.encode(`data: ${JSON.stringify({ content })}\n\n`));
             }
           }
           controller.close();
@@ -50,6 +49,7 @@ Be professional, helpful, and concise. Answer questions about AI Kitchen's platf
       headers: {
         'Content-Type': 'text/event-stream',
         'Cache-Control': 'no-cache',
+        'Connection': 'keep-alive',
       },
     });
   } catch (error) {
