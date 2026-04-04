@@ -35,7 +35,8 @@ Be professional, helpful, and concise. Answer questions about AI Kitchen's platf
           for await (const chunk of response) {
             const content = chunk.choices[0]?.delta?.content || '';
             if (content) {
-              controller.enqueue(encoder.encode(`0:"${content.replace(/"/g, '\\"')}"\\n`));
+              const message = JSON.stringify({ type: 'text-delta', delta: content });
+              controller.enqueue(encoder.encode(`0:${message}\n`));
             }
           }
           controller.close();
