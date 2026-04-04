@@ -44,6 +44,8 @@ export const en = {
     terms: 'Terms of Service',
     contact: 'Contact Us',
     email: 'hello@aikitchen.com.tr',
+    supportEmail: 'support@aikitchen.com.tr',
+    salesEmail: 'sales@aikitchen.com.tr',
     address: 'Enterprise Automation Platform',
     copyright: '© 2026 AI Kitchen. All rights reserved.',
   },

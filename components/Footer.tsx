@@ -15,6 +15,8 @@ interface FooterProps {
       terms: string;
       contact: string;
       email: string;
+      supportEmail: string;
+      salesEmail: string;
       address: string;
       copyright: string;
     };
@@ -135,14 +137,23 @@ export function Footer({ dictionary, locale }: FooterProps) {
 
         {/* Bottom Section */}
         <div className="border-t border-outline/20 pt-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div>
-              <p className="text-on-surface/70 text-sm mb-2">{dictionary.footer.contact}</p>
+              <p className="text-on-surface/70 text-sm mb-2">Support</p>
               <a
-                href={`mailto:${dictionary.footer.email}`}
+                href={`mailto:${dictionary.footer.supportEmail}`}
                 className="text-primary hover:text-on-surface text-sm font-medium transition-colors"
               >
-                {dictionary.footer.email}
+                {dictionary.footer.supportEmail}
+              </a>
+            </div>
+            <div>
+              <p className="text-on-surface/70 text-sm mb-2">Sales</p>
+              <a
+                href={`mailto:${dictionary.footer.salesEmail}`}
+                className="text-primary hover:text-on-surface text-sm font-medium transition-colors"
+              >
+                {dictionary.footer.salesEmail}
               </a>
             </div>
             <div>

@@ -44,6 +44,8 @@ export const tr = {
     terms: 'Kullanım Şartları',
     contact: 'Bize Ulaşın',
     email: 'hello@aikitchen.com.tr',
+    supportEmail: 'support@aikitchen.com.tr',
+    salesEmail: 'sales@aikitchen.com.tr',
     address: 'Kurumsal Otomasyon Platformu',
     copyright: '© 2026 AI Kitchen. Tüm hakları saklıdır.',
   },
