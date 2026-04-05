@@ -3,7 +3,6 @@ import { languages, isValidLanguage } from '@/i18n/config';
 import { getDictionary } from '@/lib/i18n';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
-import { Chatbot } from '@/components/Chatbot';
 import '@/app/globals.css';
 
 interface LayoutProps {
@@ -86,7 +85,6 @@ export default async function RootLayout({ children, params }: LayoutProps) {
         <Navbar dictionary={dictionary} />
         <main className="flex-1">{children}</main>
         <Footer dictionary={dictionary} locale={locale} />
-        <Chatbot />
       </body>
     </html>
   );
