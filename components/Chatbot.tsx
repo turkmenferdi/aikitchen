@@ -45,73 +45,13 @@ export function Chatbot() {
         }),
       });
 
-      if (!response.body) {
-        throw new Error('No response body');
+      const data = await response.json();
+      if (!response.ok || data.error) {
+        const errorMessage = data.message || data.error || 'Chat failed';
+        throw new Error(errorMessage);
       }
 
-      const reader = response.body.getReader();
-      const decoder = new TextDecoder();
-      let assistantMessage = '';
-      let buffer = '';
-
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-
-        buffer += decoder.decode(value, { stream: true });
-        const parts = buffer.split('\n\n');
-        
-        // Keep the last part in buffer in case it's incomplete
-        buffer = parts[parts.length - 1];
-        
-        for (let i = 0; i < parts.length - 1; i++) {
-          const part = parts[i].trim();
-          if (part.startsWith('data: ')) {
-            try {
-              const jsonStr = part.substring(6);
-              const data = JSON.parse(jsonStr);
-              if (data.content) {
-                assistantMessage += data.content;
-                setMessages((prev) => {
-                  const updated = [...prev];
-                  const lastMsg = updated[updated.length - 1];
-                  if (lastMsg?.role === 'assistant') {
-                    lastMsg.content = assistantMessage;
-                  } else {
-                    updated.push({ role: 'assistant', content: assistantMessage });
-                  }
-                  return updated;
-                });
-              }
-            } catch (e) {
-              console.error('Parse error:', e);
-            }
-          }
-        }
-      }
-      
-      // Handle any remaining buffer data
-      if (buffer.trim().startsWith('data: ')) {
-        try {
-          const jsonStr = buffer.trim().substring(6);
-          const data = JSON.parse(jsonStr);
-          if (data.content) {
-            assistantMessage += data.content;
-            setMessages((prev) => {
-              const updated = [...prev];
-              const lastMsg = updated[updated.length - 1];
-              if (lastMsg?.role === 'assistant') {
-                lastMsg.content = assistantMessage;
-              } else {
-                updated.push({ role: 'assistant', content: assistantMessage });
-              }
-              return updated;
-            });
-          }
-        } catch (e) {
-          console.error('Parse error:', e);
-        }
-      }
+      setMessages((prev) => [...prev, { role: 'assistant', content: data.content || '' }]);
     } catch (error) {
       console.error('Chat error:', error);
       setMessages((prev) => [

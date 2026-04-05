@@ -20,36 +20,17 @@ Be professional, helpful, and concise. Answer questions about AI Kitchen's platf
     // Add system message to the beginning of messages array
     const messagesWithSystem = [{ role: 'system' as const, content: systemPrompt }, ...messages];
 
-    const response = await openai.chat.completions.create({
+    const completion = await openai.chat.completions.create({
       model: 'gpt-3.5-turbo',
       messages: messagesWithSystem as OpenAI.ChatCompletionMessageParam[],
-      stream: true,
+      stream: false,
     });
 
-    // Convert to ReadableStream for streaming response
-    const encoder = new TextEncoder();
+    const assistantText = completion.choices?.[0]?.message?.content || '';
 
-    const stream = new ReadableStream({
-      async start(controller) {
-        try {
-          for await (const chunk of response) {
-            const content = chunk.choices[0]?.delta?.content || '';
-            if (content) {
-              controller.enqueue(encoder.encode(`data: ${JSON.stringify({ content })}\n\n`));
-            }
-          }
-          controller.close();
-        } catch (error) {
-          controller.error(error);
-        }
-      },
-    });
-
-    return new Response(stream, {
+    return new Response(JSON.stringify({ content: assistantText }), {
       headers: {
-        'Content-Type': 'text/event-stream',
-        'Cache-Control': 'no-cache',
-        'Connection': 'keep-alive',
+        'Content-Type': 'application/json',
       },
     });
   } catch (error) {
