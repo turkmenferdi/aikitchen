@@ -39,6 +39,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function Platform({ params }: PageProps) {
   const { locale } = await params;
   const validLocale = isValidLanguage(locale) ? locale : 'en';
+  const isEnglish = validLocale === 'en';
   const dictionary = await getDictionary(validLocale);
 
   return (
@@ -80,7 +81,9 @@ export default async function Platform({ params }: PageProps) {
             <div className="bg-surface-container-highest rounded-lg border border-outline/20 p-8 flex items-center justify-center min-h-96">
               <div className="text-center text-on-surface-variant">
                 <Brain className="w-16 h-16 mx-auto mb-4 text-primary/50" />
-                <p className="text-sm">Digital Workers Architecture</p>
+                <p className="text-sm">
+                  {isEnglish ? 'Digital workforce architecture' : 'Dijital iş gücü mimarisi'}
+                </p>
               </div>
             </div>
           </div>
@@ -94,7 +97,9 @@ export default async function Platform({ params }: PageProps) {
             <div className="bg-surface-container-high rounded-lg border border-outline/20 p-8 flex items-center justify-center min-h-96 order-2 md:order-1">
               <div className="text-center text-on-surface-variant">
                 <Cpu className="w-16 h-16 mx-auto mb-4 text-primary/50" />
-                <p className="text-sm">Integration Architecture</p>
+                <p className="text-sm">
+                  {isEnglish ? 'Integration architecture' : 'Entegrasyon mimarisi'}
+                </p>
               </div>
             </div>
             <div className="order-1 md:order-2">
@@ -140,7 +145,9 @@ export default async function Platform({ params }: PageProps) {
             <div className="bg-surface-container-highest rounded-lg border border-outline/20 p-8 flex items-center justify-center min-h-96">
               <div className="text-center text-on-surface-variant">
                 <Workflow className="w-16 h-16 mx-auto mb-4 text-primary/50" />
-                <p className="text-sm">Process Orchestration Flow</p>
+                <p className="text-sm">
+                  {isEnglish ? 'Process orchestration flow' : 'Süreç orkestrasyonu akışı'}
+                </p>
               </div>
             </div>
           </div>
@@ -154,7 +161,9 @@ export default async function Platform({ params }: PageProps) {
             <div className="bg-surface-container-high rounded-lg border border-outline/20 p-8 flex items-center justify-center min-h-96 order-2 md:order-1">
               <div className="text-center text-on-surface-variant">
                 <Lock className="w-16 h-16 mx-auto mb-4 text-primary/50" />
-                <p className="text-sm">On-Premises Infrastructure</p>
+                <p className="text-sm">
+                  {isEnglish ? 'On-premises deployment model' : 'On-prem kurulum modeli'}
+                </p>
               </div>
             </div>
             <div className="order-1 md:order-2">
@@ -225,10 +234,14 @@ export default async function Platform({ params }: PageProps) {
       <section className="py-20 md:py-32 bg-surface-container-low">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <CTABanner
-            heading="Ready to explore our platform?"
-            description="Schedule a demo to see AI Kitchen in action"
+            heading={isEnglish ? 'Ready to explore our platform?' : 'Platformu canlı görmek ister misiniz?'}
+            description={
+              isEnglish
+                ? 'Schedule a demo to see AI Kitchen in action'
+                : 'AI Kitchen’ın gerçek süreçlerde nasıl çalıştığını size özel bir demo ile gösterelim.'
+            }
             primaryCTA={{
-              text: 'Request Demo',
+              text: isEnglish ? 'Request Demo' : 'Demo Talep Et',
               href: `/${locale}/contact`,
             }}
           />

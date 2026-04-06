@@ -20,6 +20,16 @@ interface ContactFormProps {
         error: string;
         required: string;
         invalidEmail: string;
+        placeholderName: string;
+        placeholderCompany: string;
+        placeholderEmail: string;
+        placeholderPhone: string;
+        placeholderMessage: string;
+        optionFinancial: string;
+        optionAp: string;
+        optionLegal: string;
+        optionTourism: string;
+        optionOther: string;
       };
     };
   };
@@ -114,7 +124,7 @@ export function ContactForm({ dictionary }: ContactFormProps) {
             onChange={handleChange}
             required
             className="w-full px-4 py-3 rounded-lg border border-outline/20 bg-surface-container text-on-surface placeholder-on-surface-variant focus:outline-none focus:border-primary transition-colors"
-            placeholder="Your name"
+            placeholder={dictionary.contact.form.placeholderName}
           />
         </div>
 
@@ -131,7 +141,7 @@ export function ContactForm({ dictionary }: ContactFormProps) {
             onChange={handleChange}
             required
             className="w-full px-4 py-3 rounded-lg border border-outline/20 bg-surface-container text-on-surface placeholder-on-surface-variant focus:outline-none focus:border-primary transition-colors"
-            placeholder="Company name"
+            placeholder={dictionary.contact.form.placeholderCompany}
           />
         </div>
       </div>
@@ -150,7 +160,7 @@ export function ContactForm({ dictionary }: ContactFormProps) {
             onChange={handleChange}
             required
             className="w-full px-4 py-3 rounded-lg border border-outline/20 bg-surface-container text-on-surface placeholder-on-surface-variant focus:outline-none focus:border-primary transition-colors"
-            placeholder="your@company.com"
+            placeholder={dictionary.contact.form.placeholderEmail}
           />
         </div>
 
@@ -165,7 +175,7 @@ export function ContactForm({ dictionary }: ContactFormProps) {
             value={formData.phone}
             onChange={handleChange}
             className="w-full px-4 py-3 rounded-lg border border-outline/20 bg-surface-container text-on-surface placeholder-on-surface-variant focus:outline-none focus:border-primary transition-colors"
-            placeholder="+1 (555) 123-4567"
+            placeholder={dictionary.contact.form.placeholderPhone}
           />
         </div>
       </div>
@@ -182,11 +192,11 @@ export function ContactForm({ dictionary }: ContactFormProps) {
           className="w-full px-4 py-3 rounded-lg border border-outline/20 bg-surface-container text-on-surface focus:outline-none focus:border-primary transition-colors"
         >
           <option value="other">{dictionary.contact.form.selectSolution}</option>
-          <option value="financial">Financial Automation</option>
-          <option value="ap">Accounts Payable</option>
-          <option value="legal">Legal Processing</option>
-          <option value="tourism">Tourism & Hospitality</option>
-          <option value="other">Other</option>
+          <option value="financial">{dictionary.contact.form.optionFinancial}</option>
+          <option value="ap">{dictionary.contact.form.optionAp}</option>
+          <option value="legal">{dictionary.contact.form.optionLegal}</option>
+          <option value="tourism">{dictionary.contact.form.optionTourism}</option>
+          <option value="other">{dictionary.contact.form.optionOther}</option>
         </select>
       </div>
 
@@ -203,7 +213,7 @@ export function ContactForm({ dictionary }: ContactFormProps) {
           required
           rows={5}
           className="w-full px-4 py-3 rounded-lg border border-outline/20 bg-surface-container text-on-surface placeholder-on-surface-variant focus:outline-none focus:border-primary transition-colors resize-none"
-          placeholder="Tell us about your automation needs..."
+          placeholder={dictionary.contact.form.placeholderMessage}
         />
       </div>
 

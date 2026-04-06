@@ -50,25 +50,25 @@ export default async function Solutions({ params }: PageProps) {
             {[
               {
                 title: dictionary.solutions.financial.name,
-                description: 'Automate financial operations with AI-powered accuracy and governance',
+                description: dictionary.solutions.financial.hero.description,
                 href: `/${locale}/solutions/financial`,
                 icon: <BarChart3 className="w-8 h-8 text-primary" />,
               },
               {
                 title: dictionary.solutions.accountsPayable.name,
-                description: 'Transform AP from manual process to intelligent, compliant automation',
+                description: dictionary.solutions.accountsPayable.hero.description,
                 href: `/${locale}/solutions/accounts-payable`,
                 icon: <Zap className="w-8 h-8 text-primary" />,
               },
               {
                 title: dictionary.solutions.legal.name,
-                description: 'Automate high-value legal processes with AI-powered document understanding',
+                description: dictionary.solutions.legal.hero.description,
                 href: `/${locale}/solutions/legal`,
                 icon: <FileText className="w-8 h-8 text-primary" />,
               },
               {
                 title: dictionary.solutions.tourism.name,
-                description: 'Streamline hospitality operations with intelligent automation',
+                description: dictionary.solutions.tourism.hero.description,
                 href: `/${locale}/solutions/tourism`,
                 icon: <MapPin className="w-8 h-8 text-primary" />,
               },

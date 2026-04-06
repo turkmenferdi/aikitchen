@@ -42,6 +42,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function Home({ params }: PageProps) {
   const { locale } = await params;
   const validLocale = isValidLanguage(locale) ? locale : 'en';
+  const isEnglish = validLocale === 'en';
   const dictionary = await getDictionary(validLocale);
   return (
     <>
@@ -155,7 +156,9 @@ export default async function Home({ params }: PageProps) {
             <div className="bg-surface-container-high rounded-lg border border-outline/20 p-8 shadow-sm flex items-center justify-center min-h-96">
               <div className="text-center text-on-surface-variant">
                 <Cpu className="w-16 h-16 mx-auto mb-4 text-primary/50" />
-                <p className="text-sm">Platform Architecture Diagram</p>
+                <p className="text-sm">
+                  {isEnglish ? 'Platform architecture overview' : 'Platform mimarisi özeti'}
+                </p>
               </div>
             </div>
           </div>
@@ -216,7 +219,9 @@ export default async function Home({ params }: PageProps) {
             <div className="bg-surface-container-highest rounded-lg border border-outline/20 p-8 shadow-sm flex items-center justify-center min-h-96">
               <div className="text-center text-on-surface-variant">
                 <Lock className="w-16 h-16 mx-auto mb-4 text-primary/50" />
-                <p className="text-sm">Security & Compliance Illustration</p>
+                <p className="text-sm">
+                  {isEnglish ? 'Security and compliance overview' : 'Güvenlik ve uyumluluk özeti'}
+                </p>
               </div>
             </div>
             <div>
@@ -266,6 +271,8 @@ export default async function Home({ params }: PageProps) {
                 metricLabel={item.metricLabel}
                 challenge={item.challenge}
                 outcomes={item.outcomes}
+                challengeLabel={isEnglish ? 'Challenge' : 'Zorluk'}
+                outcomesLabel={isEnglish ? 'Outcomes' : 'Kazanımlar'}
               />
             ))}
           </Grid>

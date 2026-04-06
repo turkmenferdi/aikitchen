@@ -27,6 +27,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function CaseStudies({ params }: PageProps) {
   const { locale } = await params;
   const validLocale = isValidLanguage(locale) ? locale : 'en';
+  const isEnglish = validLocale === 'en';
   const dictionary = await getDictionary(validLocale);
 
   return (
@@ -56,6 +57,8 @@ export default async function CaseStudies({ params }: PageProps) {
                 metricLabel={item.metricLabel}
                 challenge={item.challenge}
                 outcomes={item.outcomes}
+                challengeLabel={isEnglish ? 'Challenge' : 'Zorluk'}
+                outcomesLabel={isEnglish ? 'Outcomes' : 'Kazanımlar'}
               />
             ))}
           </Grid>
@@ -66,10 +69,16 @@ export default async function CaseStudies({ params }: PageProps) {
       <section className="py-20 md:py-32 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <CTABanner
-            heading="Ready to achieve similar results?"
-            description="Let's explore how AI Kitchen can transform your operations"
+            heading={
+              isEnglish ? 'Ready to achieve similar results?' : 'Benzer sonuçları birlikte planlayalım'
+            }
+            description={
+              isEnglish
+                ? "Let's explore how AI Kitchen can transform your operations"
+                : 'Operasyonlarınızdaki en doğru otomasyon senaryosunu birlikte kurgulayalım.'
+            }
             primaryCTA={{
-              text: 'Request Demo',
+              text: isEnglish ? 'Request Demo' : 'Demo Talep Et',
               href: `/${locale}/contact`,
             }}
           />

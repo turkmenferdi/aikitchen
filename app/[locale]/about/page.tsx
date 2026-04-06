@@ -28,6 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function About({ params }: PageProps) {
   const { locale } = await params;
   const validLocale = isValidLanguage(locale) ? locale : 'en';
+  const isEnglish = validLocale === 'en';
   const dictionary = await getDictionary(validLocale);
 
   return (
@@ -119,7 +120,9 @@ export default async function About({ params }: PageProps) {
 
           <div className="bg-surface-container/50 backdrop-blur rounded-lg border border-outline/30 p-12">
             <p className="text-on-surface/70 italic">
-              "AI Kitchen transformed how we approach automation. We moved from siloed point solutions to a unified, intelligent platform that actually learns from our business." - Enterprise Client
+              {isEnglish
+                ? '"AI Kitchen transformed how we approach automation. We moved from siloed point solutions to a unified, intelligent platform that actually learns from our business." - Enterprise Client'
+                : '"AI Kitchen ile otomasyona bakışımız değişti. Parçalı çözümler yerine işimizi gerçekten anlayan bütünleşik bir platformla ilerlemeye başladık." - Kurumsal Müşteri'}
             </p>
           </div>
         </div>

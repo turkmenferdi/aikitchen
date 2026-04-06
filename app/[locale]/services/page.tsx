@@ -34,6 +34,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function Services({ params }: PageProps) {
   const { locale } = await params;
   const validLocale = isValidLanguage(locale) ? locale : 'en';
+  const isEnglish = validLocale === 'en';
   const dictionary = await getDictionary(validLocale);
 
   return (
@@ -110,26 +111,40 @@ export default async function Services({ params }: PageProps) {
       <section className="py-20 md:py-32 bg-surface-container-low">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-on-surface mb-6">
-            A Proven Implementation Methodology
+            {isEnglish ? 'A Proven Implementation Methodology' : 'Kanıtlanmış Uygulama Metodolojisi'}
           </h2>
           <p className="text-lg text-on-surface-variant mb-8 leading-relaxed">
-            From discovery through scaling, our methodology ensures successful transformation and
-            internal capability building at every stage.
+            {isEnglish
+              ? 'From discovery through scaling, our methodology ensures successful transformation and internal capability building at every stage.'
+              : 'Keşiften canlı kullanıma kadar metodolojimiz, her aşamada hem ölçülebilir dönüşüm hem de iç ekip yetkinliği oluşturmayı hedefler.'}
           </p>
 
           <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg border border-primary/20 p-8">
             <p className="text-on-surface font-semibold mb-4">
-              Timeline Overview: 6 months from discovery to production at scale
+              {isEnglish
+                ? 'Timeline overview: approximately 6 months from discovery to scalable production'
+                : 'Zaman planı: keşiften ölçekli canlı kullanıma kadar ortalama 6 ay'}
             </p>
             <div className="grid grid-cols-2 md:grid-cols-6 gap-4 text-sm">
-              {[
-                '2-4w Discovery',
-                '1-2w Assessment',
-                '4-8w POC',
-                '8-16w Implementation',
-                'Variable Integration',
-                'Ongoing Support',
-              ].map((phase, idx) => (
+              {(
+                isEnglish
+                  ? [
+                      '2-4w Discovery',
+                      '1-2w Assessment',
+                      '4-8w POC',
+                      '8-16w Implementation',
+                      'Variable Integration',
+                      'Ongoing Support',
+                    ]
+                  : [
+                      '2-4 hf Keşif',
+                      '1-2 hf Değerlendirme',
+                      '4-8 hf POC',
+                      '8-16 hf Kurulum',
+                      'Değişken Entegrasyon',
+                      'Sürekli Destek',
+                    ]
+              ).map((phase, idx) => (
                 <div key={idx} className="bg-surface-container-high rounded border border-outline/20 p-3 text-center">
                   <p className="text-on-surface-variant font-medium">{phase}</p>
                 </div>

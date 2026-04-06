@@ -1,5 +1,4 @@
 export const en = {
-  // Navigation
   nav: {
     home: 'Home',
     about: 'About',
@@ -12,13 +11,11 @@ export const en = {
     requestDemo: 'Request Demo',
   },
 
-  // Language
   language: {
     en: 'English',
-    tr: 'Türkçe',
+    tr: 'Turkish',
   },
 
-  // Common
   common: {
     learnMore: 'Learn More',
     getStarted: 'Get Started',
@@ -31,10 +28,10 @@ export const en = {
     loading: 'Loading...',
   },
 
-  // Footer
   footer: {
     company: 'AI Kitchen',
-    description: 'Enterprise AI-supported RPA and Agentic AI platform for digital workforce automation.',
+    description:
+      'AI-powered RPA for enterprise teams, with digital workers, reusable automation scenarios, and expert implementation support.',
     product: 'Product',
     solutions: 'Solutions',
     services: 'Services',
@@ -50,533 +47,606 @@ export const en = {
     copyright: '© 2026 AI Kitchen. All rights reserved.',
   },
 
-  // Home Page
   home: {
     hero: {
-      title: 'Scale Your Digital Workforce with AI-Supported RPA and Agentic AI',
-      description: 'Build intelligent, autonomous digital workers that drive enterprise automation at scale. Secure, flexible, enterprise-ready.',
+      title: 'A Turkish-Ready AI + RPA Platform for Enterprise Operations',
+      description:
+        'AI Kitchen helps teams automate document-heavy, repetitive, and multi-system workflows with digital workers, reusable automation modules, and expert implementation support.',
       cta: 'Request Demo',
-      subHeading: 'Enterprise-grade automation powered by AI + RPA',
+      subHeading: 'Reusable bot logic + AI decisions + enterprise control',
     },
     valueProposition: {
-      heading: 'Why Enterprises Choose AI Kitchen',
+      heading: 'Why AI Kitchen',
       items: [
         {
-          title: 'AI + RPA Integration',
-          description: 'Unified platform combining intelligent automation with enterprise-grade process orchestration.',
+          title: 'AI + RPA in One Platform',
+          description:
+            'Combine rule-based execution with intelligent decision layers in the same workflow for more resilient automation.',
         },
         {
-          title: 'Enterprise-Ready Deployment',
-          description: 'On-premises deployment for maximum security and data sovereignty control.',
+          title: 'Reusable Automation Scenarios',
+          description:
+            'Start faster with adaptable building blocks for invoice handling, reconciliation, document processing, customer operations, and more.',
         },
         {
-          title: 'Agentic AI Capability',
-          description: 'Autonomous digital workers that learn and adapt to your business processes.',
+          title: 'Implementation, Training, and Support',
+          description:
+            'We deliver more than software with a model that includes discovery, deployment, team enablement, and ongoing optimization.',
         },
       ],
     },
     platformOverview: {
       heading: 'The Digital Workforce Platform',
-      description: 'AI Kitchen combines AI-powered agents with RPA orchestration to create a flexible, intelligent automation platform designed for enterprise deployment and complex business processes.',
+      description:
+        'AI Kitchen takes inspiration from modern RPA platforms focused on speed and modularity, then adds an AI-enabled orchestration layer designed for Turkish-language and enterprise operational realities. Teams can build from scratch or launch faster with reusable automation patterns.',
       points: [
-        'Agentic AI architecture for intelligent decision-making',
-        'Seamless RPA integration for legacy system automation',
-        'Enterprise orchestration and process control',
-        'On-premises deployment and data sovereignty',
-        'Real-time monitoring and governance',
+        'Work across browsers, desktop apps, and internal web systems',
+        'Process files, tables, PDFs, emails, and APIs in one flow',
+        'Orchestrate exceptions and human approval steps',
+        'Provide enterprise visibility, logs, and auditability',
+        'Support controlled deployment models, including on-prem needs',
       ],
     },
     coreCapabilities: {
       heading: 'Core Capabilities',
       items: [
         {
-          title: 'Intelligent Process Orchestration',
-          description: 'Coordinate complex multi-step business processes with AI-driven decision making.',
+          title: 'Document and Data Processing',
+          description:
+            'Read, validate, transform, and move data across PDFs, Excel, Word, CSV, email, and web forms.',
         },
         {
-          title: 'AI-Powered Digital Workers',
-          description: 'Autonomous agents that learn from data, adapt to changes, and scale performance.',
+          title: 'Browser and Application Automation',
+          description:
+            'Build robust workflows that operate across web applications, desktop screens, and legacy systems.',
         },
         {
-          title: 'Real-Time Monitoring & Control',
-          description: 'Complete visibility into digital worker performance, compliance, and business outcomes.',
+          title: 'AI-Enabled Decision Layer',
+          description:
+            'Handle classification, exception detection, content understanding, and routing with more than static rules alone.',
         },
         {
-          title: 'Enterprise Integration',
-          description: 'Seamless connectivity with legacy systems, cloud platforms, and enterprise applications.',
+          title: 'Reusable Bot Library Approach',
+          description:
+            'Create repeatable automation modules so new workflows can be launched faster with less rework.',
         },
       ],
     },
     businessOutcomes: {
-      heading: 'Business Outcomes',
+      heading: 'Expected Business Outcomes',
       items: [
         {
-          metric: '45%',
-          description: 'Faster automation delivery vs. traditional RPA',
+          metric: '50%',
+          description: 'Average time savings across repetitive operational work',
         },
         {
-          metric: '60%',
-          description: 'Reduction in operational costs through intelligent automation',
+          metric: '70%',
+          description: 'Reduction in manual entry and control-heavy processing steps',
         },
         {
-          metric: '90%',
-          description: 'Less training and maintenance overhead',
+          metric: '24/7',
+          description: 'Always-on execution capacity with digital workers',
         },
       ],
     },
     securitySection: {
-      heading: 'Enterprise Security & Compliance',
-      description: 'AI Kitchen is built for enterprise security requirements with on-premises deployment, data sovereignty, and compliance-ready architecture.',
+      heading: 'Enterprise Security and Governance',
+      description:
+        'Scale automation with the controls enterprise teams expect around access, logging, data ownership, and compliance-sensitive operations.',
       items: [
-        'On-premises deployment for data control',
-        'Enterprise-grade security and encryption',
-        'Compliance-ready (SOC2, HIPAA, GDPR compatible)',
-        'Audit trails and governance',
+        'Controlled deployment models aligned with enterprise policies',
+        'Detailed logging, monitoring, and audit trails',
+        'Role-based permissions and process ownership',
+        'Human approval steps for critical workflows',
       ],
     },
     caseStudiesPreview: {
-      heading: 'Real Results from Enterprise Leaders',
+      heading: 'Use Cases That Inspire Action',
       viewAll: 'View All Case Studies',
     },
     finalCTA: {
-      heading: 'Ready to Build Your Digital Workforce?',
-      description: 'Learn how AI Kitchen can transform your enterprise automation strategy.',
-      cta: 'Start Your Transformation',
+      heading: 'Let’s Make Your Processes Automation-Ready',
+      description:
+        'Whether you need a custom deployment or a reusable scenario adapted to your workflow, we can map the fastest path to value together.',
+      cta: 'Schedule a Meeting',
     },
   },
 
-  // About Page
   about: {
     hero: {
       title: 'About AI Kitchen',
-      description: 'Enterprise AI automation platform designed for the modern digital workforce',
+      description:
+        'A team that understands local operational realities and treats enterprise automation as an implementation discipline, not just a software sale.',
     },
     story: {
-      heading: 'Our Story',
-      content: 'AI Kitchen was founded with a mission to transform how enterprises approach digital automation. We recognized that traditional RPA alone was insufficient for the complexity of modern business processes. By combining AI-powered agents with enterprise-grade orchestration, we created a platform that truly understands and adapts to your business.',
+      heading: 'Our Approach',
+      content:
+        'Many automation initiatives fail to scale because they stay too technical or solve only isolated tasks. AI Kitchen combines the modularity of modern RPA ecosystems with AI-assisted decision logic, process advisory, training, and live support to create a more practical delivery model.',
     },
     mission: {
       heading: 'Our Mission',
-      content: 'To empower enterprises with intelligent digital workers that drive measurable business transformation while maintaining security, control, and flexibility.',
+      content:
+        'To turn the most time-consuming manual operations in enterprise teams into measurable, manageable, and sustainable automations.',
     },
     vision: {
       heading: 'Our Vision',
-      content: 'A future where organizations can scale their automation capabilities without limits, where digital workers are intelligent partners in business operations, and where data remains secure under enterprise control.',
+      content:
+        'A future where every business can confidently operate a digital workforce on its own data, systems, and approval logic.',
     },
     values: {
       heading: 'Our Values',
       items: [
         {
-          title: 'Enterprise-First',
-          description: 'Built from the ground up for enterprise requirements.',
+          title: 'Practicality',
+          description: 'We design automations that create value in real operations, not just in theory.',
         },
         {
-          title: 'Security by Design',
-          description: 'Data sovereignty and compliance at the platform core.',
+          title: 'Transparency',
+          description: 'What gets automated, what stays under human control, and how success is measured are always clear.',
         },
         {
-          title: 'Intelligent Simplicity',
-          description: 'Powerful capabilities made accessible and practical.',
+          title: 'Enablement',
+          description: 'We train customer teams so automation becomes sustainable inside the organization.',
         },
         {
-          title: 'Trusted Partnership',
-          description: 'Long-term success of our customers is our success.',
+          title: 'Long-Term Partnership',
+          description: 'We stay involved beyond go-live to optimize and expand automation across new processes.',
         },
       ],
     },
     trust: {
-      heading: 'Trusted by Enterprise Leaders',
-      description: 'Enterprises across finance, legal, operations, and beyond trust AI Kitchen for mission-critical automation.',
+      heading: 'Built for Real Operations',
+      description:
+        'We focus on repetitive, document-heavy work in finance, legal, operations, HR, customer service, and related teams.',
     },
   },
 
-  // Platform Page
   platform: {
     hero: {
-      title: 'The Digital Workforce Platform',
-      description: 'Enterprise automation built on AI and RPA—secure, scalable, intelligent',
+      title: 'Platform',
+      description:
+        'An enterprise automation foundation that combines browser, desktop, document, and data workflows with AI-supported RPA.',
     },
     digitalWorkforce: {
       heading: 'Digital Workforce Architecture',
-      description: 'AI Kitchen enables you to build teams of intelligent digital workers—autonomous agents that understand your business processes and execute with precision.',
+      description:
+        'With AI Kitchen, you can design digital workers that act on behalf of your teams and manage them through tasks, rules, integrations, and approval logic.',
       points: [
-        'Autonomous agents powered by AI',
-        'Enterprise-scale orchestration',
-        'Adaptive learning and optimization',
-        'Full audit and governance',
+        'Define digital workers by process',
+        'Manage queues, tasks, and priorities',
+        'Insert human approval where control is required',
+        'Orchestrate multi-step workflows centrally',
       ],
     },
     agentic: {
-      heading: 'Agentic AI + RPA Integration',
-      description: 'Unlike point solutions, AI Kitchen unifies intelligent agents with enterprise process automation. Your digital workers make decisions, learn from outcomes, and continuously improve.',
+      heading: 'AI + RPA Integration',
+      description:
+        'Traditional RPA executes predefined steps. AI Kitchen adds document understanding, content classification, exception detection, and routing so decision points can live inside the process too.',
       points: [
-        'AI agents for decision-making and learning',
-        'RPA capabilities for reliable task execution',
-        'Unified orchestration and control',
-        'Seamless integration in one platform',
+        'Document and content understanding',
+        'Routing based on context, not only static rules',
+        'Smart escalation for exceptions',
+        'Decision and execution in one platform',
       ],
     },
     orchestration: {
       heading: 'Intelligent Process Orchestration',
-      description: 'Coordinate complex, multi-step business processes with real-time decision-making and adaptive workflows.',
+      description:
+        'Manage complex workflows that span multiple systems, files, and user steps with end-to-end visibility.',
       points: [
-        'Visual workflow builder',
-        'Real-time process monitoring',
-        'Adaptive routing and decision logic',
-        'Exception handling and remediation',
+        'Workflow and step tracking',
+        'Real-time status monitoring',
+        'Queue, SLA, and priority logic',
+        'Retry, failure, and exception handling',
       ],
     },
     onPrem: {
-      heading: 'On-Premises Deployment',
-      description: 'Deploy AI Kitchen within your own infrastructure for maximum control, security, and compliance.',
+      heading: 'Controlled Deployment Options',
+      description:
+        'Move forward with a deployment model that keeps data access, integrations, and operational controls aligned with your enterprise requirements.',
       points: [
-        'Full data sovereignty',
-        'No data leaving your environment',
-        'Compliance with GDPR, HIPAA, and enterprise requirements',
-        'Integration with existing enterprise infrastructure',
+        'Data ownership and access control',
+        'Deployment approaches aligned to internal policy',
+        'Compatibility with existing enterprise systems',
+        'Architecture shaped by security and compliance needs',
       ],
     },
     architecture: {
-      heading: 'Enterprise Architecture',
+      heading: 'Enterprise Architecture Strengths',
       items: [
         {
           title: 'Modular Design',
-          description: 'Build custom solutions by combining pre-built and custom components.',
+          description:
+            'Scale faster with reusable automation steps and integration modules.',
         },
         {
           title: 'Scalability',
-          description: 'From pilot to enterprise-wide deployment without architectural changes.',
+          description:
+            'Grow from pilot workflows to multi-department usage with control and consistency.',
         },
         {
           title: 'Integration',
-          description: 'Connect to legacy systems, cloud platforms, and enterprise applications.',
+          description:
+            'Connect ERP, CRM, web portals, email inboxes, shared folders, and APIs.',
         },
         {
           title: 'Governance',
-          description: 'Complete audit trails, compliance reporting, and access control.',
+          description:
+            'Track who did what, what happened in each step, and which records were processed.',
         },
         {
           title: 'Performance',
-          description: 'Handle high-volume, mission-critical processes reliably.',
+          description:
+            'Standardize repetitive, high-volume work to produce more consistent outputs.',
         },
         {
           title: 'Security',
-          description: 'Enterprise-grade encryption, authentication, and data protection.',
+          description:
+            'Support enterprise controls around access, logging, data usage, and critical approval steps.',
         },
       ],
     },
     execution: {
-      heading: 'AI-Enabled Business Process Execution',
-      description: 'Digital workers execute processes powered by AI decision-making, continuous learning, and adaptive workflows.',
+      heading: 'Automation That Runs Inside Operations',
+      description:
+        'AI Kitchen is designed for real workflows, not only demos. It creates digital workers that collect, compare, decide, and write back into operational systems.',
       points: [
-        'Autonomous task execution',
-        'Intelligent decision-making',
-        'Continuous learning and optimization',
-        'Real-time performance analytics',
+        'Automated execution of repetitive tasks',
+        'Faster document- and data-driven workflows',
+        'Operations teams focused on exceptions instead of repetition',
+        'Measurable performance data for continuous improvement',
       ],
     },
   },
 
-  // Solutions Pages
   solutions: {
     index: {
       hero: {
-        title: 'Enterprise Solutions',
-        description: 'Purpose-built solutions for your industry and business process challenges',
+        title: 'Solutions',
+        description:
+          'Enterprise automation solutions built around reusable scenario logic and adapted to specific departments and workflows.',
       },
     },
     financial: {
-      name: 'Financial Automation',
+      name: 'Finance Operations',
       hero: {
-        title: 'Financial Automation & Intelligence',
-        description: 'Automate financial operations with AI-powered accuracy and enterprise control',
+        title: 'Intelligent Automation for Finance Operations',
+        description:
+          'Standardize reconciliation, reporting, data collection, and control-heavy financial processes with AI-supported RPA.',
       },
       challenges:
-        'Financial departments face complexity: reconciliation, compliance, multiple systems, and high accuracy requirements. Traditional RPA requires constant maintenance. Your teams spend time on exceptions rather than strategy.',
+        'Finance teams collect data from multiple systems, compare files, perform reconciliations, and follow up on exceptions manually. The result is slow, error-prone work with too much control overhead.',
       solution:
-        'AI Kitchen automates the full financial workflow—from data ingestion through reconciliation to reporting. Digital workers learn your standards, maintain compliance automatically, and flag exceptions intelligently.',
+        'AI Kitchen works across ERP screens, bank portals, Excel files, and email flows to collect data, compare records, flag mismatches, and generate the outputs your teams need.',
       capabilities: [
-        'Automated reconciliation with exception flagging',
-        'Multi-system financial data integration',
-        'Compliance-ready audit trails',
-        'Real-time financial reporting',
-        'Intelligent anomaly detection',
+        'Multi-system data collection and matching',
+        'Reconciliation and variance detection',
+        'Report preparation and distribution',
+        'Audit-friendly processing records',
+        'Escalation for human approval steps',
       ],
       outcomes: [
-        '45% reduction in financial processing time',
-        '99.5% accuracy in reconciliation',
-        '60% cost savings vs. in-house teams',
+        'Major time savings across close and control workflows',
+        'Lower manual error rates',
+        'Teams spend more time on exceptions than repetitive checks',
       ],
-      cta: 'Explore Financial Automation',
+      cta: 'Explore Finance Operations',
     },
     accountsPayable: {
-      name: 'Accounts Payable',
+      name: 'Invoice and Payables Workflows',
       hero: {
-        title: 'Intelligent Accounts Payable Automation',
-        description: 'Transform AP from manual, error-prone process to intelligent, compliant workflow',
+        title: 'Automate Invoice Processing and Approval Flows',
+        description:
+          'Speed up the reading, validation, routing, and posting of incoming invoices.',
       },
       challenges:
-        'Accounts Payable teams juggle invoice processing, approval workflows, vendor management, and payment coordination across multiple systems. Manual processes create bottlenecks, errors, and compliance risk.',
+        'Accounting and procurement teams receive invoices from different channels, compare them with PO and delivery data, follow up on missing records, and run approval chains before payment.',
       solution:
-        'AI Kitchen automates invoice-to-payment with intelligent processing. Digital workers extract data, validate against POs, route approvals, and coordinate payments—all while learning from your business rules.',
+        'AI Kitchen reads incoming documents, extracts fields, validates them against business rules, triggers approvals, and pushes results into accounting systems.',
       capabilities: [
-        'Intelligent invoice capture and recognition',
-        'Automated three-way matching (PO, receipt, invoice)',
-        'Dynamic approval workflow management',
-        'Vendor management and compliance',
-        'Payment processing integration',
+        'Invoice data extraction and classification',
+        'Cross-checking against PO and delivery data',
+        'Automated approval routing',
+        'Supplier and document tracking',
+        'Pre-payment control checkpoints',
       ],
       outcomes: [
-        '70% reduction in processing time per invoice',
-        '99% accuracy in invoice processing',
-        'Early payment discounts captured automatically',
+        'Less processing time per invoice',
+        'Reduced manual data entry',
+        'Better visibility across approval workflows',
       ],
-      cta: 'Explore Accounts Payable',
+      cta: 'Explore Payables Workflows',
     },
     legal: {
-      name: 'Legal Document Processing',
+      name: 'Legal Document Workflows',
       hero: {
-        title: 'Intelligent Legal Document Automation',
-        description: 'Automate high-value legal processes while maintaining control and compliance',
+        title: 'Accelerate Contract and Document Operations',
+        description:
+          'Standardize document review, data extraction, risk flagging, and archiving activities.',
       },
       challenges:
-        'Legal departments manage document review, contract analysis, compliance tracking, and negotiation—all document-heavy and knowledge-intensive. Manual processes slow time-to-decision and create compliance risk.',
+        'Legal teams lose time on repetitive control steps across high volumes of documents. Different document types and manual status tracking increase turnaround times.',
       solution:
-        'AI Kitchen automates legal workflows with AI-powered document understanding. Digital workers review contracts, extract terms, flag risks, and manage compliance—all while learning legal standards.',
+        'AI Kitchen extracts critical fields from contracts and supporting documents, applies pre-check logic, highlights risk or missing information, and routes work to the right people.',
       capabilities: [
-        'Intelligent contract review and analysis',
-        'Automated term extraction and comparison',
-        'Risk flagging and compliance checking',
-        'Document clustering and organization',
-        'Audit-ready process documentation',
+        'Document classification and field extraction',
+        'Critical clause and field detection',
+        'Early-stage risk flagging',
+        'Archiving and tagging automation',
+        'Traceable process records',
       ],
       outcomes: [
-        '60% faster contract processing',
-        'Consistent legal standards across all documents',
-        'Compliance violations reduced by 95%',
+        'Shorter document cycle times',
+        'More consistent control steps',
+        'Higher capacity across legal operations work',
       ],
-      cta: 'Explore Legal Automation',
+      cta: 'Explore Legal Workflows',
     },
     tourism: {
-      name: 'Tourism & Hospitality Operations',
+      name: 'Tourism and Customer Operations',
       hero: {
-        title: 'Hospitality Operations Intelligence',
-        description: 'Streamline booking, customer operations, and revenue management with AI',
+        title: 'Coordinate Reservations and Customer Operations End to End',
+        description:
+          'Manage reservations, confirmations, payments, guest communication, and follow-up actions through centralized automation.',
       },
       challenges:
-        'Tourism and hospitality operations manage bookings, customer communications, payments, and multi-channel coordination. Manual processes create operational inefficiency, missed revenue, and disconnected customer experience.',
+        'Tourism and service teams re-enter the same information across web portals, email inboxes, payment systems, and CRM tools. That creates delays, inconsistency, and lost customer satisfaction.',
       solution:
-        'AI Kitchen automates tourism and hospitality operations end-to-end. Digital workers manage reservations, customer communications, payments, and operational tasks—while continuously learning to improve guest satisfaction.',
+        'AI Kitchen collects reservation data from multiple channels, generates confirmations, processes payment and status updates, and distributes operational tasks across teams automatically.',
       capabilities: [
-        'Automated booking and reservation management',
-        'Multi-channel guest communication',
-        'Revenue management and dynamic pricing',
-        'Guest history and preference intelligence',
-        'Post-stay follow-up and feedback automation',
+        'Reservation and request intake',
+        'Guest communication and notification flows',
+        'Payment and status update scenarios',
+        'Operational task distribution across teams',
+        'Follow-up workflows for next actions',
       ],
       outcomes: [
-        '40% increase in operational efficiency',
-        '25% increase in revenue per booking',
-        'Guest satisfaction scores increase by 30%',
+        'Faster response times',
+        'Less repetitive operational work',
+        'More consistent customer communication',
       ],
-      cta: 'Explore Hospitality Solutions',
+      cta: 'Explore Tourism Operations',
     },
   },
 
-  // Services Pages
   services: {
     index: {
       hero: {
-        title: 'Services & Implementation',
-        description: 'Expert-led approach to successful AI Kitchen deployment and continuous optimization',
+        title: 'Services',
+        description:
+          'A delivery model that takes automation from discovery to go-live, then supports enablement and long-term optimization.',
       },
-      intro: 'We guide you from assessment through implementation to ongoing optimization. Each service builds your internal capability while delivering measurable results.',
+      intro:
+        'Inspired by the training and competency-center mindset seen in modern RPA ecosystems, we offer not just implementation but a model that helps teams own automation internally.',
     },
     processDiscovery: {
       name: 'Process Discovery',
-      description: 'Understand your business processes deeply to identify automation opportunities',
+      description: 'Identify which workflows are the strongest candidates for automation.',
       content:
-        'We conduct comprehensive process mapping and analysis to identify which of your business processes are candidates for automation and how AI Kitchen can deliver maximum value.',
-      benefits: ['Identify top automation opportunities', 'Understand current pain points', 'Define success metrics', 'Prioritize implementation roadmap'],
+        'We break down your current operations step by step to expose manual effort, repetitive work, and hidden failure points.',
+      benefits: [
+        'Clear prioritization of automation candidates',
+        'Visibility into bottlenecks and duplicate work',
+        'Defined success metrics',
+        'A realistic implementation roadmap',
+      ],
       timeline: '2-4 weeks',
     },
     assessment: {
-      name: 'AI Readiness Assessment',
-      description: 'Evaluate your organization for AI Kitchen implementation',
+      name: 'Technical and Operational Assessment',
+      description: 'Define the right deployment model, integration requirements, and team readiness.',
       content:
-        'We assess your technical infrastructure, business processes, team readiness, and success factors to create a tailored implementation plan.',
-      benefits: ['Technical infrastructure review', 'Process readiness evaluation', 'Team skill assessment', 'Risk identification and mitigation'],
+        'We analyze your systems, access patterns, data sources, and user roles to shape an implementation plan that can actually be executed.',
+      benefits: [
+        'Clear system and access requirements',
+        'Mapped integration needs',
+        'Visibility into risks and dependencies',
+        'A sharpened implementation scope',
+      ],
       timeline: '1-2 weeks',
     },
     poc: {
-      name: 'Proof of Concept',
-      description: 'Validate AI Kitchen value on your most important process',
-      content: 'We implement a focused automation on your highest-priority process to demonstrate value, build internal capability, and de-risk full deployment.',
-      benefits: ['Prove business value', 'Train internal teams', 'Build confidence', 'Refine implementation approach'],
+      name: 'Pilot / POC',
+      description: 'Prove value quickly on one high-impact workflow.',
+      content:
+        'We launch a controlled pilot on a selected process, measure success criteria together, and create a strong base for wider rollout.',
+      benefits: [
+        'Fast value demonstration',
+        'Internal stakeholder confidence',
+        'Validation with real operational data',
+        'A solid foundation for scale',
+      ],
       timeline: '4-8 weeks',
     },
     implementation: {
-      name: 'Full Implementation',
-      description: 'Deploy AI Kitchen across priority processes at scale',
+      name: 'Go-Live and Rollout',
+      description: 'Move validated workflows into production and expand to new teams.',
       content:
-        'Our team partners with yours to implement automation across your priority solutions, ensuring knowledge transfer and internal ownership.',
-      benefits: ['Scaled automation deployment', 'Team training and knowledge transfer', 'Quality assurance', 'Production launch support'],
-      timeline: '8-16 weeks per solution',
+        'We turn pilot workflows into production-grade automations, transfer knowledge to your team, and extend the model across additional departments.',
+      benefits: [
+        'Controlled production launch',
+        'Training and knowledge transfer',
+        'Standardized delivery discipline',
+        'Reusable foundations for future automations',
+      ],
+      timeline: '8-16 weeks',
     },
     integration: {
       name: 'System Integration',
-      description: 'Connect AI Kitchen to your enterprise systems and data sources',
+      description:
+        'Bring together web portals, desktop apps, files, and APIs in the same automation flow.',
       content:
-        'We handle integration with your legacy systems, cloud platforms, databases, and APIs to ensure your digital workers can access and coordinate across all systems.',
-      benefits: ['Multi-system connectivity', 'Data pipeline setup', 'API integration', 'Real-time synchronization'],
-      timeline: 'Variable per system',
+        'We connect ERP, CRM, accounting tools, email, shared folders, and third-party services so automation can operate on real data and real systems.',
+      benefits: [
+        'Multi-system connectivity',
+        'Standardized data flows',
+        'A blend of API and UI automation',
+        'Real-time or scheduled execution models',
+      ],
+      timeline: 'Varies by system',
     },
     support: {
-      name: 'Managed Support & Optimization',
-      description: 'Ongoing optimization and growth of your AI Kitchen platform',
+      name: 'Training, Support, and Optimization',
+      description:
+        'Monitor live performance and launch new workflows faster over time.',
       content:
-        'Our support team monitors performance, handles exceptions, optimizes workflows, and helps you scale automation across additional processes.',
-      benefits: ['24/7 operational support', 'Performance optimization', 'Continuous improvement', 'Scaling to new processes'],
+        'We train your teams, monitor live workflows, identify improvement opportunities, and help extend automation into new use cases.',
+      benefits: [
+        'User and operations team enablement',
+        'Live support and issue analysis',
+        'Continuous improvement loops',
+        'Guidance for new scenarios',
+      ],
       timeline: 'Ongoing',
     },
   },
 
-  // Why AI Kitchen Page
   whyAiKitchen: {
     hero: {
       title: 'Why AI Kitchen',
-      description: 'The complete platform for enterprise digital workforce automation',
+      description:
+        'A unified model for enterprise automation that goes beyond software and focuses on practical implementation.',
     },
-    intro: 'AI Kitchen is built differently - combining AI intelligence with RPA reliability in one enterprise platform. Here\'s why leading organizations choose us.',
+    intro:
+      'We offer more than task automation: reusable scenarios, team enablement, enterprise governance, and AI-supported decision layers that make automation more practical to adopt.',
     items: [
       {
-        title: 'AI + RPA Integrated',
+        title: 'Reusable and Adaptable Foundations',
         description:
-          'Unlike point solutions, AI Kitchen unifies intelligent agents with enterprise process automation. Your digital workers make decisions, learn, and improve continuously.',
-        benefit: 'Complete automation without tool sprawl',
+          'Instead of starting every project from zero, we adapt common workflow patterns so teams can move faster.',
+        benefit: 'Faster go-live timelines',
       },
       {
-        title: 'Enterprise-Ready Architecture',
-        description: 'Built from the ground up for enterprise requirements: scalability, security, integration, governance, and compliance.',
-        benefit: 'Deploy at scale with confidence',
-      },
-      {
-        title: 'Secure On-Premises Deployment',
+        title: 'Designed for Enterprise Operations',
         description:
-          'Full control over your data. Deploy AI Kitchen within your infrastructure for maximum security and compliance with GDPR, HIPAA, and industry standards.',
-        benefit: 'Data sovereignty and regulatory compliance',
+          'We support workflows that involve multiple systems, teams, approvals, and operational dependencies.',
+        benefit: 'Centralized control instead of fragmented tooling',
       },
       {
-        title: 'Flexible & Open Integration',
-        description: 'Connect to any system—legacy, cloud, or custom applications. API-first design enables seamless integration with your existing infrastructure.',
-        benefit: 'Future-proof integration strategy',
-      },
-      {
-        title: 'Faster Delivery Model',
+        title: 'Controlled Data and Access',
         description:
-          'Accelerated time-to-value through intelligent automation. 45% faster delivery than traditional RPA with less maintenance and training overhead.',
-        benefit: 'Quick ROI and rapid scaling',
+          'We define exactly what automation can access, where human approval is required, and which records must be kept.',
+        benefit: 'A stronger foundation for security and compliance',
       },
       {
-        title: 'Cost-Efficient Scaling',
-        description: 'Traditional RPA requires constant maintenance and retraining. AI Kitchen digital workers learn and adapt, reducing total cost of ownership.',
-        benefit: 'Lower operational costs at scale',
+        title: 'RPA Strengthened by AI',
+        description:
+          'Beyond clicks and data transfer, we add document understanding, classification, and exception detection into the workflow.',
+        benefit: 'A step beyond static rule-based automation',
+      },
+      {
+        title: 'Training and Capability Building',
+        description:
+          'We support customer teams after deployment so automation knowledge stays inside the organization.',
+        benefit: 'Less dependence on outside specialists',
+      },
+      {
+        title: 'Focused on Business Outcomes',
+        description:
+          'Success is measured not by bot counts, but by time saved, errors reduced, and service quality improved.',
+        benefit: 'Clearer ROI tracking',
       },
     ],
     comparison: {
       heading: 'AI Kitchen vs. Traditional RPA',
       rows: [
         {
-          aspect: 'Intelligence',
-          traditional: 'Rule-based automation',
-          aiKitchen: 'AI-powered decision making and learning',
+          aspect: 'Scope',
+          traditional: 'Isolated task automation',
+          aiKitchen: 'End-to-end process automation with decision support',
         },
         {
-          aspect: 'Maintenance',
-          traditional: 'High—constant rule updates required',
-          aiKitchen: 'Low—agents learn and adapt automatically',
-        },
-        {
-          aspect: 'Training',
-          traditional: 'Extensive RPA developer training',
-          aiKitchen: 'Minimal—business users configure processes',
-        },
-        {
-          aspect: 'Deployment',
-          traditional: 'Cloud-primarily, limited on-prem',
-          aiKitchen: 'Full on-premises deployment available',
+          aspect: 'Document Understanding',
+          traditional: 'Limited and mostly rule-based',
+          aiKitchen: 'AI-supported classification and field extraction',
         },
         {
           aspect: 'Exception Handling',
-          traditional: 'Manual escalation required',
-          aiKitchen: 'Intelligent resolution with human oversight',
+          traditional: 'Manual follow-up and brittle logic',
+          aiKitchen: 'Escalation, approval, and retry design built in',
         },
         {
-          aspect: 'Scalability',
-          traditional: 'Exponential complexity as scale increases',
-          aiKitchen: 'Linear scaling with unified orchestration',
+          aspect: 'Adaptation Speed',
+          traditional: 'High development effort per workflow',
+          aiKitchen: 'Faster launch through reusable modules',
+        },
+        {
+          aspect: 'Team Enablement',
+          traditional: 'Strong dependence on specialist developers',
+          aiKitchen: 'Training and shared delivery model',
+        },
+        {
+          aspect: 'Operational Visibility',
+          traditional: 'Fragmented logs and tracking',
+          aiKitchen: 'Centralized monitoring and audit trail',
         },
       ],
     },
   },
 
-  // Case Studies Page
   caseStudies: {
     hero: {
       title: 'Case Studies',
-      description: 'Real results from enterprise leaders using AI Kitchen',
+      description:
+        'Operationally realistic automation scenarios inspired by common enterprise workflow patterns.',
     },
     items: [
       {
-        company: 'Global Financial Services Inc.',
-        industry: 'Finance',
-        challenge: 'Manual reconciliation consuming 15 FTEs, error rates at 2.3%, compliance risk',
-        solution: 'Deployed AI Kitchen for automated reconciliation with intelligent exception handling',
+        company: 'National Retail Finance Team',
+        industry: 'Finance Operations',
+        challenge:
+          'Dealer and bank movements were being compared manually every day across separate Excel files and portals, creating heavy control work for the team.',
+        solution:
+          'AI Kitchen automated the flow for data collection, reconciliation, and exception flagging.',
         outcomes: [
-          '45% reduction in processing time',
-          '99.5% accuracy achieved',
-          '12 FTEs reallocated to strategy',
-          '$2.1M annual savings',
+          'End-of-day control work finished much faster',
+          'The team focused only on variances and exceptions',
+          'Less duplicate effort for reporting preparation',
+          'A standardized process with a clear audit trail was established',
         ],
-        metric: '99.5%',
-        metricLabel: 'Accuracy',
+        metric: '68%',
+        metricLabel: 'Less Manual Work',
       },
       {
-        company: 'Enterprise Legal Corp',
-        industry: 'Legal Services',
-        challenge: 'Contract review taking 3+ weeks per agreement, compliance inconsistency',
-        solution: 'Implemented AI Kitchen for intelligent contract analysis and risk flagging',
+        company: 'Scaling E-Commerce Operations Center',
+        industry: 'Order and Customer Operations',
+        challenge:
+          'Order updates, return records, and customer requests were handled across multiple portals, making peak periods difficult to manage.',
+        solution:
+          'Digital workflows running across browser and back-office systems centralized order and service operations.',
         outcomes: [
-          '60% faster contract processing',
-          'Consistent legal standards applied',
-          '95% compliance violation reduction',
-          '$1.8M compliance risk mitigation',
+          'More stable operations during peak demand',
+          'Improved customer response times',
+          'Much less repetitive portal handling',
+          'Trackable task distribution across teams',
         ],
-        metric: '60%',
-        metricLabel: 'Faster Processing',
+        metric: '3x',
+        metricLabel: 'Processing Capacity',
       },
       {
-        company: 'International Hospitality Group',
-        industry: 'Hospitality',
-        challenge: 'Manual booking coordination, multi-channel chaos, lost revenue opportunities',
-        solution: 'Deployed AI Kitchen for end-to-end hospitality operations automation',
+        company: 'Corporate Legal and Procurement Team',
+        industry: 'Document and Approval Workflows',
+        challenge:
+          'Contract attachments, invoices, and approval documents arrived by email, and teams had to manage both document checks and status follow-up manually.',
+        solution:
+          'AI Kitchen automated document reading, field extraction, pre-checks, and routing to the right stakeholders.',
         outcomes: [
-          '40% operational efficiency gain',
-          '25% revenue increase per booking',
-          '30% guest satisfaction improvement',
-          '$4.2M incremental revenue',
+          'Shorter document turnaround times',
+          'Earlier detection of missing information',
+          'Better visibility into waiting approvals',
+          'Clearer collaboration between operations and legal teams',
         ],
-        metric: '40%',
-        metricLabel: 'Efficiency Gain',
+        metric: '55%',
+        metricLabel: 'Faster Turnaround',
       },
     ],
   },
 
-  // Contact Page
   contact: {
     hero: {
       title: 'Get in Touch',
-      description: 'Let\'s explore how AI Kitchen can transform your enterprise automation',
+      description:
+        'Let’s review your workflows together and decide whether a reusable scenario or a custom deployment is the better fit.',
     },
     form: {
       fullName: 'Full Name',
@@ -585,29 +655,40 @@ export const en = {
       phone: 'Phone Number',
       message: 'How can we help?',
       solution: 'Primary Interest',
-      selectSolution: 'Select a solution...',
+      selectSolution: 'Select a topic...',
       submit: 'Send Request',
       submitting: 'Sending...',
-      success: 'Thank you for your message. We will be in touch shortly.',
+      success: 'Your message has been received. We will get back to you shortly.',
       error: 'There was an error sending your message. Please try again.',
       required: 'This field is required',
       invalidEmail: 'Please enter a valid email address',
+      placeholderName: 'Your full name',
+      placeholderCompany: 'Company name',
+      placeholderEmail: 'you@company.com',
+      placeholderPhone: '+90 5xx xxx xx xx',
+      placeholderMessage: 'Briefly describe the process you want to automate',
+      optionFinancial: 'Finance Operations',
+      optionAp: 'Invoice and Payables Workflows',
+      optionLegal: 'Legal Document Workflows',
+      optionTourism: 'Tourism and Customer Operations',
+      optionOther: 'Other',
     },
     info: {
       contact: 'Contact Information',
       email: 'support@aikitchen.com.tr',
       emailLabel: 'Email',
-      phone: '+1 (555) 123-4567',
+      phone: '+90 (212) 000 00 00',
       phoneLabel: 'Phone',
       address: 'Enterprise Automation Platform',
       addressLabel: 'Headquarters',
-      hours: 'Monday – Friday, 9 AM – 6 PM EST',
+      hours: 'Monday - Friday, 09:00 - 18:00',
       response: 'We typically respond within 24 hours',
     },
     cta: {
-      heading: 'Ready to Transform Your Enterprise Automation?',
-      description: 'Join leading organizations automating critical processes with AI Kitchen.',
-      button: 'Start Your Journey',
+      heading: 'Ready for the Next Step in Enterprise Automation?',
+      description:
+        'Let’s build an automation structure that reduces manual workload while staying measurable and sustainable.',
+      button: 'Start the Conversation',
     },
   },
 };

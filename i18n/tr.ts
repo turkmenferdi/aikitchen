@@ -1,5 +1,4 @@
 export const tr = {
-  // Navigation
   nav: {
     home: 'Ana Sayfa',
     about: 'Hakkımızda',
@@ -12,18 +11,16 @@ export const tr = {
     requestDemo: 'Demo Talep Et',
   },
 
-  // Language
   language: {
     en: 'English',
     tr: 'Türkçe',
   },
 
-  // Common
   common: {
-    learnMore: 'Daha Fazla Bilgi',
+    learnMore: 'Detayları İncele',
     getStarted: 'Başlayın',
     contactUs: 'Bize Ulaşın',
-    schedule: 'Demo Talep Et',
+    schedule: 'Demo Planla',
     explore: 'Keşfet',
     close: 'Kapat',
     success: 'Başarılı',
@@ -31,10 +28,10 @@ export const tr = {
     loading: 'Yükleniyor...',
   },
 
-  // Footer
   footer: {
     company: 'AI Kitchen',
-    description: 'Kurumsal AI destekli RPA ve Agentic AI platformu dijital işgücü otomasyonu için.',
+    description:
+      'Kurumsal ekipler için AI destekli RPA, dijital çalışanlar, hazır kullanım senaryoları ve uzman kurulum hizmetleri.',
     product: 'Ürün',
     solutions: 'Çözümler',
     services: 'Hizmetler',
@@ -42,7 +39,7 @@ export const tr = {
     legal: 'Yasal',
     privacy: 'Gizlilik Politikası',
     terms: 'Kullanım Şartları',
-    contact: 'Bize Ulaşın',
+    contact: 'İletişim',
     email: 'support@aikitchen.com.tr',
     supportEmail: 'support@aikitchen.com.tr',
     salesEmail: 'sales@aikitchen.com.tr',
@@ -50,594 +47,639 @@ export const tr = {
     copyright: '© 2026 AI Kitchen. Tüm hakları saklıdır.',
   },
 
-  // Home Page
   home: {
     hero: {
-      title: 'AI Destekli RPA ve Agentic AI ile Dijital İş Gücünüzü Ölçeklendirin',
-      description: 'Kurumsal otomasyonu ölçekte yöneten akıllı, özerk dijital işçiler oluşturun. Güvenli, esnek, kurumsal standarta uygun.',
+      title: 'Kurumsal Süreçleriniz İçin Türkçe AI + RPA Otomasyon Platformu',
+      description:
+        'AI Kitchen; dijital çalışanlar, hazır otomasyon bileşenleri ve uzman kurulum yaklaşımıyla belge yoğun, çok sistemli ve tekrarlı işleri uçtan uca otomatikleştirir.',
       cta: 'Demo Talep Et',
-      subHeading: 'AI + RPA tarafından güçlendirilen kurumsal otomasyon',
+      subHeading: 'Hazır bot mantığı + AI destekli karar alma + kurumsal kontrol',
     },
     valueProposition: {
-      heading: 'Kuruluşlar Neden AI Kitchen\'i Seçiyor',
+      heading: 'Neden AI Kitchen',
       items: [
         {
-          title: 'AI + RPA Entegrasyonu',
-          description: 'Akıllı otomasyonu kurumsal işlem orkestrasyon ile birleştiren birleşik platform.',
+          title: 'Tek Platformda AI + RPA',
+          description:
+            'Kural bazlı adımlar ile akıllı karar mekanizmalarını aynı akışta birleştirerek daha dayanıklı otomasyonlar kurun.',
         },
         {
-          title: 'Kurumsal Hazır Dağıtım',
-          description: 'Maksimum güvenlik ve veri egemenliği kontrolü için şirket içi dağıtım.',
+          title: 'Hazır Kullanım Senaryoları',
+          description:
+            'Fatura işleme, mutabakat, belge okuma, müşteri operasyonları ve benzeri süreçler için hızla uyarlanabilen yapı taşları.',
         },
         {
-          title: 'Agentic AI Yeteneği',
-          description: 'İş süreçlerinizle uyum sağlayan ve adapte olan özerk dijital işçiler.',
+          title: 'Kurulum, Eğitim ve Destek',
+          description:
+            'Sadece yazılım değil; keşif, devreye alma, ekip eğitimi ve sürekli iyileştirme desteğiyle ilerleyen bir teslim modeli.',
         },
       ],
     },
     platformOverview: {
       heading: 'Dijital İş Gücü Platformu',
-      description: 'AI Kitchen, AI destekli ajanları RPA orkestrasyon ile birleştirerek kurumsal dağıtım ve karmaşık iş süreçleri için tasarlanmış esnek, akıllı bir otomasyon platformu oluşturur.',
+      description:
+        'Referans alınan modern RPA platformlarındaki hız ve modülerlik yaklaşımını, Türkçe iş ihtiyaçlarına uygun AI destekli bir orkestrasyon katmanıyla birleştiriyoruz. Böylece ekipleriniz hem sıfırdan akış kurabilir hem de hazır çözümleri hızla devreye alabilir.',
       points: [
-        'Akıllı karar alma için Agentic AI mimarisi',
-        'Eski sistemlerin otomasyonu için sorunsuz RPA entegrasyonu',
-        'Kurumsal orkestrasyon ve süreç kontrolü',
-        'Şirket içi dağıtım ve veri egemenliği',
-        'Gerçek zamanlı izleme ve yönetişim',
+        'Tarayıcı, masaüstü uygulama ve web sistemleriyle çalışma',
+        'Dosya, tablo, PDF, e-posta ve API verilerini birlikte işleme',
+        'İstisna yönetimi ve insan onayı gerektiren adımları orkestre etme',
+        'Kurumsal görünürlük, loglama ve denetim izi oluşturma',
+        'İhtiyaca göre on-prem veya kontrollü kurulum seçenekleri',
       ],
     },
     coreCapabilities: {
-      heading: 'Temel Yetenekler',
+      heading: 'Öne Çıkan Yetkinlikler',
       items: [
         {
-          title: 'Akıllı İşlem Orkestrasyon',
-          description: 'AI destekli karar alma ile karmaşık çok aşamalı iş süreçlerini koordine edin.',
+          title: 'Belge ve Veri İşleme',
+          description:
+            'PDF, Excel, Word, CSV, e-posta ve web formlarından veri toplayıp doğrulayın, dönüştürün ve hedef sistemlere işleyin.',
         },
         {
-          title: 'AI Destekli Dijital İşçiler',
-          description: 'Verilerden öğrenen, değişimlere adapte olan ve performansı ölçekte arttıran özerk ajanlar.',
+          title: 'Tarayıcı ve Uygulama Otomasyonu',
+          description:
+            'Web uygulamaları, masaüstü ekranları ve eski sistemlerle birlikte çalışan dayanıklı görev akışları oluşturun.',
         },
         {
-          title: 'Gerçek Zamanlı İzleme & Kontrol',
-          description: 'Dijital işçilerin performansı, uyumluluğu ve iş sonuçları üzerinde tam görünürlük.',
+          title: 'AI Destekli Karar Katmanı',
+          description:
+            'Sınıflandırma, istisna tespiti, içerik anlama ve yönlendirme gibi kararları yalnızca kurallarla sınırlı kalmadan yönetin.',
         },
         {
-          title: 'Kurumsal Entegrasyon',
-          description: 'Eski sistemler, bulut platformları ve kurumsal uygulamalarla sorunsuz bağlantı.',
+          title: 'Hazır Bot Kütüphanesi Yaklaşımı',
+          description:
+            'Sık tekrar eden süreçler için yeniden kullanılabilir modüller oluşturarak yeni otomasyonları daha kısa sürede yayına alın.',
         },
       ],
     },
     businessOutcomes: {
-      heading: 'İş Sonuçları',
+      heading: 'Beklenen İş Sonuçları',
       items: [
         {
-          metric: '%45',
-          description: 'Geleneksel RPA\'ya kıyasla daha hızlı otomasyon sunumu',
+          metric: '%50',
+          description: 'Tekrarlı operasyonel işlerde ortalama zaman tasarrufu',
         },
         {
-          metric: '%60',
-          description: 'Akıllı otomasyon yoluyla operasyonel maliyetlerde azalma',
+          metric: '%70',
+          description: 'Manuel veri girişi ve kontrol adımlarında iş yükü azalması',
         },
         {
-          metric: '%90',
-          description: 'Daha az eğitim ve bakım yükü',
+          metric: '7/24',
+          description: 'Dijital çalışanlarla kesintisiz süreç yürütme kapasitesi',
         },
       ],
     },
     securitySection: {
-      heading: 'Kurumsal Güvenlik & Uyumluluk',
-      description: 'AI Kitchen, şirket içi dağıtım, veri egemenliği ve uyumluluk hazır mimarisi ile kurumsal güvenlik gereklilikleri için tasarlanmıştır.',
+      heading: 'Kurumsal Güvenlik ve Yönetişim',
+      description:
+        'Kurumsal ekiplerin ihtiyaç duyduğu erişim kontrolü, loglama, veri sahipliği ve uyumluluk odaklı mimari ile süreçlerinizi güven içinde ölçeklendirin.',
       items: [
-        'Veri kontrolü için şirket içi dağıtım',
-        'Kurumsal seviye güvenlik ve şifreleme',
-        'Uyumluluk hazır (SOC2, HIPAA, GDPR uyumlu)',
-        'Denetim izleri ve yönetişim',
+        'Kuruma uygun kurulum ve veri erişim kontrolü',
+        'Detaylı loglama, izleme ve denetim izi',
+        'Rol bazlı yetkilendirme ve süreç sahipliği',
+        'Kritik adımlarda insan onayı ile hibrit çalışma',
       ],
     },
     caseStudiesPreview: {
-      heading: 'Kurumsal Liderlerden Gerçek Sonuçlar',
-      viewAll: 'Tüm Vaka Çalışmalarını Görüntüle',
+      heading: 'İlham Veren Kullanım Senaryoları',
+      viewAll: 'Tüm Vakaları Gör',
     },
     finalCTA: {
-      heading: 'Dijital İş Gücünüzü İnşa Etmeye Hazır Mısınız?',
-      description: 'AI Kitchen\'in kurumsal otomasyon stratejinizi nasıl dönüştürebileceğini öğrenin.',
-      cta: 'Dönüşümünüzü Başlatın',
+      heading: 'Süreçlerinizi Otomasyona Hazır Hale Getirelim',
+      description:
+        'İster sıfırdan kurulum, ister hazır senaryo uyarlaması olsun; ekibinize en hızlı değer üretecek yol haritasını birlikte çıkaralım.',
+      cta: 'Görüşme Planla',
     },
   },
 
-  // About Page
   about: {
     hero: {
-      title: 'Hakkımızda',
-      description: 'Modern dijital işgücü için tasarlanmış kurumsal AI otomasyon platformu',
+      title: 'AI Kitchen Hakkında',
+      description:
+        'Türkçe iş ihtiyaçlarını bilen, kurumsal otomasyonu sadece yazılım değil uygulama disiplini olarak ele alan bir ekip.',
     },
     story: {
-      heading: 'Hikayemiz',
-      content: 'AI Kitchen, kuruluşların dijital otomasyona yaklaşma biçimini dönüştürme misyonu ile kuruldu. Geleneksel RPA\'nın modern iş süreçlerinin karmaşıklığı için yetersiz olduğunu fark ettik. AI destekli ajanları kurumsal seviye orkestrasyon ile birleştirerek, gerçekten işinizi anlaşan ve işinize uyum sağlayan bir platform oluşturduk.',
+      heading: 'Yaklaşımımız',
+      content:
+        'Birçok kurumda otomasyon projeleri ya aşırı teknik kaldığı ya da yalnızca tekil görevleri çözdüğü için ölçeklenemiyor. AI Kitchen, referans alınan RPA ekosistemlerinin modülerliğini; AI destekli karar katmanı, süreç danışmanlığı, eğitim ve canlı destek yaklaşımıyla bir araya getirerek daha uygulanabilir bir model sunar.',
     },
     mission: {
       heading: 'Misyonumuz',
-      content: 'Kuruluşları güvenlik, kontrol ve esnekliği korurken ölçülebilir iş dönüşümünü sağlayan akıllı dijital işçiler ile güçlendirmek.',
+      content:
+        'Kurumsal ekiplerin en çok zaman kaybettiren manuel süreçlerini görünür, yönetilebilir ve ölçülebilir otomasyonlara dönüştürmek.',
     },
     vision: {
       heading: 'Vizyonumuz',
-      content: 'Kuruluşların otomasyon yeteneklerini sınırsız şekilde ölçeklendirebileceği, dijital işçilerin iş operasyonlarında akıllı ortaklar olduğu ve verilerin kurumsal kontrol altında kalması gereken bir gelecek.',
+      content:
+        'Her işletmenin, kendi verisi ve kendi süreçleri üzerinde çalışan dijital bir iş gücünü güvenle yönetebildiği bir operasyon standardı oluşturmak.',
     },
     values: {
       heading: 'Değerlerimiz',
       items: [
         {
-          title: 'Kurumsal Odaklı',
-          description: 'Başlangıçtan itibaren kurumsal gereksinimler için tasarlanmış.',
+          title: 'Uygulanabilirlik',
+          description: 'Teoride değil, gerçek iş akışlarında hızlı değer üreten çözümler tasarlarız.',
         },
         {
-          title: 'Tasarımda Güvenlik',
-          description: 'Platform özünde veri egemenliği ve uyumluluk.',
+          title: 'Şeffaflık',
+          description: 'Ne otomatikleşecek, ne insan onayında kalacak ve nasıl ölçülecek açıkça tanımlanır.',
         },
         {
-          title: 'Akıllı Basitlik',
-          description: 'Güçlü yetenekler erişilebilir ve pratik hale getirildi.',
+          title: 'Yetkinlik Kazandırma',
+          description: 'Müşteri ekiplerini eğiterek otomasyonu kurum içinde sürdürülebilir hale getiririz.',
         },
         {
-          title: 'Güvenilir Ortaklık',
-          description: 'Müşterilerimizin uzun vadeli başarısı bizim başarımız.',
+          title: 'Uzun Vadeli Ortaklık',
+          description: 'Devreye alma sonrası optimizasyon ve yeni süreçlerin yaygınlaştırılmasını birlikte yönetiriz.',
         },
       ],
     },
     trust: {
-      heading: 'Kurumsal Liderler Tarafından Güvenilir',
-      description: 'Finans, hukuk, operasyon ve daha birçok alandaki kuruluşlar, görev açısından kritik otomasyon için AI Kitchen\'e güvenir.',
+      heading: 'Gerçek Operasyonlara Odaklı',
+      description:
+        'Finans, hukuk, operasyon, insan kaynakları, müşteri hizmetleri ve belge yoğun ekiplerde tekrarlı işleri azaltmaya odaklanırız.',
     },
   },
 
-  // Platform Page
   platform: {
     hero: {
-      title: 'Dijital İş Gücü Platformu',
-      description: 'AI ve RPA üzerine inşa edilmiş kurumsal otomasyon—güvenli, ölçeklenebilir, akıllı',
+      title: 'Platform',
+      description:
+        'Tarayıcı, masaüstü, belge ve veri odaklı işleri AI destekli RPA ile yöneten kurumsal otomasyon altyapısı.',
     },
     digitalWorkforce: {
       heading: 'Dijital İş Gücü Mimarisi',
-      description: 'AI Kitchen, akıllı işçiler—iş süreçlerinizi anlayan ve hassasiyetle yürüten özerk ajanlar—takımları inşa etmenizi sağlar.',
+      description:
+        'AI Kitchen ile ekipleriniz adına çalışan dijital personeller tasarlayabilir; bu personelleri görev, kural, entegrasyon ve onay mantıklarıyla birlikte yönetebilirsiniz.',
       points: [
-        'AI tarafından desteklenen özerk ajanlar',
-        'Kurumsal ölçekte orkestrasyon',
-        'Uyarlanabilir öğrenme ve optimizasyon',
-        'Tam denetim ve yönetişim',
+        'Süreç bazlı dijital çalışan tanımlama',
+        'Görev, kuyruk ve öncelik yönetimi',
+        'İnsan onayı gereken noktalarda kontrollü akış',
+        'Çok adımlı işlerde merkezî orkestrasyon',
       ],
     },
     agentic: {
-      heading: 'Agentic AI + RPA Entegrasyonu',
-      description: 'Point çözümlerini birleştirmek yerine, AI Kitchen akıllı ajanları kurumsal iş otomasyonu ile birleştirir. Dijital işçileriniz karar alır, sonuçlardan öğrenir ve sürekli iyileşir.',
+      heading: 'AI + RPA Entegrasyonu',
+      description:
+        'Klasik RPA yalnızca tanımlı adımları yürütür. AI Kitchen ise belge anlama, içerik sınıflandırma, istisna tespiti ve yönlendirme gibi karar anlarını da sürecin içine alır.',
       points: [
-        'Karar alma ve öğrenme için AI ajanları',
-        'Güvenilir görev yürütme için RPA yetenekleri',
-        'Birleşik orkestrasyon ve kontrol',
-        'Bir platformda sorunsuz entegrasyon',
+        'Belge ve içerik anlama',
+        'Kurallara ek olarak bağlama göre yönlendirme',
+        'İstisna tespiti ve operatöre akıllı eskalasyon',
+        'Tek platformda karar alma ve icra yeteneği',
       ],
     },
     orchestration: {
-      heading: 'Akıllı İşlem Orkestrasyon',
-      description: 'Gerçek zamanlı karar alma ve uyarlanabilir iş akışları ile karmaşık, çok aşamalı iş süreçlerini koordine edin.',
+      heading: 'Akıllı Süreç Orkestrasyonu',
+      description:
+        'Birden fazla sistem, dosya ve kullanıcı adımını içeren karmaşık süreçleri uçtan uca görünürlükle yönetin.',
       points: [
-        'Görsel iş akışı oluşturucu',
-        'Gerçek zamanlı iş süreci izleme',
-        'Uyarlanabilir yönlendirme ve karar mantığı',
-        'İstisna işlemesi ve düzeltme',
+        'Süreç akışı ve adım takibi',
+        'Gerçek zamanlı durum izleme',
+        'Kuyruk, SLA ve öncelik mantığı',
+        'Hata, retry ve istisna kurguları',
       ],
     },
     onPrem: {
-      heading: 'Şirket İçi Dağıtım',
-      description: 'Maksimum kontrol, güvenlik ve uyumluluk için AI Kitchen\'i kendi altyapınız içerisine dağıtın.',
+      heading: 'Kontrollü Kurulum Seçenekleri',
+      description:
+        'Kurumsal ihtiyaçlarınıza göre verinin, erişimin ve entegrasyonların kontrol altında tutulduğu kurulum modeliyle ilerleyin.',
       points: [
-        'Tam veri egemenliği',
-        'Hiçbir veri ortamınızı terk etmiyor',
-        'GDPR, HIPAA ve kurumsal gereksinimlere uyumluluk',
-        'Mevcut kurumsal altyapı ile entegrasyon',
+        'Veri sahipliği ve erişim kontrolü',
+        'Kurum politikalarına uygun kurulum yaklaşımı',
+        'Mevcut sistemlerle uyumlu entegrasyon',
+        'Güvenlik ve uyumluluk gereksinimlerine uygun mimari',
       ],
     },
     architecture: {
-      heading: 'Kurumsal Mimari',
+      heading: 'Kurumsal Mimari Güçleri',
       items: [
         {
-          title: 'Modüler Tasarım',
-          description: 'Önceden inşa edilmiş ve özel bileşenleri birleştirerek özel çözümler oluşturun.',
+          title: 'Modüler Yapı',
+          description: 'Tekrar kullanılabilir otomasyon adımları ve entegrasyon modülleriyle daha hızlı yaygınlaşma.',
         },
         {
           title: 'Ölçeklenebilirlik',
-          description: 'Pilot\'tan kurumsal genelinde dağıtıma mimari değişiklikler olmadan.',
+          description: 'Pilot süreçlerden çoklu departman kullanımına kadar kontrollü büyüme.',
         },
         {
           title: 'Entegrasyon',
-          description: 'Eski sistemler, bulut platformları ve kurumsal uygulamalara bağlanın.',
+          description: 'ERP, CRM, web panelleri, e-posta kutuları, dosya sistemleri ve API’lerle bağlantı.',
         },
         {
           title: 'Yönetişim',
-          description: 'Tam denetim izleri, uyumluluk raporlaması ve erişim kontrolü.',
+          description: 'Kim ne yaptı, hangi adımda ne oldu ve hangi kayıtlar işlendi net biçimde izlenebilir.',
         },
         {
           title: 'Performans',
-          description: 'Yüksek hacimli, görev açısından kritik işlemleri güvenilir bir şekilde işleyin.',
+          description: 'Yüksek hacimli ve tekrar eden süreçleri standardize ederek daha tutarlı çıktı üretme.',
         },
         {
           title: 'Güvenlik',
-          description: 'Kurumsal seviye şifreleme, kimlik doğrulama ve veri koruması.',
+          description: 'Erişim, loglama, veri kullanımı ve kritik adımlar için kurumsal kontrollere uyum.',
         },
       ],
     },
     execution: {
-      heading: 'AI Destekli İş Süreci Yürütme',
-      description: 'Dijital işçiler AI karar almadan güçlendirilen işlemleri, sürekli öğrenmeyi ve uyarlanabilir iş akışlarını yürütür.',
+      heading: 'Operasyonun İçinde Çalışan Otomasyon',
+      description:
+        'AI Kitchen yalnızca demo ortamı için değil; gerçek operasyonlarda veri toplayan, karşılaştıran, karar veren ve hedef sistemlere işleyen dijital çalışanlar üretmek için tasarlanır.',
       points: [
-        'Özerk görev yürütme',
-        'Akıllı karar alma',
-        'Sürekli öğrenme ve optimizasyon',
-        'Gerçek zamanlı performans analitiği',
+        'Tekrarlı görevlerin otomatik yürütülmesi',
+        'Belge ve veri odaklı süreçlerin hızlanması',
+        'Operasyon ekiplerinin istisnalara odaklanması',
+        'Sürekli iyileştirme için ölçülebilir performans verisi',
       ],
     },
   },
 
-  // Solutions Pages
   solutions: {
     index: {
       hero: {
-        title: 'Kurumsal Çözümler',
-        description: 'Sektörünüz ve iş süreci zorluklarınız için özel olarak tasarlanmış çözümler',
+        title: 'Çözümler',
+        description:
+          'Hazır senaryo mantığıyla kurgulanmış, farklı departmanlara hızla uyarlanabilen kurumsal otomasyon çözümleri.',
       },
     },
     financial: {
-      name: 'Mali Otomasyon',
+      name: 'Finans Operasyonları',
       hero: {
-        title: 'Mali Otomasyon & İstihbarat',
-        description: 'Mali işlemleri AI destekli doğruluk ve kurumsal kontrol ile otomatikleştirin',
+        title: 'Finans Operasyonlarında Akıllı Otomasyon',
+        description:
+          'Mutabakat, raporlama, veri toplama ve kontrol adımlarını AI destekli RPA ile standartlaştırın.',
       },
       challenges:
-        'Mali departmanlar karmaşıklıkla karşı karşıya: uzlaşma, uyumluluk, çok sayıda sistem ve yüksek doğruluk gereksinimleri. Geleneksel RPA sürekli bakım gerektirir. Takımlarınız istisnalarla uğraşmak yerine stratejiye zaman ayırıyor.',
+        'Finans ekipleri birden fazla sistemden veri toplar, dosyaları karşılaştırır, mutabakat yapar ve istisnaları manuel olarak takip eder. Bu yapı hem yavaş hem de hataya açıktır.',
       solution:
-        'AI Kitchen, tüm mali iş akışını otomatikleştiriyor—veri alımından uzlaştırmaya raporlamaya kadar. Dijital işçiler standartlarınızı öğrenir, uyumluluğu otomatik olarak korur ve istisnayı akıllıca işaretler.',
+        'AI Kitchen; ERP, banka ekranları, Excel dosyaları ve e-posta akışları arasında çalışarak veri toplar, karşılaştırır, uyumsuzlukları işaretler ve gerekli çıktıları otomatik üretir.',
       capabilities: [
-        'İstisna işaretlemesi ile otomatik uzlaşma',
-        'Çok sistemli mali veri entegrasyonu',
-        'Uyumluluk hazır denetim izleri',
-        'Gerçek zamanlı mali raporlama',
-        'Akıllı anomali tespiti',
+        'Çok sistemli veri toplama ve eşleştirme',
+        'Mutabakat ve sapma tespiti',
+        'Rapor hazırlığı ve dağıtımı',
+        'Denetim izi oluşturan işlem kayıtları',
+        'İnsan onayı gerektiren adımlarda eskalasyon',
       ],
       outcomes: [
-        'Mali işleme süresinde %45 azalma',
-        'Uzlaştırmada %99.5 doğruluk',
-        'Şirket içi takımlara kıyasla %60 maliyet tasarrufu',
+        'Kapanış ve kontrol süreçlerinde ciddi zaman tasarrufu',
+        'Manuel hata oranında düşüş',
+        'İstisna odaklı daha verimli ekip kullanımı',
       ],
-      cta: 'Mali Otomasyon\'u Keşfet',
+      cta: 'Finans Operasyonlarını İncele',
     },
     accountsPayable: {
-      name: 'Ödenecek Hesaplar',
+      name: 'Fatura ve Ödeme Süreçleri',
       hero: {
-        title: 'Akıllı Ödenecek Hesaplar Otomasyonu',
-        description: 'AP\'yi manuel, hataya açık süreçten akıllı, uyumlu iş akışına dönüştürün',
+        title: 'Fatura İşleme ve Onay Akışlarını Otomatikleştirin',
+        description:
+          'Gelen faturaların okunması, doğrulanması, onaya yönlendirilmesi ve sisteme işlenmesini hızlandırın.',
       },
       challenges:
-        'Ödenecek Hesaplar takımları fatura işlemesi, onay iş akışları, satıcı yönetimi ve çok sistemlerde ödeme koordinasyonuyla uğraşır. Manuel işlemler darboğazlar, hatalar ve uyumluluk riski yaratır.',
+        'Muhasebe ve satın alma ekipleri farklı kanallardan gelen faturaları toplar, PO ve teslim bilgileriyle karşılaştırır, eksik kayıtları takip eder ve ödeme için onay zinciri yürütür.',
       solution:
-        'AI Kitchen, akıllı işleme ile fatura\'dan ödemeye otomatikleştiriyor. Dijital işçiler verileri ayıklıyor, PO\'lara karşı doğrulayor, onayları yönlendirleiyor ve ödemeleri koordine ediyor—tüm bunları iş kurallarınızdan öğrenirken.',
+        'AI Kitchen; belgeleri okur, alanları çıkarır, iş kurallarına göre doğrular, onay akışını başlatır ve sonuçları muhasebe sistemlerine işler.',
       capabilities: [
-        'Akıllı fatura yakalama ve tanıma',
-        'Otomatik üç yönlü eşleştirme (PO, makbuz, fatura)',
-        'Dinamik onay iş akışı yönetimi',
-        'Satıcı yönetimi ve uyumluluk',
-        'Ödeme işleme entegrasyonu',
+        'Fatura verisi çıkarımı ve sınıflandırma',
+        'PO ve teslim bilgisiyle çapraz kontrol',
+        'Otomatik onay yönlendirme',
+        'Tedarikçi ve evrak takibi',
+        'Ödeme öncesi kontrol listeleri',
       ],
       outcomes: [
-        'Fatura başına işleme süresinde %70 azalma',
-        'Fatura işlemede %99 doğruluk',
-        'Erken ödeme indirimleri otomatik olarak yakalanıyor',
+        'Fatura başına işlem süresinde belirgin azalma',
+        'Daha az manuel veri girişi',
+        'Onay süreçlerinde daha iyi görünürlük',
       ],
-      cta: 'Ödenecek Hesaplar\'ı Keşfet',
+      cta: 'Fatura Süreçlerini İncele',
     },
     legal: {
-      name: 'Hukuki Belge İşlemesi',
+      name: 'Hukuki Belge Süreçleri',
       hero: {
-        title: 'Akıllı Hukuki Belge Otomasyonu',
-        description: 'Yüksek değerli hukuki işlemleri otomatikleştirin ve kontrolü koruyun',
+        title: 'Sözleşme ve Belge Operasyonlarını Hızlandırın',
+        description:
+          'Belge inceleme, veri çıkarımı, risk işaretleme ve arşivleme adımlarını standart hale getirin.',
       },
       challenges:
-        'Hukuki departmanlar belge incelemesi, sözleşme analizi, uyumluluk takibi ve müzakere—tümü belge yoğun ve bilgiye ihtiyaç duyuyor. Manuel işlemler karar alma süresini yavaşlatır ve uyumluluk riski oluşturur.',
+        'Hukuk ekipleri yüksek hacimli belge akışlarında tekrar eden kontrol işleriyle zaman kaybeder. Farklı sözleşme tipleri ve manuel takip, çevrim sürelerini uzatır.',
       solution:
-        'AI Kitchen, hukuki iş akışlarını AI destekli belge anlayışı ile otomatikleştiriyor. Dijital işçiler sözleşmeleri incelediyor, koşulları ayıklıyor, riskleri işaretliyor ve uyumluluğu yönetiyor—tümü hukuki standartları öğrenirken.',
+        'AI Kitchen; sözleşmelerden kritik alanları çıkarır, ön kontrol kurallarını uygular, eksik veya riskli noktaları işaretler ve ilgili ekipleri sürece dahil eder.',
       capabilities: [
-        'Akıllı sözleşme incelemesi ve analizi',
-        'Otomatik koşul ayıklaması ve karşılaştırması',
-        'Risk işaretlemesi ve uyumluluk kontrolü',
-        'Belge kümeleme ve organizasyonu',
-        'Denetim hazır süreç dokumentasyonu',
+        'Belge sınıflandırma ve içerik çıkarımı',
+        'Kritik madde ve alan tespiti',
+        'Ön risk işaretleme',
+        'Arşiv ve etiketleme otomasyonu',
+        'Süreç adımlarının kayıt altına alınması',
       ],
       outcomes: [
-        'Sözleşme işlemede %60 daha hızlı',
-        'Tüm belgelerde tutarlı hukuki standartlar',
-        'Uyumluluk ihlalleri %95 azalmış',
+        'Belge işleme çevrim süresinde düşüş',
+        'Standart kontrol adımlarında tutarlılık',
+        'Operasyonel hukuk işlerinde kapasite artışı',
       ],
-      cta: 'Hukuki Otomasyon\'u Keşfet',
+      cta: 'Hukuki Süreçleri İncele',
     },
     tourism: {
-      name: 'Turizm & Otelcilik Operasyonları',
+      name: 'Turizm ve Müşteri Operasyonları',
       hero: {
-        title: 'Otelcilik Operasyonları İstihbarı',
-        description: 'Otomasyonla rezervasyon, müşteri operasyonları ve gelir yönetimini düzene koyun',
+        title: 'Rezervasyon ve Müşteri Operasyonlarını Uçtan Uca Yönetin',
+        description:
+          'Rezervasyon, teyit, ödeme, misafir iletişimi ve takip adımlarını merkezi otomasyonla yönetin.',
       },
       challenges:
-        'Turizm ve otelcilik operasyonları rezervasyonları, müşteri iletişimini, ödemeleri ve çok kanallı koordinasyonu yönetir. Manuel işlemler operasyonel verimsizlikler, kaçırılan geliri ve bölünmüş müşteri deneyimi yaratır.',
+        'Turizm ve hizmet ekipleri web panelleri, e-posta kutuları, ödeme ekranları ve CRM araçları arasında aynı veriyi tekrar tekrar işler. Bu da gecikme ve memnuniyet kaybı yaratır.',
       solution:
-        'AI Kitchen, turizm ve otelcilik operasyonlarını uçtan uca otomatikleştiriyor. Dijital işçiler rezervasyonları yönetiyor, müşteri iletişimini koordine ediyor, ödemeleri işliyor ve operasyonel görevleri yürütüyor—misafir memnuniyetini artırmayı sürekli öğrenirken.',
+        'AI Kitchen; çok kanallı rezervasyon verisini toplar, teyit mesajlarını üretir, ödeme ve durum güncellemelerini işler, görevleri ekipler arasında otomatik dağıtır.',
       capabilities: [
-        'Otomatik rezervasyon ve tutmaklık yönetimi',
-        'Çok kanallı misafir iletişimi',
-        'Gelir yönetimi ve dinamik fiyatlandırma',
-        'Misafir geçmişi ve tercih istihbarı',
-        'Gezi sonrası takip ve geri bildirim otomasyonu',
+        'Rezervasyon ve talep toplama',
+        'Misafir iletişimi ve bildirim akışları',
+        'Ödeme ve durum güncelleme senaryoları',
+        'Operasyon görevlerinin ekipler arasında dağıtımı',
+        'Sonraki aksiyonlar için takip akışları',
       ],
       outcomes: [
-        'Operasyonel verimlilikte %40 artış',
-        'Rezervasyon başına %25 gelir artışı',
-        'Misafir memnuniyet puanları %30 artar',
+        'Daha hızlı dönüş süresi',
+        'Operasyonel tekrar işlerinde azalma',
+        'Misafir deneyiminde daha tutarlı iletişim',
       ],
-      cta: 'Otelcilik Çözümlerini Keşfet',
+      cta: 'Turizm Operasyonlarını İncele',
     },
   },
 
-  // Services Pages
   services: {
     index: {
       hero: {
-        title: 'Hizmetler & Uygulama',
-        description: 'Başarılı AI Kitchen dağıtımı ve sürekli optimizasyon için uzman yönlendirilmiş yaklaşım',
+        title: 'Hizmetler',
+        description:
+          'Keşiften canlı kullanıma, eğitimden optimizasyona kadar otomasyonu kurumsal ölçekte hayata geçiren hizmet modeli.',
       },
-      intro: 'Değerlendirmeden uygulamaya ve sürekli optimizasyona kadar sizi rehberlik ederiz. Her hizmet iç yeteneğinizi oluştururken ölçülebilir sonuçlar sunar.',
+      intro:
+        'Referans alınan platformların eğitim ve yetkinlik merkezi yaklaşımından ilhamla, yalnızca kurulum değil ekiplerin otomasyonu sahiplenmesini sağlayan bir çalışma modeli sunuyoruz.',
     },
     processDiscovery: {
-      name: 'İşlem Keşfi',
-      description: 'Otomasyon fırsatlarını tanımlamak için iş süreçlerinizi derinlemesine anlayın',
+      name: 'Süreç Keşfi',
+      description: 'Hangi işlerin otomasyona en uygun olduğunu veriyle belirleyin.',
       content:
-        'Otomasyon adayları olan iş süreçlerinizi tanımlamak ve AI Kitchen\'in maksimum değer sunabileceği alanları belirlemek için kapsamlı işlem eşlemesi ve analiz yapıyoruz.',
+        'Mevcut operasyonunuzu adım adım analiz eder, manuel eforu, tekrar eden işleri ve hata noktalarını görünür hale getiririz.',
       benefits: [
-        'En yüksek otomasyon fırsatlarını tanımlayın',
-        'Mevcut ağrı noktalarını anlayın',
-        'Başarı metriklerini tanımlayın',
-        'Uygulama yol haritasını önceliklendirin',
+        'Öncelikli otomasyon adaylarının belirlenmesi',
+        'Darboğazların ve tekrar işlerin netleştirilmesi',
+        'Başarı metriklerinin tanımlanması',
+        'Gerçekçi yol haritası oluşturulması',
       ],
       timeline: '2-4 hafta',
     },
     assessment: {
-      name: 'AI Hazırlık Değerlendirmesi',
-      description: 'Kuruluşunuzu AI Kitchen uygulaması için değerlendirin',
+      name: 'Teknik ve Operasyonel Değerlendirme',
+      description: 'Kurulum modeli, entegrasyon gereksinimleri ve ekip hazırlığını belirleyin.',
       content:
-        'Teknik altyapınızı, iş süreçlerinizi, takım hazırlığınızı ve başarı faktörlerini değerlendirerek özel bir uygulama planı oluşturuyoruz.',
+        'Sistemlerinizi, erişim modellerini, veri kaynaklarını ve kullanıcı rollerini analiz ederek uygulanabilir bir kurulum planı çıkarırız.',
       benefits: [
-        'Teknik altyapı incelemesi',
-        'İşlem hazırlık değerlendirmesi',
-        'Takım beceri değerlendirmesi',
-        'Risk tanımlama ve azaltma',
+        'Sistem ve erişim gereksinimlerinin netleşmesi',
+        'Entegrasyon ihtiyaçlarının haritalanması',
+        'Risk ve bağımlılıkların görülmesi',
+        'Uygulama kapsamının netleştirilmesi',
       ],
       timeline: '1-2 hafta',
     },
     poc: {
-      name: 'Kavram Kanıtı',
-      description: 'AI Kitchen değerini en önemli süreçte doğrulayın',
-      content: 'En yüksek öncelikli işleminizde odaklanmış bir otomasyon uygulayarak değeri gösteriyor, iç yetenekleri inşa ediyor ve tam dağıtımı risksiz hale getiriyoruz.',
+      name: 'Pilot / POC',
+      description: 'Yüksek etkili tek bir süreçte hızlı değer gösterin.',
+      content:
+        'Kısa sürede sonuç üretmek için seçilen bir süreçte kontrollü pilot kurar, başarı kriterlerini birlikte ölçeriz.',
       benefits: [
-        'İş değerini kanıtlayın',
-        'İç takımları eğitin',
-        'Güveni oluşturun',
-        'Uygulama yaklaşımını hassaslaştırın',
+        'Hızlı değer ispatı',
+        'İş birimleriyle güven oluşturma',
+        'Gerçek veriyle test etme',
+        'Sonraki yaygınlaştırma için sağlam temel kurma',
       ],
       timeline: '4-8 hafta',
     },
     implementation: {
-      name: 'Tam Uygulaması',
-      description: 'AI Kitchen\'i öncelik süreçlerine ölçekte dağıtın',
+      name: 'Canlıya Alma ve Yaygınlaştırma',
+      description: 'Doğrulanmış senaryoları üretim ortamına taşıyın ve yeni süreçlere açın.',
       content:
-        'Takımımız, otomasyon önceliğinizes dağıtmak, bilgi devri sağlamak ve iç hakkiyeti sağlamak için sizinle ortaklık yapıyor.',
+        'Pilotta doğrulanan akışları üretim kalitesine getirir, kullanıcı devrini yapar ve otomasyonu yeni departmanlara yayarız.',
       benefits: [
-        'Ölçeklenmiş otomasyon dağıtımı',
-        'Takım eğitimi ve bilgi devri',
-        'Kalite güvencesi',
-        'Üretim başlatma desteği',
+        'Üretim ortamına güvenli geçiş',
+        'Bilgi transferi ve ekip eğitimi',
+        'Standartlaştırılmış teslim yaklaşımı',
+        'Yeni süreçler için tekrar kullanılabilir yapıların kurulması',
       ],
-      timeline: 'Çözüm başına 8-16 hafta',
+      timeline: '8-16 hafta',
     },
     integration: {
       name: 'Sistem Entegrasyonu',
-      description: 'AI Kitchen\'i kurumsal sistemlere ve veri kaynaklarına bağlayın',
+      description: 'Web panelleri, masaüstü uygulamalar, dosyalar ve API’leri aynı akışta birleştirin.',
       content:
-        'Dijital işçilerinizin tüm sistemlerde erişebilmesini ve koordine hale gelmesini sağlamak için eski sistemlere, bulut platformlarına, veritabanlarına ve API\'lere entegrasyon yapıyoruz.',
+        'ERP, CRM, muhasebe, e-posta, paylaşımlı klasörler ve üçüncü parti servislerle bağlantı kurarak otomasyonun gerçek veri üzerinde çalışmasını sağlarız.',
       benefits: [
-        'Çok sistemli bağlantı kurma',
-        'Veri ardışık düzenini kurma',
-        'API entegrasyonu',
-        'Gerçek zamanlı senkronizasyon',
+        'Çoklu sistem bağlantısı',
+        'Veri akışlarının standardizasyonu',
+        'API ve ekran otomasyonu kombinasyonu',
+        'Gerçek zamanlı veya zamanlanmış senaryolar',
       ],
-      timeline: 'Sistem başına değişken',
+      timeline: 'Sisteme göre değişir',
     },
     support: {
-      name: 'Yönetilen Destek & Optimizasyon',
-      description: 'AI Kitchen platformunuzun sürekli optimizasyonu ve büyümesi',
+      name: 'Eğitim, Destek ve Optimizasyon',
+      description: 'Kurulum sonrası performansı izleyin ve yeni süreçleri daha hızlı devreye alın.',
       content:
-        'Destek takımımız performansı izliyor, istisnayı işliyor, iş akışlarını optimize ediyor ve otomasyonu ek süreçlere ölçeklendirmenize yardımcı oluyor.',
+        'Ekiplerinizi eğitir, canlı süreçleri izler, iyileştirme alanlarını belirler ve otomasyonu yeni kullanım senaryolarına taşırız.',
       benefits: [
-        '24/7 operasyonel destek',
-        'Performans optimizasyonu',
-        'Sürekli iyileştirme',
-        'Yeni işlemlere ölçekleme',
+        'Kullanıcı ve operasyon ekibi eğitimi',
+        'Canlı destek ve hata analizi',
+        'Sürekli iyileştirme döngüsü',
+        'Yeni senaryolar için danışmanlık',
       ],
-      timeline: 'Devam eden',
+      timeline: 'Sürekli',
     },
   },
 
-  // Why AI Kitchen Page
   whyAiKitchen: {
     hero: {
       title: 'Neden AI Kitchen',
-      description: 'Kurumsal dijital işgücü otomasyonu için tam platform',
+      description: 'Kurumsal otomasyonu yazılımdan öte, uygulama disiplini olarak ele alan bütünleşik yapı.',
     },
-    intro: 'AI Kitchen farklı şekilde tasarlanmıştır—AI istihbaratını RPA güvenilirliği ile bir kurumsal platformda birleştirir. Neden önde gelen kuruluşlar bizi seçtiğini buradan görebilirsiniz.',
+    intro:
+      'Sadece görev otomasyonu değil; hazır senaryolar, eğitim yaklaşımı, kurumsal yönetişim ve AI destekli karar katmanıyla daha uygulanabilir bir dönüşüm modeli sunuyoruz.',
     items: [
       {
-        title: 'AI + RPA Entegre',
+        title: 'Hazır ve Uyarlanabilir Yapı',
         description:
-          'Point çözümlerini birleştirmek yerine, AI Kitchen akıllı ajanları kurumsal iş otomasyonu ile birleştirir. Dijital işçileriniz karar alır, öğrenir ve sürekli iyileşir.',
-        benefit: 'Araç yayılımı olmadan tüm otomasyon',
+          'Her şeyi sıfırdan başlatmak yerine, sık kullanılan süreç kurgularını hızla uyarlayarak projeleri daha kısa sürede ilerletiriz.',
+        benefit: 'Daha hızlı canlıya geçiş',
       },
       {
-        title: 'Kurumsal Hazır Mimari',
-        description: 'Başlangıçtan itibaren kurumsal gereksinimler için tasarlanmıştır: ölçeklenebilirlik, güvenlik, entegrasyon, yönetişim ve uyumluluk.',
-        benefit: 'Güvenle ölçekte dağıtın',
-      },
-      {
-        title: 'Güvenli Şirket İçi Dağıtım',
+        title: 'Kurumsal Ölçekte Tasarım',
         description:
-          'Verileriniz üzerinde tam kontrol. GDPR, HIPAA ve endüstri standartlarına maksimum güvenlik ve uyumluluk için AI Kitchen\'i kendi altyapınız içerisine dağıtın.',
-        benefit: 'Veri egemenliği ve yasal uyumluluk',
+          'Birden fazla sistem, ekip ve onay mekanizması içeren süreçler için görünürlük ve kontrol sağlayan bir yapı sunarız.',
+        benefit: 'Dağınık araçlar yerine tek merkezden yönetim',
       },
       {
-        title: 'Esnek & Açık Entegrasyon',
-        description: 'Herhangi bir sisteme—eski, bulut veya özel uygulamalara—bağlanın. API birinci tasarım, mevcut altyapınız ile sorunsuz entergrasyonu sağlar.',
-        benefit: 'Geleceğe dayanıklı entegrasyon stratejisi',
-      },
-      {
-        title: 'Daha Hızlı Sunnum Modeli',
+        title: 'Kontrollü Veri ve Erişim',
         description:
-          'Akıllı otomasyon yoluyla hızlandırılan değere varmak. Geleneksel RPA\'dan %45 daha hızlı sunle, daha az bakım ve eğitim yükü.',
-        benefit: 'Hızlı ROI ve hızlı ölçekleme',
+          'Otomasyonun hangi veriye erişeceği, hangi adımda kimin onay vereceği ve hangi kayıtların tutulacağı net olarak tanımlanır.',
+        benefit: 'Güvenlik ve uyumluluk açısından daha güçlü zemin',
       },
       {
-        title: 'Maliyet Etkili Ölçekleme',
-        description: 'Geleneksel RPA, sürekli bakım ve yeniden eğitim gerektirir. AI Kitchen dijital işçileri öğrenir ve uyum sağlar, toplam maliyet azaltır.',
-        benefit: 'Ölçekte daha düşük operasyonel maliyetler',
+        title: 'AI ile Güçlendirilmiş RPA',
+        description:
+          'Yalnızca tıklama ve veri taşıma değil; belge anlama, sınıflandırma ve istisna tespitini de sürecin içine katarız.',
+        benefit: 'Kural bazlı otomasyonun ötesine geçiş',
+      },
+      {
+        title: 'Eğitim ve Yetkinlik Kazandırma',
+        description:
+          'Müşteri ekipleri için devreye alma sonrasında da öğrenmeyi destekleyen bir çalışma modeli kurarız.',
+        benefit: 'Dış bağımlılığı azaltan sürdürülebilir yapı',
+      },
+      {
+        title: 'İş Sonuçlarına Odaklı Yaklaşım',
+        description:
+          'Başarıyı yalnızca geliştirilen bot sayısıyla değil; kazanılan zaman, düşen hata oranı ve iyileşen servis kalitesiyle ölçeriz.',
+        benefit: 'Daha net ROI takibi',
       },
     ],
     comparison: {
-      heading: 'AI Kitchen vs. Geleneksel RPA',
+      heading: 'AI Kitchen ve Geleneksel RPA Karşılaştırması',
       rows: [
         {
-          aspect: 'İstihbarat',
-          traditional: 'Kural tabanlı otomasyon',
-          aiKitchen: 'AI destekli karar alma ve öğrenme',
+          aspect: 'Kapsam',
+          traditional: 'Tekil görev otomasyonu',
+          aiKitchen: 'Uçtan uca süreç ve karar katmanı',
         },
         {
-          aspect: 'Bakım',
-          traditional: 'Yüksek—sabit kural güncellemeleri gerekli',
-          aiKitchen: 'Düşük—ajanlar otomatik olarak öğrenir ve uyum sağlar',
+          aspect: 'Belge Anlama',
+          traditional: 'Sınırlı, çoğunlukla kural bazlı',
+          aiKitchen: 'AI destekli sınıflandırma ve veri çıkarımı',
         },
         {
-          aspect: 'Eğitim',
-          traditional: 'Kapsamlı RPA geliştirici eğitimi',
-          aiKitchen: 'Minimal—iş kullanıcıları işlemleri yapılandırır',
+          aspect: 'İstisna Yönetimi',
+          traditional: 'Manuel takip ve kırılgan akışlar',
+          aiKitchen: 'Eskalasyon, onay ve yeniden deneme kurguları',
         },
         {
-          aspect: 'Dağıtım',
-          traditional: 'Bulut birincisi, sınırlı şirket içi',
-          aiKitchen: 'Tam şirket içi dağıtım kullanılabilir',
+          aspect: 'Uyarlama Hızı',
+          traditional: 'Her süreçte yüksek geliştirme eforu',
+          aiKitchen: 'Hazır modüllerle daha hızlı devreye alma',
         },
         {
-          aspect: 'İstisna İşlemesi',
-          traditional: 'Manuel yönlendirme gerekli',
-          aiKitchen: 'İnsan gözetimi altında akıllı çözüm',
+          aspect: 'Ekip Yetkinliği',
+          traditional: 'Platform bağımlı uzman gereksinimi',
+          aiKitchen: 'Eğitim ve ortak çalışma modeliyle bilgi transferi',
         },
         {
-          aspect: 'Ölçeklenebilirlik',
-          traditional: 'Ölçek arttıkça üssel karmaşıklık',
-          aiKitchen: 'Birleşik orkestrasyon ile doğrusal ölçekleme',
+          aspect: 'Kurumsal Görünürlük',
+          traditional: 'Parçalı log ve takip yapısı',
+          aiKitchen: 'Merkezî izleme ve denetim izi',
         },
       ],
     },
   },
 
-  // Case Studies Page
   caseStudies: {
     hero: {
       title: 'Vaka Çalışmaları',
-      description: 'AI Kitchen kullanan kurumsal liderlerden gerçek sonuçlar',
+      description:
+        'Referans kullanım desenlerinden ilhamla kurgulanmış, gerçek hayata yakın otomasyon senaryoları.',
     },
     items: [
       {
-        company: 'Küresel Mali Hizmetler Inc.',
-        industry: 'Finans',
-        challenge: 'Manuel uzlaştırma 15 KZK kullanıyor, hata oranları %2.3, uyumluluk riski',
-        solution: 'Akıllı istisna işlemesi ile otomatik uzlaştırma için AI Kitchen dağıtıldı',
+        company: 'Ulusal Perakende Finans Ekibi',
+        industry: 'Finans Operasyonları',
+        challenge:
+          'Bayi ve banka hareketleri her gün farklı Excel dosyaları ve paneller üzerinden manuel karşılaştırılıyor, ekip yoğun şekilde kontrol işi yapıyordu.',
+        solution:
+          'AI Kitchen ile veri toplama, mutabakat ve istisna işaretleme akışı otomatikleştirildi.',
         outcomes: [
-          'İşleme süresinde %45 azalma',
-          '%99.5 doğruluk sağlandı',
-          '12 KZK stratejiye yeniden tahsis edildi',
-          'Yıllık $2.1M tasarrufu',
+          'Gün sonu kontrolleri daha kısa sürede tamamlandı',
+          'Operasyon ekibi yalnızca sapmalara odaklandı',
+          'Raporlama için tekrar iş ihtiyacı azaldı',
+          'Denetim izi oluşturan standart süreç yapısı kuruldu',
         ],
-        metric: '%99,5',
-        metricLabel: 'Doğruluk',
+        metric: '%68',
+        metricLabel: 'Daha Az Manuel İş',
       },
       {
-        company: 'Kurumsal Hukuki Corp',
-        industry: 'Hukuki Hizmetler',
-        challenge: 'Sözleşme incelemesi anlaşma başına 3+ hafta, uyumluluk tutarsızlığı',
-        solution: 'Akıllı sözleşme analizi ve risk işaretlemesi için AI Kitchen uygulandı',
+        company: 'Büyüyen E-Ticaret Operasyon Merkezi',
+        industry: 'Sipariş ve Müşteri Operasyonları',
+        challenge:
+          'Sipariş güncellemeleri, iade kayıtları ve müşteri talepleri farklı paneller arasında tekrar tekrar işleniyor, ekip pik dönemlerde yetişmekte zorlanıyordu.',
+        solution:
+          'Tarayıcı ve arka ofis ekranları arasında çalışan dijital akışlarla sipariş ve talep adımları merkezi hale getirildi.',
         outcomes: [
-          'Sözleşme işlemede %60 daha hızlı',
-          'Tutarlı hukuki standartlar uygulandı',
-          'Uyumluluk ihlali riski %95 azalmış',
-          '$1.8M uyumluluk risk azaltımı',
+          'Pik dönemlerde daha istikrarlı operasyon',
+          'Müşteri dönüş sürelerinde iyileşme',
+          'Tekrarlı panel işlemlerinde ciddi azalma',
+          'Takip edilebilir görev dağıtımı sağlandı',
         ],
-        metric: '%60',
-        metricLabel: 'Daha Hızlı İşleme',
+        metric: '3x',
+        metricLabel: 'İşleme Kapasitesi',
       },
       {
-        company: 'Uluslararası Otelcilik Grubu',
-        industry: 'Otelcilik',
-        challenge: 'Manuel rezervasyon koordinasyonu, çok kanallı kaos, kaçırılan gelir fırsatları',
-        solution: 'Uçtan uca otelcilik operasyonu otomasyonu için AI Kitchen dağıtıldı',
+        company: 'Kurumsal Hukuk ve Satınalma Ekibi',
+        industry: 'Belge ve Onay Süreçleri',
+        challenge:
+          'Sözleşme ekleri, faturalar ve onay belgeleri e-posta ile geliyor; ekip hem belge kontrolü hem de statü takibini manuel yürütüyordu.',
+        solution:
+          'Belge okuma, alan çıkarımı, ön kontrol ve ilgili kişilere yönlendirme adımları otomatikleştirildi.',
         outcomes: [
-          'Operasyonel verimlilikte %40 artış',
-          'Rezervasyon başına %25 gelir artışı',
-          'Misafir memnuniyeti %30 iyileşti',
-          '$4.2M artımlı gelir',
+          'Belge çevrim süresi kısaldı',
+          'Eksik evrakların erken tespiti mümkün oldu',
+          'Onay bekleyen işler daha görünür hale geldi',
+          'Operasyon ve hukuk ekipleri arasında daha net iş paylaşımı oluştu',
         ],
-        metric: '%40',
-        metricLabel: 'Verimlilik Artışı',
+        metric: '%55',
+        metricLabel: 'Daha Hızlı Çevrim',
       },
     ],
   },
 
-  // Contact Page
   contact: {
     hero: {
-      title: 'Bize Ulaşın',
-      description: 'AI Kitchen\'in kurumsal otomasyonunuzu nasıl dönüştürebileceğini keşfedin',
+      title: 'İletişime Geçin',
+      description:
+        'Süreçlerinizi birlikte inceleyelim; hazır senaryo mu, özel kurulum mu daha doğru birlikte belirleyelim.',
     },
     form: {
-      fullName: 'Tam Ad',
+      fullName: 'Ad Soyad',
       company: 'Şirket',
       email: 'İş E-postası',
-      phone: 'Telefon Numarası',
-      message: 'Sizi nasıl yardımcı olabiliriz?',
-      solution: 'Birincil İlgi',
-      selectSolution: 'Bir çözüm seçin...',
-      submit: 'İsteği Gönder',
+      phone: 'Telefon',
+      message: 'Nasıl yardımcı olabiliriz?',
+      solution: 'İlgi Alanı',
+      selectSolution: 'Bir konu seçin...',
+      submit: 'Talep Gönder',
       submitting: 'Gönderiliyor...',
-      success: 'Mesajınız için teşekkür ederiz. Kısa sürede sizinle iletişime geçeceğiz.',
+      success: 'Mesajınız alındı. En kısa sürede sizinle iletişime geçeceğiz.',
       error: 'Mesaj gönderilirken bir hata oluştu. Lütfen tekrar deneyin.',
-      required: 'Bu alan gereklidir',
+      required: 'Bu alan zorunludur',
       invalidEmail: 'Lütfen geçerli bir e-posta adresi girin',
+      placeholderName: 'Adınızı ve soyadınızı yazın',
+      placeholderCompany: 'Şirket adınızı yazın',
+      placeholderEmail: 'ornek@sirketiniz.com',
+      placeholderPhone: '+90 5xx xxx xx xx',
+      placeholderMessage: 'Otomatikleştirmek istediğiniz süreçleri kısaca anlatın',
+      optionFinancial: 'Finans Operasyonları',
+      optionAp: 'Fatura ve Ödeme Süreçleri',
+      optionLegal: 'Hukuki Belge Süreçleri',
+      optionTourism: 'Turizm ve Müşteri Operasyonları',
+      optionOther: 'Diğer',
     },
     info: {
       contact: 'İletişim Bilgileri',
       email: 'support@aikitchen.com.tr',
       emailLabel: 'E-posta',
-      phone: '+1 (555) 123-4567',
+      phone: '+90 (212) 000 00 00',
       phoneLabel: 'Telefon',
       address: 'Kurumsal Otomasyon Platformu',
       addressLabel: 'Merkez',
-      hours: 'Pazartesi – Cuma, Saat 09:00 – 18:00 (EST)',
-      response: 'Tipik olarak 24 saat içinde yanıt veriyoruz',
+      hours: 'Pazartesi - Cuma, 09:00 - 18:00',
+      response: 'Genellikle 24 saat içinde dönüş yapıyoruz',
     },
     cta: {
-      heading: 'Kurumsal Otomasyonunuzu Dönüştürmeye Hazır Mısınız?',
-      description: 'AI Kitchen ile kritik süreçleri otomatikleştiren öncü kuruluşlara katılın.',
-      button: 'Yolculuğunuzu Başlatın',
+      heading: 'Kurumsal Otomasyonda Bir Sonraki Adıma Hazır mısınız?',
+      description:
+        'Manuel iş yükünü azaltan, ölçülebilir ve sürdürülebilir bir otomasyon yapısını birlikte kuralım.',
+      button: 'Görüşme Başlat',
     },
   },
 };
