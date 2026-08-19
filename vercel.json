@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.aikitchen.com.tr"
+        }
+      ],
+      "destination": "https://aikitchen.com.tr/$1",
+      "permanent": true
+    }
+  ]
+}

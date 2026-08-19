@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { languages, isValidLanguage } from '@/i18n/config';
 import { getDictionary } from '@/lib/i18n';
+import { notFound } from 'next/navigation';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import '@/app/globals.css';
@@ -33,12 +34,6 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
       locale: locale === 'tr' ? 'tr_TR' : 'en_US',
       type: 'website',
     },
-    alternates: {
-      languages: {
-        'en': `https://aikitchen.com.tr/en`,
-        'tr': `https://aikitchen.com.tr/tr`,
-      },
-    },
   };
 }
 
@@ -50,14 +45,15 @@ export function generateStaticParams() {
 
 export default async function RootLayout({ children, params }: LayoutProps) {
   const { locale } = await params;
-  const validLocale = isValidLanguage(locale) ? locale : 'en';
+  if (!isValidLanguage(locale)) {
+    notFound();
+  }
+  const validLocale = locale;
   const dictionary = await getDictionary(validLocale);
 
   return (
-    <html lang={locale} className="dark">
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <html lang={validLocale} className="dark">
+    <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

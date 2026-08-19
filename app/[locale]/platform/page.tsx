@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { isValidLanguage } from '@/i18n/config';
 import { getDictionary } from '@/lib/i18n';
+import { localeAlternates } from '@/lib/seo';
 import { SectionHeading } from '@/components/SectionHeading';
 import { FeatureCard } from '@/components/FeatureCard';
 import { CTABanner } from '@/components/CTABanner';
@@ -33,6 +34,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: isEnglish
       ? 'Explore AI Kitchen\'s digital workforce platform powered by AI and RPA'
       : 'AI Kitchen\'in AI ve RPA tarafından güçlendirilen dijital işgücü platformunu keşfedin',
+    alternates: localeAlternates(validLocale, 'platform'),
   };
 }
 

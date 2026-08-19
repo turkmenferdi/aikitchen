@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { isValidLanguage } from '@/i18n/config';
 import { getDictionary } from '@/lib/i18n';
+import { localeAlternates } from '@/lib/seo';
 import { CTABanner } from '@/components/CTABanner';
 import { Grid } from '@/components/Grid';
 import Link from 'next/link';
@@ -15,17 +16,34 @@ interface PageProps {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { solution } = await params;
-  const solutionMap: { [key: string]: string } = {
-    financial: 'Financial Automation',
-    'accounts-payable': 'Accounts Payable',
-    legal: 'Legal Document Processing',
-    tourism: 'Tourism & Hospitality',
-  };
+  const { locale, solution } = await params;
+  const validLocale = isValidLanguage(locale) ? locale : 'en';
+  const entries = {
+    financial: {
+      en: ['Financial Automation', 'Automate finance operations, reconciliation, and exception handling with AI and RPA.'],
+      tr: ['Finans Operasyon Otomasyonu', 'Finans operasyonları, mutabakat ve istisna yönetimi için AI ve RPA otomasyonu.'],
+    },
+    'accounts-payable': {
+      en: ['Accounts Payable Automation', 'Automate invoice processing and approval workflows with AI and RPA.'],
+      tr: ['Fatura ve Borç Hesapları Otomasyonu', 'Fatura işleme ve onay akışları için AI ve RPA otomasyonu.'],
+    },
+    legal: {
+      en: ['Legal Document Automation', 'Streamline document and contract operations with AI-assisted automation.'],
+      tr: ['Belge ve Sözleşme Otomasyonu', 'Belge ve sözleşme operasyonlarını AI destekli otomasyonla hızlandırın.'],
+    },
+    tourism: {
+      en: ['Tourism Operations Automation', 'Coordinate reservation and customer operations with AI and RPA automation.'],
+      tr: ['Turizm Operasyon Otomasyonu', 'Rezervasyon ve müşteri operasyonlarını AI ve RPA otomasyonuyla yönetin.'],
+    },
+  } as const;
+  const entry = entries[solution as keyof typeof entries];
 
-  const title = solutionMap[solution] || 'Solution';
+  if (!entry) return {};
+  const [title, description] = entry[validLocale];
   return {
     title: `${title} - AI Kitchen`,
+    description,
+    alternates: localeAlternates(validLocale, `solutions/${solution}`),
   };
 }
 

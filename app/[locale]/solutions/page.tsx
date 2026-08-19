@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { isValidLanguage } from '@/i18n/config';
 import { getDictionary } from '@/lib/i18n';
+import { localeAlternates } from '@/lib/seo';
 import { SolutionCard } from '@/components/SolutionCard';
 import { Grid } from '@/components/Grid';
 import { BarChart3, Zap, FileText, MapPin } from 'lucide-react';
@@ -21,6 +22,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: isEnglish
       ? 'Enterprise automation solutions for finance, legal, operations, and more'
       : 'Finans, hukuk, operasyon ve daha birçok alanı için kurumsal otomasyon çözümleri',
+    alternates: localeAlternates(validLocale, 'solutions'),
   };
 }
 

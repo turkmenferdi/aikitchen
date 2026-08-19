@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { isValidLanguage } from '@/i18n/config';
 import { getDictionary } from '@/lib/i18n';
+import { localeAlternates } from '@/lib/seo';
 import { ContactForm } from '@/components/ContactForm';
 import { Button } from '@/components/Button';
 import { Mail, Phone, MapPin } from 'lucide-react';
@@ -22,6 +23,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: isEnglish
       ? 'Get in touch with AI Kitchen to discuss your automation needs'
       : 'Otomasyon ihtiyaçlarınızı tartışmak için AI Kitchen ile iletişime geçin',
+    alternates: localeAlternates(validLocale, 'contact'),
   };
 }
 

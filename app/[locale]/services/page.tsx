@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { isValidLanguage } from '@/i18n/config';
 import { getDictionary } from '@/lib/i18n';
+import { localeAlternates } from '@/lib/seo';
 import { FeatureCard } from '@/components/FeatureCard';
 import { Grid } from '@/components/Grid';
 import {
@@ -28,6 +29,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: isEnglish
       ? 'Expert services from process discovery to implementation and ongoing support'
       : 'İşlem keşfinden uygulamaya ve devam eden desteğe kadar uzman hizmetler',
+    alternates: localeAlternates(validLocale, 'services'),
   };
 }
 

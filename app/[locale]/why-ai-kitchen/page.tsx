@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { isValidLanguage } from '@/i18n/config';
 import { getDictionary } from '@/lib/i18n';
+import { localeAlternates } from '@/lib/seo';
 import { CTABanner } from '@/components/CTABanner';
 import {
   Zap,
@@ -28,6 +29,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: isEnglish
       ? 'Understand why enterprises choose AI Kitchen over traditional RPA'
       : "Kuruluşların neden geleneksel RPA yerine AI Kitchen'ı tercih ettiğini keşfedin",
+    alternates: localeAlternates(validLocale, 'why-ai-kitchen'),
   };
 }
 

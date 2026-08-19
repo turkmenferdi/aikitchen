@@ -4,8 +4,10 @@ import { languages, defaultLanguage } from '@/i18n/config';
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
-  // Check if the pathname already has a locale
-  const pathnameHasLocale = languages.some((lang) => pathname.startsWith(`/${lang}`));
+  // A locale must be the first complete path segment. Prefix matching would make
+  // paths such as /enfoo indexable duplicates of /en.
+  const firstSegment = pathname.split('/')[1];
+  const pathnameHasLocale = languages.includes(firstSegment as (typeof languages)[number]);
 
   if (pathnameHasLocale) {
     return NextResponse.next();

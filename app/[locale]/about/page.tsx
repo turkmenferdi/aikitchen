@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { isValidLanguage } from '@/i18n/config';
 import { getDictionary } from '@/lib/i18n';
+import { localeAlternates } from '@/lib/seo';
 import { SectionHeading } from '@/components/SectionHeading';
 import { FeatureCard } from '@/components/FeatureCard';
 import { Grid } from '@/components/Grid';
@@ -22,6 +23,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: isEnglish
       ? 'Learn about AI Kitchen\'s mission to transform enterprise automation'
       : 'AI Kitchen\'in kurumsal otomasyonu dönüştürme misyonu hakkında bilgi edinin',
+    alternates: localeAlternates(validLocale, 'about'),
   };
 }
 
@@ -121,8 +123,8 @@ export default async function About({ params }: PageProps) {
           <div className="bg-surface-container/50 backdrop-blur rounded-lg border border-outline/30 p-12">
             <p className="text-on-surface/70 italic">
               {isEnglish
-                ? '"AI Kitchen transformed how we approach automation. We moved from siloed point solutions to a unified, intelligent platform that actually learns from our business." - Enterprise Client'
-                : '"AI Kitchen ile otomasyona bakışımız değişti. Parçalı çözümler yerine işimizi gerçekten anlayan bütünleşik bir platformla ilerlemeye başladık." - Kurumsal Müşteri'}
+                ? 'We work with teams to identify where automation can improve a process, then define measurable success criteria together.'
+                : 'Ekiplerle birlikte otomasyonun süreci nerede iyileştirebileceğini belirler, ardından ölçülebilir başarı kriterlerini birlikte tanımlarız.'}
             </p>
           </div>
         </div>

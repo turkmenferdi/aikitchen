@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { isValidLanguage } from '@/i18n/config';
 import { getDictionary } from '@/lib/i18n';
+import { localeAlternates } from '@/lib/seo';
 import { Button } from '@/components/Button';
 import { SectionHeading } from '@/components/SectionHeading';
 import { FeatureCard } from '@/components/FeatureCard';
@@ -36,6 +37,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         ? 'Enterprise-ready AI and RPA automation platform'
         : 'Kurumsal seviye AI ve RPA otomasyon platformu',
     },
+    alternates: localeAlternates(validLocale),
   };
 }
 

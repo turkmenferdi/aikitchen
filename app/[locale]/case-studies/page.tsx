@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { isValidLanguage } from '@/i18n/config';
 import { getDictionary } from '@/lib/i18n';
+import { localeAlternates } from '@/lib/seo';
 import { CaseStudyCard } from '@/components/CaseStudyCard';
 import { CTABanner } from '@/components/CTABanner';
 import { Grid } from '@/components/Grid';
@@ -19,8 +20,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: isEnglish ? 'Case Studies - AI Kitchen' : 'Vaka Çalışmaları - AI Kitchen',
     description: isEnglish
-      ? 'Real results from enterprise leaders using AI Kitchen'
-      : 'AI Kitchen kullanan kurumsal liderlerden gerçek sonuçlar',
+      ? 'Illustrative enterprise automation scenarios'
+      : 'Örnek kurumsal otomasyon senaryoları',
+    alternates: localeAlternates(validLocale, 'case-studies'),
   };
 }
 
@@ -57,8 +59,8 @@ export default async function CaseStudies({ params }: PageProps) {
                 metricLabel={item.metricLabel}
                 challenge={item.challenge}
                 outcomes={item.outcomes}
-                challengeLabel={isEnglish ? 'Challenge' : 'Zorluk'}
-                outcomesLabel={isEnglish ? 'Outcomes' : 'Kazanımlar'}
+                challengeLabel={isEnglish ? 'Illustrative scenario' : 'Örnek senaryo'}
+                outcomesLabel={isEnglish ? 'Potential outcomes to measure' : 'Ölçülebilecek olası sonuçlar'}
               />
             ))}
           </Grid>
