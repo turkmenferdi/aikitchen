@@ -31,7 +31,7 @@ export const tr = {
   footer: {
     company: 'AI Kitchen',
     description:
-      'Kurumsal ekipler için AI destekli RPA, dijital çalışanlar, hazır kullanım senaryoları ve uzman kurulum hizmetleri.',
+      'Tekrarlanan iş süreçleri için RPA, belge otomasyonu, veri işleme ve AI destekli iş akışı hizmetleri.',
     product: 'Ürün',
     solutions: 'Çözümler',
     services: 'Hizmetler',
@@ -49,11 +49,11 @@ export const tr = {
 
   home: {
     hero: {
-      title: 'Kurumsal Süreçleriniz İçin Türkçe AI + RPA Otomasyon Platformu',
+      title: 'Kurumsal İş Süreçleri İçin RPA ve Otomasyon Çözümleri',
       description:
-        'AI Kitchen; dijital çalışanlar, hazır otomasyon bileşenleri ve uzman kurulum yaklaşımıyla belge yoğun, çok sistemli ve tekrarlı işleri uçtan uca otomatikleştirir.',
+        'AI Kitchen; belge, tarayıcı, e-posta, Office, ERP ve CRM sistemleri arasında tekrarlanan işleri RPA ve AI destekli iş akışlarıyla otomatikleştirmeye yardımcı olur.',
       cta: 'Demo Talep Et',
-      subHeading: 'Hazır bot mantığı + AI destekli karar alma + kurumsal kontrol',
+      subHeading: 'İş süreci otomasyonu, belge işleme ve orkestrasyon',
     },
     valueProposition: {
       heading: 'Neden AI Kitchen',
@@ -84,7 +84,7 @@ export const tr = {
         'Dosya, tablo, PDF, e-posta ve API verilerini birlikte işleme',
         'İstisna yönetimi ve insan onayı gerektiren adımları orkestre etme',
         'Kurumsal görünürlük, loglama ve denetim izi oluşturma',
-        'İhtiyaca göre on-prem veya kontrollü kurulum seçenekleri',
+        'Kurulum modelinin keşif sırasında sistem ve erişim ihtiyaçlarına göre belirlenmesi',
       ],
     },
     coreCapabilities: {
@@ -311,7 +311,7 @@ export const tr = {
       challenges:
         'Finans ekipleri birden fazla sistemden veri toplar, dosyaları karşılaştırır, mutabakat yapar ve istisnaları manuel olarak takip eder. Bu yapı hem yavaş hem de hataya açıktır.',
       solution:
-        'AI Kitchen; ERP, banka ekranları, Excel dosyaları ve e-posta akışları arasında çalışarak veri toplar, karşılaştırır, uyumsuzlukları işaretler ve gerekli çıktıları otomatik üretir.',
+        'AI Kitchen; ERP ekranları, izin verilen web uygulamaları, Excel dosyaları ve e-posta akışları arasında veri toplama, karşılaştırma, uyumsuzluk işaretleme ve çıktı üretme adımlarını otomatikleştirir.',
       capabilities: [
         'Çok sistemli veri toplama ve eşleştirme',
         'Mutabakat ve sapma tespiti',
@@ -320,9 +320,9 @@ export const tr = {
         'İnsan onayı gerektiren adımlarda eskalasyon',
       ],
       outcomes: [
-        'Kapanış ve kontrol süreçlerinde ciddi zaman tasarrufu',
-        'Manuel hata oranında düşüş',
-        'İstisna odaklı daha verimli ekip kullanımı',
+        'Kapanış ve kontrol süresinin ölçülmesi ve azaltılması',
+        'Manuel veri girişi hatalarının izlenmesi ve azaltılması',
+        'Ekibin istisnalara odaklanabilmesi',
       ],
       cta: 'Finans Operasyonlarını İncele',
     },
@@ -345,7 +345,7 @@ export const tr = {
         'Ödeme öncesi kontrol listeleri',
       ],
       outcomes: [
-        'Fatura başına işlem süresinde belirgin azalma',
+        'Fatura başına işlem süresinin ölçülmesi ve azaltılması',
         'Daha az manuel veri girişi',
         'Onay süreçlerinde daha iyi görünürlük',
       ],
@@ -370,9 +370,9 @@ export const tr = {
         'Süreç adımlarının kayıt altına alınması',
       ],
       outcomes: [
-        'Belge işleme çevrim süresinde düşüş',
+        'Belge işleme çevrim süresinin ölçülmesi ve azaltılması',
         'Standart kontrol adımlarında tutarlılık',
-        'Operasyonel hukuk işlerinde kapasite artışı',
+        'Tekrarlanan kontrol işlerinin otomasyona aktarılması',
       ],
       cta: 'Hukuki Süreçleri İncele',
     },
@@ -395,8 +395,8 @@ export const tr = {
         'Sonraki aksiyonlar için takip akışları',
       ],
       outcomes: [
-        'Daha hızlı dönüş süresi',
-        'Operasyonel tekrar işlerinde azalma',
+        'Dönüş süresinin ölçülmesi ve iyileştirilmesi',
+        'Tekrarlanan operasyon adımlarının azaltılması',
         'Misafir deneyiminde daha tutarlı iletişim',
       ],
       cta: 'Turizm Operasyonlarını İncele',
@@ -424,7 +424,7 @@ export const tr = {
         'Başarı metriklerinin tanımlanması',
         'Gerçekçi yol haritası oluşturulması',
       ],
-      timeline: '2-4 hafta',
+      timeline: 'Keşif sonrasında belirlenir',
     },
     assessment: {
       name: 'Teknik ve Operasyonel Değerlendirme',
@@ -437,7 +437,7 @@ export const tr = {
         'Risk ve bağımlılıkların görülmesi',
         'Uygulama kapsamının netleştirilmesi',
       ],
-      timeline: '1-2 hafta',
+      timeline: 'Keşif sonrasında belirlenir',
     },
     poc: {
       name: 'Pilot / POC',
@@ -450,7 +450,7 @@ export const tr = {
         'Gerçek veriyle test etme',
         'Sonraki yaygınlaştırma için sağlam temel kurma',
       ],
-      timeline: '4-8 hafta',
+      timeline: 'Kapsama göre belirlenir',
     },
     implementation: {
       name: 'Canlıya Alma ve Yaygınlaştırma',
@@ -463,7 +463,7 @@ export const tr = {
         'Standartlaştırılmış teslim yaklaşımı',
         'Yeni süreçler için tekrar kullanılabilir yapıların kurulması',
       ],
-      timeline: '8-16 hafta',
+      timeline: 'Kapsama göre belirlenir',
     },
     integration: {
       name: 'Sistem Entegrasyonu',
@@ -476,7 +476,7 @@ export const tr = {
         'API ve ekran otomasyonu kombinasyonu',
         'Gerçek zamanlı veya zamanlanmış senaryolar',
       ],
-      timeline: 'Sisteme göre değişir',
+      timeline: 'Sistem ve erişim kapsamına göre belirlenir',
     },
     support: {
       name: 'Eğitim, Destek ve Optimizasyon',
@@ -489,7 +489,7 @@ export const tr = {
         'Sürekli iyileştirme döngüsü',
         'Yeni senaryolar için danışmanlık',
       ],
-      timeline: 'Sürekli',
+      timeline: 'Hizmet kapsamına göre belirlenir',
     },
   },
 
@@ -579,53 +579,53 @@ export const tr = {
     hero: {
       title: 'Vaka Çalışmaları',
       description:
-        'Referans kullanım desenlerinden ilhamla kurgulanmış, gerçek hayata yakın otomasyon senaryoları.',
+        'Gerçek müşteri sonucu veya referansı olarak sunulmayan, değerlendirme amaçlı temsili otomasyon senaryoları.',
     },
     items: [
       {
-        company: 'Ulusal Perakende Finans Ekibi',
+        company: 'Temsili Finans Operasyonu',
         industry: 'Finans Operasyonları',
         challenge:
-          'Bayi ve banka hareketleri her gün farklı Excel dosyaları ve paneller üzerinden manuel karşılaştırılıyor, ekip yoğun şekilde kontrol işi yapıyordu.',
+          'Farklı Excel dosyaları ve izin verilen iş uygulamalarındaki kayıtların manuel karşılaştırıldığı varsayımsal bir süreç.',
         solution:
-          'AI Kitchen ile veri toplama, mutabakat ve istisna işaretleme akışı otomatikleştirildi.',
+          'Değerlendirilebilecek yapı: veri toplama, mutabakat ve istisna işaretleme adımlarının otomasyonu.',
         outcomes: [
-          'Gün sonu kontrolleri daha kısa sürede tamamlandı',
-          'Operasyon ekibi yalnızca sapmalara odaklandı',
-          'Raporlama için tekrar iş ihtiyacı azaldı',
-          'Denetim izi oluşturan standart süreç yapısı kuruldu',
+          'Gün sonu kontrol süresinin ölçülmesi',
+          'Ekibin sapmalara odaklanabilmesi',
+          'Tekrarlanan raporlama adımlarının azaltılması',
+          'İşlem kaydı üreten standart bir akışın değerlendirilmesi',
         ],
         metric: 'Örnek Senaryo',
         metricLabel: 'Finans Operasyonları',
       },
       {
-        company: 'Büyüyen E-Ticaret Operasyon Merkezi',
+        company: 'Temsili Sipariş Operasyonu',
         industry: 'Sipariş ve Müşteri Operasyonları',
         challenge:
-          'Sipariş güncellemeleri, iade kayıtları ve müşteri talepleri farklı paneller arasında tekrar tekrar işleniyor, ekip pik dönemlerde yetişmekte zorlanıyordu.',
+          'Sipariş güncellemeleri, iade kayıtları ve taleplerin farklı paneller arasında tekrarlandığı varsayımsal bir süreç.',
         solution:
-          'Tarayıcı ve arka ofis ekranları arasında çalışan dijital akışlarla sipariş ve talep adımları merkezi hale getirildi.',
+          'Değerlendirilebilecek yapı: tarayıcı ve arka ofis ekranları arasındaki sipariş ve talep adımlarının orkestrasyonu.',
         outcomes: [
-          'Pik dönemlerde daha istikrarlı operasyon',
-          'Müşteri dönüş sürelerinde iyileşme',
-          'Tekrarlı panel işlemlerinde ciddi azalma',
-          'Takip edilebilir görev dağıtımı sağlandı',
+          'Pik dönem iş yükünün izlenmesi',
+          'Dönüş sürelerinin ölçülmesi',
+          'Tekrarlanan panel işlemlerinin azaltılması',
+          'Takip edilebilir görev dağıtımının değerlendirilmesi',
         ],
         metric: 'Örnek Senaryo',
         metricLabel: 'Sipariş ve Müşteri Operasyonları',
       },
       {
-        company: 'Kurumsal Hukuk ve Satınalma Ekibi',
+        company: 'Temsili Belge ve Onay Operasyonu',
         industry: 'Belge ve Onay Süreçleri',
         challenge:
-          'Sözleşme ekleri, faturalar ve onay belgeleri e-posta ile geliyor; ekip hem belge kontrolü hem de statü takibini manuel yürütüyordu.',
+          'Sözleşme ekleri, faturalar ve onay belgelerinin e-postayla geldiği, kontrol ve durum takibinin manuel yürütüldüğü varsayımsal bir süreç.',
         solution:
-          'Belge okuma, alan çıkarımı, ön kontrol ve ilgili kişilere yönlendirme adımları otomatikleştirildi.',
+          'Değerlendirilebilecek yapı: belge okuma, alan çıkarımı, ön kontrol ve ilgili kişilere yönlendirme adımlarının otomasyonu.',
         outcomes: [
-          'Belge çevrim süresi kısaldı',
-          'Eksik evrakların erken tespiti mümkün oldu',
-          'Onay bekleyen işler daha görünür hale geldi',
-          'Operasyon ve hukuk ekipleri arasında daha net iş paylaşımı oluştu',
+          'Belge çevrim süresinin ölçülmesi',
+          'Eksik evrakların erken işaretlenmesi',
+          'Onay bekleyen işlerin görünür hale getirilmesi',
+          'Ekipler arası görev dağıtımının netleştirilmesi',
         ],
         metric: 'Örnek Senaryo',
         metricLabel: 'Belge ve Onay Süreçleri',
@@ -668,7 +668,7 @@ export const tr = {
       contact: 'İletişim Bilgileri',
       email: 'support@aikitchen.com.tr',
       emailLabel: 'E-posta',
-      phone: '+90 (212) 000 00 00',
+      phone: '',
       phoneLabel: 'Telefon',
       address: 'Kurumsal Otomasyon Platformu',
       addressLabel: 'Merkez',

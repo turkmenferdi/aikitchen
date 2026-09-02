@@ -16,18 +16,18 @@ export function TrustBadges({ badges, className = '' }: TrustBadgesProps) {
   const defaultBadges: TrustBadge[] = badges || [
     {
       icon: <Shield className="w-6 h-6 text-primary" />,
-      label: 'Enterprise Security',
-      value: 'On-premises deployment',
+      label: 'Access Control',
+      value: 'Defined for each workflow',
     },
     {
       icon: <Lock className="w-6 h-6 text-primary" />,
-      label: 'Compliant',
-      value: 'SOC2, HIPAA, GDPR ready',
+      label: 'Process Records',
+      value: 'Logging and audit-trail design',
     },
     {
       icon: <Zap className="w-6 h-6 text-primary" />,
-      label: 'Proven Track Record',
-      value: 'Deployed across industries',
+      label: 'Human Review',
+      value: 'Approval steps where required',
     },
   ];
 

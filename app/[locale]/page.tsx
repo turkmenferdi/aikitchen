@@ -24,18 +24,18 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   return {
     title: isEnglish
-      ? 'AI Kitchen - Scale Your Digital Workforce'
-      : 'AI Kitchen - Dijital İş Gücünüzü Ölçeklendirin',
+      ? 'Business Process Automation and RPA | AI Kitchen'
+      : 'İş Süreci Otomasyonu ve RPA | AI Kitchen',
     description: isEnglish
-      ? 'Enterprise AI-supported RPA platform for intelligent automation. Build digital workers with Agentic AI and secure on-premises deployment.'
-      : 'Kurumsal AI destekli RPA platformu akıllı otomasyon için. Agentic AI ve güvenli şirket içi dağıtım ile dijital işçiler oluşturun.',
+      ? 'Automate repeatable document, browser, email, Office, ERP and CRM workflows with RPA and AI-supported process orchestration.'
+      : 'Tekrarlanan belge, tarayıcı, e-posta, Office, ERP ve CRM iş akışlarını RPA ve AI destekli süreç orkestrasyonuyla otomatikleştirin.',
     openGraph: {
       title: isEnglish
         ? 'AI Kitchen - Scale Your Digital Workforce'
         : 'AI Kitchen - Dijital İş Gücünüzü Ölçeklendirin',
       description: isEnglish
-        ? 'Enterprise-ready AI and RPA automation platform'
-        : 'Kurumsal seviye AI ve RPA otomasyon platformu',
+        ? 'Business process automation with RPA and AI-supported workflows'
+        : 'RPA ve AI destekli iş akışlarıyla iş süreci otomasyonu',
     },
     alternates: localeAlternates(validLocale),
   };
@@ -274,7 +274,7 @@ export default async function Home({ params }: PageProps) {
                 challenge={item.challenge}
                 outcomes={item.outcomes}
                 challengeLabel={isEnglish ? 'Challenge' : 'Zorluk'}
-                outcomesLabel={isEnglish ? 'Outcomes' : 'Kazanımlar'}
+                outcomesLabel={isEnglish ? 'Potential outcomes to measure' : 'Ölçülebilecek olası sonuçlar'}
               />
             ))}
           </Grid>

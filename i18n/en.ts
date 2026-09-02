@@ -31,7 +31,7 @@ export const en = {
   footer: {
     company: 'AI Kitchen',
     description:
-      'AI-powered RPA for enterprise teams, with digital workers, reusable automation scenarios, and expert implementation support.',
+      'RPA, document automation, data processing, and AI-supported workflow services for repeatable business processes.',
     product: 'Product',
     solutions: 'Solutions',
     services: 'Services',
@@ -49,11 +49,11 @@ export const en = {
 
   home: {
     hero: {
-      title: 'A Turkish-Ready AI + RPA Platform for Enterprise Operations',
+      title: 'RPA and Automation for Business Processes',
       description:
-        'AI Kitchen helps teams automate document-heavy, repetitive, and multi-system workflows with digital workers, reusable automation modules, and expert implementation support.',
+        'AI Kitchen helps automate repeatable work across documents, browsers, email, Office tools, ERP, and CRM systems with RPA and AI-supported workflows.',
       cta: 'Request Demo',
-      subHeading: 'Reusable bot logic + AI decisions + enterprise control',
+      subHeading: 'Business process automation, document processing, and orchestration',
     },
     valueProposition: {
       heading: 'Why AI Kitchen',
@@ -84,7 +84,7 @@ export const en = {
         'Process files, tables, PDFs, emails, and APIs in one flow',
         'Orchestrate exceptions and human approval steps',
         'Provide enterprise visibility, logs, and auditability',
-        'Support controlled deployment models, including on-prem needs',
+        'Define the deployment model during discovery according to system and access requirements',
       ],
     },
     coreCapabilities: {
@@ -317,7 +317,7 @@ export const en = {
       challenges:
         'Finance teams collect data from multiple systems, compare files, perform reconciliations, and follow up on exceptions manually. The result is slow, error-prone work with too much control overhead.',
       solution:
-        'AI Kitchen works across ERP screens, bank portals, Excel files, and email flows to collect data, compare records, flag mismatches, and generate the outputs your teams need.',
+        'AI Kitchen works across ERP screens, permitted web applications, Excel files, and email flows to collect data, compare records, flag mismatches, and generate required outputs.',
       capabilities: [
         'Multi-system data collection and matching',
         'Reconciliation and variance detection',
@@ -326,9 +326,9 @@ export const en = {
         'Escalation for human approval steps',
       ],
       outcomes: [
-        'Major time savings across close and control workflows',
-        'Lower manual error rates',
-        'Teams spend more time on exceptions than repetitive checks',
+        'Measurement and reduction of close and control time',
+        'Monitoring and reduction of manual data-entry errors',
+        'More team capacity for exception handling',
       ],
       cta: 'Explore Finance Operations',
     },
@@ -351,7 +351,7 @@ export const en = {
         'Pre-payment control checkpoints',
       ],
       outcomes: [
-        'Less processing time per invoice',
+        'Measurement and reduction of processing time per invoice',
         'Reduced manual data entry',
         'Better visibility across approval workflows',
       ],
@@ -401,8 +401,8 @@ export const en = {
         'Follow-up workflows for next actions',
       ],
       outcomes: [
-        'Faster response times',
-        'Less repetitive operational work',
+        'Measurement and improvement of response times',
+        'Reduction of repeatable operations work',
         'More consistent customer communication',
       ],
       cta: 'Explore Tourism Operations',
@@ -430,7 +430,7 @@ export const en = {
         'Defined success metrics',
         'A realistic implementation roadmap',
       ],
-      timeline: '2-4 weeks',
+      timeline: 'Defined after discovery',
     },
     assessment: {
       name: 'Technical and Operational Assessment',
@@ -443,7 +443,7 @@ export const en = {
         'Visibility into risks and dependencies',
         'A sharpened implementation scope',
       ],
-      timeline: '1-2 weeks',
+      timeline: 'Defined after discovery',
     },
     poc: {
       name: 'Pilot / POC',
@@ -456,7 +456,7 @@ export const en = {
         'Validation with real operational data',
         'A solid foundation for scale',
       ],
-      timeline: '4-8 weeks',
+      timeline: 'Defined by scope',
     },
     implementation: {
       name: 'Go-Live and Rollout',
@@ -469,7 +469,7 @@ export const en = {
         'Standardized delivery discipline',
         'Reusable foundations for future automations',
       ],
-      timeline: '8-16 weeks',
+      timeline: 'Defined by scope',
     },
     integration: {
       name: 'System Integration',
@@ -483,7 +483,7 @@ export const en = {
         'A blend of API and UI automation',
         'Real-time or scheduled execution models',
       ],
-      timeline: 'Varies by system',
+      timeline: 'Defined by systems and access scope',
     },
     support: {
       name: 'Training, Support, and Optimization',
@@ -497,7 +497,7 @@ export const en = {
         'Continuous improvement loops',
         'Guidance for new scenarios',
       ],
-      timeline: 'Ongoing',
+      timeline: 'Defined by service scope',
     },
   },
 
@@ -588,53 +588,53 @@ export const en = {
     hero: {
       title: 'Case Studies',
       description:
-        'Operationally realistic automation scenarios inspired by common enterprise workflow patterns.',
+        'Illustrative automation scenarios for evaluation, not published customer references or measured business results.',
     },
     items: [
       {
-        company: 'National Retail Finance Team',
+        company: 'Illustrative Finance Operation',
         industry: 'Finance Operations',
         challenge:
-          'Dealer and bank movements were being compared manually every day across separate Excel files and portals, creating heavy control work for the team.',
+          'A hypothetical process where records from separate Excel files and permitted business applications are compared manually.',
         solution:
-          'AI Kitchen automated the flow for data collection, reconciliation, and exception flagging.',
+          'Structure to evaluate: automating data collection, reconciliation, and exception flagging across the workflow.',
         outcomes: [
-          'End-of-day control work finished much faster',
-          'The team focused only on variances and exceptions',
-          'Less duplicate effort for reporting preparation',
-          'A standardized process with a clear audit trail was established',
+          'Measurement of end-of-day control time',
+          'Ability for the team to focus on variances and exceptions',
+          'Reduction of repeatable reporting steps',
+          'Evaluation of a standardized workflow with process records',
         ],
         metric: 'Illustrative Scenario',
         metricLabel: 'Finance Operations',
       },
       {
-        company: 'Scaling E-Commerce Operations Center',
+        company: 'Illustrative Order Operation',
         industry: 'Order and Customer Operations',
         challenge:
-          'Order updates, return records, and customer requests were handled across multiple portals, making peak periods difficult to manage.',
+          'A hypothetical process where order updates, return records, and requests are repeatedly handled across multiple portals.',
         solution:
-          'Digital workflows running across browser and back-office systems centralized order and service operations.',
+          'Structure to evaluate: coordinating order and request steps across browser-based and back-office systems.',
         outcomes: [
-          'More stable operations during peak demand',
-          'Improved customer response times',
-          'Much less repetitive portal handling',
-          'Trackable task distribution across teams',
+          'Monitoring of peak-period workload',
+          'Measurement of response times',
+          'Reduction of repetitive portal actions',
+          'Evaluation of trackable task routing across teams',
         ],
         metric: 'Illustrative Scenario',
         metricLabel: 'Order and Customer Operations',
       },
       {
-        company: 'Corporate Legal and Procurement Team',
+        company: 'Illustrative Document and Approval Operation',
         industry: 'Document and Approval Workflows',
         challenge:
-          'Contract attachments, invoices, and approval documents arrived by email, and teams had to manage both document checks and status follow-up manually.',
+          'A hypothetical process where contract attachments, invoices, and approval documents arrive by email while review and status tracking remain manual.',
         solution:
-          'AI Kitchen automated document reading, field extraction, pre-checks, and routing to the right stakeholders.',
+          'Structure to evaluate: automating document reading, field extraction, pre-checks, and routing steps.',
         outcomes: [
-          'Shorter document turnaround times',
-          'Earlier detection of missing information',
-          'Better visibility into waiting approvals',
-          'Clearer collaboration between operations and legal teams',
+          'Measurement of document turnaround time',
+          'Earlier flagging of missing information',
+          'Visibility into pending approvals',
+          'Clearer task allocation across operations and legal teams',
         ],
         metric: 'Illustrative Scenario',
         metricLabel: 'Document and Approval Workflows',
@@ -677,7 +677,7 @@ export const en = {
       contact: 'Contact Information',
       email: 'support@aikitchen.com.tr',
       emailLabel: 'Email',
-      phone: '+90 (212) 000 00 00',
+      phone: '',
       phoneLabel: 'Phone',
       address: 'Enterprise Automation Platform',
       addressLabel: 'Headquarters',

@@ -30,10 +30,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const isEnglish = validLocale === 'en';
 
   return {
-    title: isEnglish ? 'Platform - AI Kitchen' : 'Platform - AI Kitchen',
+    title: isEnglish
+      ? 'RPA and Process Automation Capabilities | AI Kitchen'
+      : 'RPA ve İş Süreci Otomasyonu Yetkinlikleri | AI Kitchen',
     description: isEnglish
-      ? 'Explore AI Kitchen\'s digital workforce platform powered by AI and RPA'
-      : 'AI Kitchen\'in AI ve RPA tarafından güçlendirilen dijital işgücü platformunu keşfedin',
+      ? 'Explore browser, document, data, ERP and CRM workflow automation with RPA, orchestration and AI-supported processing.'
+      : 'Tarayıcı, belge, veri, ERP ve CRM iş akışları için RPA, orkestrasyon ve AI destekli işleme yetkinliklerini inceleyin.',
     alternates: localeAlternates(validLocale, 'platform'),
   };
 }
@@ -156,7 +158,7 @@ export default async function Platform({ params }: PageProps) {
         </div>
       </section>
 
-      {/* On-Prem Deployment */}
+      {/* Controlled Deployment */}
       <section className="py-20 md:py-32 bg-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -164,7 +166,7 @@ export default async function Platform({ params }: PageProps) {
               <div className="text-center text-on-surface-variant">
                 <Lock className="w-16 h-16 mx-auto mb-4 text-primary/50" />
                 <p className="text-sm">
-                  {isEnglish ? 'On-premises deployment model' : 'On-prem kurulum modeli'}
+                  {isEnglish ? 'Deployment and access model' : 'Kurulum ve erişim modeli'}
                 </p>
               </div>
             </div>

@@ -109,27 +109,27 @@ export function Footer({ dictionary, locale }: FooterProps) {
             </ul>
           </div>
 
-          {/* Legal */}
+          {/* Contact */}
           <div>
             <h4 className="font-semibold mb-6 text-sm uppercase tracking-wider">
-              {dictionary.footer.legal}
+              {dictionary.footer.contact}
             </h4>
             <ul className="space-y-3">
               <li>
                 <a
-                  href="#"
+                  href={`mailto:${dictionary.footer.supportEmail}`}
                   className="text-on-surface/70 hover:text-on-surface text-sm transition-colors"
                 >
-                  {dictionary.footer.privacy}
+                  {dictionary.footer.supportEmail}
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href={`/${locale}/contact`}
                   className="text-on-surface/70 hover:text-on-surface text-sm transition-colors"
                 >
-                  {dictionary.footer.terms}
-                </a>
+                  {dictionary.footer.contact}
+                </Link>
               </li>
             </ul>
           </div>

@@ -72,7 +72,7 @@ export default async function CaseStudies({ params }: PageProps) {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <CTABanner
             heading={
-              isEnglish ? 'Ready to achieve similar results?' : 'Benzer sonuçları birlikte planlayalım'
+              isEnglish ? 'Ready to evaluate a relevant workflow?' : 'İlgili bir iş akışını birlikte değerlendirelim'
             }
             description={
               isEnglish

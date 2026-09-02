@@ -4,7 +4,7 @@ import { getDictionary } from '@/lib/i18n';
 import { localeAlternates } from '@/lib/seo';
 import { ContactForm } from '@/components/ContactForm';
 import { Button } from '@/components/Button';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import Link from 'next/link';
 
 interface PageProps {
@@ -52,7 +52,9 @@ export default async function Contact({ params }: PageProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Form */}
             <div>
-              <h2 className="text-3xl font-bold text-on-surface mb-8">Send us a message</h2>
+              <h2 className="text-3xl font-bold text-on-surface mb-8">
+                {validLocale === 'tr' ? 'Bize mesaj gönderin' : 'Send us a message'}
+              </h2>
               <ContactForm dictionary={dictionary} />
             </div>
 
@@ -81,55 +83,14 @@ export default async function Contact({ params }: PageProps) {
                   </div>
                 </div>
 
-                {/* Phone */}
-                <div className="bg-surface-container rounded-lg border border-outline/20 p-6">
-                  <div className="flex items-start gap-4">
-                    <Phone className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                    <div>
-                      <p className="text-sm font-semibold text-on-surface uppercase tracking-wider mb-2">
-                        {dictionary.contact.info.phoneLabel}
-                      </p>
-                      <a
-                        href={`tel:${dictionary.contact.info.phone}`}
-                        className="text-primary hover:text-secondary-fixed font-medium transition-colors"
-                      >
-                        {dictionary.contact.info.phone}
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Address */}
-                <div className="bg-surface-container rounded-lg border border-outline/20 p-6">
-                  <div className="flex items-start gap-4">
-                    <MapPin className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                    <div>
-                      <p className="text-sm font-semibold text-on-surface uppercase tracking-wider mb-2">
-                        {dictionary.contact.info.addressLabel}
-                      </p>
-                      <p className="text-on-surface font-medium">{dictionary.contact.info.address}</p>
-                    </div>
-                  </div>
-                </div>
-
                 {/* Hours */}
                 <div className="bg-primary/10 rounded-lg border border-primary/20 p-6">
-                  <p className="text-sm font-semibold text-on-surface mb-2">Response Time</p>
+                  <p className="text-sm font-semibold text-on-surface mb-2">
+                    {validLocale === 'tr' ? 'İletişim süreci' : 'Contact process'}
+                  </p>
                   <p className="text-on-surface-variant text-sm">{dictionary.contact.info.response}</p>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Map Placeholder */}
-      <section className="py-12 bg-surface border-t border-outline/20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg border border-primary/20 h-96 flex items-center justify-center">
-            <div className="text-center text-on-surface-variant">
-              <MapPin className="w-12 h-12 mx-auto mb-4 text-primary/50" />
-              <p className="text-sm">Map - Global Presence</p>
             </div>
           </div>
         </div>

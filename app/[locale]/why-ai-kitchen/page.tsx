@@ -27,8 +27,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: isEnglish ? 'Why AI Kitchen' : 'Neden AI Kitchen',
     description: isEnglish
-      ? 'Understand why enterprises choose AI Kitchen over traditional RPA'
-      : "Kuruluşların neden geleneksel RPA yerine AI Kitchen'ı tercih ettiğini keşfedin",
+      ? 'Review AI Kitchen\'s approach to RPA, document automation and business process orchestration.'
+      : "AI Kitchen'ın RPA, belge otomasyonu ve iş süreci orkestrasyonu yaklaşımını inceleyin.",
     alternates: localeAlternates(validLocale, 'why-ai-kitchen'),
   };
 }

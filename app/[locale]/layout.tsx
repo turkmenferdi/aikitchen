@@ -19,11 +19,11 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
 
   const isEnglish = validLocale === 'en';
   const title = isEnglish
-    ? 'AI Kitchen - Enterprise AI-Supported RPA Platform'
-    : 'AI Kitchen - Kurumsal AI Destekli RPA Platformu';
+    ? 'AI Kitchen | Business Process Automation and RPA'
+    : 'AI Kitchen | İş Süreci Otomasyonu ve RPA';
   const description = isEnglish
-    ? 'Scale your digital workforce with AI-supported RPA and Agentic AI. Enterprise-ready automation platform for intelligent process orchestration.'
-    : 'AI destekli RPA ve Agentic AI ile dijital iş gücünüzü ölçeklendirin. Akıllı işlem orkestrasyon için kurumsal otomasyon platformu.';
+    ? 'Automate repeatable business processes across documents, browsers, email, Office tools, ERP and CRM systems with RPA and AI-supported workflows.'
+    : 'Tekrarlanan iş süreçlerini RPA ve AI destekli iş akışlarıyla; belge, tarayıcı, e-posta, Office, ERP ve CRM sistemleri arasında otomatikleştirin.';
 
   return {
     title,
@@ -62,16 +62,11 @@ export default async function RootLayout({ children, params }: LayoutProps) {
               '@type': 'Organization',
               name: 'AI Kitchen',
               url: 'https://aikitchen.com.tr',
-              logo: 'https://aikitchen.com.tr/logo.png',
-              description: 'Enterprise AI-supported RPA platform for digital workforce automation',
-              sameAs: [
-                'https://twitter.com/aikitchen',
-                'https://linkedin.com/company/aikitchen',
-              ],
+              description: 'Business process automation services using RPA, document processing and AI-supported workflows',
               contactPoint: {
                 '@type': 'ContactPoint',
                 contactType: 'Sales',
-                email: 'info@aikitchen.com.tr',
+                email: 'sales@aikitchen.com.tr',
               },
             }),
           }}

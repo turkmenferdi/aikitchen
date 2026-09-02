@@ -25,10 +25,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const isEnglish = validLocale === 'en';
 
   return {
-    title: isEnglish ? 'Services - AI Kitchen' : 'Hizmetler - AI Kitchen',
+    title: isEnglish
+      ? 'RPA Consulting and Automation Services | AI Kitchen'
+      : 'RPA Danışmanlığı ve Otomasyon Hizmetleri | AI Kitchen',
     description: isEnglish
       ? 'Expert services from process discovery to implementation and ongoing support'
-      : 'İşlem keşfinden uygulamaya ve devam eden desteğe kadar uzman hizmetler',
+      : 'Süreç keşfinden kontrollü pilota, uygulamadan desteğe kadar RPA ve iş süreci otomasyonu hizmetleri.',
     alternates: localeAlternates(validLocale, 'services'),
   };
 }
@@ -113,38 +115,38 @@ export default async function Services({ params }: PageProps) {
       <section className="py-20 md:py-32 bg-surface-container-low">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-on-surface mb-6">
-            {isEnglish ? 'A Proven Implementation Methodology' : 'Kanıtlanmış Uygulama Metodolojisi'}
+            {isEnglish ? 'An Implementation Methodology Shaped to the Process' : 'Sürece Göre Şekillenen Uygulama Metodolojisi'}
           </h2>
           <p className="text-lg text-on-surface-variant mb-8 leading-relaxed">
             {isEnglish
-              ? 'From discovery through scaling, our methodology ensures successful transformation and internal capability building at every stage.'
-              : 'Keşiften canlı kullanıma kadar metodolojimiz, her aşamada hem ölçülebilir dönüşüm hem de iç ekip yetkinliği oluşturmayı hedefler.'}
+              ? 'The scope and schedule are defined after reviewing the process, systems, controls and success criteria with the customer team.'
+              : 'Kapsam ve takvim; süreç, sistemler, kontroller ve başarı kriterleri müşteri ekibiyle incelendikten sonra belirlenir.'}
           </p>
 
           <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg border border-primary/20 p-8">
             <p className="text-on-surface font-semibold mb-4">
               {isEnglish
-                ? 'Timeline overview: approximately 6 months from discovery to scalable production'
-                : 'Zaman planı: keşiften ölçekli canlı kullanıma kadar ortalama 6 ay'}
+                ? 'Delivery stages are planned after discovery'
+                : 'Teslim aşamaları keşif sonrasında planlanır'}
             </p>
             <div className="grid grid-cols-2 md:grid-cols-6 gap-4 text-sm">
               {(
                 isEnglish
                   ? [
-                      '2-4w Discovery',
-                      '1-2w Assessment',
-                      '4-8w POC',
-                      '8-16w Implementation',
-                      'Variable Integration',
-                      'Ongoing Support',
+                      'Process discovery',
+                      'Assessment',
+                      'Controlled pilot',
+                      'Implementation',
+                      'Integration',
+                      'Support',
                     ]
                   : [
-                      '2-4 hf Keşif',
-                      '1-2 hf Değerlendirme',
-                      '4-8 hf POC',
-                      '8-16 hf Kurulum',
-                      'Değişken Entegrasyon',
-                      'Sürekli Destek',
+                      'Süreç keşfi',
+                      'Değerlendirme',
+                      'Kontrollü pilot',
+                      'Uygulama',
+                      'Entegrasyon',
+                      'Destek',
                     ]
               ).map((phase, idx) => (
                 <div key={idx} className="bg-surface-container-high rounded border border-outline/20 p-3 text-center">

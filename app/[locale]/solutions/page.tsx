@@ -18,10 +18,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const isEnglish = validLocale === 'en';
 
   return {
-    title: isEnglish ? 'Solutions - AI Kitchen' : 'Çözümler - AI Kitchen',
+    title: isEnglish
+      ? 'Business Process Automation Solutions | AI Kitchen'
+      : 'İş Süreci Otomasyonu Çözümleri | AI Kitchen',
     description: isEnglish
-      ? 'Enterprise automation solutions for finance, legal, operations, and more'
-      : 'Finans, hukuk, operasyon ve daha birçok alanı için kurumsal otomasyon çözümleri',
+      ? 'Review automation approaches for finance, invoice processing, document workflows and repeatable operations.'
+      : 'Finans, fatura işleme, belge akışları ve tekrarlanan operasyonlar için otomasyon yaklaşımlarını inceleyin.',
     alternates: localeAlternates(validLocale, 'solutions'),
   };
 }

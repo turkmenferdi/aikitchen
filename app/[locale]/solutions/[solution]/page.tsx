@@ -169,8 +169,8 @@ export default async function SolutionDetail({ params }: PageProps) {
             }
             description={
               isEnglish
-                ? 'Schedule a demo to see how AI Kitchen can transform your operations'
-                : 'Süreçlerinize özel demo ile hangi işleri ne kadar hızlandırabileceğimizi birlikte gösterelim.'
+                ? 'Schedule a demo to evaluate which steps in your workflow are suitable for automation.'
+                : 'Süreçlerinize özel demoda hangi adımların otomasyona uygun olduğunu birlikte değerlendirelim.'
             }
             primaryCTA={{
               text: isEnglish ? 'Request Demo' : 'Demo Talep Et',

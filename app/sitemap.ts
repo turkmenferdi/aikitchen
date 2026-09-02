@@ -22,7 +22,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const pages = routes.flatMap((route) =>
     locales.map((locale) => ({
       url: `${baseUrl}/${locale}${route}`,
-      lastModified: new Date(),
       changeFrequency: route === '' ? 'daily' : 'weekly',
       priority: route === '' ? 1 : 0.8,
     }))
