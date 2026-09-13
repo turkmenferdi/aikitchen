@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
+import { ArrowRight, BarChart3, FileText, MapPin, MessageSquareText, Receipt } from 'lucide-react';
 import { isValidLanguage } from '@/i18n/config';
 import { getDictionary } from '@/lib/i18n';
 import { localeAlternates } from '@/lib/seo';
+import { SOLUTIONS, TURKISH_TOPIC_PAGES } from '@/lib/solutions';
+import { buttonClass } from '@/components/Button';
 import { SolutionCard } from '@/components/SolutionCard';
-import { Grid } from '@/components/Grid';
-import { BarChart3, Zap, FileText, MapPin } from 'lucide-react';
 
 interface PageProps {
   params: Promise<{
@@ -28,64 +30,78 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
+const icons = { financial: BarChart3, accountsPayable: Receipt, legal: FileText, tourism: MapPin };
+
 export default async function Solutions({ params }: PageProps) {
   const { locale } = await params;
   const validLocale = isValidLanguage(locale) ? locale : 'en';
-  const dictionary = await getDictionary(validLocale);
+  const { solutions } = await getDictionary(validLocale);
+  const { index, ui } = solutions;
 
   return (
     <>
-      {/* Hero */}
-      <section className="bg-surface py-20 md:py-32">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-on-surface mb-6">
-            {dictionary.solutions.index.hero.title}
-          </h1>
-          <p className="text-xl text-on-surface-variant leading-relaxed">
-            {dictionary.solutions.index.hero.description}
-          </p>
+      <section className="border-b border-outline-variant/60 bg-white">
+        <div className="mx-auto max-w-7xl px-4 pb-16 pt-14 sm:px-6 md:pb-20 md:pt-20 lg:px-8">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-primary">{index.hero.eyebrow}</p>
+          <h1 className="mb-6 max-w-3xl text-[2.4rem] font-extrabold leading-[1.1] tracking-tight text-on-surface sm:text-5xl">{index.hero.title}</h1>
+          <p className="max-w-2xl text-lg leading-relaxed text-on-surface-variant md:text-xl">{index.hero.description}</p>
         </div>
       </section>
 
-      {/* Solutions Grid */}
-      <section className="py-20 md:py-32 bg-surface-container-low">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Grid columns={2} gap="lg">
-            {[
-              {
-                title: dictionary.solutions.financial.name,
-                description: dictionary.solutions.financial.hero.description,
-                href: `/${locale}/solutions/financial`,
-                icon: <BarChart3 className="w-8 h-8 text-primary" />,
-              },
-              {
-                title: dictionary.solutions.accountsPayable.name,
-                description: dictionary.solutions.accountsPayable.hero.description,
-                href: `/${locale}/solutions/accounts-payable`,
-                icon: <Zap className="w-8 h-8 text-primary" />,
-              },
-              {
-                title: dictionary.solutions.legal.name,
-                description: dictionary.solutions.legal.hero.description,
-                href: `/${locale}/solutions/legal`,
-                icon: <FileText className="w-8 h-8 text-primary" />,
-              },
-              {
-                title: dictionary.solutions.tourism.name,
-                description: dictionary.solutions.tourism.hero.description,
-                href: `/${locale}/solutions/tourism`,
-                icon: <MapPin className="w-8 h-8 text-primary" />,
-              },
-            ].map((solution, idx) => (
-              <SolutionCard
-                key={idx}
-                title={solution.title}
-                description={solution.description}
-                href={solution.href}
-                icon={solution.icon}
-              />
-            ))}
-          </Grid>
+      <section className="bg-surface py-16 md:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-6 md:grid-cols-2">
+            {SOLUTIONS.map(({ slug, key }) => {
+              const data = solutions[key];
+              const Icon = icons[key];
+              return (
+                <SolutionCard
+                  key={slug}
+                  title={data.name}
+                  description={data.hero.description}
+                  href={`/${validLocale}/solutions/${slug}`}
+                  cta={ui.learnMore}
+                  icon={<Icon size={24} />}
+                  points={data.capabilities.slice(0, 3)}
+                />
+              );
+            })}
+          </div>
+
+          {validLocale === 'tr' && (
+            <div className="mt-16">
+              <h2 className="mb-6 text-2xl font-bold text-on-surface">{index.topicsHeading}</h2>
+              <div className="grid gap-4 md:grid-cols-3">
+                {TURKISH_TOPIC_PAGES.map((page) => (
+                  <Link
+                    key={page.href}
+                    href={page.href}
+                    className="group flex flex-col rounded-2xl border border-outline-variant bg-white p-6 transition-colors hover:border-primary/40"
+                  >
+                    <h3 className="mb-2 text-lg font-bold text-on-surface">{page.title}</h3>
+                    <p className="mb-4 leading-relaxed text-on-surface-variant">{page.description}</p>
+                    <ArrowRight size={18} className="mt-auto text-primary transition-transform group-hover:translate-x-1" />
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <div className="mt-16 flex flex-col items-start justify-between gap-6 rounded-3xl border border-primary/20 bg-primary/5 p-8 md:flex-row md:items-center md:p-10">
+            <div className="flex gap-5">
+              <span className="hidden h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-primary text-white sm:flex">
+                <MessageSquareText size={22} />
+              </span>
+              <div>
+                <h2 className="mb-2 text-2xl font-bold text-on-surface">{index.notListed.heading}</h2>
+                <p className="max-w-2xl text-lg leading-relaxed text-on-surface-variant">{index.notListed.description}</p>
+              </div>
+            </div>
+            <Link href={`/${validLocale}/contact`} className={buttonClass('primary', 'lg', 'flex-shrink-0')}>
+              {index.notListed.cta}
+              <ArrowRight size={18} />
+            </Link>
+          </div>
         </div>
       </section>
     </>

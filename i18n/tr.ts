@@ -345,10 +345,32 @@ export const tr = {
   solutions: {
     index: {
       hero: {
-        title: 'Çözümler',
+        eyebrow: 'Çözümler',
+        title: 'Departmanınıza göre otomasyon çözümleri',
         description:
-          'Hazır senaryo mantığıyla kurgulanmış, farklı departmanlara hızla uyarlanabilen kurumsal otomasyon çözümleri.',
+          'Finans, fatura, hukuk ve müşteri operasyonlarındaki tekrarlanan işler için hazır senaryo mantığıyla başlıyor, sürecinize uyarlıyoruz.',
       },
+      topicsHeading: 'Konuya göre otomasyon',
+      notListed: {
+        heading: 'Süreciniz listede yok mu?',
+        description: 'Bir iş sık tekrarlanıyor, kuralları belli ve sistemler arasında veri taşıyorsa büyük ihtimalle iyi bir adaydır. Birlikte bakalım.',
+        cta: 'Sürecinizi anlatın',
+      },
+    },
+    ui: {
+      learnMore: 'İnceleyin',
+      breadcrumb: 'Çözümler',
+      flowLabel: 'Örnek otomasyon akışı',
+      challengeLabel: 'Mevcut zorluk',
+      solutionLabel: 'AI Kitchen yaklaşımı',
+      capabilitiesLabel: 'Öne çıkan yetkinlikler',
+      outcomesLabel: 'Birlikte ölçtüğümüz kazanımlar',
+      outcomesNote: 'Başarı ölçütleri keşif aşamasında tanımlanır ve pilot sırasında gerçek veriyle ölçülür.',
+      relatedLabel: 'Diğer çözümler',
+      ctaHeading: '{name} için ilk adımı atalım',
+      ctaDescription: 'Kısa bir görüşmede iş akışınızdaki hangi adımların otomasyona uygun olduğunu birlikte değerlendirelim.',
+      ctaButton: 'Demo Talep Edin',
+      secondaryCta: 'Çalışma modelini inceleyin',
     },
     financial: {
       name: 'Finans ve Muhasebe Operasyonları',
@@ -375,6 +397,7 @@ export const tr = {
         'Ekibin istisnalara odaklanabilmesi',
       ],
       cta: 'Finans Operasyonlarını İncele',
+      flow: ['ERP, Excel ve e-postadan veriyi toplar', 'Kayıtları eşleştirir ve farkları tespit eder', 'Rapor ve mutabakat çıktısını hazırlar', 'İstisnaları incelemeye yönlendirir'],
     },
     accountsPayable: {
       name: 'Fatura ve Ödeme Süreçleri',
@@ -400,6 +423,7 @@ export const tr = {
         'Onay süreçlerinde daha iyi görünürlük',
       ],
       cta: 'Fatura Süreçlerini İncele',
+      flow: ['Gelen faturayı okur', 'Alanları çıkarır ve doğrular', 'Sipariş ve teslimat verisiyle karşılaştırır', 'Onaya yönlendirir ve muhasebeye kaydeder'],
     },
     legal: {
       name: 'Hukuki Belge Süreçleri',
@@ -425,6 +449,7 @@ export const tr = {
         'Tekrarlanan kontrol işlerinin otomasyona aktarılması',
       ],
       cta: 'Hukuki Süreçleri İncele',
+      flow: ['Sözleşme ve ekleri alır', 'Sınıflandırır ve kritik alanları çıkarır', 'Eksik bilgi ve risk noktalarını işaretler', 'Doğru kişiye yönlendirir ve arşivler'],
     },
     tourism: {
       name: 'Turizm ve Müşteri Operasyonları',
@@ -450,6 +475,7 @@ export const tr = {
         'Misafir deneyiminde daha tutarlı iletişim',
       ],
       cta: 'Turizm Operasyonlarını İncele',
+      flow: ['Kanallardan gelen talepleri toplar', 'Rezervasyon kaydını oluşturur veya günceller', 'Onay ve bildirimleri gönderir', 'Takip görevlerini ekiplere dağıtır'],
     },
   },
 

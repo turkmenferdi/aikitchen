@@ -82,7 +82,7 @@ export function Footer({ dictionary, locale }: FooterProps) {
   return (
     <footer className="bg-ink text-white">
       <div className="mx-auto max-w-7xl px-4 pb-10 pt-16 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-[1.4fr_repeat(3,1fr)_1.3fr]">
+        <div className="grid gap-12 lg:grid-cols-[1.3fr_repeat(3,1fr)_1.6fr]">
           <div>
             <Link href={`/${locale}`} aria-label="AI Kitchen">
               <Logo inverted />
@@ -111,7 +111,7 @@ export function Footer({ dictionary, locale }: FooterProps) {
               {emails.map((item) => (
                 <li key={item.email}>
                   <p className="text-xs text-white/50">{item.label}</p>
-                  <a href={`mailto:${item.email}`} className="inline-flex items-center gap-2 break-all text-sm text-white/80 hover:text-white">
+                  <a href={`mailto:${item.email}`} className="inline-flex items-center gap-2 break-all text-sm text-white/80 hover:text-white lg:break-normal lg:whitespace-nowrap">
                     <Mail size={14} className="flex-shrink-0" />
                     {item.email}
                   </a>

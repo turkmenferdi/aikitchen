@@ -345,10 +345,32 @@ export const en = {
   solutions: {
     index: {
       hero: {
-        title: 'Solutions',
+        eyebrow: 'Solutions',
+        title: 'Automation solutions by department',
         description:
-          'Enterprise automation solutions built around reusable scenario logic and adapted to specific departments and workflows.',
+          'For repetitive work in finance, invoicing, legal and customer operations, we start from proven scenario logic and adapt it to your process.',
       },
+      topicsHeading: 'Automation by topic',
+      notListed: {
+        heading: 'Don’t see your process here?',
+        description: 'If a task repeats often, follows clear rules and moves data between systems, it is probably a good candidate. Let’s look at it together.',
+        cta: 'Describe your process',
+      },
+    },
+    ui: {
+      learnMore: 'Explore',
+      breadcrumb: 'Solutions',
+      flowLabel: 'Example automation flow',
+      challengeLabel: 'The challenge',
+      solutionLabel: 'The AI Kitchen approach',
+      capabilitiesLabel: 'Key capabilities',
+      outcomesLabel: 'What we measure together',
+      outcomesNote: 'Success criteria are defined during discovery and measured with real data during the pilot.',
+      relatedLabel: 'Other solutions',
+      ctaHeading: 'Let’s take the first step for {name}',
+      ctaDescription: 'In a short call, let’s assess which steps of your workflow are suitable for automation.',
+      ctaButton: 'Request a Demo',
+      secondaryCta: 'See how we work',
     },
     financial: {
       name: 'Finance Operations',
@@ -374,6 +396,7 @@ export const en = {
         'More team capacity for exception handling',
       ],
       cta: 'Explore Finance Operations',
+      flow: ['Collects data from ERP, Excel and email', 'Matches records and detects variances', 'Prepares reports and reconciliation outputs', 'Routes exceptions for review'],
     },
     accountsPayable: {
       name: 'Invoice and Payables Workflows',
@@ -399,6 +422,7 @@ export const en = {
         'Better visibility across approval workflows',
       ],
       cta: 'Explore Payables Workflows',
+      flow: ['Reads the incoming invoice', 'Extracts and validates the fields', 'Checks against PO and delivery data', 'Routes for approval and posts to accounting'],
     },
     legal: {
       name: 'Legal Document Workflows',
@@ -424,6 +448,7 @@ export const en = {
         'Higher capacity across legal operations work',
       ],
       cta: 'Explore Legal Workflows',
+      flow: ['Receives contracts and attachments', 'Classifies and extracts key fields', 'Flags missing information and risk points', 'Routes to the right person and archives'],
     },
     tourism: {
       name: 'Tourism and Customer Operations',
@@ -449,6 +474,7 @@ export const en = {
         'More consistent customer communication',
       ],
       cta: 'Explore Tourism Operations',
+      flow: ['Collects requests from channels', 'Creates or updates the reservation record', 'Sends confirmations and notifications', 'Distributes follow-up tasks to teams'],
     },
   },
 
