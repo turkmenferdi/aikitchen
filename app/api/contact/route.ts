@@ -11,6 +11,16 @@ if (SENDGRID_API_KEY) {
   sgMail.setApiKey(SENDGRID_API_KEY);
 }
 
+// Form values are untrusted: escape them before placing them in the notification email HTML.
+function escapeHtml(value: unknown) {
+  return String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
@@ -39,16 +49,17 @@ export async function POST(request: NextRequest) {
     const emailData = {
       to: recipients,
       from: FROM_EMAIL,
-      subject: `New contact request from ${fullName}`,
+      subject: `New contact request from ${String(fullName).replace(/[\r\n]+/g, ' ').slice(0, 120)}`,
+      replyTo: email,
       html: `
         <h2>New contact request</h2>
-        <p><strong>Name:</strong> ${fullName}</p>
-        <p><strong>Company:</strong> ${company}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone || 'N/A'}</p>
-        <p><strong>Solution:</strong> ${solution || 'N/A'}</p>
+        <p><strong>Name:</strong> ${escapeHtml(fullName)}</p>
+        <p><strong>Company:</strong> ${escapeHtml(company)}</p>
+        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+        <p><strong>Phone:</strong> ${escapeHtml(phone || 'N/A')}</p>
+        <p><strong>Topic:</strong> ${escapeHtml(solution || 'N/A')}</p>
         <p><strong>Message:</strong></p>
-        <p>${message}</p>
+        <p style="white-space:pre-wrap">${escapeHtml(message)}</p>
       `,
     };
 

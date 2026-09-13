@@ -292,7 +292,7 @@ export default async function TurboHub({ params }: PageProps) {
               </div>
 
               <div className="flex flex-col gap-3 sm:flex-row">
-                <a href={`/${validLocale}/contact`} className={buttonClass('primary', 'lg', '!bg-white !text-ink !shadow-none hover:!bg-primary-container')}>
+                <a href={`/${validLocale}/contact?topic=turbohub`} className={buttonClass('primary', 'lg', '!bg-white !text-ink !shadow-none hover:!bg-primary-container')}>
                   {t.contact.formCta}
                   <ArrowRight size={18} />
                 </a>
