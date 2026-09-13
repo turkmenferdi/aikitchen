@@ -222,14 +222,22 @@ export const en = {
 
   about: {
     hero: {
-      title: 'About AI Kitchen',
+      eyebrow: 'About',
+      title: 'A team that treats automation as an implementation discipline, not a software sale',
       description:
-        'A team that understands local operational realities and treats enterprise automation as an implementation discipline, not just a software sale.',
+        'AI Kitchen is a technology company that automates repetitive back-office work with RPA and AI, and gives management fast answers from company data with TurboHUB.',
+      focusLabel: 'Teams we focus on',
+      focusTeams: ['Finance and accounting', 'Operations and logistics', 'Human resources', 'Legal and document management', 'Customer service', 'Management and reporting'],
     },
     story: {
       heading: 'Our Approach',
       content:
-        'Many automation initiatives fail to scale because they stay too technical or solve only isolated tasks. AI Kitchen combines the modularity of modern RPA ecosystems with AI-assisted decision logic, process advisory, training, and live support to create a more practical delivery model.',
+        'Many automation initiatives fail to scale because they stay too technical or solve only isolated tasks. AI Kitchen combines a modular RPA approach with AI-supported decision steps, process advisory, training and live support to create a more practical delivery model.',
+      principles: [
+        { title: 'Process first', description: 'We start from the workflow and success criteria, not from the technology.' },
+        { title: 'Controlled automation', description: 'What gets automated and what stays under human approval is defined upfront.' },
+        { title: 'Lasting capability', description: 'After go-live, we help your team own and extend automation.' },
+      ],
     },
     mission: {
       heading: 'Our Mission',
@@ -257,15 +265,29 @@ export const en = {
           description: 'We train customer teams so automation becomes sustainable inside the organization.',
         },
         {
-          title: 'Long-Term Partnership',
+          title: 'Long-term partnership',
           description: 'We stay involved beyond go-live to optimize and expand automation across new processes.',
         },
       ],
     },
     trust: {
-      heading: 'Built for Real Operations',
+      heading: 'Built for real operations',
       description:
         'We focus on repetitive, document-heavy work in finance, legal, operations, HR, customer service, and related teams.',
+    },
+    explore: {
+      heading: 'Get to know AI Kitchen',
+      links: [
+        { title: 'Process Automation', description: 'See what software robots can do.', href: '/platform' },
+        { title: 'TurboHUB', description: 'Fast answers to management questions from data.', href: '/turbohub' },
+        { title: 'How We Work', description: 'Our stages from discovery to support.', href: '/services' },
+        { title: 'Why AI Kitchen', description: 'Compare our approach with traditional RPA.', href: '/why-ai-kitchen' },
+      ],
+    },
+    cta: {
+      heading: 'Let’s review your processes together',
+      description: 'Tell us about the work that takes your team the most time, and we will define the right starting point for automation together.',
+      primary: 'Request a Demo',
     },
   },
 
@@ -603,52 +625,53 @@ export const en = {
 
   whyAiKitchen: {
     hero: {
-      title: 'Why AI Kitchen',
-      description:
-        'A unified model for enterprise automation that goes beyond software and focuses on practical implementation.',
+      eyebrow: 'Why AI Kitchen',
+      title: 'Everything automation needs to create lasting value, in one team',
+      description: 'A unified model for enterprise automation that goes beyond software and focuses on practical implementation.',
     },
     intro:
-      'We offer more than task automation: reusable scenarios, team enablement, enterprise governance, and AI-supported decision layers that make automation more practical to adopt.',
+      'We offer more than task automation: adaptable scenarios, team enablement, enterprise control and AI-supported decision steps that make automation more practical to adopt.',
     items: [
       {
-        title: 'Reusable and Adaptable Foundations',
+        title: 'Reusable and adaptable foundations',
         description:
-          'Instead of starting every project from zero, we adapt common workflow patterns so teams can move faster.',
+          'Instead of starting every project from zero, we adapt common workflow patterns to your process so teams can move faster.',
         benefit: 'Faster go-live timelines',
       },
       {
-        title: 'Designed for Enterprise Operations',
+        title: 'Designed for enterprise operations',
         description:
           'We support workflows that involve multiple systems, teams, approvals, and operational dependencies.',
         benefit: 'Centralized control instead of fragmented tooling',
       },
       {
-        title: 'Controlled Data and Access',
+        title: 'Controlled data and access',
         description:
           'We define exactly what automation can access, where human approval is required, and which records must be kept.',
         benefit: 'A stronger foundation for security and compliance',
       },
       {
-        title: 'RPA Strengthened by AI',
+        title: 'RPA strengthened by AI',
         description:
           'Beyond clicks and data transfer, we add document understanding, classification, and exception detection into the workflow.',
         benefit: 'A step beyond static rule-based automation',
       },
       {
-        title: 'Training and Capability Building',
+        title: 'Training and capability building',
         description:
           'We support customer teams after deployment so automation knowledge stays inside the organization.',
         benefit: 'Less dependence on outside specialists',
       },
       {
-        title: 'Focused on Business Outcomes',
+        title: 'Focused on business outcomes',
         description:
-          'Success is measured not by bot counts, but by time saved, errors reduced, and service quality improved.',
-        benefit: 'Clearer ROI tracking',
+          'Success is measured not by robot counts, but by time saved, errors reduced, and service quality improved.',
+        benefit: 'Clearer return-on-investment tracking',
       },
     ],
     comparison: {
-      heading: 'AI Kitchen vs. Traditional RPA',
+      heading: 'AI Kitchen vs. traditional RPA',
+      head: ['Aspect', 'Traditional RPA', 'AI Kitchen'],
       rows: [
         {
           aspect: 'Scope',
@@ -656,31 +679,37 @@ export const en = {
           aiKitchen: 'End-to-end process automation with decision support',
         },
         {
-          aspect: 'Document Understanding',
+          aspect: 'Document understanding',
           traditional: 'Limited and mostly rule-based',
           aiKitchen: 'AI-supported classification and field extraction',
         },
         {
-          aspect: 'Exception Handling',
+          aspect: 'Exception handling',
           traditional: 'Manual follow-up and brittle logic',
           aiKitchen: 'Escalation, approval, and retry design built in',
         },
         {
-          aspect: 'Adaptation Speed',
+          aspect: 'Adaptation speed',
           traditional: 'High development effort per workflow',
           aiKitchen: 'Faster launch through reusable modules',
         },
         {
-          aspect: 'Team Enablement',
+          aspect: 'Team enablement',
           traditional: 'Strong dependence on specialist developers',
           aiKitchen: 'Training and shared delivery model',
         },
         {
-          aspect: 'Operational Visibility',
+          aspect: 'Operational visibility',
           traditional: 'Fragmented logs and tracking',
-          aiKitchen: 'Centralized monitoring and audit trail',
+          aiKitchen: 'Centralized monitoring and processing records',
         },
       ],
+    },
+    cta: {
+      heading: 'Let’s see the difference in your own process',
+      description: 'Pick one of your processes and we will assess together how the AI Kitchen approach would work there.',
+      primary: 'Request a Demo',
+      secondary: 'View case studies',
     },
   },
 

@@ -1,17 +1,10 @@
 import type { Metadata } from 'next';
+import { Check, Cpu, GraduationCap, Layers, Lock, Target, X, Zap } from 'lucide-react';
 import { isValidLanguage } from '@/i18n/config';
 import { getDictionary } from '@/lib/i18n';
 import { localeAlternates } from '@/lib/seo';
+import { SectionHeading } from '@/components/SectionHeading';
 import { CTABanner } from '@/components/CTABanner';
-import {
-  Zap,
-  Shield,
-  Lock,
-  Cpu,
-  TrendingUp,
-  DollarSign,
-  CheckCircle,
-} from 'lucide-react';
 
 interface PageProps {
   params: Promise<{
@@ -25,7 +18,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const isEnglish = validLocale === 'en';
 
   return {
-    title: isEnglish ? 'Why AI Kitchen' : 'Neden AI Kitchen',
+    title: isEnglish ? 'Why AI Kitchen | RPA and AI Automation Partner' : 'Neden AI Kitchen | RPA ve Yapay Zekâ Otomasyon Ortağı',
     description: isEnglish
       ? 'Review AI Kitchen\'s approach to RPA, document automation and business process orchestration.'
       : "AI Kitchen'ın RPA, belge otomasyonu ve iş süreci orkestrasyonu yaklaşımını inceleyin.",
@@ -33,93 +26,73 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
+const itemIcons = [Zap, Layers, Lock, Cpu, GraduationCap, Target];
+
 export default async function WhyAiKitchen({ params }: PageProps) {
   const { locale } = await params;
   const validLocale = isValidLanguage(locale) ? locale : 'en';
-  const isEnglish = validLocale === 'en';
-  const dictionary = await getDictionary(validLocale);
+  const { whyAiKitchen: why } = await getDictionary(validLocale);
 
   return (
     <>
-      <section className="bg-surface py-20 md:py-32">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-on-surface mb-6">
-            {dictionary.whyAiKitchen.hero.title}
-          </h1>
-          <p className="text-xl text-on-surface-variant leading-relaxed">
-            {dictionary.whyAiKitchen.hero.description}
-          </p>
+      <section className="border-b border-outline-variant/60 bg-white">
+        <div className="mx-auto max-w-7xl px-4 pb-16 pt-14 sm:px-6 md:pb-20 md:pt-20 lg:px-8">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-primary">{why.hero.eyebrow}</p>
+          <h1 className="mb-6 max-w-4xl text-[2.3rem] font-extrabold leading-[1.1] tracking-tight text-on-surface sm:text-5xl">{why.hero.title}</h1>
+          <p className="max-w-3xl text-lg leading-relaxed text-on-surface-variant md:text-xl">{why.intro}</p>
         </div>
       </section>
 
-      <section className="py-12 bg-surface-container-low border-b border-outline/20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-lg text-on-surface-variant leading-relaxed">
-            {dictionary.whyAiKitchen.intro}
-          </p>
-        </div>
-      </section>
-
-      <section className="py-20 md:py-32 bg-surface-container-low">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-16">
-            {dictionary.whyAiKitchen.items.map((item: any, idx: number) => (
-              <div
-                key={idx}
-                className="bg-surface-container-high rounded-lg border border-outline/20 p-8 md:p-12"
-              >
-                <div className="flex items-start gap-6">
-                  <div className="flex-shrink-0">
-                    {(() => {
-                      const icons = [Zap, Shield, Lock, Cpu, TrendingUp, DollarSign];
-                      const Icon = icons[idx % 6];
-                      return <Icon className="w-8 h-8 text-primary" />;
-                    })()}
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-on-surface mb-3">{item.title}</h3>
-                    <p className="text-on-surface-variant leading-relaxed mb-4">
-                      {item.description}
-                    </p>
-                    <p className="text-primary font-semibold">{item.benefit}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
+      <section className="bg-surface py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {why.items.map((item, idx) => {
+              const Icon = itemIcons[idx % itemIcons.length];
+              return (
+                <article key={item.title} className="flex flex-col rounded-3xl border border-outline-variant bg-white p-7">
+                  <span className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                    <Icon size={24} />
+                  </span>
+                  <h2 className="mb-3 text-xl font-bold text-on-surface">{item.title}</h2>
+                  <p className="mb-6 leading-relaxed text-on-surface-variant">{item.description}</p>
+                  <p className="mt-auto inline-flex w-fit items-center gap-2 rounded-lg bg-primary/5 px-3 py-2 text-sm font-semibold text-primary">
+                    <Check size={16} />
+                    {item.benefit}
+                  </p>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      <section className="py-20 md:py-32 bg-surface">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-on-surface mb-12 text-center">
-            {dictionary.whyAiKitchen.comparison.heading}
-          </h2>
-
-          <div className="overflow-x-auto">
-            <table className="w-full bg-surface-container-high rounded-lg border border-outline/20">
+      <section className="border-y border-outline-variant/60 bg-white py-20 md:py-28">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading title={why.comparison.heading} className="mb-12" />
+          <div className="overflow-x-auto rounded-2xl border border-outline-variant">
+            <table className="w-full min-w-[640px] border-collapse text-left">
               <thead>
-                <tr className="border-b border-outline/20">
-                  <th className="px-6 py-4 text-left font-semibold text-on-surface">
-                    {isEnglish ? 'Aspect' : 'Kriter'}
-                  </th>
-                  <th className="px-6 py-4 text-left font-semibold text-on-surface-variant">
-                    {isEnglish ? 'Traditional RPA' : 'Geleneksel RPA'}
-                  </th>
-                  <th className="px-6 py-4 text-left font-semibold text-primary">AI Kitchen</th>
+                <tr className="bg-surface-container-low">
+                  <th scope="col" className="px-6 py-4 text-sm font-semibold text-on-surface-variant">{why.comparison.head[0]}</th>
+                  <th scope="col" className="px-6 py-4 text-sm font-semibold text-on-surface-variant">{why.comparison.head[1]}</th>
+                  <th scope="col" className="bg-primary/5 px-6 py-4 text-sm font-semibold text-primary">{why.comparison.head[2]}</th>
                 </tr>
               </thead>
-              <tbody>
-                {dictionary.whyAiKitchen.comparison.rows.map((row: any, idx: number) => (
-                  <tr
-                    key={idx}
-                    className="border-b border-outline/20 hover:bg-surface-container-low"
-                  >
-                    <td className="px-6 py-4 font-semibold text-on-surface">{row.aspect}</td>
-                    <td className="px-6 py-4 text-on-surface-variant">{row.traditional}</td>
-                    <td className="px-6 py-4 text-on-surface-variant flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                      {row.aiKitchen}
+              <tbody className="divide-y divide-outline-variant">
+                {why.comparison.rows.map((row) => (
+                  <tr key={row.aspect}>
+                    <th scope="row" className="px-6 py-5 align-top font-semibold text-on-surface">{row.aspect}</th>
+                    <td className="px-6 py-5 align-top text-on-surface-variant">
+                      <span className="flex gap-2.5">
+                        <X size={18} className="mt-0.5 flex-shrink-0 text-outline" />
+                        {row.traditional}
+                      </span>
+                    </td>
+                    <td className="bg-primary/5 px-6 py-5 align-top font-medium text-on-surface">
+                      <span className="flex gap-2.5">
+                        <Check size={18} className="mt-0.5 flex-shrink-0 text-primary" />
+                        {row.aiKitchen}
+                      </span>
                     </td>
                   </tr>
                 ))}
@@ -129,19 +102,13 @@ export default async function WhyAiKitchen({ params }: PageProps) {
         </div>
       </section>
 
-      <section className="py-20 md:py-32 bg-surface-container-low">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-white py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <CTABanner
-            heading={isEnglish ? 'Ready to see the difference?' : 'Farkı birlikte görelim'}
-            description={
-              isEnglish
-                ? "Experience AI Kitchen's unified AI + RPA platform"
-                : 'Birleşik AI + RPA platformunun süreçlerinize nasıl etki ettiğini canlı olarak inceleyelim.'
-            }
-            primaryCTA={{
-              text: isEnglish ? 'Request Demo' : 'Demo Talep Et',
-              href: `/${locale}/contact`,
-            }}
+            heading={why.cta.heading}
+            description={why.cta.description}
+            primaryCTA={{ text: why.cta.primary, href: `/${validLocale}/contact` }}
+            secondaryCTA={{ text: why.cta.secondary, href: `/${validLocale}/case-studies` }}
           />
         </div>
       </section>

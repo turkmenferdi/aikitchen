@@ -222,14 +222,22 @@ export const tr = {
 
   about: {
     hero: {
-      title: 'AI Kitchen Hakkında',
+      eyebrow: 'Hakkımızda',
+      title: 'Otomasyonu yazılım satışı değil, uygulama disiplini olarak ele alan bir ekip',
       description:
-        'Türkçe iş ihtiyaçlarını bilen, kurumsal otomasyonu sadece yazılım değil uygulama disiplini olarak ele alan bir ekip.',
+        'AI Kitchen; tekrarlanan ofis işlerini RPA ve yapay zekâ ile otomatikleştiren, TurboHUB ile yönetime şirket verisinden hızlı cevap sunan bir teknoloji şirketidir.',
+      focusLabel: 'Odaklandığımız ekipler',
+      focusTeams: ['Finans ve muhasebe', 'Operasyon ve lojistik', 'İnsan kaynakları', 'Hukuk ve belge yönetimi', 'Müşteri hizmetleri', 'Yönetim ve raporlama'],
     },
     story: {
       heading: 'Yaklaşımımız',
       content:
-        'Birçok kurumda otomasyon projeleri ya aşırı teknik kaldığı ya da yalnızca tekil görevleri çözdüğü için ölçeklenemiyor. AI Kitchen, referans alınan RPA ekosistemlerinin modülerliğini; AI destekli karar katmanı, süreç danışmanlığı, eğitim ve canlı destek yaklaşımıyla bir araya getirerek daha uygulanabilir bir model sunar.',
+        'Birçok kurumda otomasyon projeleri ya fazla teknik kaldığı ya da yalnızca tek tek görevleri çözdüğü için ölçeklenemiyor. AI Kitchen; modüler RPA yaklaşımını yapay zekâ destekli karar adımları, süreç danışmanlığı, eğitim ve canlı destekle bir araya getirerek daha uygulanabilir bir model sunar.',
+      principles: [
+        { title: 'Önce süreç', description: 'Teknolojiyi değil, iş akışını ve başarı ölçütlerini başlangıç noktası kabul ederiz.' },
+        { title: 'Kontrollü otomasyon', description: 'Neyin otomatikleşeceği ve neyin insan onayında kalacağı baştan tanımlanır.' },
+        { title: 'Kalıcı yetkinlik', description: 'Canlıya geçişten sonra ekibinizin otomasyonu sahiplenmesine yardımcı oluruz.' },
+      ],
     },
     mission: {
       heading: 'Misyonumuz',
@@ -246,26 +254,40 @@ export const tr = {
       items: [
         {
           title: 'Uygulanabilirlik',
-          description: 'Teoride değil, gerçek iş akışlarında hızlı değer üreten çözümler tasarlarız.',
+          description: 'Teoride değil, gerçek iş akışlarında değer üreten çözümler tasarlarız.',
         },
         {
           title: 'Şeffaflık',
           description: 'Ne otomatikleşecek, ne insan onayında kalacak ve nasıl ölçülecek açıkça tanımlanır.',
         },
         {
-          title: 'Yetkinlik Kazandırma',
+          title: 'Yetkinlik kazandırma',
           description: 'Müşteri ekiplerini eğiterek otomasyonu kurum içinde sürdürülebilir hale getiririz.',
         },
         {
-          title: 'Uzun Vadeli Ortaklık',
-          description: 'Devreye alma sonrası optimizasyon ve yeni süreçlerin yaygınlaştırılmasını birlikte yönetiriz.',
+          title: 'Uzun vadeli ortaklık',
+          description: 'Devreye alma sonrası iyileştirme ve yeni süreçlere yaygınlaştırmayı birlikte yönetiriz.',
         },
       ],
     },
     trust: {
-      heading: 'Gerçek Operasyonlara Odaklı',
+      heading: 'Gerçek operasyonlara odaklı',
       description:
-        'Finans, hukuk, operasyon, insan kaynakları, müşteri hizmetleri ve belge yoğun ekiplerde tekrarlı işleri azaltmaya odaklanırız.',
+        'Finans, hukuk, operasyon, insan kaynakları, müşteri hizmetleri ve belge yoğun ekiplerde tekrarlanan işleri azaltmaya odaklanırız.',
+    },
+    explore: {
+      heading: 'AI Kitchen’ı daha yakından tanıyın',
+      links: [
+        { title: 'Süreç Otomasyonu', description: 'Yazılım robotlarının neler yapabildiğini görün.', href: '/platform' },
+        { title: 'TurboHUB', description: 'Yönetim sorularına veriden hızlı cevaplar.', href: '/turbohub' },
+        { title: 'Çalışma Modeli', description: 'Keşiften desteğe kadar aşamalarımız.', href: '/services' },
+        { title: 'Neden AI Kitchen', description: 'Yaklaşımımızı klasik RPA ile karşılaştırın.', href: '/why-ai-kitchen' },
+      ],
+    },
+    cta: {
+      heading: 'Süreçlerinizi birlikte değerlendirelim',
+      description: 'Ekibinizin en çok zaman harcadığı işleri anlatın; otomasyon için doğru başlangıç noktasını birlikte belirleyelim.',
+      primary: 'Demo Talep Edin',
     },
   },
 
@@ -602,83 +624,91 @@ export const tr = {
 
   whyAiKitchen: {
     hero: {
-      title: 'Neden AI Kitchen',
+      eyebrow: 'Neden AI Kitchen',
+      title: 'Otomasyonun kalıcı değer üretmesi için gereken her şey, tek ekipte',
       description: 'Kurumsal otomasyonu yazılımdan öte, uygulama disiplini olarak ele alan bütünleşik yapı.',
     },
     intro:
-      'Sadece görev otomasyonu değil; hazır senaryolar, eğitim yaklaşımı, kurumsal yönetişim ve AI destekli karar katmanıyla daha uygulanabilir bir dönüşüm modeli sunuyoruz.',
+      'Sadece görev otomasyonu değil; uyarlanabilir senaryolar, eğitim yaklaşımı, kurumsal kontrol ve yapay zekâ destekli karar adımlarıyla daha uygulanabilir bir dönüşüm modeli sunuyoruz.',
     items: [
       {
-        title: 'Hazır ve Uyarlanabilir Yapı',
+        title: 'Hazır ve uyarlanabilir yapı',
         description:
-          'Her şeyi sıfırdan başlatmak yerine, sık kullanılan süreç kurgularını hızla uyarlayarak projeleri daha kısa sürede ilerletiriz.',
+          'Her şeyi sıfırdan başlatmak yerine, sık kullanılan süreç kurgularını sürecinize uyarlayarak projeleri daha kısa sürede ilerletiriz.',
         benefit: 'Daha hızlı canlıya geçiş',
       },
       {
-        title: 'Kurumsal Ölçekte Tasarım',
+        title: 'Kurumsal ölçekte tasarım',
         description:
           'Birden fazla sistem, ekip ve onay mekanizması içeren süreçler için görünürlük ve kontrol sağlayan bir yapı sunarız.',
         benefit: 'Dağınık araçlar yerine tek merkezden yönetim',
       },
       {
-        title: 'Kontrollü Veri ve Erişim',
+        title: 'Kontrollü veri ve erişim',
         description:
           'Otomasyonun hangi veriye erişeceği, hangi adımda kimin onay vereceği ve hangi kayıtların tutulacağı net olarak tanımlanır.',
-        benefit: 'Güvenlik ve uyumluluk açısından daha güçlü zemin',
+        benefit: 'Güvenlik ve uyumluluk için daha güçlü zemin',
       },
       {
-        title: 'AI ile Güçlendirilmiş RPA',
+        title: 'Yapay zekâ ile güçlendirilmiş RPA',
         description:
           'Yalnızca tıklama ve veri taşıma değil; belge anlama, sınıflandırma ve istisna tespitini de sürecin içine katarız.',
         benefit: 'Kural bazlı otomasyonun ötesine geçiş',
       },
       {
-        title: 'Eğitim ve Yetkinlik Kazandırma',
+        title: 'Eğitim ve yetkinlik kazandırma',
         description:
           'Müşteri ekipleri için devreye alma sonrasında da öğrenmeyi destekleyen bir çalışma modeli kurarız.',
         benefit: 'Dış bağımlılığı azaltan sürdürülebilir yapı',
       },
       {
-        title: 'İş Sonuçlarına Odaklı Yaklaşım',
+        title: 'İş sonuçlarına odaklı yaklaşım',
         description:
-          'Başarıyı yalnızca geliştirilen bot sayısıyla değil; kazanılan zaman, düşen hata oranı ve iyileşen servis kalitesiyle ölçeriz.',
-        benefit: 'Daha net ROI takibi',
+          'Başarıyı geliştirilen robot sayısıyla değil; kazanılan zaman, azalan hata ve iyileşen hizmet kalitesiyle ölçeriz.',
+        benefit: 'Daha net yatırım getirisi takibi',
       },
     ],
     comparison: {
-      heading: 'AI Kitchen ve Geleneksel RPA Karşılaştırması',
+      heading: 'AI Kitchen ve geleneksel RPA karşılaştırması',
+      head: ['Kriter', 'Geleneksel RPA', 'AI Kitchen'],
       rows: [
         {
           aspect: 'Kapsam',
-          traditional: 'Tekil görev otomasyonu',
-          aiKitchen: 'Uçtan uca süreç ve karar katmanı',
+          traditional: 'Tek tek görevlerin otomasyonu',
+          aiKitchen: 'Uçtan uca süreç ve karar adımları',
         },
         {
-          aspect: 'Belge Anlama',
+          aspect: 'Belge anlama',
           traditional: 'Sınırlı, çoğunlukla kural bazlı',
-          aiKitchen: 'AI destekli sınıflandırma ve veri çıkarımı',
+          aiKitchen: 'Yapay zekâ destekli sınıflandırma ve veri çıkarımı',
         },
         {
-          aspect: 'İstisna Yönetimi',
+          aspect: 'İstisna yönetimi',
           traditional: 'Manuel takip ve kırılgan akışlar',
           aiKitchen: 'Eskalasyon, onay ve yeniden deneme kurguları',
         },
         {
-          aspect: 'Uyarlama Hızı',
+          aspect: 'Uyarlama hızı',
           traditional: 'Her süreçte yüksek geliştirme eforu',
-          aiKitchen: 'Hazır modüllerle daha hızlı devreye alma',
+          aiKitchen: 'Yeniden kullanılabilir modüllerle daha hızlı devreye alma',
         },
         {
-          aspect: 'Ekip Yetkinliği',
-          traditional: 'Platform bağımlı uzman gereksinimi',
-          aiKitchen: 'Eğitim ve ortak çalışma modeliyle bilgi transferi',
+          aspect: 'Ekip yetkinliği',
+          traditional: 'Platforma bağımlı uzman gereksinimi',
+          aiKitchen: 'Eğitim ve ortak çalışma modeliyle bilgi aktarımı',
         },
         {
-          aspect: 'Kurumsal Görünürlük',
-          traditional: 'Parçalı log ve takip yapısı',
-          aiKitchen: 'Merkezî izleme ve denetim izi',
+          aspect: 'Kurumsal görünürlük',
+          traditional: 'Parçalı kayıt ve takip yapısı',
+          aiKitchen: 'Merkezi izleme ve işlem kayıtları',
         },
       ],
+    },
+    cta: {
+      heading: 'Farkı kendi sürecinizde görelim',
+      description: 'Bir sürecinizi seçin; AI Kitchen yaklaşımının o süreçte nasıl çalışacağını birlikte değerlendirelim.',
+      primary: 'Demo Talep Edin',
+      secondary: 'Vaka çalışmalarını inceleyin',
     },
   },
 

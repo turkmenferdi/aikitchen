@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
+import { ArrowRight, Award, Eye, HandHeart, Scale, Target, Users, Wrench } from 'lucide-react';
 import { isValidLanguage } from '@/i18n/config';
 import { getDictionary } from '@/lib/i18n';
 import { localeAlternates } from '@/lib/seo';
 import { SectionHeading } from '@/components/SectionHeading';
-import { FeatureCard } from '@/components/FeatureCard';
-import { Grid } from '@/components/Grid';
-import { Award, Target, Eye, Heart, Shield, Zap } from 'lucide-react';
+import { CTABanner } from '@/components/CTABanner';
 
 interface PageProps {
   params: Promise<{
@@ -29,106 +29,122 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
+const valueIcons = [Wrench, Scale, Award, HandHeart];
+
 export default async function About({ params }: PageProps) {
   const { locale } = await params;
   const validLocale = isValidLanguage(locale) ? locale : 'en';
-  const isEnglish = validLocale === 'en';
-  const dictionary = await getDictionary(validLocale);
+  const { about } = await getDictionary(validLocale);
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="bg-surface py-20 md:py-32">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-on-surface mb-6">
-            {dictionary.about.hero.title}
-          </h1>
-          <p className="text-xl text-on-surface-variant leading-relaxed">
-            {dictionary.about.hero.description}
-          </p>
-        </div>
-      </section>
-
-      {/* Story Section */}
-      <section className="py-20 md:py-32 bg-surface-container-low">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-on-surface mb-6">
-              {dictionary.about.story.heading}
-            </h2>
-            <p className="text-lg text-on-surface-variant leading-relaxed">
-              {dictionary.about.story.content}
-            </p>
+      <section className="border-b border-outline-variant/60 bg-white">
+        <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 pb-16 pt-14 sm:px-6 md:pb-20 md:pt-20 lg:grid-cols-[1.25fr_0.75fr] lg:gap-16 lg:px-8">
+          <div>
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-primary">{about.hero.eyebrow}</p>
+            <h1 className="mb-6 text-[2.3rem] font-extrabold leading-[1.1] tracking-tight text-on-surface sm:text-5xl">{about.hero.title}</h1>
+            <p className="max-w-2xl text-lg leading-relaxed text-on-surface-variant md:text-xl">{about.hero.description}</p>
           </div>
+          <aside className="rounded-3xl border border-outline-variant bg-surface p-7">
+            <div className="mb-5 flex items-center gap-3">
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                <Users size={20} />
+              </span>
+              <p className="font-headline text-lg font-bold text-on-surface">{about.hero.focusLabel}</p>
+            </div>
+            <ul className="flex flex-wrap gap-2">
+              {about.hero.focusTeams.map((team) => (
+                <li key={team} className="rounded-lg border border-outline-variant bg-white px-3 py-1.5 text-sm font-medium text-on-surface">
+                  {team}
+                </li>
+              ))}
+            </ul>
+          </aside>
         </div>
       </section>
 
-      {/* Mission & Vision Section */}
-      <section className="py-20 md:py-32 bg-surface">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Grid columns={2} gap="lg">
-            <div className="bg-surface-container rounded-lg border border-outline/20 p-10">
-              <Target className="w-8 h-8 text-primary mb-4" />
-              <h3 className="text-2xl font-bold text-on-surface mb-4">
-                {dictionary.about.mission.heading}
-              </h3>
-              <p className="text-on-surface-variant leading-relaxed">
-                {dictionary.about.mission.content}
-              </p>
-            </div>
-
-            <div className="bg-surface-container rounded-lg border border-outline/20 p-10">
-              <Eye className="w-8 h-8 text-primary mb-4" />
-              <h3 className="text-2xl font-bold text-on-surface mb-4">
-                {dictionary.about.vision.heading}
-              </h3>
-              <p className="text-on-surface-variant leading-relaxed">
-                {dictionary.about.vision.content}
-              </p>
-            </div>
-          </Grid>
-        </div>
-      </section>
-
-      {/* Values Section */}
-      <section className="py-20 md:py-32 bg-surface-container-low">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            title={dictionary.about.values.heading}
-            description=""
-            className="mb-16"
-          />
-
-          <Grid columns={2} gap="lg">
-            {dictionary.about.values.items.map((item, idx) => (
-              <FeatureCard
-                key={idx}
-                title={item.title}
-                description={item.description}
-                icon={[Shield, Zap, Heart, Award][idx]}
-              />
+      <section className="bg-surface py-20 md:py-28">
+        <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[1fr_1fr] lg:gap-20 lg:px-8">
+          <div>
+            <h2 className="mb-6 text-3xl font-bold text-on-surface md:text-[2.5rem]">{about.story.heading}</h2>
+            <p className="text-xl leading-relaxed text-on-surface-variant">{about.story.content}</p>
+          </div>
+          <ol className="space-y-4">
+            {about.story.principles.map((principle, idx) => (
+              <li key={principle.title} className="flex gap-5 rounded-2xl border border-outline-variant bg-white p-6">
+                <span className="font-headline text-3xl font-extrabold text-primary/30">{String(idx + 1).padStart(2, '0')}</span>
+                <div>
+                  <h3 className="mb-1 text-lg font-bold text-on-surface">{principle.title}</h3>
+                  <p className="leading-relaxed text-on-surface-variant">{principle.description}</p>
+                </div>
+              </li>
             ))}
-          </Grid>
+          </ol>
         </div>
       </section>
 
-      {/* Trust Section */}
-      <section className="py-20 md:py-32 bg-gradient-to-br from-surface-container-highest to-surface-container-high text-on-surface">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            {dictionary.about.trust.heading}
-          </h2>
-          <p className="text-xl text-on-surface/80 max-w-3xl mx-auto mb-12 leading-relaxed">
-            {dictionary.about.trust.description}
-          </p>
+      <section className="border-y border-outline-variant/60 bg-white py-20 md:py-28">
+        <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+          <article className="rounded-3xl border border-outline-variant bg-surface p-8 md:p-10">
+            <Target size={28} className="mb-5 text-primary" />
+            <h2 className="mb-3 text-2xl font-bold text-on-surface">{about.mission.heading}</h2>
+            <p className="text-lg leading-relaxed text-on-surface-variant">{about.mission.content}</p>
+          </article>
+          <article className="relative overflow-hidden rounded-3xl bg-ink p-8 text-white md:p-10">
+            <div aria-hidden className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-secondary/40 blur-3xl" />
+            <Eye size={28} className="relative mb-5 text-primary-fixed" />
+            <h2 className="relative mb-3 text-2xl font-bold text-white">{about.vision.heading}</h2>
+            <p className="relative text-lg leading-relaxed text-white/75">{about.vision.content}</p>
+          </article>
+        </div>
+      </section>
 
-          <div className="bg-surface-container/50 backdrop-blur rounded-lg border border-outline/30 p-12">
-            <p className="text-on-surface/70 italic">
-              {isEnglish
-                ? 'We work with teams to identify where automation can improve a process, then define measurable success criteria together.'
-                : 'Ekiplerle birlikte otomasyonun süreci nerede iyileştirebileceğini belirler, ardından ölçülebilir başarı kriterlerini birlikte tanımlarız.'}
-            </p>
+      <section className="bg-surface py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading title={about.values.heading} description={about.trust.description} className="mb-14" />
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {about.values.items.map((item, idx) => {
+              const Icon = valueIcons[idx % valueIcons.length];
+              return (
+                <article key={item.title} className="rounded-2xl border border-outline-variant bg-white p-6">
+                  <span className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                    <Icon size={22} />
+                  </span>
+                  <h3 className="mb-2 text-lg font-bold text-on-surface">{item.title}</h3>
+                  <p className="leading-relaxed text-on-surface-variant">{item.description}</p>
+                </article>
+              );
+            })}
           </div>
+        </div>
+      </section>
+
+      <section className="border-t border-outline-variant/60 bg-white py-20 md:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 className="mb-8 text-2xl font-bold text-on-surface">{about.explore.heading}</h2>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {about.explore.links.map((link) => (
+              <Link
+                key={link.href}
+                href={`/${validLocale}${link.href}`}
+                className="group flex flex-col rounded-2xl border border-outline-variant bg-surface p-6 transition-colors hover:border-primary/40 hover:bg-white"
+              >
+                <h3 className="mb-2 text-lg font-bold text-on-surface">{link.title}</h3>
+                <p className="mb-4 leading-relaxed text-on-surface-variant">{link.description}</p>
+                <ArrowRight size={18} className="mt-auto text-primary transition-transform group-hover:translate-x-1" />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white pb-20 md:pb-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <CTABanner
+            heading={about.cta.heading}
+            description={about.cta.description}
+            primaryCTA={{ text: about.cta.primary, href: `/${validLocale}/contact` }}
+          />
         </div>
       </section>
     </>
