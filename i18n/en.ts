@@ -695,6 +695,31 @@ export const en = {
       tags: ['Security', 'Neural Networks', 'AI Agents', 'Business Digitalization'],
       primaryCta: 'Request a Demo',
       secondaryCta: 'How It Works',
+      whitepaperCta: 'Download the White Paper',
+    },
+    mockup: {
+      label: 'Example view',
+      askLabel: 'Question',
+      question: 'Show revenue breakdown by counterparty for last month',
+      sourcesLabel: 'Sources used',
+      sources: ['Accounting', 'CRM', 'Excel'],
+      answerTitle: 'Revenue by counterparty · last month',
+      columns: ['Counterparty', 'Revenue', 'Share'],
+      rows: [
+        ['Counterparty A', '₺ 4.2M', '31%'],
+        ['Counterparty B', '₺ 2.9M', '21%'],
+        ['Counterparty C', '₺ 2.1M', '15%'],
+        ['Others', '₺ 4.5M', '33%'],
+      ],
+      footnote: 'Illustrative data for demonstration',
+    },
+    whitepaper: {
+      heading: 'TurboHUB White Paper',
+      description:
+        'An 8-page overview of the problem, how TurboHUB works, impact by department, deployment models and infrastructure requirements.',
+      cta: 'Download PDF',
+      file: '/whitepapers/TurboHUB_White_Paper_EN.pdf',
+      meta: 'PDF · English',
     },
     problem: {
       eyebrow: 'What companies tell us',

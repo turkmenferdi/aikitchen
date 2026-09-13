@@ -3,9 +3,13 @@ import { isValidLanguage } from '@/i18n/config';
 import { getDictionary } from '@/lib/i18n';
 import { localeAlternates } from '@/lib/seo';
 import { SectionHeading } from '@/components/SectionHeading';
-import { Button } from '@/components/Button';
+import { buttonClass } from '@/components/Button';
+import { TurboHubMockup } from '@/components/turbohub/TurboHubMockup';
 import {
   ArrowRight,
+  BarChart3,
+  Download,
+  FileText,
   CheckCircle2,
   Cloud,
   Cpu,
@@ -47,36 +51,39 @@ export default async function TurboHub({ params }: PageProps) {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-surface via-surface-container-low to-secondary-container/30 py-20 md:py-32">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-primary">{t.hero.eyebrow}</p>
-          <h1 className="mb-6 text-5xl md:text-7xl font-bold text-on-surface">{t.hero.title}</h1>
-          <p className="mb-6 max-w-3xl text-2xl md:text-3xl font-semibold leading-snug text-on-surface">
-            {t.hero.subtitle}
-          </p>
-          <p className="mb-8 max-w-3xl text-lg leading-relaxed text-on-surface-variant">{t.hero.description}</p>
-          <div className="mb-10 flex flex-wrap gap-3">
-            {t.hero.tags.map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-          <div className="flex flex-wrap gap-4">
-            <a href="#contact">
-              <Button variant="primary" size="lg">
+      <section className="relative overflow-hidden border-b border-outline-variant/60 bg-white">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(55%_60%_at_85%_20%,rgba(124,58,237,0.10),transparent_70%)]"
+        />
+        <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-4 pb-20 pt-14 sm:px-6 md:pt-20 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:px-8 lg:pb-24">
+          <div>
+            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-secondary/25 bg-secondary/5 px-3.5 py-1.5 text-sm font-semibold text-secondary">
+              <BarChart3 size={16} />
+              {t.hero.eyebrow}
+            </p>
+            <h1 className="mb-4 text-5xl font-extrabold tracking-tight text-on-surface md:text-6xl">{t.hero.title}</h1>
+            <p className="mb-5 max-w-2xl text-2xl font-bold leading-snug text-on-surface md:text-[1.75rem]">{t.hero.subtitle}</p>
+            <p className="mb-8 max-w-2xl text-lg leading-relaxed text-on-surface-variant">{t.hero.description}</p>
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <a href="#contact" className={buttonClass('primary', 'lg')}>
                 {t.hero.primaryCta}
-              </Button>
-            </a>
-            <a href="#how-it-works">
-              <Button variant="outline" size="lg">
-                {t.hero.secondaryCta}
-              </Button>
-            </a>
+                <ArrowRight size={18} />
+              </a>
+              <a href={t.whitepaper.file} className={buttonClass('secondary', 'lg')} download>
+                <Download size={18} />
+                {t.hero.whitepaperCta}
+              </a>
+            </div>
+            <ul className="mt-8 flex flex-wrap gap-2">
+              {t.hero.tags.map((tag) => (
+                <li key={tag} className="rounded-lg border border-outline-variant bg-white px-3 py-1.5 text-sm font-medium text-on-surface">
+                  {tag}
+                </li>
+              ))}
+            </ul>
           </div>
+          <TurboHubMockup {...t.mockup} />
         </div>
       </section>
 
@@ -194,7 +201,7 @@ export default async function TurboHub({ params }: PageProps) {
                 className="overflow-hidden rounded-[1.25rem] border border-outline/20 bg-surface-container text-center"
               >
                 <div className="bg-gradient-to-br from-secondary-container to-primary-dim px-6 py-8">
-                  <p className="text-3xl md:text-4xl font-bold text-on-secondary-container">{item.value}</p>
+                  <p className="whitespace-nowrap font-headline text-3xl font-extrabold text-white lg:text-[2rem]">{item.value}</p>
                 </div>
                 <p className="px-6 py-8 text-lg font-semibold text-on-surface">{item.label}</p>
               </div>
@@ -242,57 +249,60 @@ export default async function TurboHub({ params }: PageProps) {
         </div>
       </section>
 
-      {/* Contact */}
-      <section id="contact" className="scroll-mt-24 py-20 md:py-28 bg-surface">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary-dim to-secondary-container px-6 py-14 md:px-14 text-white">
-            <div className="absolute top-0 right-0 h-96 w-96 -mr-48 -mt-48 rounded-full bg-primary-fixed opacity-20" />
-            <div className="relative z-10 text-center">
-              <h2 className="mb-3 text-3xl md:text-4xl font-bold">{t.contact.heading}</h2>
-              <p className="mb-2 text-xl font-semibold">{t.contact.subheading}</p>
-              <p className="mx-auto mb-10 max-w-2xl text-lg text-white/90">{t.contact.description}</p>
+      {/* White paper + contact */}
+      <section id="contact" className="scroll-mt-24 bg-white py-20 md:py-28">
+        <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
+          <article className="flex flex-col rounded-3xl border border-outline-variant bg-surface p-8 md:p-10">
+            <span className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-secondary/10 text-secondary">
+              <FileText size={24} />
+            </span>
+            <h2 className="mb-3 text-2xl font-bold text-on-surface md:text-3xl">{t.whitepaper.heading}</h2>
+            <p className="mb-8 text-lg leading-relaxed text-on-surface-variant">{t.whitepaper.description}</p>
+            <div className="mt-auto flex flex-wrap items-center gap-4">
+              <a href={t.whitepaper.file} download className={buttonClass('secondary', 'lg')}>
+                <Download size={18} />
+                {t.whitepaper.cta}
+              </a>
+              <span className="text-sm text-on-surface-variant">{t.whitepaper.meta}</span>
+            </div>
+          </article>
 
-              <div className="mx-auto mb-10 flex max-w-md flex-col items-center gap-5 rounded-2xl bg-surface/90 p-6 text-on-surface sm:flex-row sm:text-left">
-                <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary-fixed to-secondary-container text-2xl font-bold text-on-secondary-container">
+          <article className="relative overflow-hidden rounded-3xl bg-ink p-8 text-white md:p-10">
+            <div aria-hidden className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-secondary/40 blur-3xl" />
+            <div className="relative">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-primary-fixed">{t.contact.subheading}</p>
+              <h2 className="mb-3 text-3xl font-bold text-white md:text-4xl">{t.contact.heading}</h2>
+              <p className="mb-8 max-w-xl text-lg leading-relaxed text-white/75">{t.contact.description}</p>
+
+              <div className="mb-8 flex items-center gap-5 rounded-2xl border border-white/10 bg-white/[0.06] p-5">
+                <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary font-headline text-xl font-bold">
                   {t.contact.name
                     .split(' ')
                     .map((part) => part[0])
                     .join('')}
                 </div>
-                <div>
-                  <p className="text-2xl font-bold">{t.contact.name}</p>
-                  <p className="mb-2 text-sm text-on-surface-variant">{t.contact.role}</p>
-                  <a
-                    href={`mailto:${t.contact.email}`}
-                    className="inline-flex items-center gap-2 break-all font-medium text-primary hover:underline"
-                  >
-                    <Mail className="w-4 h-4 flex-shrink-0" />
+                <div className="min-w-0">
+                  <p className="font-headline text-xl font-bold">{t.contact.name}</p>
+                  <p className="mb-1 text-sm text-white/60">{t.contact.role}</p>
+                  <a href={`mailto:${t.contact.email}`} className="inline-flex items-center gap-2 break-all text-primary-fixed hover:text-white">
+                    <Mail size={16} className="flex-shrink-0" />
                     {t.contact.email}
                   </a>
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href={`mailto:${t.contact.email}?subject=TurboHUB%20Demo`}>
-                  <Button variant="secondary" size="lg">
-                    {t.contact.emailCta}
-                  </Button>
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <a href={`/${validLocale}/contact`} className={buttonClass('primary', 'lg', '!bg-white !text-ink !shadow-none hover:!bg-primary-container')}>
+                  {t.contact.formCta}
+                  <ArrowRight size={18} />
                 </a>
-                <a href={`/${validLocale}/contact`}>
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="!border-white !text-white hover:!bg-white hover:!text-secondary-container"
-                  >
-                    <span className="inline-flex items-center gap-2">
-                      {t.contact.formCta}
-                      <ArrowRight className="w-4 h-4" />
-                    </span>
-                  </Button>
+                <a href={`mailto:${t.contact.email}?subject=TurboHUB%20Demo`} className={buttonClass('ghost', 'lg', 'border border-white/30 !text-white hover:!bg-white/10')}>
+                  <Mail size={18} />
+                  {t.contact.emailCta}
                 </a>
               </div>
             </div>
-          </div>
+          </article>
         </div>
       </section>
     </>

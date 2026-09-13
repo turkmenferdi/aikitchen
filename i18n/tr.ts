@@ -693,6 +693,31 @@ export const tr = {
       tags: ['Güvenlik', 'Sinir Ağları', 'Yapay Zekâ Ajanları', 'İş Dijitalleşmesi'],
       primaryCta: 'Demo Talep Edin',
       secondaryCta: 'Nasıl Çalışır?',
+      whitepaperCta: 'White Paper’ı İndirin',
+    },
+    mockup: {
+      label: 'Örnek görünüm',
+      askLabel: 'Soru',
+      question: 'Geçen ayın gelirini cari hesaplara göre kırılımlı göster',
+      sourcesLabel: 'Kullanılan kaynaklar',
+      sources: ['Muhasebe', 'CRM', 'Excel'],
+      answerTitle: 'Cari bazında gelir · geçen ay',
+      columns: ['Cari hesap', 'Gelir', 'Pay'],
+      rows: [
+        ['Cari A', '4,2 mn ₺', '%31'],
+        ['Cari B', '2,9 mn ₺', '%21'],
+        ['Cari C', '2,1 mn ₺', '%15'],
+        ['Diğer', '4,5 mn ₺', '%33'],
+      ],
+      footnote: 'Gösterim amaçlı temsili veridir',
+    },
+    whitepaper: {
+      heading: 'TurboHUB White Paper',
+      description:
+        'Sorunu, TurboHUB’ın çalışma prensibini, departman bazında etkisini, kurulum modellerini ve altyapı gereksinimlerini anlatan 8 sayfalık doküman.',
+      cta: 'PDF’i İndirin',
+      file: '/whitepapers/TurboHUB_White_Paper_TR.pdf',
+      meta: 'PDF · Türkçe',
     },
     problem: {
       eyebrow: 'Şirketlerin bize anlattıkları',
