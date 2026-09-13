@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-inter), 'Inter', system-ui, sans-serif;
   background-color: #0a082f;
   color: #e5e2ff;
   line-height: 1.6;
@@ -21,8 +21,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 .font-headline {
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
 }
 
 .material-symbols-outlined {
@@ -37,12 +43,6 @@ body {
 .hero-gradient {
   background: linear-gradient(135deg, #97a9ff 0%, #3e65ff 100%);
 }
-
-::selection {
-  background-color: #97a9ff;
-  color: #0a082f;
-}
-
 
 /* Heading Hierarchy */
 h1 {
@@ -89,30 +89,18 @@ h6 {
 
 p {
   line-height: 1.6;
-  color: #6b7280;
 }
 
-a {
-  transition: color 0.2s ease;
-}
-
-/* Button Reset */
+/* Tailwind preflight already resets buttons; only restore the pointer so border utilities keep working. */
 button {
-  border: none;
-  background: none;
-  padding: 0;
   cursor: pointer;
-  font-family: inherit;
 }
 
-/* Link Styling */
+/* Links inherit surrounding text color; components set accents explicitly. */
 a {
-  color: #0891b2;
+  color: inherit;
   text-decoration: none;
-}
-
-a:hover {
-  color: #0e7490;
+  transition: color 0.2s ease;
 }
 
 /* Image defaults */
@@ -128,7 +116,7 @@ a:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid #0891b2;
+  outline: 2px solid #97a9ff;
   outline-offset: 2px;
 }
 
@@ -142,7 +130,7 @@ select {
 
 input::placeholder,
 textarea::placeholder {
-  color: #9ca3af;
+  color: #72719c;
 }
 
 /* Scrollbar */
@@ -152,20 +140,20 @@ textarea::placeholder {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f8fafb;
+  background: #0a082f;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #d1d5db;
+  background: #45446c;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #9ca3af;
+  background: #72719c;
 }
 
 /* Selection */
 ::selection {
-  background-color: #0891b2;
-  color: white;
+  background-color: #97a9ff;
+  color: #0a082f;
 }

@@ -46,20 +46,20 @@ export function Navbar({ dictionary }: NavbarProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href={`/${locale}`} className="flex items-center gap-3 font-semibold text-lg">
+          <Link href={`/${locale}`} className="flex flex-shrink-0 items-center gap-3 whitespace-nowrap font-headline font-semibold text-lg">
             <div className="w-10 h-10 bg-gradient-to-br from-primary-fixed to-secondary-container rounded-2xl flex items-center justify-center text-on-secondary-container font-bold text-lg shadow-lg shadow-primary/30">
               AK
             </div>
             <span className="text-on-surface hidden sm:inline">AI Kitchen</span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
+          {/* Desktop Navigation: the logo already links home */}
+          <div className="hidden xl:flex items-center gap-5">
+            {navItems.slice(1).map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors"
+                className="whitespace-nowrap text-sm font-medium text-on-surface-variant hover:text-primary transition-colors"
               >
                 {item.label}
               </Link>
@@ -78,7 +78,8 @@ export function Navbar({ dictionary }: NavbarProps) {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 rounded-lg hover:bg-surface-container-high"
+              className="xl:hidden p-2 rounded-lg text-on-surface hover:bg-surface-container-high"
+              aria-label="Menu"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -87,7 +88,7 @@ export function Navbar({ dictionary }: NavbarProps) {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden border-t border-outline/20 py-4 space-y-2">
+          <div className="xl:hidden border-t border-outline/20 py-4 space-y-2">
             {navItems.map((item) => (
               <Link
                 key={item.href}

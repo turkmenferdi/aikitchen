@@ -238,12 +238,12 @@ export default async function TurboHub({ params }: PageProps) {
       {/* Contact */}
       <section id="contact" className="scroll-mt-24 py-20 md:py-28 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-secondary-container px-6 py-14 md:px-14 text-on-primary">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary-dim to-secondary-container px-6 py-14 md:px-14 text-white">
             <div className="absolute top-0 right-0 h-96 w-96 -mr-48 -mt-48 rounded-full bg-primary-fixed opacity-20" />
             <div className="relative z-10 text-center">
               <h2 className="mb-3 text-3xl md:text-4xl font-bold">{t.contact.heading}</h2>
               <p className="mb-2 text-xl font-semibold">{t.contact.subheading}</p>
-              <p className="mx-auto mb-10 max-w-2xl text-lg text-on-primary/90">{t.contact.description}</p>
+              <p className="mx-auto mb-10 max-w-2xl text-lg text-white/90">{t.contact.description}</p>
 
               <div className="mx-auto mb-10 flex max-w-md flex-col items-center gap-5 rounded-2xl bg-surface/90 p-6 text-on-surface sm:flex-row sm:text-left">
                 <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary-fixed to-secondary-container text-2xl font-bold text-on-secondary-container">
@@ -275,7 +275,7 @@ export default async function TurboHub({ params }: PageProps) {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-on-primary text-on-primary hover:bg-on-primary hover:text-primary"
+                    className="!border-white !text-white hover:!bg-white hover:!text-secondary-container"
                   >
                     <span className="inline-flex items-center gap-2">
                       {t.contact.formCta}

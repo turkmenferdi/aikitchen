@@ -61,9 +61,9 @@ const config: Config = {
         "on-error-container": "#ffb2b9"
       },
       fontFamily: {
-        headline: ["Manrope"],
-        body: ["Inter"],
-        label: ["Inter"],
+        headline: ["var(--font-manrope)", "Manrope", "system-ui", "sans-serif"],
+        body: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
+        label: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
       },
       fontSize: {
         xs: ['0.75rem', { lineHeight: '1rem' }],

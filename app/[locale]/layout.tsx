@@ -1,10 +1,14 @@
 import type { Metadata } from 'next';
+import { Inter, Manrope } from 'next/font/google';
 import { languages, isValidLanguage } from '@/i18n/config';
 import { getDictionary } from '@/lib/i18n';
 import { notFound } from 'next/navigation';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import '@/app/globals.css';
+
+const inter = Inter({ subsets: ['latin', 'latin-ext'], variable: '--font-inter', display: 'swap' });
+const manrope = Manrope({ subsets: ['latin', 'latin-ext'], variable: '--font-manrope', display: 'swap' });
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -52,7 +56,7 @@ export default async function RootLayout({ children, params }: LayoutProps) {
   const dictionary = await getDictionary(validLocale);
 
   return (
-    <html lang={validLocale} className="dark">
+    <html lang={validLocale} className={`dark ${inter.variable} ${manrope.variable}`}>
     <head>
         <script
           type="application/ld+json"
