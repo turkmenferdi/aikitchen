@@ -13,6 +13,7 @@ interface NavbarProps {
       home: string;
       about: string;
       platform: string;
+      turbohub: string;
       solutions: string;
       services: string;
       why: string;
@@ -32,6 +33,7 @@ export function Navbar({ dictionary }: NavbarProps) {
     { label: dictionary.nav.home, href: `/${locale}` },
     { label: dictionary.nav.about, href: `/${locale}/about` },
     { label: dictionary.nav.platform, href: `/${locale}/platform` },
+    { label: dictionary.nav.turbohub, href: `/${locale}/turbohub` },
     { label: dictionary.nav.solutions, href: `/${locale}/solutions` },
     { label: dictionary.nav.services, href: `/${locale}/services` },
     { label: dictionary.nav.why, href: `/${locale}/why-ai-kitchen` },

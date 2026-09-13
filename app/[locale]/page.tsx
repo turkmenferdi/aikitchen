@@ -10,6 +10,7 @@ import { CTABanner } from '@/components/CTABanner';
 import { Grid } from '@/components/Grid';
 import Link from 'next/link';
 import { Zap, Lock, Brain, Cpu, ArrowRight, BarChart3, Shield, Workflow } from 'lucide-react';
+import { Phase2TurkishHome } from '@/components/Phase2TurkishHome';
 
 interface PageProps {
   params: Promise<{
@@ -28,7 +29,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       : 'İş Süreci Otomasyonu ve RPA | AI Kitchen',
     description: isEnglish
       ? 'Automate repeatable document, browser, email, Office, ERP and CRM workflows with RPA and AI-supported process orchestration.'
-      : 'Tekrarlanan belge, tarayıcı, e-posta, Office, ERP ve CRM iş akışlarını RPA ve AI destekli süreç orkestrasyonuyla otomatikleştirin.',
+      : 'Tekrarlanan iş süreçlerini RPA, belge otomasyonu ve sistem entegrasyonlarıyla otomatikleştirin. Finans, SAP, belge ve back-office süreçleri için AI Kitchen çözümlerini inceleyin.',
     openGraph: {
       title: isEnglish
         ? 'AI Kitchen - Scale Your Digital Workforce'
@@ -46,6 +47,9 @@ export default async function Home({ params }: PageProps) {
   const validLocale = isValidLanguage(locale) ? locale : 'en';
   const isEnglish = validLocale === 'en';
   const dictionary = await getDictionary(validLocale);
+  if (!isEnglish) {
+    return <Phase2TurkishHome />;
+  }
   return (
     <>
       {/* Hero Section */}

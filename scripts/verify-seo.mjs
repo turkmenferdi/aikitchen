@@ -38,10 +38,7 @@ assert.match(read('i18n/en.ts'), /not published customer references or measured 
 assert.match(read('app/[locale]/page.tsx'), /localeAlternates\(validLocale\)/);
 
 const futureRoutes = [
-  'robotik-surec-otomasyonu',
   'is-sureci-otomasyonu',
-  'sap-otomasyonu',
-  'belge-otomasyonu',
   'finans-muhasebe-otomasyonu',
   'insan-kaynaklari-otomasyonu',
   'satin-alma-otomasyonu',
@@ -56,5 +53,22 @@ for (const route of futureRoutes) {
     `Phase 1 must not create future route: ${route}`,
   );
 }
+
+const phase2Routes = [
+  'robotik-surec-otomasyonu',
+  'belge-otomasyonu',
+  'sap-otomasyonu',
+];
+
+for (const route of phase2Routes) {
+  assert.equal(
+    existsSync(join(root, 'app/[locale]', route, 'page.tsx')),
+    true,
+    `Phase 2 route is missing: ${route}`,
+  );
+}
+
+assert.equal(read('i18n/config.ts').includes("defaultLanguage = 'tr'"), true);
+assert.equal(read('lib/seo.ts').includes("'x-default': `${SITE_URL}/tr${path}`"), true);
 
 console.log('SEO foundation checks passed.');

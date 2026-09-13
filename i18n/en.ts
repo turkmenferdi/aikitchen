@@ -3,6 +3,7 @@ export const en = {
     home: 'Home',
     about: 'About',
     platform: 'Platform',
+    turbohub: 'TurboHUB',
     solutions: 'Solutions',
     services: 'Services',
     why: 'Why AI Kitchen',
@@ -642,6 +643,154 @@ export const en = {
     ],
   },
 
+  turbohub: {
+    hero: {
+      eyebrow: 'Product',
+      title: 'TurboHUB',
+      subtitle: 'Management answers from all your enterprise systems — in minutes, not days',
+      description:
+        'TurboHUB is an AI-powered system that answers management questions in natural language using data from your accounting, ERP, payroll, CRM and warehouse systems, databases and Excel models.',
+      tags: ['Security', 'Neural Networks', 'AI Agents', 'Business Digitalization'],
+      primaryCta: 'Request a Demo',
+      secondaryCta: 'How It Works',
+    },
+    problem: {
+      eyebrow: 'What companies tell us',
+      heading: 'Reporting relies on data from multiple disparate sources',
+      points: [
+        'Management reporting requires manual reconciliation across 5–7 sources: accounting, payroll, CRM, warehouse management, external services and manual Excel models.',
+        'The same metric can differ by 5–15% from one system to another.',
+        '3–5 business days every month go into reconciliation instead of interpretation and analysis.',
+      ],
+    },
+    costs: {
+      heading: 'Three types of inefficient costs',
+      description:
+        'Companies already using BI or Excel for management reporting face systemic inefficiencies at the data preparation stage — the “first mile” of analytics.',
+      problemLabel: 'Today',
+      solutionLabel: 'With TurboHUB',
+      items: [
+        {
+          title: 'IT Department',
+          subtitle: 'Report creation and customization',
+          problems: [
+            'Every new report dimension requires an IT ticket',
+            '2–3 weeks lead time for customization',
+            'A growing backlog of business requests',
+          ],
+          solutionTitle: 'Automated data preparation',
+          solutions: [
+            'New report dimension in 2–4 minutes without IT involvement',
+            'All reports use a single, consistent logic',
+          ],
+        },
+        {
+          title: 'Analysts and Finance Managers',
+          subtitle: 'Data extraction and reconciliation',
+          problems: [
+            '3–5 days a month spent on manual consolidation',
+            'Prolonged reconciliation of data discrepancies',
+            '70–80% of time consumed by routine tasks instead of analysis',
+          ],
+          solutionTitle: 'Business user autonomy',
+          solutions: [
+            'Natural language question — structured answer in minutes',
+            'Frees up 1.5–2 FTE of analyst capacity',
+          ],
+        },
+        {
+          title: 'Accounting Department',
+          subtitle: 'Adding supplemental analytics',
+          problems: [
+            'Manual entry of analytical tags into primary documents',
+            'Increased data entry workload',
+            'High risk of human error',
+          ],
+          solutionTitle: 'AI analytics via indirect indicators',
+          solutions: [
+            'AI extracts analytical insights from text fields and related documents',
+            'Accounting focuses on statutory compliance, not report preparation',
+          ],
+        },
+      ],
+    },
+    about: {
+      heading: 'Minutes from executive request to delivered insight',
+      points: [
+        'An up-to-date, continuously refreshed data layer built on top of your existing systems (accounting, Excel, CRM, databases, data warehouses) for real-time analytics',
+        'Executive questions answered in minutes',
+        'An AI-powered tool for situations where a 24-hour delay means lost profit',
+      ],
+      howHeading: 'How it works',
+      steps: [
+        'You ask a question in natural language: “Show revenue breakdown by counterparty for last month”',
+        'TurboHUB maintains a continuously updated operational data layer sourced from your enterprise systems',
+        'Data from all sources is unified into a single layer using AI',
+        'The system returns a structured, actionable answer',
+      ],
+    },
+    benefits: {
+      heading: 'Key business benefits',
+      items: [
+        { value: '5+ days → 2 min', label: 'Shorter request-to-report cycle' },
+        { value: '100%', label: 'Elimination of report customization costs' },
+        { value: '2+ FTE', label: 'Analyst capacity freed up' },
+      ],
+      note:
+        'TurboHUB removes long data preparation cycles and dependency on individual employee expertise. No specialized skills or training are required to use the system.',
+      disclaimer:
+        'Figures are based on TurboHUB product material. Actual results depend on your data sources, data quality and project scope.',
+    },
+    deployment: {
+      heading: 'Flexible deployment options',
+      description:
+        'TurboHUB can run inside your own infrastructure, be delivered as a pre-configured hardware appliance, or be hosted in the cloud.',
+      options: [
+        {
+          title: 'On-premise',
+          description:
+            'Deployed on your own physical servers or virtual machines. The environment must support virtualization so the solution can run in containers.',
+          specs: [
+            'Minimum (1–2 users): Intel Core i7, 128 GB RAM, 4 TB SSD, RTX 3060 / 4090 / 5090',
+            'Pilot (1–10 users): Intel Core i9, 128 GB RAM, 8 TB SSD, Tesla P40 / A40 / A100',
+            'Enterprise (100+ users): Intel Xeon Platinum, 512 GB RAM, 16 TB SSD, NVIDIA A100 / H100 / H200 or 4× L40',
+          ],
+        },
+        {
+          title: 'Hardware appliance',
+          description:
+            'If the required servers are not available, TurboHUB can be delivered pre-installed and configured on dedicated hardware placed inside your infrastructure.',
+          specs: [
+            'Compact AI supercomputer: NVIDIA DGX Spark',
+            'Two-node DGX Spark cluster for models up to 405 billion parameters',
+            'Your data stays inside your premises',
+          ],
+        },
+        {
+          title: 'Cloud (SaaS)',
+          description:
+            'If new systems cannot be hosted internally, TurboHUB can be provided on dedicated rented servers.',
+          specs: [
+            'GPU servers for running local LLMs',
+            'CPU servers combined with cloud LLM subscriptions',
+            'Server configuration sized to your requirements',
+          ],
+        },
+      ],
+      note: 'Hardware configurations are indicative and are finalized together with your team during scoping.',
+    },
+    contact: {
+      heading: 'Ready to try?',
+      subheading: 'Let’s start with a demo',
+      description: 'In 15 minutes, we’ll show you how to use the system and the impact it can create.',
+      name: 'Elena Türkmen',
+      role: 'TurboHUB Contact',
+      email: 'elena.turkmen@aikitchen.com.tr',
+      emailCta: 'Send an Email',
+      formCta: 'Request a Demo',
+    },
+  },
+
   contact: {
     hero: {
       title: 'Get in Touch',
@@ -671,6 +820,7 @@ export const en = {
       optionAp: 'Invoice and Payables Workflows',
       optionLegal: 'Legal Document Workflows',
       optionTourism: 'Tourism and Customer Operations',
+      optionTurbohub: 'TurboHUB — AI Management Analytics',
       optionOther: 'Other',
     },
     info: {

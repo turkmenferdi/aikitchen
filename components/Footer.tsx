@@ -59,6 +59,14 @@ export function Footer({ dictionary, locale }: FooterProps) {
               </li>
               <li>
                 <Link
+                  href={`/${locale}/turbohub`}
+                  className="text-on-surface/70 hover:text-on-surface text-sm transition-colors"
+                >
+                  TurboHUB
+                </Link>
+              </li>
+              <li>
+                <Link
                   href={`/${locale}/solutions`}
                   className="text-on-surface/70 hover:text-on-surface text-sm transition-colors"
                 >

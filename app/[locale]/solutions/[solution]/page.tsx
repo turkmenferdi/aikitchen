@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const entries = {
     financial: {
       en: ['Financial Automation', 'Automate finance operations, reconciliation, and exception handling with AI and RPA.'],
-      tr: ['Finans Operasyon Otomasyonu', 'Finans operasyonları, mutabakat ve istisna yönetimi için AI ve RPA otomasyonu.'],
+      tr: ['Finans ve Muhasebe Süreçleri Otomasyonu', 'Veri mutabakatı, belge işleme, finansal kontrol ve raporlama süreçleri için RPA otomasyonu.'],
     },
     'accounts-payable': {
       en: ['Accounts Payable Automation', 'Automate invoice processing and approval workflows with AI and RPA.'],
@@ -159,6 +159,27 @@ export default async function SolutionDetail({ params }: PageProps) {
           </Grid>
         </div>
       </section>
+
+      {/* CTA */}
+      {validLocale === 'tr' && solution === 'financial' && (
+        <section className="py-16 bg-surface-container-low">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-on-surface mb-8">İlgili Otomasyon Çözümleri</h2>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {[
+                ['Belge Otomasyonu', '/tr/belge-otomasyonu'],
+                ['SAP Süreç Otomasyonu', '/tr/sap-otomasyonu'],
+                ['Robotik Süreç Otomasyonu', '/tr/robotik-surec-otomasyonu'],
+                ['Gerçek Vaka Çalışmaları', '/tr/case-studies'],
+              ].map(([label, href]) => (
+                <Link key={href} href={href} className="rounded-xl border border-outline/20 bg-surface-container p-5 font-semibold text-primary hover:border-primary/50">
+                  {label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* CTA */}
       <section className="py-20 md:py-32 bg-background">

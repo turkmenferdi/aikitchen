@@ -29,6 +29,7 @@ interface ContactFormProps {
         optionAp: string;
         optionLegal: string;
         optionTourism: string;
+        optionTurbohub: string;
         optionOther: string;
       };
     };
@@ -196,6 +197,7 @@ export function ContactForm({ dictionary }: ContactFormProps) {
           <option value="ap">{dictionary.contact.form.optionAp}</option>
           <option value="legal">{dictionary.contact.form.optionLegal}</option>
           <option value="tourism">{dictionary.contact.form.optionTourism}</option>
+          <option value="turbohub">{dictionary.contact.form.optionTurbohub}</option>
           <option value="other">{dictionary.contact.form.optionOther}</option>
         </select>
       </div>

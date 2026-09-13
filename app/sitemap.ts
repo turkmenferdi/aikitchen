@@ -7,6 +7,7 @@ const routes = [
   '',
   '/about',
   '/platform',
+  '/turbohub',
   '/solutions',
   '/solutions/financial',
   '/solutions/accounts-payable',
@@ -18,8 +19,14 @@ const routes = [
   '/contact',
 ];
 
+const turkishOnlyRoutes = [
+  '/robotik-surec-otomasyonu',
+  '/belge-otomasyonu',
+  '/sap-otomasyonu',
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const pages = routes.flatMap((route) =>
+  const localizedPages = routes.flatMap((route) =>
     locales.map((locale) => ({
       url: `${baseUrl}/${locale}${route}`,
       changeFrequency: route === '' ? 'daily' : 'weekly',
@@ -27,5 +34,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  return pages as MetadataRoute.Sitemap;
+  const turkishPages = turkishOnlyRoutes.map((route) => ({
+    url: `${baseUrl}/tr${route}`,
+    changeFrequency: 'weekly' as const,
+    priority: 0.9,
+  }));
+
+  return [...localizedPages, ...turkishPages] as MetadataRoute.Sitemap;
 }

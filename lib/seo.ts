@@ -9,7 +9,20 @@ export function localeAlternates(locale: 'en' | 'tr', route = '') {
     languages: {
       en: `${SITE_URL}/en${path}`,
       tr: `${SITE_URL}/tr${path}`,
-      'x-default': `${SITE_URL}/en${path}`,
+      'x-default': `${SITE_URL}/tr${path}`,
+    },
+  };
+}
+
+/** Metadata for a Turkish-only route. English hreflang is omitted until real equivalent content exists. */
+export function turkishOnlyAlternates(route: string) {
+  const path = route ? `/${route}` : '';
+
+  return {
+    canonical: `${SITE_URL}/tr${path}`,
+    languages: {
+      tr: `${SITE_URL}/tr${path}`,
+      'x-default': `${SITE_URL}/tr${path}`,
     },
   };
 }

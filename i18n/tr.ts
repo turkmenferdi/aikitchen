@@ -3,6 +3,7 @@ export const tr = {
     home: 'Ana Sayfa',
     about: 'Hakkımızda',
     platform: 'Platform',
+    turbohub: 'TurboHUB',
     solutions: 'Çözümler',
     services: 'Hizmetler',
     why: 'Neden AI Kitchen',
@@ -302,21 +303,22 @@ export const tr = {
       },
     },
     financial: {
-      name: 'Finans Operasyonları',
+      name: 'Finans ve Muhasebe Operasyonları',
       hero: {
-        title: 'Finans Operasyonlarında Akıllı Otomasyon',
+        title: 'Finans ve Muhasebe Süreçlerini Otomatikleştirin',
         description:
-          'Mutabakat, raporlama, veri toplama ve kontrol adımlarını AI destekli RPA ile standartlaştırın.',
+          'Veri mutabakatı, raporlama, kontrol, belge işleme ve sistemler arası veri aktarımı adımlarını RPA ile standartlaştırın.',
       },
       challenges:
-        'Finans ekipleri birden fazla sistemden veri toplar, dosyaları karşılaştırır, mutabakat yapar ve istisnaları manuel olarak takip eder. Bu yapı hem yavaş hem de hataya açıktır.',
+        'Finans ve muhasebe ekipleri farklı sistemlerden veri toplar, Excel dosyalarını karşılaştırır, belge bilgilerini kontrol eder, mutabakat yapar ve istisnaları manuel takip eder. Yüksek hacimli tekrarlı işlemler önemli çalışan eforu gerektirir ve manuel veri girişi hatası olasılığı oluşturur.',
       solution:
-        'AI Kitchen; ERP ekranları, izin verilen web uygulamaları, Excel dosyaları ve e-posta akışları arasında veri toplama, karşılaştırma, uyumsuzluk işaretleme ve çıktı üretme adımlarını otomatikleştirir.',
+        'AI Kitchen; ERP ve izin verilen web uygulamaları, Excel dosyaları, e-posta akışları ve belgeler arasında veri toplama, eşleştirme, kontrol, uyumsuzluk işaretleme, muhasebe kaydı hazırlama ve rapor üretme adımlarını otomatikleştirir.',
       capabilities: [
-        'Çok sistemli veri toplama ve eşleştirme',
-        'Mutabakat ve sapma tespiti',
-        'Rapor hazırlığı ve dağıtımı',
-        'Denetim izi oluşturan işlem kayıtları',
+        'Çok sistemli finans verisi toplama ve eşleştirme',
+        'Veri mutabakatı, sapma ve tutarsızlık tespiti',
+        'Belge okuma, doğrulama ve muhasebe kaydı hazırlama',
+        'Finansal kontrol ve raporlama otomasyonu',
+        'İşlem geçmişi ve kontrol kayıtları',
         'İnsan onayı gerektiren adımlarda eskalasyon',
       ],
       outcomes: [
@@ -633,6 +635,154 @@ export const tr = {
     ],
   },
 
+  turbohub: {
+    hero: {
+      eyebrow: 'Ürün',
+      title: 'TurboHUB',
+      subtitle: 'Tüm kurumsal sistemlerinizden yönetim cevapları — günler değil, dakikalar içinde',
+      description:
+        'TurboHUB; muhasebe, ERP, bordro, CRM ve depo yönetimi sistemleri, veritabanları ve Excel modellerinizdeki verileri kullanarak yönetim sorularınızı doğal dilde yanıtlayan yapay zekâ destekli bir sistemdir.',
+      tags: ['Güvenlik', 'Sinir Ağları', 'Yapay Zekâ Ajanları', 'İş Dijitalleşmesi'],
+      primaryCta: 'Demo Talep Edin',
+      secondaryCta: 'Nasıl Çalışır?',
+    },
+    problem: {
+      eyebrow: 'Şirketlerin bize anlattıkları',
+      heading: 'Raporlama birbirinden kopuk birçok kaynaktaki veriye dayanıyor',
+      points: [
+        'Yönetim raporları için 5–7 kaynak arasında manuel mutabakat gerekiyor: muhasebe, bordro, CRM, depo yönetimi sistemleri, dış servisler ve manuel Excel modelleri.',
+        'Aynı metrik sistemden sisteme %5–15 oranında farklılık gösterebiliyor.',
+        'Her ay 3–5 iş günü yorum ve analiz yerine mutabakata harcanıyor.',
+      ],
+    },
+    costs: {
+      heading: 'Üç tür verimsiz maliyet',
+      description:
+        'Yönetim raporlamasında BI veya Excel kullanan şirketler, veri hazırlama aşamasında — analitiğin “ilk kilometresinde” — sistematik verimsizliklerle karşılaşıyor.',
+      problemLabel: 'Bugün',
+      solutionLabel: 'TurboHUB ile',
+      items: [
+        {
+          title: 'BT Departmanı',
+          subtitle: 'Rapor oluşturma ve özelleştirme',
+          problems: [
+            'Her yeni rapor kırılımı için BT talebi açılması gerekiyor',
+            'Özelleştirme için 2–3 haftalık bekleme süresi',
+            'Biriken iş birimi talepleri',
+          ],
+          solutionTitle: 'Otomatik veri hazırlama',
+          solutions: [
+            'BT desteği olmadan 2–4 dakikada yeni rapor kırılımı',
+            'Tüm raporlar tek ve tutarlı bir mantığı kullanır',
+          ],
+        },
+        {
+          title: 'Analistler ve Finans Yöneticileri',
+          subtitle: 'Veri çekme ve mutabakat',
+          problems: [
+            'Her ay 3–5 gün manuel konsolidasyona harcanıyor',
+            'Veri tutarsızlıklarının mutabakatı uzun sürüyor',
+            'Zamanın %70–80’i analiz yerine rutin işlere gidiyor',
+          ],
+          solutionTitle: 'İş kullanıcılarına bağımsızlık',
+          solutions: [
+            'Doğal dilde soru — dakikalar içinde yapılandırılmış cevap',
+            '1,5–2 tam zamanlı analist kapasitesi açığa çıkar',
+          ],
+        },
+        {
+          title: 'Muhasebe Departmanı',
+          subtitle: 'Ek analitik boyutların girilmesi',
+          problems: [
+            'Birincil belgelere analitik etiketlerin manuel girilmesi',
+            'Artan veri giriş yükü',
+            'Yüksek insan hatası riski',
+          ],
+          solutionTitle: 'Dolaylı göstergelerle yapay zekâ analitiği',
+          solutions: [
+            'Yapay zekâ, metin alanlarından ve ilişkili belgelerden analitik bilgi çıkarır',
+            'Muhasebe, rapor hazırlığına değil yasal uyumluluğa odaklanır',
+          ],
+        },
+      ],
+    },
+    about: {
+      heading: 'Yönetici talebinden içgörüye dakikalar içinde',
+      points: [
+        'Mevcut sistemlerinizin (muhasebe, Excel, CRM, veritabanları, veri ambarları) üzerine kurulan, sürekli güncellenen ve gerçek zamanlı analitik sağlayan veri katmanı',
+        'Yönetici soruları dakikalar içinde yanıtlanır',
+        '24 saatlik gecikmenin kâr kaybı anlamına geldiği durumlar için yapay zekâ destekli bir araç',
+      ],
+      howHeading: 'Nasıl çalışır?',
+      steps: [
+        'Sorunuzu doğal dilde sorarsınız: “Geçen ayın gelirini cari hesaplara göre kırılımlı göster”',
+        'TurboHUB, kurumsal sistemlerinizden beslenen ve sürekli güncellenen operasyonel bir veri katmanı tutar',
+        'Tüm kaynaklardaki veriler yapay zekâ ile tek bir katmanda birleştirilir',
+        'Sistem yapılandırılmış ve aksiyona dönüştürülebilir bir cevap üretir',
+      ],
+    },
+    benefits: {
+      heading: 'Temel iş faydaları',
+      items: [
+        { value: '5+ gün → 2 dk', label: 'Talepten rapora geçen sürede kısalma' },
+        { value: '%100', label: 'Rapor özelleştirme maliyetlerinin ortadan kalkması' },
+        { value: '2+ FTE', label: 'Açığa çıkan analist kapasitesi' },
+      ],
+      note:
+        'TurboHUB, uzun veri hazırlama süreçlerini ve tek tek çalışanların uzmanlığına bağımlılığı ortadan kaldırır. Sistemi kullanmak için özel beceri veya eğitim gerekmez.',
+      disclaimer:
+        'Rakamlar TurboHUB ürün materyallerine dayanmaktadır. Gerçek sonuçlar veri kaynaklarınıza, veri kalitenize ve proje kapsamına göre değişir.',
+    },
+    deployment: {
+      heading: 'Esnek kurulum seçenekleri',
+      description:
+        'TurboHUB kendi altyapınızda çalışabilir, önceden yapılandırılmış bir donanım-yazılım paketi olarak teslim edilebilir veya bulutta barındırılabilir.',
+      options: [
+        {
+          title: 'Kurum içi (on-premise)',
+          description:
+            'Kendi fiziksel sunucularınıza veya sanal makinelerinize kurulur. Çözümün konteynerlerde çalışabilmesi için ortamın sanallaştırmayı desteklemesi gerekir.',
+          specs: [
+            'Minimum (1–2 kullanıcı): Intel Core i7, 128 GB RAM, 4 TB SSD, RTX 3060 / 4090 / 5090',
+            'Pilot (1–10 kullanıcı): Intel Core i9, 128 GB RAM, 8 TB SSD, Tesla P40 / A40 / A100',
+            'Kurumsal (100+ kullanıcı): Intel Xeon Platinum, 512 GB RAM, 16 TB SSD, NVIDIA A100 / H100 / H200 veya 4× L40',
+          ],
+        },
+        {
+          title: 'Donanım-yazılım paketi',
+          description:
+            'Gerekli sunucular mevcut değilse TurboHUB, altyapınıza yerleştirilecek özel donanım üzerinde kurulu ve yapılandırılmış olarak teslim edilebilir.',
+          specs: [
+            'Kompakt yapay zekâ süper bilgisayarı: NVIDIA DGX Spark',
+            '405 milyar parametreye kadar modeller için iki düğümlü DGX Spark kümesi',
+            'Verileriniz kurumunuzun içinde kalır',
+          ],
+        },
+        {
+          title: 'Bulut (SaaS)',
+          description:
+            'Yeni sistemlerin kurum içinde barındırılması mümkün değilse TurboHUB, kiralanan özel sunucular üzerinde hizmet olarak sunulabilir.',
+          specs: [
+            'Yerel LLM çalıştırmak için GPU’lu sunucular',
+            'Bulut LLM abonelikleriyle birlikte GPU’suz sunucular',
+            'İhtiyaçlarınıza göre boyutlandırılan sunucu yapılandırması',
+          ],
+        },
+      ],
+      note: 'Donanım yapılandırmaları yol gösterici niteliktedir ve kapsam belirleme sırasında ekibinizle birlikte netleştirilir.',
+    },
+    contact: {
+      heading: 'Denemeye hazır mısınız?',
+      subheading: 'Bir demoyla başlayalım',
+      description: '15 dakikada sistemin nasıl kullanıldığını ve yaratabileceği etkiyi gösterelim.',
+      name: 'Elena Türkmen',
+      role: 'TurboHUB İletişim',
+      email: 'elena.turkmen@aikitchen.com.tr',
+      emailCta: 'E-posta Gönderin',
+      formCta: 'Demo Talep Edin',
+    },
+  },
+
   contact: {
     hero: {
       title: 'İletişime Geçin',
@@ -662,6 +812,7 @@ export const tr = {
       optionAp: 'Fatura ve Ödeme Süreçleri',
       optionLegal: 'Hukuki Belge Süreçleri',
       optionTourism: 'Turizm ve Müşteri Operasyonları',
+      optionTurbohub: 'TurboHUB — Yapay Zekâ ile Yönetim Analitiği',
       optionOther: 'Diğer',
     },
     info: {

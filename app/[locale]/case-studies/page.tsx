@@ -5,6 +5,7 @@ import { localeAlternates } from '@/lib/seo';
 import { CaseStudyCard } from '@/components/CaseStudyCard';
 import { CTABanner } from '@/components/CTABanner';
 import { Grid } from '@/components/Grid';
+import { Phase2TurkishCaseStudies } from '@/components/Phase2TurkishCaseStudies';
 
 interface PageProps {
   params: Promise<{
@@ -18,10 +19,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const isEnglish = validLocale === 'en';
 
   return {
-    title: isEnglish ? 'Case Studies - AI Kitchen' : 'Vaka Çalışmaları - AI Kitchen',
+    title: isEnglish ? 'Case Studies - AI Kitchen' : 'RPA ve Otomasyon Vaka Çalışmaları | AI Kitchen',
     description: isEnglish
       ? 'Illustrative enterprise automation scenarios'
-      : 'Örnek kurumsal otomasyon senaryoları',
+      : 'KPI prim hesaplama ile belge işleme ve muhasebe otomasyonuna ait anonimleştirilmiş, belgelenmiş vaka sonuçlarını inceleyin.',
     alternates: localeAlternates(validLocale, 'case-studies'),
   };
 }
@@ -31,6 +32,9 @@ export default async function CaseStudies({ params }: PageProps) {
   const validLocale = isValidLanguage(locale) ? locale : 'en';
   const isEnglish = validLocale === 'en';
   const dictionary = await getDictionary(validLocale);
+  if (!isEnglish) {
+    return <Phase2TurkishCaseStudies />;
+  }
 
   return (
     <>
