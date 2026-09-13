@@ -201,7 +201,7 @@ export default async function Home({ params }: PageProps) {
       <section id="how-it-works" className="scroll-mt-24 bg-surface py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading eyebrow={home.howItWorks.eyebrow} title={home.howItWorks.heading} description={home.howItWorks.description} className="mb-14" />
-          <ol className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <ol className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {home.howItWorks.steps.map((step, idx) => {
               const Icon = stepIcons[idx % stepIcons.length];
               const isHuman = idx === home.howItWorks.steps.length - 1;
@@ -278,7 +278,7 @@ export default async function Home({ params }: PageProps) {
                 <div className="grid gap-4 sm:grid-cols-2">
                   {item.metrics.map((metric) => (
                     <div key={metric.label} className="rounded-2xl bg-white/[0.06] p-5">
-                      <p className="mb-1 font-headline text-3xl font-extrabold text-white md:text-4xl">{metric.value}</p>
+                      <p className="mb-1 whitespace-nowrap font-headline text-3xl font-extrabold text-white lg:text-[1.7rem] xl:text-4xl">{metric.value}</p>
                       <p className="text-sm leading-snug text-white/65">{metric.label}</p>
                     </div>
                   ))}
@@ -294,7 +294,7 @@ export default async function Home({ params }: PageProps) {
       <section className="bg-surface py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading eyebrow={home.why.eyebrow} title={home.why.heading} className="mb-14" />
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
             {home.why.items.map((item, idx) => {
               const Icon = whyIcons[idx % whyIcons.length];
               return (

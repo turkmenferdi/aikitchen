@@ -102,7 +102,7 @@ export default async function About({ params }: PageProps) {
       <section className="bg-surface py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading title={about.values.heading} description={about.trust.description} className="mb-14" />
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
             {about.values.items.map((item, idx) => {
               const Icon = valueIcons[idx % valueIcons.length];
               return (
