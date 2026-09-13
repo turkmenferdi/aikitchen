@@ -481,12 +481,43 @@ export const en = {
   services: {
     index: {
       hero: {
-        title: 'Services',
+        eyebrow: 'How We Work',
+        title: 'From discovery to go-live and beyond: an end-to-end automation service',
         description:
           'A delivery model that takes automation from discovery to go-live, then supports enablement and long-term optimization.',
       },
       intro:
-        'Inspired by the training and competency-center mindset seen in modern RPA ecosystems, we offer not just implementation but a model that helps teams own automation internally.',
+        'We do not just install robots. We work with a model that helps your team understand, own and extend automation over time.',
+      primaryCta: 'Start with process discovery',
+      stagesEyebrow: 'Stages',
+      stagesHeading: 'Six stages, one accountable team',
+      stagesDescription: 'Scope and timeline are defined after reviewing the process, systems, controls and success criteria with your team.',
+      benefitsLabel: 'What you get',
+      timelineLabel: 'Timeline',
+      collaboration: {
+        eyebrow: 'Collaboration',
+        heading: 'What we need from you, what we deliver',
+        youLabel: 'From your team',
+        you: [
+          'A process owner who knows the current steps',
+          'Permitted access to the systems involved',
+          'Sample documents and data for testing',
+          'Agreement on success criteria and approval points',
+        ],
+        weLabel: 'From AI Kitchen',
+        we: [
+          'Process analysis and automation design',
+          'Robot development, testing and go-live',
+          'Training and knowledge transfer for your team',
+          'Monitoring, support and improvement after go-live',
+        ],
+      },
+      cta: {
+        heading: 'Let’s start with the process that takes the most time',
+        description: 'Tell us about the work your team repeats every day; we will assess together whether it is a good automation candidate.',
+        primary: 'Request a Demo',
+        secondary: 'Explore process automation',
+      },
     },
     processDiscovery: {
       name: 'Process Discovery',

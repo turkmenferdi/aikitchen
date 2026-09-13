@@ -482,12 +482,43 @@ export const tr = {
   services: {
     index: {
       hero: {
-        title: 'Hizmetler',
+        eyebrow: 'Çalışma Modeli',
+        title: 'Keşiften canlıya ve sonrasına: uçtan uca otomasyon hizmeti',
         description:
           'Keşiften canlı kullanıma, eğitimden optimizasyona kadar otomasyonu kurumsal ölçekte hayata geçiren hizmet modeli.',
       },
       intro:
-        'Referans alınan platformların eğitim ve yetkinlik merkezi yaklaşımından ilhamla, yalnızca kurulum değil ekiplerin otomasyonu sahiplenmesini sağlayan bir çalışma modeli sunuyoruz.',
+        'Yalnızca robot kurmuyoruz; ekibinizin otomasyonu anlamasını, sahiplenmesini ve zamanla genişletmesini sağlayan bir modelle çalışıyoruz.',
+      primaryCta: 'Süreç keşfiyle başlayalım',
+      stagesEyebrow: 'Aşamalar',
+      stagesHeading: 'Altı aşama, tek sorumlu ekip',
+      stagesDescription: 'Kapsam ve takvim; süreç, sistemler, kontroller ve başarı kriterleri ekibinizle incelendikten sonra belirlenir.',
+      benefitsLabel: 'Ne elde edersiniz',
+      timelineLabel: 'Takvim',
+      collaboration: {
+        eyebrow: 'İş birliği',
+        heading: 'Sizden neye ihtiyacımız var, biz ne teslim ediyoruz?',
+        youLabel: 'Ekibinizden',
+        you: [
+          'Mevcut adımları bilen bir süreç sahibi',
+          'İlgili sistemlere izin verilen erişim',
+          'Test için örnek belge ve veriler',
+          'Başarı ölçütleri ve onay noktaları üzerinde mutabakat',
+        ],
+        weLabel: 'AI Kitchen’dan',
+        we: [
+          'Süreç analizi ve otomasyon tasarımı',
+          'Robot geliştirme, test ve canlıya alma',
+          'Ekibinize eğitim ve bilgi aktarımı',
+          'Canlı sonrası izleme, destek ve iyileştirme',
+        ],
+      },
+      cta: {
+        heading: 'En çok zaman alan süreçle başlayalım',
+        description: 'Ekibinizin her gün tekrarladığı işi anlatın; otomasyon için uygun bir aday olup olmadığını birlikte değerlendirelim.',
+        primary: 'Demo Talep Edin',
+        secondary: 'Süreç otomasyonunu inceleyin',
+      },
     },
     processDiscovery: {
       name: 'Süreç Keşfi',
