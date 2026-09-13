@@ -14,8 +14,8 @@ html {
 
 body {
   font-family: var(--font-inter), 'Inter', system-ui, sans-serif;
-  background-color: #0a082f;
-  color: #e5e2ff;
+  background-color: #fbfbfe;
+  color: #0f1233;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -116,7 +116,7 @@ a:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid #97a9ff;
+  outline: 2px solid #4f46e5;
   outline-offset: 2px;
 }
 
@@ -130,7 +130,7 @@ select {
 
 input::placeholder,
 textarea::placeholder {
-  color: #72719c;
+  color: #8b90b0;
 }
 
 /* Scrollbar */
@@ -140,20 +140,20 @@ textarea::placeholder {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a082f;
+  background: #f4f5fb;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #45446c;
+  background: #c9cde2;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #72719c;
+  background: #9aa0c2;
 }
 
 /* Selection */
 ::selection {
-  background-color: #97a9ff;
-  color: #0a082f;
+  background-color: #c7d2fe;
+  color: #0f1233;
 }

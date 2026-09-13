@@ -2,14 +2,15 @@ export const en = {
   nav: {
     home: 'Home',
     about: 'About',
-    platform: 'Platform',
+    platform: 'Process Automation',
     turbohub: 'TurboHUB',
     solutions: 'Solutions',
-    services: 'Services',
+    services: 'How We Work',
     why: 'Why AI Kitchen',
     caseStudies: 'Case Studies',
     contact: 'Contact',
-    requestDemo: 'Request Demo',
+    requestDemo: 'Request a Demo',
+    menu: 'Menu',
   },
 
   language: {
@@ -32,124 +33,190 @@ export const en = {
   footer: {
     company: 'AI Kitchen',
     description:
-      'RPA, document automation, data processing, and AI-supported workflow services for repeatable business processes.',
-    product: 'Product',
+      'AI Kitchen automates repetitive back-office work with RPA and AI, and gives management fast answers from company data with TurboHUB.',
+    offerings: 'What we offer',
     solutions: 'Solutions',
-    services: 'Services',
-    resources: 'Resources',
-    legal: 'Legal',
-    privacy: 'Privacy Policy',
-    terms: 'Terms of Service',
-    contact: 'Contact Us',
-    email: 'support@aikitchen.com.tr',
+    companyTitle: 'Company',
+    contact: 'Contact',
+    supportLabel: 'Support',
+    salesLabel: 'Sales',
     supportEmail: 'support@aikitchen.com.tr',
     salesEmail: 'sales@aikitchen.com.tr',
-    address: 'Enterprise Automation Platform',
+    turbohubContactLabel: 'TurboHUB',
+    turbohubEmail: 'elena.turkmen@aikitchen.com.tr',
     copyright: '© 2026 AI Kitchen. All rights reserved.',
   },
 
   home: {
+    meta: {
+      title: 'Business Process Automation with RPA and AI | AI Kitchen',
+      description:
+        'Automate repetitive work such as invoice and document processing, data entry, reconciliation and reporting across your ERP, Excel, email and web systems with RPA and AI.',
+    },
     hero: {
-      title: 'RPA and Automation for Business Processes',
+      eyebrow: 'Business process automation with RPA + AI',
+      title: 'Hand off repetitive daily work',
+      titleHighlight: 'to software robots.',
       description:
-        'AI Kitchen helps automate repeatable work across documents, browsers, email, Office tools, ERP, and CRM systems with RPA and AI-supported workflows.',
-      cta: 'Request Demo',
-      subHeading: 'Business process automation, document processing, and orchestration',
+        'AI Kitchen automates repetitive work such as invoice and document processing, data entry, reconciliation and reporting across your ERP, Excel, email and web systems. We analyze the process with you, build the robot and support it in production.',
+      primaryCta: 'Request a Demo',
+      secondaryCta: 'See how it works',
+      worksWith: 'Works with your existing systems',
+      systems: ['SAP and ERP', 'Excel', 'Email', 'PDFs and scanned documents', 'Web applications'],
     },
-    valueProposition: {
-      heading: 'Why AI Kitchen',
+    heroCard: {
+      label: 'Example automation flow',
+      title: 'Supplier invoice processing',
+      steps: [
+        { title: 'Invoice arrived by email', detail: 'PDF attachment received', status: 'done' },
+        { title: 'Fields extracted', detail: 'Supplier, date, amount, VAT', status: 'done' },
+        { title: 'Matched against the order', detail: 'Amount difference detected', status: 'warning' },
+        { title: 'Sent for approval', detail: 'Decision stays with an employee', status: 'human' },
+        { title: 'Will be posted to ERP', detail: 'Automatically after approval', status: 'pending' },
+      ],
+      footer: 'The robot applies the rules and leaves exceptions to you.',
+    },
+    offerings: {
+      eyebrow: 'What we offer',
+      heading: 'Two ways we speed up your business',
+      description: 'A service that automates repetitive work, and a product that gives management fast answers from data.',
       items: [
         {
-          title: 'AI + RPA in One Platform',
+          tag: 'Service',
+          title: 'Process Automation',
           description:
-            'Combine rule-based execution with intelligent decision layers in the same workflow for more resilient automation.',
+            'We automate repetitive operational work with RPA robots and AI, and stay with you end to end, from process discovery to go-live and support.',
+          points: ['Document and invoice processing', 'Data entry and cross-system transfer', 'Reconciliation, controls and reporting', 'Human approval for exceptions'],
+          cta: 'Explore process automation',
         },
         {
-          title: 'Reusable Automation Scenarios',
+          tag: 'Product',
+          title: 'TurboHUB',
           description:
-            'Start faster with adaptable building blocks for invoice handling, reconciliation, document processing, customer operations, and more.',
-        },
-        {
-          title: 'Implementation, Training, and Support',
-          description:
-            'We deliver more than software with a model that includes discovery, deployment, team enablement, and ongoing optimization.',
+            'Unifies your accounting, ERP, CRM and Excel data in one layer and answers management questions in natural language within minutes.',
+          points: ['Natural language question, structured answer', 'Built on top of existing systems', 'On-premise, appliance or cloud', 'Data can stay in-house'],
+          cta: 'Explore TurboHUB',
         },
       ],
     },
-    platformOverview: {
-      heading: 'The Digital Workforce Platform',
+    tasks: {
+      eyebrow: 'Concrete examples',
+      heading: 'Which work can you hand off to robots?',
       description:
-        'AI Kitchen takes inspiration from modern RPA platforms focused on speed and modularity, then adds an AI-enabled orchestration layer designed for Turkish-language and enterprise operational realities. Teams can build from scratch or launch faster with reusable automation patterns.',
-      points: [
-        'Work across browsers, desktop apps, and internal web systems',
-        'Process files, tables, PDFs, emails, and APIs in one flow',
-        'Orchestrate exceptions and human approval steps',
-        'Provide enterprise visibility, logs, and auditability',
-        'Define the deployment model during discovery according to system and access requirements',
+        'The best candidates are tasks that repeat often, follow clear rules and move data between more than one system.',
+      groups: [
+        { team: 'Finance and Accounting', items: ['Incoming invoice and document entry', 'Account and ledger reconciliation', 'Month-end controls and reports', 'Pre-payment checks'] },
+        { team: 'Human Resources', items: ['Bonus and KPI calculations', 'Collecting data from multiple systems', 'Excel-based calculations and checks'] },
+        { team: 'Procurement and Logistics', items: ['Quote and document comparison', 'Order and status updates', 'Document checks and notifications'] },
+        { team: 'SAP and ERP', items: ['Scheduled control runs', 'Record comparison and variance reports', 'Parameter and data validation'] },
+        { team: 'Legal and Document Management', items: ['Field extraction from contracts and attachments', 'Pre-checks for missing information', 'Archiving and tagging'] },
+        { team: 'Customer Operations', items: ['Request and reservation intake', 'Notification and confirmation emails', 'Data transfer between applications'] },
       ],
     },
-    coreCapabilities: {
-      heading: 'Core Capabilities',
+    howItWorks: {
+      eyebrow: 'How it works',
+      heading: 'What does a software robot do?',
+      description:
+        'A robot repeats the on-screen steps an employee performs, within defined permissions and rules. AI supports steps that need interpretation, such as reading and classifying documents.',
+      steps: [
+        { title: 'Collects the data', description: 'From email, PDFs, scanned documents, Excel files or web applications.' },
+        { title: 'Reads and checks it', description: 'AI extracts the fields; business rules validate and compare them.' },
+        { title: 'Enters it into systems', description: 'Creates the record in ERP, SAP, CRM or a web screen and prepares the report.' },
+        { title: 'Leaves exceptions to you', description: 'Unclear or out-of-rule cases go to the responsible employee for approval.' },
+      ],
+      note: 'You do not need to replace your systems; the robot works through permitted access methods.',
+    },
+    model: {
+      eyebrow: 'How we work',
+      heading: 'How do we get started?',
+      description: 'We move forward in low-risk, measurable steps.',
+      steps: [
+        { title: 'Process discovery', description: 'We review the current work step by step and identify the best automation candidates and success criteria.' },
+        { title: 'Pilot', description: 'We run a controlled pilot on a selected process and measure results together with real data.' },
+        { title: 'Go-live', description: 'We move validated workflows into production and transfer knowledge to your team.' },
+        { title: 'Support and expansion', description: 'We monitor live workflows, improve them and extend automation to new processes.' },
+      ],
+      cta: 'Explore how we work',
+    },
+    proof: {
+      eyebrow: 'Proof',
+      heading: 'Documented results',
+      description:
+        'The results below come from two real automation cases documented in company-provided materials and shared without customer names.',
+      cases: [
+        {
+          area: 'Human Resources',
+          title: 'KPI bonus calculation automation',
+          description: 'A bonus calculation process based on data collected from several enterprise systems and Excel files was automated.',
+          metrics: [
+            { value: '8 → 1', label: 'Employees involved in the process' },
+            { value: '20 → 3 days', label: 'Calculation cycle time' },
+          ],
+        },
+        {
+          area: 'Accounting and Finance',
+          title: 'Document processing and accounting entry',
+          description: 'Document intake, recognition, data extraction, validation, checks and posting to the accounting system were automated.',
+          metrics: [
+            { value: '3–20x', label: 'Lower labor requirement for document entry' },
+            { value: '2–3x', label: 'Faster document processing' },
+          ],
+        },
+      ],
+      note: 'Results belong to the respective cases; each process has different potential depending on its systems and structure.',
+      cta: 'View case studies',
+    },
+    why: {
+      eyebrow: 'Why AI Kitchen?',
+      heading: 'We treat automation as an implementation discipline, not a software sale',
+      items: [
+        { title: 'RPA and AI together', description: 'Rule-based steps run on robots while document understanding and classification run on AI, in the same workflow.' },
+        { title: 'You stay in control', description: 'What the robot can access, where human approval is required and which records are kept are defined upfront.' },
+        { title: 'Deployment that fits your policy', description: 'The deployment model is defined during discovery according to your system and access requirements.' },
+        { title: 'Training and lasting support', description: 'After go-live we keep training your team, monitoring workflows and improving them.' },
+      ],
+    },
+    faq: {
+      eyebrow: 'FAQ',
+      heading: 'Frequently asked questions',
       items: [
         {
-          title: 'Document and Data Processing',
-          description:
-            'Read, validate, transform, and move data across PDFs, Excel, Word, CSV, email, and web forms.',
+          question: 'What is RPA (robotic process automation)?',
+          answer:
+            'RPA means software robots perform the repetitive computer steps an employee does (copying data, filling forms, processing files, moving data between systems) according to defined rules. Combined with AI, steps like reading and classifying documents can be automated too.',
         },
         {
-          title: 'Browser and Application Automation',
-          description:
-            'Build robust workflows that operate across web applications, desktop screens, and legacy systems.',
+          question: 'Do we need to replace our existing systems?',
+          answer:
+            'No. The robot works with your existing systems such as ERP, SAP, Excel, email and web applications through permitted access methods.',
         },
         {
-          title: 'AI-Enabled Decision Layer',
-          description:
-            'Handle classification, exception detection, content understanding, and routing with more than static rules alone.',
+          question: 'Which processes are suitable for automation?',
+          answer:
+            'Processes that repeat often, follow clear rules, use digital data and move data between multiple systems are good candidates. We prioritize them together during process discovery.',
         },
         {
-          title: 'Reusable Bot Library Approach',
-          description:
-            'Create repeatable automation modules so new workflows can be launched faster with less rework.',
+          question: 'How long does an automation project take?',
+          answer:
+            'It depends on the process scope, the systems involved and access conditions. Projects usually start with a pilot on a single process, and the timeline is set after discovery.',
+        },
+        {
+          question: 'How are data and access security handled?',
+          answer:
+            'The robot’s access rights, processing records and steps requiring human approval are defined according to your organization’s policies. The deployment model is chosen based on your security requirements.',
+        },
+        {
+          question: 'What is the difference between TurboHUB and process automation?',
+          answer:
+            'Process automation performs repetitive work. TurboHUB unifies data from different systems to answer management questions quickly. They can be used separately or together.',
         },
       ],
     },
-    businessOutcomes: {
-      heading: 'Expected Business Outcomes',
-      items: [
-        {
-          metric: 'Discovery',
-          description: 'Identify improvement opportunities in repetitive operations together',
-        },
-        {
-          metric: 'Design',
-          description: 'Design workflows intended to reduce manual entry and control-heavy steps',
-        },
-        {
-          metric: 'Measurement',
-          description: 'Measure success criteria together during pilot and live use',
-        },
-      ],
-    },
-    securitySection: {
-      heading: 'Enterprise Security and Governance',
-      description:
-        'Scale automation with the controls enterprise teams expect around access, logging, data ownership, and compliance-sensitive operations.',
-      items: [
-        'Controlled deployment models aligned with enterprise policies',
-        'Detailed logging, monitoring, and audit trails',
-        'Role-based permissions and process ownership',
-        'Human approval steps for critical workflows',
-      ],
-    },
-    caseStudiesPreview: {
-      heading: 'Use Cases That Inspire Action',
-      viewAll: 'View All Case Studies',
-    },
-    finalCTA: {
-      heading: 'Let’s Make Your Processes Automation-Ready',
-      description:
-        'Whether you need a custom deployment or a reusable scenario adapted to your workflow, we can map the fastest path to value together.',
-      cta: 'Schedule a Meeting',
+    finalCta: {
+      heading: 'Let’s find out which of your processes are ready for automation',
+      description: 'Let’s review your current process, the systems you use and your business rules in a short call.',
+      primary: 'Request a Demo',
+      secondary: 'Explore TurboHUB',
     },
   },
 

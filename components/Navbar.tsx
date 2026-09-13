@@ -1,13 +1,15 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
-import { Button } from './Button';
+import { usePathname } from 'next/navigation';
+import { ArrowRight, Menu, X } from 'lucide-react';
+import { buttonClass } from './Button';
 import { LanguageSwitcher } from './LanguageSwitcher';
-import { useParams } from 'next/navigation';
+import { Logo } from './Logo';
 
 interface NavbarProps {
+  locale: string;
   dictionary: {
     nav: {
       home: string;
@@ -16,99 +18,95 @@ interface NavbarProps {
       turbohub: string;
       solutions: string;
       services: string;
-      why: string;
       caseStudies: string;
       contact: string;
       requestDemo: string;
+      menu: string;
     };
   };
 }
 
-export function Navbar({ dictionary }: NavbarProps) {
+export function Navbar({ dictionary, locale }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const params = useParams();
-  const locale = Array.isArray(params?.locale) ? params.locale[0] : (params?.locale as string);
+  const pathname = usePathname() ?? '';
+  const t = dictionary.nav;
 
   const navItems = [
-    { label: dictionary.nav.home, href: `/${locale}` },
-    { label: dictionary.nav.about, href: `/${locale}/about` },
-    { label: dictionary.nav.platform, href: `/${locale}/platform` },
-    { label: dictionary.nav.turbohub, href: `/${locale}/turbohub` },
-    { label: dictionary.nav.solutions, href: `/${locale}/solutions` },
-    { label: dictionary.nav.services, href: `/${locale}/services` },
-    { label: dictionary.nav.why, href: `/${locale}/why-ai-kitchen` },
-    { label: dictionary.nav.caseStudies, href: `/${locale}/case-studies` },
-    { label: dictionary.nav.contact, href: `/${locale}/contact` },
+    { label: t.platform, href: `/${locale}/platform` },
+    { label: t.turbohub, href: `/${locale}/turbohub` },
+    { label: t.solutions, href: `/${locale}/solutions` },
+    { label: t.services, href: `/${locale}/services` },
+    { label: t.caseStudies, href: `/${locale}/case-studies` },
+    { label: t.about, href: `/${locale}/about` },
   ];
 
+  useEffect(() => setIsOpen(false), [pathname]);
+
+  const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
+
   return (
-    <nav className="sticky top-0 z-40 bg-surface-container/90 backdrop-blur-xl shadow-2xl shadow-indigo-500/10 border-b border-outline/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link href={`/${locale}`} className="flex flex-shrink-0 items-center gap-3 whitespace-nowrap font-headline font-semibold text-lg">
-            <div className="w-10 h-10 bg-gradient-to-br from-primary-fixed to-secondary-container rounded-2xl flex items-center justify-center text-on-secondary-container font-bold text-lg shadow-lg shadow-primary/30">
-              AK
-            </div>
-            <span className="text-on-surface hidden sm:inline">AI Kitchen</span>
+    <header className="sticky top-0 z-50 border-b border-outline-variant/70 bg-white/85 backdrop-blur-xl">
+      <nav className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-8" aria-label="Main">
+        <Link href={`/${locale}`} className="flex-shrink-0" aria-label="AI Kitchen">
+          <Logo />
+        </Link>
+
+        <ul className="hidden items-center gap-1 xl:flex">
+          {navItems.map((item) => (
+            <li key={item.href}>
+              <Link
+                href={item.href}
+                aria-current={isActive(item.href) ? 'page' : undefined}
+                className={`whitespace-nowrap rounded-lg px-3 py-2 text-[15px] font-medium transition-colors ${
+                  isActive(item.href) ? 'text-primary' : 'text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface'
+                }`}
+              >
+                {item.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <div className="flex items-center gap-2 sm:gap-3">
+          <LanguageSwitcher locale={locale} />
+          <Link href={`/${locale}/contact`} className={buttonClass('primary', 'sm', 'hidden sm:inline-flex')}>
+            {t.requestDemo}
           </Link>
-
-          {/* Desktop Navigation: the logo already links home */}
-          <div className="hidden xl:flex items-center gap-5">
-            {navItems.slice(1).map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="whitespace-nowrap text-sm font-medium text-on-surface-variant hover:text-primary transition-colors"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-
-          {/* Right Side - Language & CTA */}
-          <div className="flex items-center gap-4">
-            <LanguageSwitcher />
-            <Link href={`/${locale}/contact`} className="hidden sm:block">
-              <Button variant="primary" size="sm">
-                {dictionary.nav.requestDemo}
-              </Button>
-            </Link>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="xl:hidden p-2 rounded-lg text-on-surface hover:bg-surface-container-high"
-              aria-label="Menu"
-            >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
+          <button
+            type="button"
+            onClick={() => setIsOpen((open) => !open)}
+            className="rounded-lg p-2 text-on-surface hover:bg-surface-container-high xl:hidden"
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
+            aria-label={t.menu}
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
+      </nav>
 
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="xl:hidden border-t border-outline/20 py-4 space-y-2">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setIsOpen(false)}
-                className="block px-4 py-2 text-sm font-medium text-on-surface hover:text-primary hover:bg-primary/10 rounded-lg transition-colors"
-              >
-                {item.label}
-              </Link>
+      {isOpen && (
+        <div id="mobile-menu" className="border-t border-outline-variant/70 bg-white xl:hidden">
+          <ul className="mx-auto max-w-7xl space-y-1 px-4 py-4 sm:px-6">
+            {[{ label: t.home, href: `/${locale}` }, ...navItems, { label: t.contact, href: `/${locale}/contact` }].map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className="flex items-center justify-between rounded-xl px-4 py-3 text-base font-medium text-on-surface hover:bg-surface-container-low"
+                >
+                  {item.label}
+                  <ArrowRight size={16} className="text-outline" />
+                </Link>
+              </li>
             ))}
-            <div className="px-4 pt-4">
-              <Link href={`/${locale}/contact`} className="w-full block">
-                <Button variant="primary" className="w-full">
-                  {dictionary.nav.requestDemo}
-                </Button>
+            <li className="pt-3">
+              <Link href={`/${locale}/contact`} className={buttonClass('primary', 'lg', 'w-full')}>
+                {t.requestDemo}
               </Link>
-            </div>
-          </div>
-        )}
-      </div>
-    </nav>
+            </li>
+          </ul>
+        </div>
+      )}
+    </header>
   );
 }

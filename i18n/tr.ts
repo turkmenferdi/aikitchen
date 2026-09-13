@@ -2,14 +2,15 @@ export const tr = {
   nav: {
     home: 'Ana Sayfa',
     about: 'Hakkımızda',
-    platform: 'Platform',
+    platform: 'Süreç Otomasyonu',
     turbohub: 'TurboHUB',
     solutions: 'Çözümler',
-    services: 'Hizmetler',
+    services: 'Çalışma Modeli',
     why: 'Neden AI Kitchen',
     caseStudies: 'Vaka Çalışmaları',
     contact: 'İletişim',
     requestDemo: 'Demo Talep Et',
+    menu: 'Menü',
   },
 
   language: {
@@ -32,124 +33,190 @@ export const tr = {
   footer: {
     company: 'AI Kitchen',
     description:
-      'Tekrarlanan iş süreçleri için RPA, belge otomasyonu, veri işleme ve AI destekli iş akışı hizmetleri.',
-    product: 'Ürün',
+      'AI Kitchen, tekrarlanan ofis işlerini RPA ve yapay zekâ ile otomatikleştirir; TurboHUB ile yönetime şirket verilerinden hızlı cevaplar sunar.',
+    offerings: 'Ne sunuyoruz',
     solutions: 'Çözümler',
-    services: 'Hizmetler',
-    resources: 'Kaynaklar',
-    legal: 'Yasal',
-    privacy: 'Gizlilik Politikası',
-    terms: 'Kullanım Şartları',
+    companyTitle: 'Şirket',
     contact: 'İletişim',
-    email: 'support@aikitchen.com.tr',
+    supportLabel: 'Destek',
+    salesLabel: 'Satış',
     supportEmail: 'support@aikitchen.com.tr',
     salesEmail: 'sales@aikitchen.com.tr',
-    address: 'Kurumsal Otomasyon Platformu',
+    turbohubContactLabel: 'TurboHUB',
+    turbohubEmail: 'elena.turkmen@aikitchen.com.tr',
     copyright: '© 2026 AI Kitchen. Tüm hakları saklıdır.',
   },
 
   home: {
+    meta: {
+      title: 'İş Süreci Otomasyonu, RPA ve Yapay Zekâ | AI Kitchen',
+      description:
+        'Fatura ve belge işleme, veri girişi, mutabakat ve raporlama gibi tekrarlanan işleri ERP, Excel, e-posta ve web sistemleriniz arasında RPA ve yapay zekâ ile otomatikleştirin.',
+    },
     hero: {
-      title: 'Kurumsal İş Süreçleri İçin RPA ve Otomasyon Çözümleri',
+      eyebrow: 'RPA + yapay zekâ ile iş süreci otomasyonu',
+      title: 'Ekibinizin her gün elle yaptığı işleri',
+      titleHighlight: 'yazılım robotlarına devredin.',
       description:
-        'AI Kitchen; belge, tarayıcı, e-posta, Office, ERP ve CRM sistemleri arasında tekrarlanan işleri RPA ve AI destekli iş akışlarıyla otomatikleştirmeye yardımcı olur.',
-      cta: 'Demo Talep Et',
-      subHeading: 'İş süreci otomasyonu, belge işleme ve orkestrasyon',
+        'AI Kitchen; fatura ve belge işleme, veri girişi, mutabakat ve raporlama gibi tekrarlanan işleri ERP, Excel, e-posta ve web sistemleriniz arasında otomatikleştirir. Süreci birlikte analiz eder, robotu kurar ve canlıda destekleriz.',
+      primaryCta: 'Demo Talep Edin',
+      secondaryCta: 'Nasıl çalıştığını görün',
+      worksWith: 'Mevcut sistemlerinizle çalışır',
+      systems: ['SAP ve ERP', 'Excel', 'E-posta', 'PDF ve taranmış belgeler', 'Web uygulamaları'],
     },
-    valueProposition: {
-      heading: 'Neden AI Kitchen',
+    heroCard: {
+      label: 'Örnek otomasyon akışı',
+      title: 'Tedarikçi faturası işleme',
+      steps: [
+        { title: 'Fatura e-postayla geldi', detail: 'PDF eki alındı', status: 'done' },
+        { title: 'Alanlar okundu', detail: 'Tedarikçi, tarih, tutar, KDV', status: 'done' },
+        { title: 'Siparişle karşılaştırıldı', detail: 'Tutar farkı tespit edildi', status: 'warning' },
+        { title: 'Onaya gönderildi', detail: 'Karar sorumlu çalışanda', status: 'human' },
+        { title: 'ERP’ye kaydedilecek', detail: 'Onaydan sonra otomatik', status: 'pending' },
+      ],
+      footer: 'Robot kuralları uygular, istisnaları size bırakır.',
+    },
+    offerings: {
+      eyebrow: 'Ne sunuyoruz?',
+      heading: 'İki şekilde işinizi hızlandırıyoruz',
+      description: 'Tekrarlanan işleri otomatikleştiren bir hizmet ve yönetime veriden hızlı cevap veren bir ürün.',
       items: [
         {
-          title: 'Tek Platformda AI + RPA',
+          tag: 'Hizmet',
+          title: 'Süreç Otomasyonu',
           description:
-            'Kural bazlı adımlar ile akıllı karar mekanizmalarını aynı akışta birleştirerek daha dayanıklı otomasyonlar kurun.',
+            'Tekrarlanan operasyon işlerini RPA robotları ve yapay zekâ ile otomatikleştiriyoruz. Süreç keşfinden canlıya alma ve desteğe kadar uçtan uca yanınızdayız.',
+          points: ['Belge ve fatura işleme', 'Veri girişi ve sistemler arası aktarım', 'Mutabakat, kontrol ve raporlama', 'İstisnalar için insan onayı'],
+          cta: 'Süreç otomasyonunu inceleyin',
         },
         {
-          title: 'Hazır Kullanım Senaryoları',
+          tag: 'Ürün',
+          title: 'TurboHUB',
           description:
-            'Fatura işleme, mutabakat, belge okuma, müşteri operasyonları ve benzeri süreçler için hızla uyarlanabilen yapı taşları.',
-        },
-        {
-          title: 'Kurulum, Eğitim ve Destek',
-          description:
-            'Sadece yazılım değil; keşif, devreye alma, ekip eğitimi ve sürekli iyileştirme desteğiyle ilerleyen bir teslim modeli.',
+            'Muhasebe, ERP, CRM ve Excel verilerinizi tek bir katmanda birleştirir; yönetim sorularınıza doğal dilde, dakikalar içinde cevap verir.',
+          points: ['Doğal dilde soru, yapılandırılmış cevap', 'Mevcut sistemlerin üzerine kurulur', 'Kurum içi, donanım paketi veya bulut', 'Veriler kurum içinde kalabilir'],
+          cta: 'TurboHUB’ı inceleyin',
         },
       ],
     },
-    platformOverview: {
-      heading: 'Dijital İş Gücü Platformu',
+    tasks: {
+      eyebrow: 'Somut örnekler',
+      heading: 'Hangi işleri robotlara devredebilirsiniz?',
       description:
-        'Referans alınan modern RPA platformlarındaki hız ve modülerlik yaklaşımını, Türkçe iş ihtiyaçlarına uygun AI destekli bir orkestrasyon katmanıyla birleştiriyoruz. Böylece ekipleriniz hem sıfırdan akış kurabilir hem de hazır çözümleri hızla devreye alabilir.',
-      points: [
-        'Tarayıcı, masaüstü uygulama ve web sistemleriyle çalışma',
-        'Dosya, tablo, PDF, e-posta ve API verilerini birlikte işleme',
-        'İstisna yönetimi ve insan onayı gerektiren adımları orkestre etme',
-        'Kurumsal görünürlük, loglama ve denetim izi oluşturma',
-        'Kurulum modelinin keşif sırasında sistem ve erişim ihtiyaçlarına göre belirlenmesi',
+        'Otomasyon için en uygun işler; sık tekrarlanan, kuralları belli olan ve birden fazla sistem arasında veri taşıyan işlerdir.',
+      groups: [
+        { team: 'Finans ve Muhasebe', items: ['Gelen fatura ve belge kaydı', 'Cari ve hesap mutabakatı', 'Ay sonu kontrol ve raporları', 'Ödeme öncesi kontroller'] },
+        { team: 'İnsan Kaynakları', items: ['Prim ve KPI hesaplamaları', 'Farklı sistemlerden veri toplama', 'Excel tabanlı hesaplama ve kontrol'] },
+        { team: 'Satın Alma ve Lojistik', items: ['Teklif ve belge karşılaştırma', 'Sipariş ve durum güncellemeleri', 'Belge kontrolü ve bildirimler'] },
+        { team: 'SAP ve ERP', items: ['Zamanlanmış kontrol işlemleri', 'Kayıt karşılaştırma ve tutarsızlık raporu', 'Parametre ve veri doğrulama'] },
+        { team: 'Hukuk ve Belge Yönetimi', items: ['Sözleşme ve eklerden alan çıkarma', 'Eksik bilgi ön kontrolü', 'Arşivleme ve etiketleme'] },
+        { team: 'Müşteri Operasyonları', items: ['Talep ve rezervasyon kaydı', 'Bildirim ve onay e-postaları', 'Uygulamalar arası veri aktarımı'] },
       ],
     },
-    coreCapabilities: {
-      heading: 'Öne Çıkan Yetkinlikler',
+    howItWorks: {
+      eyebrow: 'Nasıl çalışır?',
+      heading: 'Bir yazılım robotu ne yapar?',
+      description:
+        'Robot, bir çalışanın ekranda yaptığı adımları tanımlı yetki ve kurallar içinde tekrarlar. Yapay zekâ ise belge okuma ve sınıflandırma gibi yorum gerektiren adımları destekler.',
+      steps: [
+        { title: 'Veriyi alır', description: 'E-posta, PDF, taranmış belge, Excel dosyası veya web uygulamasından.' },
+        { title: 'Okur ve kontrol eder', description: 'Yapay zekâ alanları çıkarır; iş kuralları doğrular ve karşılaştırır.' },
+        { title: 'Sisteme işler', description: 'ERP, SAP, CRM veya web ekranında kaydı oluşturur, raporu hazırlar.' },
+        { title: 'İstisnayı size bırakır', description: 'Belirsiz veya kural dışı durumlar onay için sorumlu çalışana gider.' },
+      ],
+      note: 'Mevcut sistemlerinizi değiştirmeniz gerekmez; robot izin verilen erişim yöntemleriyle çalışır.',
+    },
+    model: {
+      eyebrow: 'Çalışma modeli',
+      heading: 'Nasıl başlıyoruz?',
+      description: 'Riski düşük, ölçülebilir adımlarla ilerliyoruz.',
+      steps: [
+        { title: 'Süreç keşfi', description: 'Mevcut işi adım adım inceliyor, otomasyona en uygun süreçleri ve başarı ölçütlerini belirliyoruz.' },
+        { title: 'Pilot', description: 'Seçilen bir süreçte kontrollü bir pilot kuruyor, sonuçları gerçek veriyle birlikte ölçüyoruz.' },
+        { title: 'Canlıya alma', description: 'Doğrulanan akışları üretime alıyor, ekibinize bilgi aktarıyoruz.' },
+        { title: 'Destek ve genişleme', description: 'Canlı akışları izliyor, iyileştiriyor ve yeni süreçlere yayıyoruz.' },
+      ],
+      cta: 'Çalışma modelini inceleyin',
+    },
+    proof: {
+      eyebrow: 'Kanıt',
+      heading: 'Belgelenmiş sonuçlar',
+      description:
+        'Aşağıdaki sonuçlar, şirket tarafından sağlanan kaynaklarda belgelenmiş ve müşteri adı kullanılmadan paylaşılan iki gerçek otomasyon vakasına aittir.',
+      cases: [
+        {
+          area: 'İnsan Kaynakları',
+          title: 'KPI prim hesaplama otomasyonu',
+          description: 'Farklı kurumsal sistemlerden ve Excel dosyalarından toplanan verilerle yürütülen prim hesaplama süreci otomatikleştirildi.',
+          metrics: [
+            { value: '8 → 1', label: 'Sürece dahil olan çalışan sayısı' },
+            { value: '20 → 3 gün', label: 'Hesaplama süresi' },
+          ],
+        },
+        {
+          area: 'Muhasebe ve Finans',
+          title: 'Belge işleme ve muhasebe kaydı',
+          description: 'Belge alma, tanıma, veri çıkarma, doğrulama, kontrol ve muhasebe sistemine kayıt adımları otomatikleştirildi.',
+          metrics: [
+            { value: '3–20x', label: 'Belge kaydında daha düşük iş gücü ihtiyacı' },
+            { value: '2–3x', label: 'Belge işleme hızında artış' },
+          ],
+        },
+      ],
+      note: 'Sonuçlar ilgili vakalara aittir; her sürecin potansiyeli mevcut sistemlere ve süreç yapısına göre değişir.',
+      cta: 'Vaka çalışmalarını inceleyin',
+    },
+    why: {
+      eyebrow: 'Neden AI Kitchen?',
+      heading: 'Otomasyonu yazılım satışı değil, uygulama disiplini olarak ele alıyoruz',
+      items: [
+        { title: 'RPA ve yapay zekâ bir arada', description: 'Kural bazlı adımlar robotla, belge anlama ve sınıflandırma yapay zekâ ile aynı akışta yürür.' },
+        { title: 'Kontrol sizde kalır', description: 'Robotun neye erişeceği, nerede insan onayı gerektiği ve hangi kayıtların tutulacağı baştan tanımlanır.' },
+        { title: 'Politikanıza uygun kurulum', description: 'Kurulum modeli, sistem ve erişim gereksinimlerinize göre keşif aşamasında belirlenir.' },
+        { title: 'Eğitim ve kalıcı destek', description: 'Canlıya geçişten sonra da ekibinizi eğitir, akışları izler ve iyileştiririz.' },
+      ],
+    },
+    faq: {
+      eyebrow: 'SSS',
+      heading: 'Sık sorulan sorular',
       items: [
         {
-          title: 'Belge ve Veri İşleme',
-          description:
-            'PDF, Excel, Word, CSV, e-posta ve web formlarından veri toplayıp doğrulayın, dönüştürün ve hedef sistemlere işleyin.',
+          question: 'RPA (robotik süreç otomasyonu) nedir?',
+          answer:
+            'RPA, bir çalışanın bilgisayarda yaptığı tekrarlanan adımları (veri kopyalama, form doldurma, dosya işleme, sistemler arası aktarım) yazılım robotlarının tanımlı kurallarla yapmasıdır. Yapay zekâ ile birlikte kullanıldığında belge okuma ve sınıflandırma gibi adımlar da otomatikleşir.',
         },
         {
-          title: 'Tarayıcı ve Uygulama Otomasyonu',
-          description:
-            'Web uygulamaları, masaüstü ekranları ve eski sistemlerle birlikte çalışan dayanıklı görev akışları oluşturun.',
+          question: 'Mevcut sistemlerimizi değiştirmemiz gerekir mi?',
+          answer:
+            'Hayır. Robot; ERP, SAP, Excel, e-posta ve web uygulamaları gibi mevcut sistemlerinizle, izin verilen erişim yöntemleri üzerinden çalışır.',
         },
         {
-          title: 'AI Destekli Karar Katmanı',
-          description:
-            'Sınıflandırma, istisna tespiti, içerik anlama ve yönlendirme gibi kararları yalnızca kurallarla sınırlı kalmadan yönetin.',
+          question: 'Hangi süreçler otomasyona uygun?',
+          answer:
+            'Sık tekrarlanan, kuralları açık, dijital veriyle çalışan ve birden fazla sistem arasında veri taşıyan süreçler iyi adaylardır. Süreç keşfinde birlikte önceliklendiririz.',
         },
         {
-          title: 'Hazır Bot Kütüphanesi Yaklaşımı',
-          description:
-            'Sık tekrar eden süreçler için yeniden kullanılabilir modüller oluşturarak yeni otomasyonları daha kısa sürede yayına alın.',
+          question: 'Bir otomasyon projesi ne kadar sürer?',
+          answer:
+            'Süre; sürecin kapsamına, kullanılan sistemlere ve erişim koşullarına bağlıdır. Genellikle tek bir süreçte pilotla başlanır, takvim keşif sonrasında netleşir.',
+        },
+        {
+          question: 'Veri ve erişim güvenliği nasıl sağlanır?',
+          answer:
+            'Robotun erişim yetkileri, işlem kayıtları ve insan onayı gereken adımlar kurumunuzun politikalarına göre tanımlanır. Kurulum modeli güvenlik gereksinimlerinize göre belirlenir.',
+        },
+        {
+          question: 'TurboHUB ile süreç otomasyonu arasındaki fark nedir?',
+          answer:
+            'Süreç otomasyonu tekrarlanan işleri yapar. TurboHUB ise farklı sistemlerdeki verileri birleştirerek yönetim sorularına hızlı cevap verir. İkisi ayrı ayrı veya birlikte kullanılabilir.',
         },
       ],
     },
-    businessOutcomes: {
-      heading: 'Beklenen İş Sonuçları',
-      items: [
-        {
-          metric: 'Keşif',
-          description: 'Tekrarlı operasyonlarda iyileştirme fırsatlarını birlikte belirleme',
-        },
-        {
-          metric: 'Tasarım',
-          description: 'Manuel veri girişi ve kontrol adımlarını azaltmaya yönelik iş akışı tasarımı',
-        },
-        {
-          metric: 'Ölçüm',
-          description: 'Başarı kriterlerini pilot ve canlı kullanım sürecinde birlikte ölçme',
-        },
-      ],
-    },
-    securitySection: {
-      heading: 'Kurumsal Güvenlik ve Yönetişim',
-      description:
-        'Kurumsal ekiplerin ihtiyaç duyduğu erişim kontrolü, loglama, veri sahipliği ve uyumluluk odaklı mimari ile süreçlerinizi güven içinde ölçeklendirin.',
-      items: [
-        'Kuruma uygun kurulum ve veri erişim kontrolü',
-        'Detaylı loglama, izleme ve denetim izi',
-        'Rol bazlı yetkilendirme ve süreç sahipliği',
-        'Kritik adımlarda insan onayı ile hibrit çalışma',
-      ],
-    },
-    caseStudiesPreview: {
-      heading: 'İlham Veren Kullanım Senaryoları',
-      viewAll: 'Tüm Vakaları Gör',
-    },
-    finalCTA: {
-      heading: 'Süreçlerinizi Otomasyona Hazır Hale Getirelim',
-      description:
-        'İster sıfırdan kurulum, ister hazır senaryo uyarlaması olsun; ekibinize en hızlı değer üretecek yol haritasını birlikte çıkaralım.',
-      cta: 'Görüşme Planla',
+    finalCta: {
+      heading: 'Hangi işlerinizin otomasyona uygun olduğunu birlikte bulalım',
+      description: 'Mevcut sürecinizi, kullandığınız sistemleri ve iş kurallarınızı kısa bir görüşmede değerlendirelim.',
+      primary: 'Demo Talep Edin',
+      secondary: 'TurboHUB’ı inceleyin',
     },
   },
 

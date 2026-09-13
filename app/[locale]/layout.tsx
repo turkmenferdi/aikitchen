@@ -56,7 +56,7 @@ export default async function RootLayout({ children, params }: LayoutProps) {
   const dictionary = await getDictionary(validLocale);
 
   return (
-    <html lang={validLocale} className={`dark ${inter.variable} ${manrope.variable}`}>
+    <html lang={validLocale} className={`${inter.variable} ${manrope.variable}`}>
     <head>
         <script
           type="application/ld+json"
@@ -76,9 +76,12 @@ export default async function RootLayout({ children, params }: LayoutProps) {
           }}
         />
       </head>
-      <body className="bg-surface text-on-surface selection:bg-primary selection:text-on-primary">
-        <Navbar dictionary={dictionary} />
-        <main className="flex-1">{children}</main>
+      <body className="bg-surface text-on-surface">
+        <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:shadow-lg">
+          {validLocale === 'tr' ? 'İçeriğe geç' : 'Skip to content'}
+        </a>
+        <Navbar dictionary={dictionary} locale={validLocale} />
+        <main id="main" className="flex-1">{children}</main>
         <Footer dictionary={dictionary} locale={locale} />
       </body>
     </html>

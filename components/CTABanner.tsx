@@ -1,70 +1,40 @@
 import React from 'react';
-import { Button } from './Button';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
+import { buttonClass } from './Button';
 
 interface CTABannerProps {
   heading: string;
   description?: string;
   primaryCTA: {
     text: string;
-    onClick?: () => void;
-    href?: string;
+    href: string;
   };
   secondaryCTA?: {
     text: string;
-    onClick?: () => void;
-    href?: string;
+    href: string;
   };
 }
 
-export function CTABanner({
-  heading,
-  description,
-  primaryCTA,
-  secondaryCTA,
-}: CTABannerProps) {
+export function CTABanner({ heading, description, primaryCTA, secondaryCTA }: CTABannerProps) {
   return (
-    <div className="relative bg-gradient-to-br from-primary-dim to-secondary-container text-white py-16 md:py-24 rounded-3xl overflow-hidden">
-      {/* Subtle background accent */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary-fixed rounded-full -mr-48 -mt-48" />
-      </div>
-
-      <div className="relative z-10 max-w-3xl mx-auto text-center px-6">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">{heading}</h2>
-        {description && <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed">{description}</p>}
-
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          {primaryCTA.href ? (
-            <a href={primaryCTA.href}>
-              <Button variant="secondary" size="lg">
-                {primaryCTA.text}
-              </Button>
-            </a>
-          ) : (
-            <Button variant="secondary" size="lg" onClick={primaryCTA.onClick}>
-              {primaryCTA.text}
-            </Button>
-          )}
-
+    <div className="relative overflow-hidden rounded-3xl bg-ink px-6 py-14 text-white md:px-14 md:py-20">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_80%_at_100%_0%,rgba(124,58,237,0.45),transparent_60%),radial-gradient(50%_70%_at_0%_100%,rgba(79,70,229,0.4),transparent_60%)]"
+      />
+      <div className="relative mx-auto max-w-3xl text-center">
+        <h2 className="mb-4 text-3xl font-bold leading-tight text-white md:text-4xl">{heading}</h2>
+        {description && <p className="mb-9 text-lg leading-relaxed text-white/80">{description}</p>}
+        <div className={`flex flex-col justify-center gap-3 sm:flex-row ${description ? '' : 'mt-8'}`}>
+          <Link href={primaryCTA.href} className={buttonClass('primary', 'lg', '!bg-white !text-ink !shadow-none hover:!bg-primary-container')}>
+            {primaryCTA.text}
+            <ArrowRight size={18} />
+          </Link>
           {secondaryCTA && (
-            <>
-              {secondaryCTA.href ? (
-                <a href={secondaryCTA.href}>
-                  <Button variant="outline" size="lg" className="!border-white !text-white hover:!bg-white hover:!text-secondary-container">
-                    {secondaryCTA.text}
-                  </Button>
-                </a>
-              ) : (
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="!border-white !text-white hover:!bg-white hover:!text-secondary-container"
-                  onClick={secondaryCTA.onClick}
-                >
-                  {secondaryCTA.text}
-                </Button>
-              )}
-            </>
+            <Link href={secondaryCTA.href} className={buttonClass('ghost', 'lg', 'border border-white/30 !text-white hover:!bg-white/10')}>
+              {secondaryCTA.text}
+            </Link>
           )}
         </div>
       </div>

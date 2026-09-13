@@ -1,179 +1,128 @@
 import React from 'react';
 import Link from 'next/link';
+import { Mail } from 'lucide-react';
+import { Logo } from './Logo';
 
 interface FooterProps {
+  locale: string;
   dictionary: {
-    footer: {
-      company: string;
-      description: string;
-      product: string;
+    nav: {
+      home: string;
+      about: string;
+      platform: string;
+      turbohub: string;
       solutions: string;
       services: string;
-      resources: string;
-      legal: string;
-      privacy: string;
-      terms: string;
+      why: string;
+      caseStudies: string;
       contact: string;
-      email: string;
+    };
+    footer: {
+      description: string;
+      offerings: string;
+      solutions: string;
+      companyTitle: string;
+      contact: string;
+      supportLabel: string;
+      salesLabel: string;
       supportEmail: string;
       salesEmail: string;
-      address: string;
+      turbohubContactLabel: string;
+      turbohubEmail: string;
       copyright: string;
     };
+    solutions: {
+      financial: { name: string };
+      accountsPayable: { name: string };
+      legal: { name: string };
+      tourism: { name: string };
+    };
   };
-  locale: string;
 }
 
 export function Footer({ dictionary, locale }: FooterProps) {
-  const currentYear = new Date().getFullYear();
+  const { nav, footer, solutions } = dictionary;
+  const year = new Date().getFullYear();
+
+  const columns = [
+    {
+      title: footer.offerings,
+      links: [
+        { label: nav.platform, href: `/${locale}/platform` },
+        { label: nav.turbohub, href: `/${locale}/turbohub` },
+        { label: nav.services, href: `/${locale}/services` },
+      ],
+    },
+    {
+      title: footer.solutions,
+      links: [
+        { label: solutions.financial.name, href: `/${locale}/solutions/financial` },
+        { label: solutions.accountsPayable.name, href: `/${locale}/solutions/accounts-payable` },
+        { label: solutions.legal.name, href: `/${locale}/solutions/legal` },
+        { label: solutions.tourism.name, href: `/${locale}/solutions/tourism` },
+      ],
+    },
+    {
+      title: footer.companyTitle,
+      links: [
+        { label: nav.about, href: `/${locale}/about` },
+        { label: nav.why, href: `/${locale}/why-ai-kitchen` },
+        { label: nav.caseStudies, href: `/${locale}/case-studies` },
+        { label: nav.contact, href: `/${locale}/contact` },
+      ],
+    },
+  ];
+
+  const emails = [
+    { label: footer.salesLabel, email: footer.salesEmail },
+    { label: footer.supportLabel, email: footer.supportEmail },
+    { label: footer.turbohubContactLabel, email: footer.turbohubEmail },
+  ];
 
   return (
-    <footer className="bg-surface-container text-on-surface pt-20 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
-          {/* Company Info */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary-fixed to-secondary-container rounded-lg flex items-center justify-center font-bold text-lg text-on-secondary-container">
-                AK
-              </div>
-              <span className="text-xl font-bold">{dictionary.footer.company}</span>
+    <footer className="bg-ink text-white">
+      <div className="mx-auto max-w-7xl px-4 pb-10 pt-16 sm:px-6 lg:px-8">
+        <div className="grid gap-12 lg:grid-cols-[1.4fr_repeat(3,1fr)_1.3fr]">
+          <div>
+            <Link href={`/${locale}`} aria-label="AI Kitchen">
+              <Logo inverted />
+            </Link>
+            <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/65">{footer.description}</p>
+          </div>
+
+          {columns.map((column) => (
+            <div key={column.title}>
+              <h2 className="mb-4 font-body text-sm font-semibold text-white">{column.title}</h2>
+              <ul className="space-y-3">
+                {column.links.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="text-sm text-white/65 transition-colors hover:text-white">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <p className="text-on-surface/70 leading-relaxed text-sm">{dictionary.footer.description}</p>
-          </div>
+          ))}
 
-          {/* Product */}
           <div>
-            <h4 className="font-semibold mb-6 text-sm uppercase tracking-wider">
-              {dictionary.footer.product}
-            </h4>
+            <h2 className="mb-4 font-body text-sm font-semibold text-white">{footer.contact}</h2>
             <ul className="space-y-3">
-              <li>
-                <Link
-                  href={`/${locale}/platform`}
-                  className="text-on-surface/70 hover:text-on-surface text-sm transition-colors"
-                >
-                  Platform
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={`/${locale}/turbohub`}
-                  className="text-on-surface/70 hover:text-on-surface text-sm transition-colors"
-                >
-                  TurboHUB
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={`/${locale}/solutions`}
-                  className="text-on-surface/70 hover:text-on-surface text-sm transition-colors"
-                >
-                  {dictionary.footer.solutions}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={`/${locale}/services`}
-                  className="text-on-surface/70 hover:text-on-surface text-sm transition-colors"
-                >
-                  {dictionary.footer.services}
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h4 className="font-semibold mb-6 text-sm uppercase tracking-wider">
-              {dictionary.footer.company}
-            </h4>
-            <ul className="space-y-3">
-              <li>
-                <Link
-                  href={`/${locale}/about`}
-                  className="text-on-surface/70 hover:text-on-surface text-sm transition-colors"
-                >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={`/${locale}/why-ai-kitchen`}
-                  className="text-on-surface/70 hover:text-on-surface text-sm transition-colors"
-                >
-                  Why AI Kitchen
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={`/${locale}/case-studies`}
-                  className="text-on-surface/70 hover:text-on-surface text-sm transition-colors"
-                >
-                  {dictionary.footer.contact}
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="font-semibold mb-6 text-sm uppercase tracking-wider">
-              {dictionary.footer.contact}
-            </h4>
-            <ul className="space-y-3">
-              <li>
-                <a
-                  href={`mailto:${dictionary.footer.supportEmail}`}
-                  className="text-on-surface/70 hover:text-on-surface text-sm transition-colors"
-                >
-                  {dictionary.footer.supportEmail}
-                </a>
-              </li>
-              <li>
-                <Link
-                  href={`/${locale}/contact`}
-                  className="text-on-surface/70 hover:text-on-surface text-sm transition-colors"
-                >
-                  {dictionary.footer.contact}
-                </Link>
-              </li>
+              {emails.map((item) => (
+                <li key={item.email}>
+                  <p className="text-xs text-white/50">{item.label}</p>
+                  <a href={`mailto:${item.email}`} className="inline-flex items-center gap-2 break-all text-sm text-white/80 hover:text-white">
+                    <Mail size={14} className="flex-shrink-0" />
+                    {item.email}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="border-t border-outline/20 pt-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            <div>
-              <p className="text-on-surface/70 text-sm mb-2">Support</p>
-              <a
-                href={`mailto:${dictionary.footer.supportEmail}`}
-                className="text-primary hover:text-on-surface text-sm font-medium transition-colors"
-              >
-                {dictionary.footer.supportEmail}
-              </a>
-            </div>
-            <div>
-              <p className="text-on-surface/70 text-sm mb-2">Sales</p>
-              <a
-                href={`mailto:${dictionary.footer.salesEmail}`}
-                className="text-primary hover:text-on-surface text-sm font-medium transition-colors"
-              >
-                {dictionary.footer.salesEmail}
-              </a>
-            </div>
-            <div>
-              <p className="text-on-surface/70 text-sm mb-2">{dictionary.footer.address}</p>
-              <p className="text-on-surface text-sm font-medium">Enterprise Automation Platform</p>
-            </div>
-          </div>
-
-          {/* Copyright */}
-          <div className="text-center text-on-surface/60 text-sm">
-            <p>{dictionary.footer.copyright.replace('2026', currentYear.toString())}</p>
-          </div>
+        <div className="mt-14 border-t border-white/10 pt-6 text-sm text-white/50">
+          {footer.copyright.replace('2026', String(year))}
         </div>
       </div>
     </footer>
