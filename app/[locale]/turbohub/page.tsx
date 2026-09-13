@@ -103,22 +103,22 @@ export default async function TurboHub({ params }: PageProps) {
       <section className="py-20 md:py-28 bg-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading title={t.costs.heading} description={t.costs.description} className="mb-16" />
-          {/* On desktop each card joins shared subgrid rows so matching sections line up across cards. */}
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-y-0">
+          {/* One row per department. On desktop the two comparison panels share subgrid rows, so their headings and lists start level. */}
+          <div className="space-y-6">
             {t.costs.items.map((item, idx) => (
               <article
                 key={item.title}
-                className="flex flex-col overflow-hidden rounded-[1.25rem] border border-outline/20 bg-surface-container lg:grid lg:grid-rows-subgrid lg:row-span-4"
+                className="overflow-hidden rounded-[1.25rem] border border-outline/20 bg-surface-container lg:grid lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1fr)_minmax(0,1fr)] lg:grid-rows-[auto_1fr]"
               >
-                <div className="px-8 pt-8">
-                  <span className="mb-4 block text-4xl font-bold text-outline/50">
-                    {String(idx + 1).padStart(2, '0')}
-                  </span>
-                  <h3 className="text-xl font-semibold text-on-surface">{item.title}</h3>
-                  <p className="mb-6 text-sm text-on-surface-variant">{item.subtitle}</p>
+                <div className="flex items-center gap-5 border-b border-outline/20 p-8 lg:row-span-2 lg:border-b-0 lg:border-r">
+                  <span className="text-5xl font-bold text-primary/40">{String(idx + 1).padStart(2, '0')}</span>
+                  <h3 className="mb-0 text-xl font-semibold text-on-surface">{item.title}</h3>
                 </div>
-                <div className="px-8 pb-8">
-                  <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-error">{t.costs.problemLabel}</p>
+                <div className="p-8 lg:grid lg:grid-rows-subgrid lg:row-span-2">
+                  <div className="mb-4">
+                    <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-error">{t.costs.problemLabel}</p>
+                    <h4 className="mb-0 font-semibold text-on-surface">{item.subtitle}</h4>
+                  </div>
                   <ul className="space-y-3">
                     {item.problems.map((problem) => (
                       <li key={problem} className="flex items-start gap-3 text-on-surface-variant">
@@ -128,10 +128,10 @@ export default async function TurboHub({ params }: PageProps) {
                     ))}
                   </ul>
                 </div>
-                <div className="flex flex-1 flex-col bg-gradient-to-br from-primary/20 to-secondary-container/40 p-8 lg:grid lg:grid-rows-subgrid lg:row-span-2">
-                  <div>
+                <div className="bg-gradient-to-br from-primary/20 to-secondary-container/40 p-8 lg:grid lg:grid-rows-subgrid lg:row-span-2">
+                  <div className="mb-4">
                     <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-primary">{t.costs.solutionLabel}</p>
-                    <h4 className="mb-4 font-semibold text-on-surface">{item.solutionTitle}</h4>
+                    <h4 className="mb-0 font-semibold text-on-surface">{item.solutionTitle}</h4>
                   </div>
                   <ul className="space-y-3">
                     {item.solutions.map((solution) => (
