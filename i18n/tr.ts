@@ -683,10 +683,64 @@ export const tr = {
   },
 
   caseStudies: {
-    hero: {
-      title: 'Vaka Çalışmaları',
+    meta: {
+      title: 'RPA ve Otomasyon Vaka Çalışmaları | AI Kitchen',
       description:
-        'Gerçek müşteri sonucu veya referansı olarak sunulmayan, değerlendirme amaçlı temsili otomasyon senaryoları.',
+        'KPI prim hesaplama ile belge işleme ve muhasebe otomasyonuna ait anonimleştirilmiş, belgelenmiş vaka sonuçlarını ve temsili otomasyon senaryolarını inceleyin.',
+    },
+    hero: {
+      eyebrow: 'Vaka Çalışmaları',
+      title: 'Gerçek otomasyon vakaları ve örnek senaryolar',
+      description:
+        'Gerçek vaka sonuçları, şirket tarafından sağlanan kaynaklarda belgelenmiş ve müşteri adı kullanılmadan yayımlanmıştır. Örnek senaryolar ayrı bölümde açıkça etiketlenir.',
+    },
+    documented: {
+      eyebrow: 'Belgelenmiş sonuçlar',
+      heading: 'Anonimleştirilmiş gerçek vakalar',
+      label: 'Gerçek vaka',
+      beforeLabel: 'Başlangıç durumu',
+      automatedLabel: 'Otomatikleştirilen adımlar',
+      resultsLabel: 'Sonuçlar',
+      cases: [
+        {
+          area: 'İnsan Kaynakları',
+          title: 'KPI prim hesaplama süreci otomasyonu',
+          before:
+            'İnsan kaynakları çalışanları KPI prim hesaplaması için birden fazla kurumsal sistemden veri topluyor ve Excel tabanlı manuel işleme adımları yürütüyordu. Süreçte 8 çalışan görev alıyor, hesaplama döngüsü yaklaşık 20 gün sürüyordu.',
+          steps: ['Farklı kurumsal sistemlerden veri toplama', 'Excel tabanlı hesaplama ve kontrol adımları', 'Prim sonuçlarının hazırlanması'],
+          metrics: [
+            { value: '8 → 1', label: 'Sürece dahil olan çalışan sayısı' },
+            { value: '20 → 3 gün', label: 'KPI prim hesaplama süresi' },
+          ],
+        },
+        {
+          area: 'Muhasebe ve Finans',
+          title: 'Belge işleme ve muhasebe otomasyonu',
+          before:
+            'Muhasebe ve birincil belgelerin manuel kaydı önemli çalışan eforu gerektiriyor ve manuel veri girişi hatası olasılığı oluşturuyordu.',
+          steps: [
+            'Tarama, fotoğraf, e-posta veya paylaşılan kaynaktan belge alma',
+            'Bilgiyi tanıma, çıkarma ve doğrulama',
+            'Muhasebe sistemi verisiyle karşılaştırma ve kontroller',
+            'Muhasebe kaydının oluşturulması',
+          ],
+          metrics: [
+            { value: '3–20x', label: 'Belge kayıt işinde daha düşük iş gücü gereksinimi' },
+            { value: '2–3x', label: 'Gelen belge işleme hızında artış' },
+          ],
+        },
+      ],
+      note: 'Sonuçlar ilgili vaka çalışmalarına aittir. Her sürecin otomasyon potansiyeli mevcut sistemlere ve süreç yapısına göre değişebilir.',
+    },
+    scenarios: {
+      eyebrow: 'Örnek senaryolar',
+      heading: 'Değerlendirme amaçlı otomasyon senaryoları',
+      description:
+        'Gerçek müşteri sonucu veya referansı olarak sunulmayan, değerlendirme amaçlı temsili otomasyon senaryoları. Kendi sürecinize benzeyen yapıyı incelemeniz için hazırlanmıştır.',
+      label: 'Örnek senaryo',
+      challengeLabel: 'Senaryo',
+      approachLabel: 'Değerlendirilebilecek yapı',
+      outcomesLabel: 'Ölçülebilecek olası sonuçlar',
     },
     items: [
       {
@@ -695,7 +749,7 @@ export const tr = {
         challenge:
           'Farklı Excel dosyaları ve izin verilen iş uygulamalarındaki kayıtların manuel karşılaştırıldığı varsayımsal bir süreç.',
         solution:
-          'Değerlendirilebilecek yapı: veri toplama, mutabakat ve istisna işaretleme adımlarının otomasyonu.',
+          'Veri toplama, mutabakat ve istisna işaretleme adımlarının otomasyonu.',
         outcomes: [
           'Gün sonu kontrol süresinin ölçülmesi',
           'Ekibin sapmalara odaklanabilmesi',
@@ -711,7 +765,7 @@ export const tr = {
         challenge:
           'Sipariş güncellemeleri, iade kayıtları ve taleplerin farklı paneller arasında tekrarlandığı varsayımsal bir süreç.',
         solution:
-          'Değerlendirilebilecek yapı: tarayıcı ve arka ofis ekranları arasındaki sipariş ve talep adımlarının orkestrasyonu.',
+          'Tarayıcı ve arka ofis ekranları arasındaki sipariş ve talep adımlarının orkestrasyonu.',
         outcomes: [
           'Pik dönem iş yükünün izlenmesi',
           'Dönüş sürelerinin ölçülmesi',
@@ -727,7 +781,7 @@ export const tr = {
         challenge:
           'Sözleşme ekleri, faturalar ve onay belgelerinin e-postayla geldiği, kontrol ve durum takibinin manuel yürütüldüğü varsayımsal bir süreç.',
         solution:
-          'Değerlendirilebilecek yapı: belge okuma, alan çıkarımı, ön kontrol ve ilgili kişilere yönlendirme adımlarının otomasyonu.',
+          'Belge okuma, alan çıkarımı, ön kontrol ve ilgili kişilere yönlendirme adımlarının otomasyonu.',
         outcomes: [
           'Belge çevrim süresinin ölçülmesi',
           'Eksik evrakların erken işaretlenmesi',
@@ -738,6 +792,20 @@ export const tr = {
         metricLabel: 'Belge ve Onay Süreçleri',
       },
     ],
+    sap: {
+      label: 'Örnek otomasyon senaryosu',
+      title: 'SAP kontrol ve mutabakat senaryoları',
+      description:
+        'Amortisman kontrolü, birincil belge sürelerinin izlenmesi, vergi ve amortisman parametrelerinin kontrolü, gayrimenkul ve kadastro verisi karşılaştırması, tutarsızlık raporu oluşturma ve sonuçları sorumlu çalışanlara gönderme adımları. Müşteri projesi veya ölçülmüş sonuç değildir.',
+      cta: 'SAP otomasyonunu inceleyin',
+      href: '/tr/sap-otomasyonu',
+    },
+    cta: {
+      heading: 'Benzer bir süreci birlikte değerlendirelim',
+      description: 'Vaka sonuçları her süreç için garanti değildir. Mevcut sistemleri ve iş akışını inceleyerek uygun otomasyon kapsamını belirleyelim.',
+      primary: 'Demo Talep Edin',
+      secondary: 'Çözümleri inceleyin',
+    },
   },
 
   turbohub: {

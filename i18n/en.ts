@@ -685,10 +685,64 @@ export const en = {
   },
 
   caseStudies: {
-    hero: {
-      title: 'Case Studies',
+    meta: {
+      title: 'RPA and Automation Case Studies | AI Kitchen',
       description:
-        'Illustrative automation scenarios for evaluation, not published customer references or measured business results.',
+        'Review anonymized, documented results from KPI bonus calculation and document processing automation, plus clearly labeled illustrative automation scenarios.',
+    },
+    hero: {
+      eyebrow: 'Case Studies',
+      title: 'Real automation cases and example scenarios',
+      description:
+        'Real case results are documented in company-provided materials and published without customer names. Example scenarios are clearly labeled in a separate section.',
+    },
+    documented: {
+      eyebrow: 'Documented results',
+      heading: 'Anonymized real cases',
+      label: 'Real case',
+      beforeLabel: 'Starting point',
+      automatedLabel: 'Automated steps',
+      resultsLabel: 'Results',
+      cases: [
+        {
+          area: 'Human Resources',
+          title: 'KPI bonus calculation automation',
+          before:
+            'HR staff collected data from several enterprise systems and ran manual Excel-based processing steps to calculate KPI bonuses. Eight employees were involved and the calculation cycle took about 20 days.',
+          steps: ['Collecting data from several enterprise systems', 'Excel-based calculation and control steps', 'Preparing bonus results'],
+          metrics: [
+            { value: '8 → 1', label: 'Employees involved in the process' },
+            { value: '20 → 3 days', label: 'KPI bonus calculation cycle' },
+          ],
+        },
+        {
+          area: 'Accounting and Finance',
+          title: 'Document processing and accounting automation',
+          before:
+            'Manual entry of accounting and primary documents required significant employee effort and created a risk of data-entry errors.',
+          steps: [
+            'Receiving documents from scans, photos, email or shared sources',
+            'Recognizing, extracting and validating information',
+            'Comparing with accounting system data and running checks',
+            'Creating the accounting entry',
+          ],
+          metrics: [
+            { value: '3–20x', label: 'Lower labor requirement for document entry' },
+            { value: '2–3x', label: 'Faster incoming document processing' },
+          ],
+        },
+      ],
+      note: 'Results belong to the respective case studies. The automation potential of each process may vary depending on existing systems and process structure.',
+    },
+    scenarios: {
+      eyebrow: 'Example scenarios',
+      heading: 'Automation scenarios for evaluation',
+      description:
+        'Illustrative automation scenarios for evaluation, not published customer references or measured business results. They are here to help you find a structure similar to your own process.',
+      label: 'Illustrative scenario',
+      challengeLabel: 'Scenario',
+      approachLabel: 'Structure to evaluate',
+      outcomesLabel: 'Potential outcomes to measure',
     },
     items: [
       {
@@ -697,7 +751,7 @@ export const en = {
         challenge:
           'A hypothetical process where records from separate Excel files and permitted business applications are compared manually.',
         solution:
-          'Structure to evaluate: automating data collection, reconciliation, and exception flagging across the workflow.',
+          'Automating data collection, reconciliation, and exception flagging across the workflow.',
         outcomes: [
           'Measurement of end-of-day control time',
           'Ability for the team to focus on variances and exceptions',
@@ -713,7 +767,7 @@ export const en = {
         challenge:
           'A hypothetical process where order updates, return records, and requests are repeatedly handled across multiple portals.',
         solution:
-          'Structure to evaluate: coordinating order and request steps across browser-based and back-office systems.',
+          'Coordinating order and request steps across browser-based and back-office systems.',
         outcomes: [
           'Monitoring of peak-period workload',
           'Measurement of response times',
@@ -729,7 +783,7 @@ export const en = {
         challenge:
           'A hypothetical process where contract attachments, invoices, and approval documents arrive by email while review and status tracking remain manual.',
         solution:
-          'Structure to evaluate: automating document reading, field extraction, pre-checks, and routing steps.',
+          'Automating document reading, field extraction, pre-checks, and routing steps.',
         outcomes: [
           'Measurement of document turnaround time',
           'Earlier flagging of missing information',
@@ -740,6 +794,20 @@ export const en = {
         metricLabel: 'Document and Approval Workflows',
       },
     ],
+    sap: {
+      label: 'Example automation scenario',
+      title: 'SAP control and reconciliation scenarios',
+      description:
+        'Depreciation checks, monitoring primary document deadlines, checking tax and depreciation parameters, comparing real estate and cadastral data, creating variance reports and sending results to responsible employees. Not a customer project or measured result.',
+      cta: 'Explore process automation',
+      href: '/en/platform',
+    },
+    cta: {
+      heading: 'Let’s evaluate a similar process together',
+      description: 'Case results are not guaranteed for every process. Let’s review your systems and workflow to define the right automation scope.',
+      primary: 'Request a Demo',
+      secondary: 'Explore solutions',
+    },
   },
 
   turbohub: {
