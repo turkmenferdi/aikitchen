@@ -85,7 +85,7 @@ export default async function Services({ params }: PageProps) {
                       <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
                         <Icon size={24} />
                       </span>
-                      <span className="font-headline text-4xl font-extrabold text-outline-variant">{String(idx + 1).padStart(2, '0')}</span>
+                      <span className="font-headline text-4xl font-extrabold text-outline">{String(idx + 1).padStart(2, '0')}</span>
                     </div>
                     <h3 className="mb-2 text-2xl font-bold text-on-surface">{stage.name}</h3>
                     <p className="mb-4 text-lg font-medium text-on-surface">{stage.description}</p>

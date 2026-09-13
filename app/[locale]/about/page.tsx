@@ -72,7 +72,7 @@ export default async function About({ params }: PageProps) {
           <ol className="space-y-4">
             {about.story.principles.map((principle, idx) => (
               <li key={principle.title} className="flex gap-5 rounded-2xl border border-outline-variant bg-white p-6">
-                <span className="font-headline text-3xl font-extrabold text-primary/30">{String(idx + 1).padStart(2, '0')}</span>
+                <span className="font-headline text-3xl font-extrabold text-primary-fixed-dim">{String(idx + 1).padStart(2, '0')}</span>
                 <div>
                   <h3 className="mb-1 text-lg font-bold text-on-surface">{principle.title}</h3>
                   <p className="leading-relaxed text-on-surface-variant">{principle.description}</p>

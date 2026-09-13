@@ -57,7 +57,7 @@ const config: Config = {
         "on-tertiary-container": "#155e75",
         "on-tertiary-fixed": "#083344",
         "on-tertiary-fixed-variant": "#155e75",
-        "success": "#059669",
+        "success": "#047857",
         "error": "#dc2626",
         "error-dim": "#b91c1c",
         "error-container": "#fee2e2",

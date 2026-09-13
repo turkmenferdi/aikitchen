@@ -30,13 +30,21 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
     : 'Tekrarlanan iş süreçlerini RPA ve AI destekli iş akışlarıyla; belge, tarayıcı, e-posta, Office, ERP ve CRM sistemleri arasında otomatikleştirin.';
 
   return {
+    metadataBase: new URL('https://aikitchen.com.tr'),
     title,
     description,
+    applicationName: 'AI Kitchen',
     openGraph: {
       title,
       description,
-      locale: locale === 'tr' ? 'tr_TR' : 'en_US',
+      siteName: 'AI Kitchen',
+      locale: validLocale === 'tr' ? 'tr_TR' : 'en_US',
       type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
     },
   };
 }

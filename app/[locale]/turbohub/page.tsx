@@ -118,7 +118,7 @@ export default async function TurboHub({ params }: PageProps) {
                 className="overflow-hidden rounded-[1.25rem] border border-outline/20 bg-surface-container lg:grid lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1fr)_minmax(0,1fr)] lg:grid-rows-[auto_1fr]"
               >
                 <div className="flex items-center gap-5 border-b border-outline/20 p-8 lg:row-span-2 lg:border-b-0 lg:border-r">
-                  <span className="text-5xl font-bold text-primary/40">{String(idx + 1).padStart(2, '0')}</span>
+                  <span className="font-headline text-5xl font-bold text-primary-fixed-dim">{String(idx + 1).padStart(2, '0')}</span>
                   <h3 className="mb-0 text-xl font-semibold text-on-surface">{item.title}</h3>
                 </div>
                 <div className="p-8 lg:grid lg:grid-rows-subgrid lg:row-span-2">

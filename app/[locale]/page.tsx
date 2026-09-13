@@ -214,7 +214,7 @@ export default async function Home({ params }: PageProps) {
                     <span className={`flex h-11 w-11 items-center justify-center rounded-xl ${isHuman ? 'bg-primary text-white' : 'bg-ink text-white'}`}>
                       <Icon size={20} />
                     </span>
-                    <span className="font-headline text-3xl font-extrabold text-outline-variant">{String(idx + 1).padStart(2, '0')}</span>
+                    <span className="font-headline text-3xl font-extrabold text-outline">{String(idx + 1).padStart(2, '0')}</span>
                   </div>
                   <h3 className="mb-2 text-lg font-bold text-on-surface">{step.title}</h3>
                   <p className="leading-relaxed text-on-surface-variant">{step.description}</p>
