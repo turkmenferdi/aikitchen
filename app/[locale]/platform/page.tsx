@@ -1,22 +1,28 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
+import {
+  ArrowDown,
+  ArrowRight,
+  Bot,
+  CalendarClock,
+  Check,
+  FileText,
+  FileSearch,
+  ListChecks,
+  Lock,
+  MonitorSmartphone,
+  ScrollText,
+  ShieldCheck,
+  UserCheck,
+  Sparkles,
+  X,
+} from 'lucide-react';
 import { isValidLanguage } from '@/i18n/config';
 import { getDictionary } from '@/lib/i18n';
 import { localeAlternates } from '@/lib/seo';
+import { buttonClass } from '@/components/Button';
 import { SectionHeading } from '@/components/SectionHeading';
-import { FeatureCard } from '@/components/FeatureCard';
 import { CTABanner } from '@/components/CTABanner';
-import { Grid } from '@/components/Grid';
-import {
-  Brain,
-  Workflow,
-  BarChart3,
-  Lock,
-  Zap,
-  Shield,
-  Database,
-  Settings,
-  Cpu,
-} from 'lucide-react';
 
 interface PageProps {
   params: Promise<{
@@ -27,230 +33,249 @@ interface PageProps {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params;
   const validLocale = isValidLanguage(locale) ? locale : 'en';
-  const isEnglish = validLocale === 'en';
+  const { platform } = await getDictionary(validLocale);
 
   return {
-    title: isEnglish
-      ? 'RPA and Process Automation Capabilities | AI Kitchen'
-      : 'RPA ve İş Süreci Otomasyonu Yetkinlikleri | AI Kitchen',
-    description: isEnglish
-      ? 'Explore browser, document, data, ERP and CRM workflow automation with RPA, orchestration and AI-supported processing.'
-      : 'Tarayıcı, belge, veri, ERP ve CRM iş akışları için RPA, orkestrasyon ve AI destekli işleme yetkinliklerini inceleyin.',
+    title: platform.meta.title,
+    description: platform.meta.description,
     alternates: localeAlternates(validLocale, 'platform'),
   };
 }
 
+const capabilityIcons = [FileText, MonitorSmartphone, Sparkles, UserCheck, CalendarClock, ScrollText];
+const controlIcons = [Lock, ListChecks, UserCheck, ShieldCheck];
+
+// Turkish-only landing pages have no English equivalent, so they are listed only on the Turkish page.
+const turkishLandingPages = [
+  { title: 'Robotik Süreç Otomasyonu', description: 'Tarayıcı, Office, e-posta ve kurumsal sistemlerdeki tekrarlanan görevler.', href: '/tr/robotik-surec-otomasyonu' },
+  { title: 'Belge Otomasyonu', description: 'Belge tanıma, veri çıkarma, doğrulama ve sistem kaydı.', href: '/tr/belge-otomasyonu' },
+  { title: 'SAP Süreç Otomasyonu', description: 'Kontrol, mutabakat, zamanlanmış işlem ve raporlama senaryoları.', href: '/tr/sap-otomasyonu' },
+];
+
 export default async function Platform({ params }: PageProps) {
   const { locale } = await params;
   const validLocale = isValidLanguage(locale) ? locale : 'en';
-  const isEnglish = validLocale === 'en';
   const dictionary = await getDictionary(validLocale);
+  const { platform, solutions } = dictionary;
+  const d = platform.diagram;
+
+  const useCases = [
+    { title: solutions.financial.name, description: solutions.financial.hero.description, href: `/${validLocale}/solutions/financial` },
+    { title: solutions.accountsPayable.name, description: solutions.accountsPayable.hero.description, href: `/${validLocale}/solutions/accounts-payable` },
+    { title: solutions.legal.name, description: solutions.legal.hero.description, href: `/${validLocale}/solutions/legal` },
+    { title: solutions.tourism.name, description: solutions.tourism.hero.description, href: `/${validLocale}/solutions/tourism` },
+    ...(validLocale === 'tr' ? turkishLandingPages : []),
+  ];
 
   return (
     <>
-      {/* Hero */}
-      <section className="bg-surface py-20 md:py-32">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-on-surface mb-6">
-            {dictionary.platform.hero.title}
-          </h1>
-          <p className="text-xl text-on-surface-variant leading-relaxed">
-            {dictionary.platform.hero.description}
-          </p>
-        </div>
-      </section>
-
-      {/* Digital Workforce */}
-      <section className="py-20 md:py-32 bg-surface-container-low">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-on-surface mb-6">
-                {dictionary.platform.digitalWorkforce.heading}
-              </h2>
-              <p className="text-lg text-on-surface-variant mb-8 leading-relaxed">
-                {dictionary.platform.digitalWorkforce.description}
-              </p>
-              <ul className="space-y-4">
-                {dictionary.platform.digitalWorkforce.points.map((point, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <div className="w-2 h-2 bg-primary rounded-full" />
-                    </div>
-                    <span className="text-on-surface-variant">{point}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="bg-surface-container-highest rounded-lg border border-outline/20 p-8 flex items-center justify-center min-h-96">
-              <div className="text-center text-on-surface-variant">
-                <Brain className="w-16 h-16 mx-auto mb-4 text-primary/50" />
-                <p className="text-sm">
-                  {isEnglish ? 'Digital workforce architecture' : 'Dijital iş gücü mimarisi'}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Agentic AI + RPA */}
-      <section className="py-20 md:py-32 bg-surface">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="bg-surface-container-high rounded-lg border border-outline/20 p-8 flex items-center justify-center min-h-96 order-2 md:order-1">
-              <div className="text-center text-on-surface-variant">
-                <Cpu className="w-16 h-16 mx-auto mb-4 text-primary/50" />
-                <p className="text-sm">
-                  {isEnglish ? 'Integration architecture' : 'Entegrasyon mimarisi'}
-                </p>
-              </div>
-            </div>
-            <div className="order-1 md:order-2">
-              <h2 className="text-3xl md:text-4xl font-bold text-on-surface mb-6">
-                {dictionary.platform.agentic.heading}
-              </h2>
-              <p className="text-lg text-on-surface-variant mb-8 leading-relaxed">
-                {dictionary.platform.agentic.description}
-              </p>
-              <ul className="space-y-4">
-                {dictionary.platform.agentic.points.map((point, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <Zap className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-on-surface-variant">{point}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Orchestration */}
-      <section className="py-20 md:py-32 bg-surface-container-low">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-on-surface mb-6">
-                {dictionary.platform.orchestration.heading}
-              </h2>
-              <p className="text-lg text-on-surface-variant mb-8 leading-relaxed">
-                {dictionary.platform.orchestration.description}
-              </p>
-              <ul className="space-y-4">
-                {dictionary.platform.orchestration.points.map((point, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <Workflow className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-on-surface-variant">{point}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="bg-surface-container-highest rounded-lg border border-outline/20 p-8 flex items-center justify-center min-h-96">
-              <div className="text-center text-on-surface-variant">
-                <Workflow className="w-16 h-16 mx-auto mb-4 text-primary/50" />
-                <p className="text-sm">
-                  {isEnglish ? 'Process orchestration flow' : 'Süreç orkestrasyonu akışı'}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Controlled Deployment */}
-      <section className="py-20 md:py-32 bg-surface">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="bg-surface-container-high rounded-lg border border-outline/20 p-8 flex items-center justify-center min-h-96 order-2 md:order-1">
-              <div className="text-center text-on-surface-variant">
-                <Lock className="w-16 h-16 mx-auto mb-4 text-primary/50" />
-                <p className="text-sm">
-                  {isEnglish ? 'Deployment and access model' : 'Kurulum ve erişim modeli'}
-                </p>
-              </div>
-            </div>
-            <div className="order-1 md:order-2">
-              <h2 className="text-3xl md:text-4xl font-bold text-on-surface mb-6">
-                {dictionary.platform.onPrem.heading}
-              </h2>
-              <p className="text-lg text-on-surface-variant mb-8 leading-relaxed">
-                {dictionary.platform.onPrem.description}
-              </p>
-              <ul className="space-y-4">
-                {dictionary.platform.onPrem.points.map((point, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <Shield className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-on-surface-variant">{point}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Architecture Strengths */}
-      <section className="py-20 md:py-32 bg-surface-container-low">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            title={dictionary.platform.architecture.heading}
-            description=""
-            className="mb-16"
-          />
-
-          <Grid columns={3} gap="lg">
-            {dictionary.platform.architecture.items.map((item, idx) => (
-              <FeatureCard
-                key={idx}
-                title={item.title}
-                description={item.description}
-                icon={[Database, Zap, Cpu, Settings, Lock, Shield][idx]}
-              />
-            ))}
-          </Grid>
-        </div>
-      </section>
-
-      {/* Execution */}
-      <section className="py-20 md:py-32 bg-surface">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-surface-container-high rounded-lg border border-outline/20 p-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-on-surface mb-6">
-              {dictionary.platform.execution.heading}
-            </h2>
-            <p className="text-lg text-on-surface-variant mb-8 leading-relaxed">
-              {dictionary.platform.execution.description}
+      {/* Hero + data flow diagram */}
+      <section className="relative overflow-hidden border-b border-outline-variant/60 bg-white">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_0%,rgba(79,70,229,0.08),transparent_70%)]"
+        />
+        <div className="relative mx-auto max-w-7xl px-4 pb-20 pt-14 sm:px-6 md:pt-20 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3.5 py-1.5 text-sm font-semibold text-primary">
+              <Bot size={16} />
+              {platform.hero.eyebrow}
             </p>
-            <Grid columns={2} gap="lg">
-              {dictionary.platform.execution.points.map((point, idx) => (
-                <div key={idx} className="flex items-start gap-3">
-                  <BarChart3 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-on-surface-variant">{point}</span>
+            <h1 className="mb-6 text-[2.4rem] font-extrabold leading-[1.1] tracking-tight text-on-surface sm:text-5xl lg:text-[3.25rem]">
+              {platform.hero.title}
+            </h1>
+            <p className="mx-auto mb-9 max-w-2xl text-lg leading-relaxed text-on-surface-variant md:text-xl">{platform.hero.description}</p>
+            <div className="flex flex-col justify-center gap-3 sm:flex-row">
+              <Link href={`/${validLocale}/contact`} className={buttonClass('primary', 'lg')}>
+                {platform.hero.primaryCta}
+                <ArrowRight size={18} />
+              </Link>
+              <a href="#capabilities" className={buttonClass('secondary', 'lg')}>
+                {platform.hero.secondaryCta}
+              </a>
+            </div>
+          </div>
+
+          <div className="mx-auto mt-16 grid max-w-6xl items-center gap-4 lg:grid-cols-[1fr_auto_1.3fr_auto_1fr]">
+            <FlowColumn label={d.inputsLabel} items={d.inputs} />
+            <FlowArrow />
+            <div className="flex flex-col gap-4">
+              <div className="flex-1 rounded-3xl bg-ink p-6 text-white shadow-[0_24px_60px_-24px_rgba(15,18,51,0.6)]">
+                <div className="mb-5 flex items-center gap-3">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-secondary">
+                    <Bot size={20} />
+                  </span>
+                  <p className="font-headline text-lg font-bold">{d.robotLabel}</p>
                 </div>
-              ))}
-            </Grid>
+                <ol className="space-y-2.5">
+                  {d.robotSteps.map((step, idx) => (
+                    <li key={step} className="flex items-center gap-3 rounded-xl bg-white/[0.07] px-4 py-3 text-[15px]">
+                      <span className="font-headline text-sm font-bold text-primary-fixed">{idx + 1}</span>
+                      {step}
+                    </li>
+                  ))}
+                </ol>
+              </div>
+              <div className="flex items-center gap-3 rounded-2xl border border-primary/30 bg-primary/5 px-4 py-3">
+                <UserCheck size={20} className="flex-shrink-0 text-primary" />
+                <p className="text-sm text-on-surface">
+                  <span className="font-semibold">{d.humanLabel}:</span> {d.human}
+                </p>
+              </div>
+            </div>
+            <FlowArrow />
+            <FlowColumn label={d.outputsLabel} items={d.outputs} />
           </div>
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-20 md:py-32 bg-surface-container-low">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Capabilities */}
+      <section id="capabilities" className="scroll-mt-24 bg-surface py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow={platform.capabilities.eyebrow}
+            title={platform.capabilities.heading}
+            description={platform.capabilities.description}
+            className="mb-14"
+          />
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {platform.capabilities.items.map((item, idx) => {
+              const Icon = capabilityIcons[idx % capabilityIcons.length];
+              return (
+                <article key={item.title} className="rounded-2xl border border-outline-variant bg-white p-7">
+                  <span className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                    <Icon size={22} />
+                  </span>
+                  <h3 className="mb-2 text-lg font-bold text-on-surface">{item.title}</h3>
+                  <p className="leading-relaxed text-on-surface-variant">{item.description}</p>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Traditional RPA vs AI Kitchen */}
+      <section className="border-y border-outline-variant/60 bg-white py-20 md:py-28">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading eyebrow={platform.comparison.eyebrow} title={platform.comparison.heading} className="mb-12" />
+          <div className="overflow-x-auto rounded-2xl border border-outline-variant">
+            <table className="w-full min-w-[640px] border-collapse text-left">
+              <thead>
+                <tr className="bg-surface-container-low">
+                  <th scope="col" className="px-6 py-4 text-sm font-semibold text-on-surface-variant">{platform.comparison.head[0]}</th>
+                  <th scope="col" className="px-6 py-4 text-sm font-semibold text-on-surface-variant">{platform.comparison.head[1]}</th>
+                  <th scope="col" className="bg-primary/5 px-6 py-4 text-sm font-semibold text-primary">{platform.comparison.head[2]}</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-outline-variant">
+                {platform.comparison.rows.map((row) => (
+                  <tr key={row.aspect}>
+                    <th scope="row" className="px-6 py-5 align-top font-semibold text-on-surface">{row.aspect}</th>
+                    <td className="px-6 py-5 align-top text-on-surface-variant">
+                      <span className="flex gap-2.5">
+                        <X size={18} className="mt-0.5 flex-shrink-0 text-outline" />
+                        {row.traditional}
+                      </span>
+                    </td>
+                    <td className="bg-primary/5 px-6 py-5 align-top font-medium text-on-surface">
+                      <span className="flex gap-2.5">
+                        <Check size={18} className="mt-0.5 flex-shrink-0 text-primary" />
+                        {row.aiKitchen}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Control and security */}
+      <section className="bg-surface py-20 md:py-28">
+        <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20 lg:px-8">
+          <SectionHeading
+            eyebrow={platform.control.eyebrow}
+            title={platform.control.heading}
+            description={platform.control.description}
+            centered={false}
+          />
+          <div className="grid gap-4 sm:grid-cols-2">
+            {platform.control.items.map((item, idx) => {
+              const Icon = controlIcons[idx % controlIcons.length];
+              return (
+                <article key={item.title} className="rounded-2xl border border-outline-variant bg-white p-6">
+                  <Icon size={22} className="mb-4 text-primary" />
+                  <h3 className="mb-2 text-lg font-bold text-on-surface">{item.title}</h3>
+                  <p className="leading-relaxed text-on-surface-variant">{item.description}</p>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Use cases */}
+      <section className="border-t border-outline-variant/60 bg-white py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow={platform.useCases.eyebrow}
+            title={platform.useCases.heading}
+            description={platform.useCases.description}
+            className="mb-12"
+          />
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {useCases.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="group flex flex-col rounded-2xl border border-outline-variant bg-surface p-6 transition-colors hover:border-primary/50 hover:bg-white"
+              >
+                <FileSearch size={20} className="mb-4 text-primary" />
+                <h3 className="mb-2 text-lg font-bold text-on-surface">{item.title}</h3>
+                <p className="mb-5 leading-relaxed text-on-surface-variant">{item.description}</p>
+                <ArrowRight size={18} className="mt-auto text-primary transition-transform group-hover:translate-x-1" />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white pb-20 md:pb-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <CTABanner
-            heading={isEnglish ? 'Ready to explore our platform?' : 'Platformu canlı görmek ister misiniz?'}
-            description={
-              isEnglish
-                ? 'Schedule a demo to see AI Kitchen in action'
-                : 'AI Kitchen’ın gerçek süreçlerde nasıl çalıştığını size özel bir demo ile gösterelim.'
-            }
-            primaryCTA={{
-              text: isEnglish ? 'Request Demo' : 'Demo Talep Et',
-              href: `/${locale}/contact`,
-            }}
+            heading={platform.cta.heading}
+            description={platform.cta.description}
+            primaryCTA={{ text: platform.cta.primary, href: `/${validLocale}/contact` }}
+            secondaryCTA={{ text: platform.cta.secondary, href: `/${validLocale}/services` }}
           />
         </div>
       </section>
     </>
+  );
+}
+
+function FlowColumn({ label, items }: { label: string; items: string[] }) {
+  return (
+    <div className="rounded-3xl border border-outline-variant bg-surface p-6">
+      <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-on-surface-variant">{label}</p>
+      <ul className="space-y-2.5">
+        {items.map((item) => (
+          <li key={item} className="rounded-xl border border-outline-variant bg-white px-4 py-3 text-[15px] font-medium text-on-surface">
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function FlowArrow() {
+  return (
+    <div aria-hidden className="flex items-center justify-center text-primary">
+      <ArrowRight size={24} className="hidden lg:block" />
+      <ArrowDown size={24} className="lg:hidden" />
+    </div>
   );
 }

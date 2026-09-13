@@ -270,94 +270,75 @@ export const tr = {
   },
 
   platform: {
+    meta: {
+      title: 'Süreç Otomasyonu: RPA ve Yapay Zekâ ile Yazılım Robotları | AI Kitchen',
+      description:
+        'Belge, e-posta, Excel, ERP ve web uygulamaları arasındaki tekrarlanan işleri RPA robotları ve yapay zekâ ile uçtan uca otomatikleştirin. İstisna yönetimi, insan onayı ve kontrollü kurulum.',
+    },
     hero: {
-      title: 'Platform',
+      eyebrow: 'Hizmet · Süreç Otomasyonu',
+      title: 'Tekrarlanan işleri uçtan uca yürüten yazılım robotları',
       description:
-        'Tarayıcı, masaüstü, belge ve veri odaklı işleri AI destekli RPA ile yöneten kurumsal otomasyon altyapısı.',
+        'AI Kitchen; belge okuma, veri girişi, kontrol, mutabakat ve raporlama adımlarını tek bir otomatik akışta birleştirir. Robot kuralları uygular, yapay zekâ belgeleri anlar, kritik kararlar ise ekibinizde kalır.',
+      primaryCta: 'Süreç analizi için görüşelim',
+      secondaryCta: 'Robotun yapabildikleri',
     },
-    digitalWorkforce: {
-      heading: 'Dijital İş Gücü Mimarisi',
-      description:
-        'AI Kitchen ile ekipleriniz adına çalışan dijital personeller tasarlayabilir; bu personelleri görev, kural, entegrasyon ve onay mantıklarıyla birlikte yönetebilirsiniz.',
-      points: [
-        'Süreç bazlı dijital çalışan tanımlama',
-        'Görev, kuyruk ve öncelik yönetimi',
-        'İnsan onayı gereken noktalarda kontrollü akış',
-        'Çok adımlı işlerde merkezî orkestrasyon',
-      ],
+    diagram: {
+      inputsLabel: 'Gelen veri',
+      inputs: ['E-posta ve ekler', 'PDF ve taranmış belgeler', 'Excel ve CSV dosyaları', 'Web uygulamaları'],
+      robotLabel: 'AI Kitchen robotu',
+      robotSteps: ['Okur ve sınıflandırır', 'Kurallarla kontrol eder', 'Sistemlere işler', 'Raporlar ve bildirir'],
+      outputsLabel: 'Hedef sistemler',
+      outputs: ['ERP ve SAP', 'CRM ve iş uygulamaları', 'Raporlar ve dosyalar', 'E-posta bildirimleri'],
+      humanLabel: 'İstisna olduğunda',
+      human: 'Sorumlu çalışana onay için gider',
     },
-    agentic: {
-      heading: 'AI + RPA Entegrasyonu',
-      description:
-        'Klasik RPA yalnızca tanımlı adımları yürütür. AI Kitchen ise belge anlama, içerik sınıflandırma, istisna tespiti ve yönlendirme gibi karar anlarını da sürecin içine alır.',
-      points: [
-        'Belge ve içerik anlama',
-        'Kurallara ek olarak bağlama göre yönlendirme',
-        'İstisna tespiti ve operatöre akıllı eskalasyon',
-        'Tek platformda karar alma ve icra yeteneği',
-      ],
-    },
-    orchestration: {
-      heading: 'Akıllı Süreç Orkestrasyonu',
-      description:
-        'Birden fazla sistem, dosya ve kullanıcı adımını içeren karmaşık süreçleri uçtan uca görünürlükle yönetin.',
-      points: [
-        'Süreç akışı ve adım takibi',
-        'Gerçek zamanlı durum izleme',
-        'Kuyruk, SLA ve öncelik mantığı',
-        'Hata, retry ve istisna kurguları',
-      ],
-    },
-    onPrem: {
-      heading: 'Kontrollü Kurulum Seçenekleri',
-      description:
-        'Kurumsal ihtiyaçlarınıza göre verinin, erişimin ve entegrasyonların kontrol altında tutulduğu kurulum modeliyle ilerleyin.',
-      points: [
-        'Veri sahipliği ve erişim kontrolü',
-        'Kurum politikalarına uygun kurulum yaklaşımı',
-        'Mevcut sistemlerle uyumlu entegrasyon',
-        'Güvenlik ve uyumluluk gereksinimlerine uygun mimari',
-      ],
-    },
-    architecture: {
-      heading: 'Kurumsal Mimari Güçleri',
+    capabilities: {
+      eyebrow: 'Yetenekler',
+      heading: 'Robotun yapabildikleri',
+      description: 'Bir çalışanın bilgisayarda yaptığı tekrarlanan adımların büyük bölümü otomatikleştirilebilir.',
       items: [
-        {
-          title: 'Modüler Yapı',
-          description: 'Tekrar kullanılabilir otomasyon adımları ve entegrasyon modülleriyle daha hızlı yaygınlaşma.',
-        },
-        {
-          title: 'Ölçeklenebilirlik',
-          description: 'Pilot süreçlerden çoklu departman kullanımına kadar kontrollü büyüme.',
-        },
-        {
-          title: 'Entegrasyon',
-          description: 'ERP, CRM, web panelleri, e-posta kutuları, dosya sistemleri ve API’lerle bağlantı.',
-        },
-        {
-          title: 'Yönetişim',
-          description: 'Kim ne yaptı, hangi adımda ne oldu ve hangi kayıtlar işlendi net biçimde izlenebilir.',
-        },
-        {
-          title: 'Performans',
-          description: 'Yüksek hacimli ve tekrar eden süreçleri standardize ederek daha tutarlı çıktı üretme.',
-        },
-        {
-          title: 'Güvenlik',
-          description: 'Erişim, loglama, veri kullanımı ve kritik adımlar için kurumsal kontrollere uyum.',
-        },
+        { title: 'Belge ve veri işleme', description: 'PDF, Excel, Word, CSV, e-posta ve formlardaki veriyi okur, doğrular, dönüştürür ve taşır.' },
+        { title: 'Uygulama ve tarayıcı otomasyonu', description: 'Web uygulamaları, masaüstü ekranları ve eski sistemler üzerinde çalışan akışlar kurar.' },
+        { title: 'Yapay zekâ ile belge anlama', description: 'Sınıflandırma, alan çıkarma, içerik anlama ve istisna tespitini sabit kuralların ötesine taşır.' },
+        { title: 'İstisna ve onay yönetimi', description: 'Kural dışı durumları tespit eder, sorumlu kişiye yönlendirir ve onaydan sonra akışı sürdürür.' },
+        { title: 'Zamanlanmış ve tetiklenen çalışma', description: 'Belirli saatlerde, dönem sonlarında veya yeni bir e-posta ya da dosya geldiğinde başlar.' },
+        { title: 'İzleme ve işlem kayıtları', description: 'Hangi kaydın, hangi adımda, nasıl işlendiğini izlenebilir hale getirir.' },
       ],
     },
-    execution: {
-      heading: 'Operasyonun İçinde Çalışan Otomasyon',
-      description:
-        'AI Kitchen yalnızca demo ortamı için değil; gerçek operasyonlarda veri toplayan, karşılaştıran, karar veren ve hedef sistemlere işleyen dijital çalışanlar üretmek için tasarlanır.',
-      points: [
-        'Tekrarlı görevlerin otomatik yürütülmesi',
-        'Belge ve veri odaklı süreçlerin hızlanması',
-        'Operasyon ekiplerinin istisnalara odaklanması',
-        'Sürekli iyileştirme için ölçülebilir performans verisi',
+    comparison: {
+      eyebrow: 'Fark',
+      heading: 'Klasik RPA ile AI Kitchen yaklaşımı',
+      head: ['Konu', 'Klasik RPA', 'AI Kitchen'],
+      rows: [
+        { aspect: 'Kapsam', traditional: 'Tek tek görevlerin otomasyonu', aiKitchen: 'Karar desteğiyle uçtan uca süreç otomasyonu' },
+        { aspect: 'Belge anlama', traditional: 'Sınırlı, çoğunlukla kural bazlı', aiKitchen: 'Yapay zekâ destekli sınıflandırma ve alan çıkarma' },
+        { aspect: 'İstisna yönetimi', traditional: 'Manuel takip, kırılgan kurallar', aiKitchen: 'Eskalasyon, onay ve yeniden deneme tasarımı' },
+        { aspect: 'Ekip yetkinliği', traditional: 'Uzman geliştiricilere yüksek bağımlılık', aiKitchen: 'Eğitim ve ortak teslim modeli' },
       ],
+    },
+    control: {
+      eyebrow: 'Kontrol ve güvenlik',
+      heading: 'Otomasyon büyür, kontrol sizde kalır',
+      description:
+        'Robotun neye erişebileceği, hangi adımlarda insan onayı gerektiği ve hangi kayıtların tutulacağı projenin başında birlikte tanımlanır.',
+      items: [
+        { title: 'Veri sahipliği ve erişim kontrolü', description: 'Robot yalnızca izin verilen sistemlere ve verilere, tanımlı yetkilerle erişir.' },
+        { title: 'İşlem kayıtları', description: 'Her adımda ne yapıldığı ve hangi kayıtların işlendiği izlenebilir.' },
+        { title: 'İnsan onay adımları', description: 'Kritik iş akışlarında karar noktaları sorumlu çalışanda kalır.' },
+        { title: 'Politikaya uygun kurulum', description: 'Kurulum modeli, sistem ve güvenlik gereksinimlerinize göre keşif aşamasında belirlenir.' },
+      ],
+    },
+    useCases: {
+      eyebrow: 'Nereden başlamalı?',
+      heading: 'Departman ve konuya göre otomasyon',
+      description: 'Sizinkine en yakın senaryoyu inceleyin.',
+    },
+    cta: {
+      heading: 'Otomatikleştirmek istediğiniz süreci birlikte inceleyelim',
+      description: 'Mevcut adımları, kullandığınız sistemleri ve kontrol noktalarını birlikte değerlendirip uygun kapsamı belirleyelim.',
+      primary: 'Demo Talep Edin',
+      secondary: 'Çalışma modelini inceleyin',
     },
   },
 

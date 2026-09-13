@@ -270,100 +270,75 @@ export const en = {
   },
 
   platform: {
+    meta: {
+      title: 'Process Automation: Software Robots with RPA and AI | AI Kitchen',
+      description:
+        'Automate repetitive work across documents, email, Excel, ERP and web applications end to end with RPA robots and AI. Exception handling, human approval and controlled deployment.',
+    },
     hero: {
-      title: 'Platform',
+      eyebrow: 'Service · Process Automation',
+      title: 'Software robots that run repetitive work end to end',
       description:
-        'An enterprise automation foundation that combines browser, desktop, document, and data workflows with AI-supported RPA.',
+        'AI Kitchen combines document reading, data entry, checks, reconciliation and reporting into a single automated workflow. The robot applies the rules, AI understands the documents, and critical decisions stay with your team.',
+      primaryCta: 'Talk to us about your process',
+      secondaryCta: 'What the robot can do',
     },
-    digitalWorkforce: {
-      heading: 'Digital Workforce Architecture',
-      description:
-        'With AI Kitchen, you can design digital workers that act on behalf of your teams and manage them through tasks, rules, integrations, and approval logic.',
-      points: [
-        'Define digital workers by process',
-        'Manage queues, tasks, and priorities',
-        'Insert human approval where control is required',
-        'Orchestrate multi-step workflows centrally',
-      ],
+    diagram: {
+      inputsLabel: 'Incoming data',
+      inputs: ['Email and attachments', 'PDFs and scanned documents', 'Excel and CSV files', 'Web applications'],
+      robotLabel: 'AI Kitchen robot',
+      robotSteps: ['Reads and classifies', 'Checks against rules', 'Enters into systems', 'Reports and notifies'],
+      outputsLabel: 'Target systems',
+      outputs: ['ERP and SAP', 'CRM and business apps', 'Reports and files', 'Email notifications'],
+      humanLabel: 'When there is an exception',
+      human: 'Goes to the responsible employee for approval',
     },
-    agentic: {
-      heading: 'AI + RPA Integration',
-      description:
-        'Traditional RPA executes predefined steps. AI Kitchen adds document understanding, content classification, exception detection, and routing so decision points can live inside the process too.',
-      points: [
-        'Document and content understanding',
-        'Routing based on context, not only static rules',
-        'Smart escalation for exceptions',
-        'Decision and execution in one platform',
-      ],
-    },
-    orchestration: {
-      heading: 'Intelligent Process Orchestration',
-      description:
-        'Manage complex workflows that span multiple systems, files, and user steps with end-to-end visibility.',
-      points: [
-        'Workflow and step tracking',
-        'Real-time status monitoring',
-        'Queue, SLA, and priority logic',
-        'Retry, failure, and exception handling',
-      ],
-    },
-    onPrem: {
-      heading: 'Controlled Deployment Options',
-      description:
-        'Move forward with a deployment model that keeps data access, integrations, and operational controls aligned with your enterprise requirements.',
-      points: [
-        'Data ownership and access control',
-        'Deployment approaches aligned to internal policy',
-        'Compatibility with existing enterprise systems',
-        'Architecture shaped by security and compliance needs',
-      ],
-    },
-    architecture: {
-      heading: 'Enterprise Architecture Strengths',
+    capabilities: {
+      eyebrow: 'Capabilities',
+      heading: 'What the robot can do',
+      description: 'Most of the repetitive steps an employee performs on a computer can be automated.',
       items: [
-        {
-          title: 'Modular Design',
-          description:
-            'Scale faster with reusable automation steps and integration modules.',
-        },
-        {
-          title: 'Scalability',
-          description:
-            'Grow from pilot workflows to multi-department usage with control and consistency.',
-        },
-        {
-          title: 'Integration',
-          description:
-            'Connect ERP, CRM, web portals, email inboxes, shared folders, and APIs.',
-        },
-        {
-          title: 'Governance',
-          description:
-            'Track who did what, what happened in each step, and which records were processed.',
-        },
-        {
-          title: 'Performance',
-          description:
-            'Standardize repetitive, high-volume work to produce more consistent outputs.',
-        },
-        {
-          title: 'Security',
-          description:
-            'Support enterprise controls around access, logging, data usage, and critical approval steps.',
-        },
+        { title: 'Document and data processing', description: 'Reads, validates, transforms and moves data from PDFs, Excel, Word, CSV, email and forms.' },
+        { title: 'Application and browser automation', description: 'Builds workflows that operate across web applications, desktop screens and legacy systems.' },
+        { title: 'AI document understanding', description: 'Takes classification, field extraction, content understanding and exception detection beyond static rules.' },
+        { title: 'Exception and approval handling', description: 'Detects out-of-rule cases, routes them to the responsible person and continues after approval.' },
+        { title: 'Scheduled and triggered runs', description: 'Starts at set times, at period end, or when a new email or file arrives.' },
+        { title: 'Monitoring and processing records', description: 'Makes it traceable which record was processed, at which step and how.' },
       ],
     },
-    execution: {
-      heading: 'Automation That Runs Inside Operations',
-      description:
-        'AI Kitchen is designed for real workflows, not only demos. It creates digital workers that collect, compare, decide, and write back into operational systems.',
-      points: [
-        'Automated execution of repetitive tasks',
-        'Faster document- and data-driven workflows',
-        'Operations teams focused on exceptions instead of repetition',
-        'Measurable performance data for continuous improvement',
+    comparison: {
+      eyebrow: 'The difference',
+      heading: 'Traditional RPA vs. the AI Kitchen approach',
+      head: ['Aspect', 'Traditional RPA', 'AI Kitchen'],
+      rows: [
+        { aspect: 'Scope', traditional: 'Isolated task automation', aiKitchen: 'End-to-end process automation with decision support' },
+        { aspect: 'Document understanding', traditional: 'Limited and mostly rule-based', aiKitchen: 'AI-supported classification and field extraction' },
+        { aspect: 'Exception handling', traditional: 'Manual follow-up and brittle logic', aiKitchen: 'Escalation, approval and retry design built in' },
+        { aspect: 'Team capability', traditional: 'Strong dependence on specialist developers', aiKitchen: 'Training and a shared delivery model' },
       ],
+    },
+    control: {
+      eyebrow: 'Control and security',
+      heading: 'Automation scales, control stays with you',
+      description:
+        'What the robot can access, which steps need human approval and which records are kept are defined together at the start of the project.',
+      items: [
+        { title: 'Data ownership and access control', description: 'The robot accesses only permitted systems and data, with defined permissions.' },
+        { title: 'Processing records', description: 'What was done at each step and which records were processed stays traceable.' },
+        { title: 'Human approval steps', description: 'In critical workflows, decision points stay with the responsible employee.' },
+        { title: 'Deployment that fits your policy', description: 'The deployment model is defined during discovery based on your system and security requirements.' },
+      ],
+    },
+    useCases: {
+      eyebrow: 'Where to start?',
+      heading: 'Automation by department and topic',
+      description: 'Explore the scenario closest to yours.',
+    },
+    cta: {
+      heading: 'Let’s review the process you want to automate',
+      description: 'We will assess the current steps, the systems you use and your control points together to define the right scope.',
+      primary: 'Request a Demo',
+      secondary: 'Explore how we work',
     },
   },
 
