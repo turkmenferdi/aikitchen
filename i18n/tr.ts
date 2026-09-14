@@ -40,8 +40,8 @@ export const tr = {
     contact: 'İletişim',
     supportLabel: 'Destek',
     salesLabel: 'Satış',
-    supportEmail: 'support@aikitchen.com.tr',
-    salesEmail: 'sales@aikitchen.com.tr',
+    supportEmail: 'elena.turkmen@aikitchen.com.tr',
+    salesEmail: 'elena.turkmen@aikitchen.com.tr',
     turbohubContactLabel: 'TurboHUB',
     turbohubEmail: 'elena.turkmen@aikitchen.com.tr',
     copyright: '© 2026 AI Kitchen. Tüm hakları saklıdır.',
@@ -1063,9 +1063,9 @@ export const tr = {
     channels: {
       heading: 'Doğrudan e-posta ile ulaşın',
       items: [
-        { label: 'Satış ve demo', description: 'Süreç otomasyonu projeleri ve teklif talepleri', email: 'sales@aikitchen.com.tr' },
+        { label: 'Satış ve demo', description: 'Elena Türkmen · Süreç otomasyonu projeleri ve teklif talepleri', email: 'elena.turkmen@aikitchen.com.tr' },
         { label: 'TurboHUB', description: 'Elena Türkmen · TurboHUB demo ve bilgi talepleri', email: 'elena.turkmen@aikitchen.com.tr' },
-        { label: 'Destek', description: 'Mevcut müşteriler için teknik destek', email: 'support@aikitchen.com.tr' },
+        { label: 'Destek', description: 'Elena Türkmen · Mevcut müşteriler için teknik destek', email: 'elena.turkmen@aikitchen.com.tr' },
       ],
       response: 'Talebinizi aldıktan sonra en kısa sürede dönüş yapıyoruz.',
     },

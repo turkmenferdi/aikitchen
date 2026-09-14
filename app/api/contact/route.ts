@@ -5,7 +5,7 @@ const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY;
 const FROM_EMAIL = process.env.FROM_EMAIL || 'noreply@aikitchen.com.tr';
 const CONTACT_EMAILS =
   process.env.CONTACT_EMAILS ||
-  'support@aikitchen.com.tr,sales@aikitchen.com.tr,ferdi@aikitchen.com.tr,elena@aikitchen.com.tr';
+  'support@aikitchen.com.tr,sales@aikitchen.com.tr,ferdi@aikitchen.com.tr,elena.turkmen@aikitchen.com.tr';
 
 if (SENDGRID_API_KEY) {
   sgMail.setApiKey(SENDGRID_API_KEY);

@@ -73,11 +73,17 @@ export function Footer({ dictionary, locale }: FooterProps) {
     },
   ];
 
+  // Channels that share an address are shown once, with their labels combined.
   const emails = [
     { label: footer.salesLabel, email: footer.salesEmail },
     { label: footer.supportLabel, email: footer.supportEmail },
     { label: footer.turbohubContactLabel, email: footer.turbohubEmail },
-  ];
+  ].reduce<{ label: string; email: string }[]>((acc, item) => {
+    const existing = acc.find((entry) => entry.email === item.email);
+    if (existing) existing.label = `${existing.label} · ${item.label}`;
+    else acc.push({ ...item });
+    return acc;
+  }, []);
 
   return (
     <footer className="border-t border-outline-variant/60 bg-surface-dim text-white">

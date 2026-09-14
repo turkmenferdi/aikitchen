@@ -78,7 +78,7 @@ export default async function RootLayout({ children, params }: LayoutProps) {
               contactPoint: {
                 '@type': 'ContactPoint',
                 contactType: 'Sales',
-                email: 'sales@aikitchen.com.tr',
+                email: 'elena.turkmen@aikitchen.com.tr',
               },
             }),
           }}

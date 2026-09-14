@@ -40,8 +40,8 @@ export const en = {
     contact: 'Contact',
     supportLabel: 'Support',
     salesLabel: 'Sales',
-    supportEmail: 'support@aikitchen.com.tr',
-    salesEmail: 'sales@aikitchen.com.tr',
+    supportEmail: 'elena.turkmen@aikitchen.com.tr',
+    salesEmail: 'elena.turkmen@aikitchen.com.tr',
     turbohubContactLabel: 'TurboHUB',
     turbohubEmail: 'elena.turkmen@aikitchen.com.tr',
     copyright: '© 2026 AI Kitchen. All rights reserved.',
@@ -1064,9 +1064,9 @@ export const en = {
     channels: {
       heading: 'Reach us directly by email',
       items: [
-        { label: 'Sales and demos', description: 'Process automation projects and proposal requests', email: 'sales@aikitchen.com.tr' },
+        { label: 'Sales and demos', description: 'Elena Türkmen · Process automation projects and proposal requests', email: 'elena.turkmen@aikitchen.com.tr' },
         { label: 'TurboHUB', description: 'Elena Türkmen · TurboHUB demo and information requests', email: 'elena.turkmen@aikitchen.com.tr' },
-        { label: 'Support', description: 'Technical support for existing customers', email: 'support@aikitchen.com.tr' },
+        { label: 'Support', description: 'Elena Türkmen · Technical support for existing customers', email: 'elena.turkmen@aikitchen.com.tr' },
       ],
       response: 'We respond as soon as possible after receiving your request.',
     },
