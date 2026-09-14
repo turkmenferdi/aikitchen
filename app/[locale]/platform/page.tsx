@@ -70,14 +70,14 @@ export default async function Platform({ params }: PageProps) {
   return (
     <>
       {/* Hero + data flow diagram */}
-      <section className="relative overflow-hidden border-b border-outline-variant/60 bg-white">
+      <section className="relative overflow-hidden border-b border-outline-variant/60 bg-surface-container-low">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_0%,rgba(79,70,229,0.08),transparent_70%)]"
         />
         <div className="relative mx-auto max-w-7xl px-4 pb-20 pt-14 sm:px-6 md:pt-20 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3.5 py-1.5 text-sm font-semibold text-primary">
+            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3.5 py-1.5 text-sm font-semibold text-primary-fixed">
               <Bot size={16} />
               {platform.hero.eyebrow}
             </p>
@@ -100,7 +100,7 @@ export default async function Platform({ params }: PageProps) {
             <FlowColumn label={d.inputsLabel} items={d.inputs} />
             <FlowArrow />
             <div className="flex flex-col gap-4">
-              <div className="flex-1 rounded-3xl bg-ink p-6 text-white shadow-[0_24px_60px_-24px_rgba(15,18,51,0.6)]">
+              <div className="flex-1 rounded-3xl bg-ink p-6 text-white shadow-[0_24px_60px_-24px_rgba(0,0,0,0.6)]">
                 <div className="mb-5 flex items-center gap-3">
                   <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-secondary">
                     <Bot size={20} />
@@ -117,7 +117,7 @@ export default async function Platform({ params }: PageProps) {
                 </ol>
               </div>
               <div className="flex items-center gap-3 rounded-2xl border border-primary/30 bg-primary/5 px-4 py-3">
-                <UserCheck size={20} className="flex-shrink-0 text-primary" />
+                <UserCheck size={20} className="flex-shrink-0 text-primary-fixed" />
                 <p className="text-sm text-on-surface">
                   <span className="font-semibold">{d.humanLabel}:</span> {d.human}
                 </p>
@@ -142,8 +142,8 @@ export default async function Platform({ params }: PageProps) {
             {platform.capabilities.items.map((item, idx) => {
               const Icon = capabilityIcons[idx % capabilityIcons.length];
               return (
-                <article key={item.title} className="rounded-2xl border border-outline-variant bg-white p-7">
-                  <span className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                <article key={item.title} className="rounded-2xl border border-outline-variant bg-surface-container p-7">
+                  <span className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary-fixed">
                     <Icon size={22} />
                   </span>
                   <h3 className="mb-2 text-lg font-bold text-on-surface">{item.title}</h3>
@@ -156,7 +156,7 @@ export default async function Platform({ params }: PageProps) {
       </section>
 
       {/* Traditional RPA vs AI Kitchen */}
-      <section className="border-y border-outline-variant/60 bg-white py-20 md:py-28">
+      <section className="border-y border-outline-variant/60 bg-surface-container-low py-20 md:py-28">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <SectionHeading eyebrow={platform.comparison.eyebrow} title={platform.comparison.heading} className="mb-12" />
           <div className="overflow-x-auto rounded-2xl border border-outline-variant">
@@ -165,7 +165,7 @@ export default async function Platform({ params }: PageProps) {
                 <tr className="bg-surface-container-low">
                   <th scope="col" className="px-6 py-4 text-sm font-semibold text-on-surface-variant">{platform.comparison.head[0]}</th>
                   <th scope="col" className="px-6 py-4 text-sm font-semibold text-on-surface-variant">{platform.comparison.head[1]}</th>
-                  <th scope="col" className="bg-primary/5 px-6 py-4 text-sm font-semibold text-primary">{platform.comparison.head[2]}</th>
+                  <th scope="col" className="bg-primary/5 px-6 py-4 text-sm font-semibold text-primary-fixed">{platform.comparison.head[2]}</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-outline-variant">
@@ -180,7 +180,7 @@ export default async function Platform({ params }: PageProps) {
                     </td>
                     <td className="bg-primary/5 px-6 py-5 align-top font-medium text-on-surface">
                       <span className="flex gap-2.5">
-                        <Check size={18} className="mt-0.5 flex-shrink-0 text-primary" />
+                        <Check size={18} className="mt-0.5 flex-shrink-0 text-primary-fixed" />
                         {row.aiKitchen}
                       </span>
                     </td>
@@ -205,8 +205,8 @@ export default async function Platform({ params }: PageProps) {
             {platform.control.items.map((item, idx) => {
               const Icon = controlIcons[idx % controlIcons.length];
               return (
-                <article key={item.title} className="rounded-2xl border border-outline-variant bg-white p-6">
-                  <Icon size={22} className="mb-4 text-primary" />
+                <article key={item.title} className="rounded-2xl border border-outline-variant bg-surface-container p-6">
+                  <Icon size={22} className="mb-4 text-primary-fixed" />
                   <h3 className="mb-2 text-lg font-bold text-on-surface">{item.title}</h3>
                   <p className="leading-relaxed text-on-surface-variant">{item.description}</p>
                 </article>
@@ -217,7 +217,7 @@ export default async function Platform({ params }: PageProps) {
       </section>
 
       {/* Use cases */}
-      <section className="border-t border-outline-variant/60 bg-white py-20 md:py-28">
+      <section className="border-t border-outline-variant/60 bg-surface-container-low py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow={platform.useCases.eyebrow}
@@ -230,19 +230,19 @@ export default async function Platform({ params }: PageProps) {
               <Link
                 key={item.href}
                 href={item.href}
-                className="group flex flex-col rounded-2xl border border-outline-variant bg-surface p-6 transition-colors hover:border-primary/50 hover:bg-white"
+                className="group flex flex-col rounded-2xl border border-outline-variant bg-surface p-6 transition-colors hover:border-primary/50 hover:bg-surface-container-high"
               >
-                <FileSearch size={20} className="mb-4 text-primary" />
+                <FileSearch size={20} className="mb-4 text-primary-fixed" />
                 <h3 className="mb-2 text-lg font-bold text-on-surface">{item.title}</h3>
                 <p className="mb-5 leading-relaxed text-on-surface-variant">{item.description}</p>
-                <ArrowRight size={18} className="mt-auto text-primary transition-transform group-hover:translate-x-1" />
+                <ArrowRight size={18} className="mt-auto text-primary-fixed transition-transform group-hover:translate-x-1" />
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-white pb-20 md:pb-28">
+      <section className="bg-surface-container-low pb-20 md:pb-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <CTABanner
             heading={platform.cta.heading}
@@ -262,7 +262,7 @@ function FlowColumn({ label, items }: { label: string; items: string[] }) {
       <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-on-surface-variant">{label}</p>
       <ul className="space-y-2.5">
         {items.map((item) => (
-          <li key={item} className="rounded-xl border border-outline-variant bg-white px-4 py-3 text-[15px] font-medium text-on-surface">
+          <li key={item} className="rounded-xl border border-outline-variant bg-surface-container px-4 py-3 text-[15px] font-medium text-on-surface">
             {item}
           </li>
         ))}
@@ -273,7 +273,7 @@ function FlowColumn({ label, items }: { label: string; items: string[] }) {
 
 function FlowArrow() {
   return (
-    <div aria-hidden className="flex items-center justify-center text-primary">
+    <div aria-hidden className="flex items-center justify-center text-primary-fixed">
       <ArrowRight size={24} className="hidden lg:block" />
       <ArrowDown size={24} className="lg:hidden" />
     </div>

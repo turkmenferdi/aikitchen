@@ -15,17 +15,17 @@ interface TrustBadgesProps {
 export function TrustBadges({ badges, className = '' }: TrustBadgesProps) {
   const defaultBadges: TrustBadge[] = badges || [
     {
-      icon: <Shield className="w-6 h-6 text-primary" />,
+      icon: <Shield className="w-6 h-6 text-primary-fixed" />,
       label: 'Access Control',
       value: 'Defined for each workflow',
     },
     {
-      icon: <Lock className="w-6 h-6 text-primary" />,
+      icon: <Lock className="w-6 h-6 text-primary-fixed" />,
       label: 'Process Records',
       value: 'Logging and audit-trail design',
     },
     {
-      icon: <Zap className="w-6 h-6 text-primary" />,
+      icon: <Zap className="w-6 h-6 text-primary-fixed" />,
       label: 'Human Review',
       value: 'Approval steps where required',
     },

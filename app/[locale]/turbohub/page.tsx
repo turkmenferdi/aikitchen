@@ -51,14 +51,14 @@ export default async function TurboHub({ params }: PageProps) {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden border-b border-outline-variant/60 bg-white">
+      <section className="relative overflow-hidden border-b border-outline-variant/60 bg-surface-container-low">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(55%_60%_at_85%_20%,rgba(124,58,237,0.10),transparent_70%)]"
         />
         <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-4 pb-20 pt-14 sm:px-6 md:pt-20 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:px-8 lg:pb-24">
           <div>
-            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-secondary/25 bg-secondary/5 px-3.5 py-1.5 text-sm font-semibold text-secondary">
+            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-secondary/25 bg-secondary/5 px-3.5 py-1.5 text-sm font-semibold text-secondary-fixed-dim">
               <BarChart3 size={16} />
               {t.hero.eyebrow}
             </p>
@@ -77,7 +77,7 @@ export default async function TurboHub({ params }: PageProps) {
             </div>
             <ul className="mt-8 flex flex-wrap gap-2">
               {t.hero.tags.map((tag) => (
-                <li key={tag} className="rounded-lg border border-outline-variant bg-white px-3 py-1.5 text-sm font-medium text-on-surface">
+                <li key={tag} className="rounded-lg border border-outline-variant bg-surface-container px-3 py-1.5 text-sm font-medium text-on-surface">
                   {tag}
                 </li>
               ))}
@@ -92,7 +92,7 @@ export default async function TurboHub({ params }: PageProps) {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-12 items-start">
             <div className="md:col-span-2">
-              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-primary">{t.problem.eyebrow}</p>
+              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-primary-fixed">{t.problem.eyebrow}</p>
               <h2 className="text-3xl md:text-4xl font-bold text-on-surface leading-tight">{t.problem.heading}</h2>
             </div>
             <ul className="md:col-span-3 space-y-6 border-l-4 border-secondary pl-6">
@@ -129,7 +129,7 @@ export default async function TurboHub({ params }: PageProps) {
                   <ul className="space-y-3">
                     {item.problems.map((problem) => (
                       <li key={problem} className="flex items-start gap-3 text-on-surface-variant">
-                        <Zap className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
+                        <Zap className="w-5 h-5 text-secondary-fixed-dim flex-shrink-0 mt-0.5" />
                         <span>{problem}</span>
                       </li>
                     ))}
@@ -137,13 +137,13 @@ export default async function TurboHub({ params }: PageProps) {
                 </div>
                 <div className="bg-gradient-to-br from-primary/20 to-secondary-container/40 p-8 lg:grid lg:grid-rows-subgrid lg:row-span-2">
                   <div className="mb-4">
-                    <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-primary">{t.costs.solutionLabel}</p>
+                    <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-primary-fixed">{t.costs.solutionLabel}</p>
                     <h4 className="mb-0 font-semibold text-on-surface">{item.solutionTitle}</h4>
                   </div>
                   <ul className="space-y-3">
                     {item.solutions.map((solution) => (
                       <li key={solution} className="flex items-start gap-3 text-on-surface">
-                        <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-5 h-5 text-primary-fixed flex-shrink-0 mt-0.5" />
                         <span>{solution}</span>
                       </li>
                     ))}
@@ -164,7 +164,7 @@ export default async function TurboHub({ params }: PageProps) {
               <ul className="space-y-5">
                 {t.about.points.map((point) => (
                   <li key={point} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-6 h-6 text-primary-fixed flex-shrink-0 mt-0.5" />
                     <span className="text-lg text-on-surface-variant">{point}</span>
                   </li>
                 ))}
@@ -227,7 +227,7 @@ export default async function TurboHub({ params }: PageProps) {
                   className="rounded-[1.25rem] border border-outline/20 bg-surface-container p-8 lg:grid lg:grid-rows-subgrid lg:row-span-3"
                 >
                   <div>
-                    <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-3xl bg-primary/20 text-primary">
+                    <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-3xl bg-primary/20 text-primary-fixed">
                       <Icon className="w-7 h-7" strokeWidth={1.5} />
                     </div>
                     <h3 className="mb-3 text-xl font-semibold text-on-surface">{option.title}</h3>
@@ -236,7 +236,7 @@ export default async function TurboHub({ params }: PageProps) {
                   <ul className="space-y-3">
                     {option.specs.map((spec) => (
                       <li key={spec} className="flex items-start gap-3 text-sm text-on-surface-variant">
-                        <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-4 h-4 text-primary-fixed flex-shrink-0 mt-0.5" />
                         <span>{spec}</span>
                       </li>
                     ))}
@@ -250,10 +250,10 @@ export default async function TurboHub({ params }: PageProps) {
       </section>
 
       {/* White paper + contact */}
-      <section id="contact" className="scroll-mt-24 bg-white py-20 md:py-28">
+      <section id="contact" className="scroll-mt-24 bg-surface-container-low py-20 md:py-28">
         <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
           <article className="flex flex-col rounded-3xl border border-outline-variant bg-surface p-8 md:p-10">
-            <span className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-secondary/10 text-secondary">
+            <span className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-secondary/10 text-secondary-fixed-dim">
               <FileText size={24} />
             </span>
             <h2 className="mb-3 text-2xl font-bold text-on-surface md:text-3xl">{t.whitepaper.heading}</h2>
@@ -292,7 +292,7 @@ export default async function TurboHub({ params }: PageProps) {
               </div>
 
               <div className="flex flex-col gap-3 sm:flex-row">
-                <a href={`/${validLocale}/contact?topic=turbohub`} className={buttonClass('primary', 'lg', '!bg-white !text-ink !shadow-none hover:!bg-primary-container')}>
+                <a href={`/${validLocale}/contact?topic=turbohub`} className={buttonClass('primary', 'lg', '!bg-white !text-ink !shadow-none hover:!bg-indigo-100')}>
                   {t.contact.formCta}
                   <ArrowRight size={18} />
                 </a>

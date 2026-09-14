@@ -80,7 +80,7 @@ export function Footer({ dictionary, locale }: FooterProps) {
   ];
 
   return (
-    <footer className="bg-ink text-white">
+    <footer className="border-t border-outline-variant/60 bg-surface-dim text-white">
       <div className="mx-auto max-w-7xl px-4 pb-10 pt-16 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-[1.3fr_repeat(3,1fr)_1.6fr]">
           <div>

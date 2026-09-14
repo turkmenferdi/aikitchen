@@ -73,10 +73,10 @@ export default async function SolutionDetail({ params }: PageProps) {
 
   return (
     <>
-      <section className="border-b border-outline-variant/60 bg-white">
+      <section className="border-b border-outline-variant/60 bg-surface-container-low">
         <div className="mx-auto max-w-7xl px-4 pb-16 pt-8 sm:px-6 md:pb-20 lg:px-8">
           <nav aria-label="Breadcrumb" className="mb-10 flex items-center gap-1.5 text-sm text-on-surface-variant">
-            <Link href={`/${validLocale}/solutions`} className="hover:text-primary">
+            <Link href={`/${validLocale}/solutions`} className="hover:text-primary-fixed">
               {ui.breadcrumb}
             </Link>
             <ChevronRight size={14} />
@@ -85,7 +85,7 @@ export default async function SolutionDetail({ params }: PageProps) {
 
           <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
             <div>
-              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-primary">{data.name}</p>
+              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-primary-fixed">{data.name}</p>
               <h1 className="mb-6 text-[2.3rem] font-extrabold leading-[1.1] tracking-tight text-on-surface sm:text-5xl">{data.hero.title}</h1>
               <p className="mb-9 max-w-2xl text-lg leading-relaxed text-on-surface-variant md:text-xl">{data.hero.description}</p>
               <div className="flex flex-col gap-3 sm:flex-row">
@@ -99,7 +99,7 @@ export default async function SolutionDetail({ params }: PageProps) {
               </div>
             </div>
 
-            <figure className="rounded-3xl border border-outline-variant bg-surface p-6 shadow-[0_24px_60px_-28px_rgba(15,18,51,0.3)] md:p-8">
+            <figure className="rounded-3xl border border-outline-variant bg-surface p-6 shadow-[0_24px_60px_-28px_rgba(0,0,0,0.3)] md:p-8">
               <figcaption className="mb-5 flex items-center gap-3">
                 <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-ink text-white">
                   <Bot size={20} />
@@ -108,7 +108,7 @@ export default async function SolutionDetail({ params }: PageProps) {
               </figcaption>
               <ol className="space-y-3">
                 {data.flow.map((step, idx) => (
-                  <li key={step} className="flex items-center gap-4 rounded-2xl border border-outline-variant bg-white px-5 py-4">
+                  <li key={step} className="flex items-center gap-4 rounded-2xl border border-outline-variant bg-surface-container px-5 py-4">
                     <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-primary font-headline text-sm font-bold text-white">
                       {idx + 1}
                     </span>
@@ -123,8 +123,8 @@ export default async function SolutionDetail({ params }: PageProps) {
 
       <section className="bg-surface py-16 md:py-24">
         <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-          <article className="rounded-3xl border border-outline-variant bg-white p-8 md:p-10">
-            <span className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-amber-50 text-amber-600">
+          <article className="rounded-3xl border border-outline-variant bg-surface-container p-8 md:p-10">
+            <span className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-amber-400/10 text-amber-300">
               <TriangleAlert size={22} />
             </span>
             <h2 className="mb-4 text-2xl font-bold text-on-surface">{ui.challengeLabel}</h2>
@@ -140,14 +140,14 @@ export default async function SolutionDetail({ params }: PageProps) {
         </div>
       </section>
 
-      <section className="border-y border-outline-variant/60 bg-white py-16 md:py-24">
+      <section className="border-y border-outline-variant/60 bg-surface-container-low py-16 md:py-24">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-20 lg:px-8">
           <div>
             <h2 className="mb-6 text-3xl font-bold text-on-surface">{ui.capabilitiesLabel}</h2>
             <ul className="space-y-3">
               {data.capabilities.map((capability) => (
                 <li key={capability} className="flex items-start gap-3 rounded-2xl border border-outline-variant bg-surface px-5 py-4 text-on-surface">
-                  <Check size={20} className="mt-0.5 flex-shrink-0 text-primary" />
+                  <Check size={20} className="mt-0.5 flex-shrink-0 text-primary-fixed" />
                   <span className="text-[15px] font-medium">{capability}</span>
                 </li>
               ))}
@@ -176,11 +176,11 @@ export default async function SolutionDetail({ params }: PageProps) {
               <Link
                 key={item.href}
                 href={item.href}
-                className="group flex flex-col rounded-2xl border border-outline-variant bg-white p-6 transition-colors hover:border-primary/40"
+                className="group flex flex-col rounded-2xl border border-outline-variant bg-surface-container p-6 transition-colors hover:border-primary/40"
               >
                 <h3 className="mb-2 text-lg font-bold text-on-surface">{item.title}</h3>
                 <p className="mb-4 leading-relaxed text-on-surface-variant">{item.description}</p>
-                <ArrowRight size={18} className="mt-auto text-primary transition-transform group-hover:translate-x-1" />
+                <ArrowRight size={18} className="mt-auto text-primary-fixed transition-transform group-hover:translate-x-1" />
               </Link>
             ))}
           </div>

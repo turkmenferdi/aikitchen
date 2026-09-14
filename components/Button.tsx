@@ -18,8 +18,8 @@ export const buttonStyles = {
   },
   variant: {
     primary: 'bg-primary text-on-primary shadow-lg shadow-primary/25 hover:bg-primary-dim hover:shadow-xl hover:shadow-primary/30',
-    secondary: 'border border-outline-variant bg-white text-on-surface shadow-sm hover:border-outline hover:bg-surface-container-low',
-    outline: 'border-2 border-primary text-primary hover:bg-primary/5',
+    secondary: 'border border-outline-variant bg-surface-container text-on-surface shadow-sm hover:border-outline hover:bg-surface-container-low',
+    outline: 'border-2 border-primary text-primary-fixed hover:bg-primary/5',
     ghost: 'text-on-surface hover:bg-surface-container-high',
   },
 } as const;

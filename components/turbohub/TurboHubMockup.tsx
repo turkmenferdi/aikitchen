@@ -18,7 +18,7 @@ export function TurboHubMockup(props: TurboHubMockupProps) {
   return (
     <div className="relative">
       <div aria-hidden className="absolute -inset-6 rounded-[2.5rem] bg-gradient-to-br from-secondary/20 via-primary/10 to-transparent blur-2xl" />
-      <figure className="relative overflow-hidden rounded-3xl border border-outline-variant bg-white shadow-[0_24px_60px_-20px_rgba(15,18,51,0.25)]">
+      <figure className="relative overflow-hidden rounded-3xl border border-outline-variant bg-surface-container shadow-[0_24px_60px_-20px_rgba(0,0,0,0.25)]">
         <div className="flex items-center justify-between border-b border-outline-variant/80 bg-surface-container-low px-6 py-3.5">
           <p className="font-headline text-sm font-bold text-on-surface">TurboHUB</p>
           <span className="rounded-full bg-surface-container-high px-2.5 py-1 text-xs font-medium text-on-surface-variant">{props.label}</span>
@@ -44,7 +44,7 @@ export function TurboHubMockup(props: TurboHubMockupProps) {
                 <Database size={13} />
                 {props.sourcesLabel}:
                 {props.sources.map((source) => (
-                  <span key={source} className="rounded-md bg-primary/10 px-2 py-0.5 font-medium text-primary">
+                  <span key={source} className="rounded-md bg-primary/10 px-2 py-0.5 font-medium text-primary-fixed">
                     {source}
                   </span>
                 ))}

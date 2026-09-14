@@ -40,9 +40,9 @@ export default async function Solutions({ params }: PageProps) {
 
   return (
     <>
-      <section className="border-b border-outline-variant/60 bg-white">
+      <section className="border-b border-outline-variant/60 bg-surface-container-low">
         <div className="mx-auto max-w-7xl px-4 pb-16 pt-14 sm:px-6 md:pb-20 md:pt-20 lg:px-8">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-primary">{index.hero.eyebrow}</p>
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-primary-fixed">{index.hero.eyebrow}</p>
           <h1 className="mb-6 max-w-3xl text-[2.4rem] font-extrabold leading-[1.1] tracking-tight text-on-surface sm:text-5xl">{index.hero.title}</h1>
           <p className="max-w-2xl text-lg leading-relaxed text-on-surface-variant md:text-xl">{index.hero.description}</p>
         </div>
@@ -76,11 +76,11 @@ export default async function Solutions({ params }: PageProps) {
                   <Link
                     key={page.href}
                     href={page.href}
-                    className="group flex flex-col rounded-2xl border border-outline-variant bg-white p-6 transition-colors hover:border-primary/40"
+                    className="group flex flex-col rounded-2xl border border-outline-variant bg-surface-container p-6 transition-colors hover:border-primary/40"
                   >
                     <h3 className="mb-2 text-lg font-bold text-on-surface">{page.title}</h3>
                     <p className="mb-4 leading-relaxed text-on-surface-variant">{page.description}</p>
-                    <ArrowRight size={18} className="mt-auto text-primary transition-transform group-hover:translate-x-1" />
+                    <ArrowRight size={18} className="mt-auto text-primary-fixed transition-transform group-hover:translate-x-1" />
                   </Link>
                 ))}
               </div>

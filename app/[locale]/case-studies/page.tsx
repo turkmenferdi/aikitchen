@@ -35,9 +35,9 @@ export default async function CaseStudies({ params }: PageProps) {
 
   return (
     <>
-      <section className="border-b border-outline-variant/60 bg-white">
+      <section className="border-b border-outline-variant/60 bg-surface-container-low">
         <div className="mx-auto max-w-7xl px-4 pb-16 pt-14 sm:px-6 md:pb-20 md:pt-20 lg:px-8">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-primary">{caseStudies.hero.eyebrow}</p>
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-primary-fixed">{caseStudies.hero.eyebrow}</p>
           <h1 className="mb-6 max-w-3xl text-[2.3rem] font-extrabold leading-[1.1] tracking-tight text-on-surface sm:text-5xl">{caseStudies.hero.title}</h1>
           <p className="max-w-3xl text-lg leading-relaxed text-on-surface-variant md:text-xl">{caseStudies.hero.description}</p>
         </div>
@@ -51,11 +51,11 @@ export default async function CaseStudies({ params }: PageProps) {
             {documented.cases.map((item, idx) => {
               const Icon = caseIcons[idx % caseIcons.length];
               return (
-                <article key={item.title} className="overflow-hidden rounded-3xl border border-outline-variant bg-white">
+                <article key={item.title} className="overflow-hidden rounded-3xl border border-outline-variant bg-surface-container">
                   <div className="grid lg:grid-cols-[1.25fr_0.75fr]">
                     <div className="p-8 md:p-10">
                       <div className="mb-6 flex flex-wrap items-center gap-3">
-                        <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                        <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary-fixed">
                           <Icon size={22} />
                         </span>
                         <span className="inline-flex items-center gap-1.5 rounded-full bg-success/10 px-3 py-1 text-xs font-semibold text-success">
@@ -75,7 +75,7 @@ export default async function CaseStudies({ params }: PageProps) {
                           <ul className="space-y-2">
                             {item.steps.map((step) => (
                               <li key={step} className="flex items-start gap-2.5 text-on-surface">
-                                <Check size={18} className="mt-0.5 flex-shrink-0 text-primary" />
+                                <Check size={18} className="mt-0.5 flex-shrink-0 text-primary-fixed" />
                                 <span>{step}</span>
                               </li>
                             ))}
@@ -102,13 +102,13 @@ export default async function CaseStudies({ params }: PageProps) {
       </section>
 
       {/* Illustrative scenarios */}
-      <section className="border-y border-outline-variant/60 bg-white py-20 md:py-24">
+      <section className="border-y border-outline-variant/60 bg-surface-container-low py-20 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading eyebrow={scenarios.eyebrow} title={scenarios.heading} description={scenarios.description} centered={false} className="mb-10" />
           <div className="grid gap-5 lg:grid-cols-3">
             {caseStudies.items.map((item) => (
               <article key={item.company} className="flex flex-col rounded-3xl border border-dashed border-outline bg-surface p-7">
-                <span className="mb-5 inline-flex w-fit items-center gap-1.5 rounded-full bg-amber-50 px-3 py-1 text-xs font-semibold text-amber-700">
+                <span className="mb-5 inline-flex w-fit items-center gap-1.5 rounded-full bg-amber-400/10 px-3 py-1 text-xs font-semibold text-amber-300">
                   <FlaskConical size={14} />
                   {scenarios.label}
                 </span>
@@ -132,11 +132,11 @@ export default async function CaseStudies({ params }: PageProps) {
 
           <article className="mt-5 flex flex-col gap-6 rounded-3xl border border-dashed border-outline bg-surface p-7 md:flex-row md:items-center md:justify-between md:p-8">
             <div className="flex gap-5">
-              <span className="hidden h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary sm:flex">
+              <span className="hidden h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary-fixed sm:flex">
                 <HardDrive size={22} />
               </span>
               <div>
-                <span className="mb-2 inline-flex items-center gap-1.5 rounded-full bg-amber-50 px-3 py-1 text-xs font-semibold text-amber-700">
+                <span className="mb-2 inline-flex items-center gap-1.5 rounded-full bg-amber-400/10 px-3 py-1 text-xs font-semibold text-amber-300">
                   <FlaskConical size={14} />
                   {sap.label}
                 </span>
@@ -144,7 +144,7 @@ export default async function CaseStudies({ params }: PageProps) {
                 <p className="max-w-3xl leading-relaxed text-on-surface-variant">{sap.description}</p>
               </div>
             </div>
-            <Link href={sap.href} className="inline-flex flex-shrink-0 items-center gap-2 font-semibold text-primary hover:gap-3">
+            <Link href={sap.href} className="inline-flex flex-shrink-0 items-center gap-2 font-semibold text-primary-fixed hover:gap-3">
               {sap.cta}
               <ArrowRight size={18} className="transition-all" />
             </Link>
@@ -152,7 +152,7 @@ export default async function CaseStudies({ params }: PageProps) {
         </div>
       </section>
 
-      <section className="bg-white py-20 md:py-28">
+      <section className="bg-surface-container-low py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <CTABanner
             heading={caseStudies.cta.heading}

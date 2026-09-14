@@ -38,23 +38,23 @@ export default async function About({ params }: PageProps) {
 
   return (
     <>
-      <section className="border-b border-outline-variant/60 bg-white">
+      <section className="border-b border-outline-variant/60 bg-surface-container-low">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 pb-16 pt-14 sm:px-6 md:pb-20 md:pt-20 lg:grid-cols-[1.25fr_0.75fr] lg:gap-16 lg:px-8">
           <div>
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-primary">{about.hero.eyebrow}</p>
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-primary-fixed">{about.hero.eyebrow}</p>
             <h1 className="mb-6 text-[2.3rem] font-extrabold leading-[1.1] tracking-tight text-on-surface sm:text-5xl">{about.hero.title}</h1>
             <p className="max-w-2xl text-lg leading-relaxed text-on-surface-variant md:text-xl">{about.hero.description}</p>
           </div>
           <aside className="rounded-3xl border border-outline-variant bg-surface p-7">
             <div className="mb-5 flex items-center gap-3">
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary-fixed">
                 <Users size={20} />
               </span>
               <p className="font-headline text-lg font-bold text-on-surface">{about.hero.focusLabel}</p>
             </div>
             <ul className="flex flex-wrap gap-2">
               {about.hero.focusTeams.map((team) => (
-                <li key={team} className="rounded-lg border border-outline-variant bg-white px-3 py-1.5 text-sm font-medium text-on-surface">
+                <li key={team} className="rounded-lg border border-outline-variant bg-surface-container px-3 py-1.5 text-sm font-medium text-on-surface">
                   {team}
                 </li>
               ))}
@@ -71,7 +71,7 @@ export default async function About({ params }: PageProps) {
           </div>
           <ol className="space-y-4">
             {about.story.principles.map((principle, idx) => (
-              <li key={principle.title} className="flex gap-5 rounded-2xl border border-outline-variant bg-white p-6">
+              <li key={principle.title} className="flex gap-5 rounded-2xl border border-outline-variant bg-surface-container p-6">
                 <span className="font-headline text-3xl font-extrabold text-primary-fixed-dim">{String(idx + 1).padStart(2, '0')}</span>
                 <div>
                   <h3 className="mb-1 text-lg font-bold text-on-surface">{principle.title}</h3>
@@ -83,10 +83,10 @@ export default async function About({ params }: PageProps) {
         </div>
       </section>
 
-      <section className="border-y border-outline-variant/60 bg-white py-20 md:py-28">
+      <section className="border-y border-outline-variant/60 bg-surface-container-low py-20 md:py-28">
         <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <article className="rounded-3xl border border-outline-variant bg-surface p-8 md:p-10">
-            <Target size={28} className="mb-5 text-primary" />
+            <Target size={28} className="mb-5 text-primary-fixed" />
             <h2 className="mb-3 text-2xl font-bold text-on-surface">{about.mission.heading}</h2>
             <p className="text-lg leading-relaxed text-on-surface-variant">{about.mission.content}</p>
           </article>
@@ -106,8 +106,8 @@ export default async function About({ params }: PageProps) {
             {about.values.items.map((item, idx) => {
               const Icon = valueIcons[idx % valueIcons.length];
               return (
-                <article key={item.title} className="rounded-2xl border border-outline-variant bg-white p-6">
-                  <span className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                <article key={item.title} className="rounded-2xl border border-outline-variant bg-surface-container p-6">
+                  <span className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary-fixed">
                     <Icon size={22} />
                   </span>
                   <h3 className="mb-2 text-lg font-bold text-on-surface">{item.title}</h3>
@@ -119,7 +119,7 @@ export default async function About({ params }: PageProps) {
         </div>
       </section>
 
-      <section className="border-t border-outline-variant/60 bg-white py-20 md:py-24">
+      <section className="border-t border-outline-variant/60 bg-surface-container-low py-20 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="mb-8 text-2xl font-bold text-on-surface">{about.explore.heading}</h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -127,18 +127,18 @@ export default async function About({ params }: PageProps) {
               <Link
                 key={link.href}
                 href={`/${validLocale}${link.href}`}
-                className="group flex flex-col rounded-2xl border border-outline-variant bg-surface p-6 transition-colors hover:border-primary/40 hover:bg-white"
+                className="group flex flex-col rounded-2xl border border-outline-variant bg-surface p-6 transition-colors hover:border-primary/40 hover:bg-surface-container-high"
               >
                 <h3 className="mb-2 text-lg font-bold text-on-surface">{link.title}</h3>
                 <p className="mb-4 leading-relaxed text-on-surface-variant">{link.description}</p>
-                <ArrowRight size={18} className="mt-auto text-primary transition-transform group-hover:translate-x-1" />
+                <ArrowRight size={18} className="mt-auto text-primary-fixed transition-transform group-hover:translate-x-1" />
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-white pb-20 md:pb-28">
+      <section className="bg-surface-container-low pb-20 md:pb-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <CTABanner
             heading={about.cta.heading}

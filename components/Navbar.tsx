@@ -45,7 +45,7 @@ export function Navbar({ dictionary, locale }: NavbarProps) {
   const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-outline-variant/70 bg-white/85 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-outline-variant/70 bg-surface/85 backdrop-blur-xl">
       <nav className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-8" aria-label="Main">
         <Link href={`/${locale}`} className="flex-shrink-0" aria-label="AI Kitchen">
           <Logo />
@@ -58,7 +58,7 @@ export function Navbar({ dictionary, locale }: NavbarProps) {
                 href={item.href}
                 aria-current={isActive(item.href) ? 'page' : undefined}
                 className={`whitespace-nowrap rounded-lg px-3 py-2 text-[15px] font-medium transition-colors ${
-                  isActive(item.href) ? 'text-primary' : 'text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface'
+                  isActive(item.href) ? 'text-primary-fixed' : 'text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface'
                 }`}
               >
                 {item.label}
@@ -86,7 +86,7 @@ export function Navbar({ dictionary, locale }: NavbarProps) {
       </nav>
 
       {isOpen && (
-        <div id="mobile-menu" className="border-t border-outline-variant/70 bg-white xl:hidden">
+        <div id="mobile-menu" className="border-t border-outline-variant/70 bg-surface-container xl:hidden">
           <ul className="mx-auto max-w-7xl space-y-1 px-4 py-4 sm:px-6">
             {[{ label: t.home, href: `/${locale}` }, ...navItems, { label: t.contact, href: `/${locale}/contact` }].map((item) => (
               <li key={item.href}>

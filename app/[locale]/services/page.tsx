@@ -42,9 +42,9 @@ export default async function Services({ params }: PageProps) {
 
   return (
     <>
-      <section className="border-b border-outline-variant/60 bg-white">
+      <section className="border-b border-outline-variant/60 bg-surface-container-low">
         <div className="mx-auto max-w-7xl px-4 pb-16 pt-14 sm:px-6 md:pb-20 md:pt-20 lg:px-8">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-primary">{index.hero.eyebrow}</p>
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-primary-fixed">{index.hero.eyebrow}</p>
           <h1 className="mb-6 max-w-4xl text-[2.3rem] font-extrabold leading-[1.1] tracking-tight text-on-surface sm:text-5xl">{index.hero.title}</h1>
           <p className="mb-9 max-w-3xl text-lg leading-relaxed text-on-surface-variant md:text-xl">{index.intro}</p>
           <Link href={`/${validLocale}/contact`} className={buttonClass('primary', 'lg')}>
@@ -57,9 +57,9 @@ export default async function Services({ params }: PageProps) {
               <li key={stage.name}>
                 <a
                   href={`#stage-${idx + 1}`}
-                  className="flex h-full items-center gap-3 rounded-2xl border border-outline-variant bg-surface px-4 py-3 transition-colors hover:border-primary/40 hover:bg-white"
+                  className="flex h-full items-center gap-3 rounded-2xl border border-outline-variant bg-surface px-4 py-3 transition-colors hover:border-primary/40 hover:bg-surface-container-high"
                 >
-                  <span className="font-headline text-sm font-bold text-primary">{String(idx + 1).padStart(2, '0')}</span>
+                  <span className="font-headline text-sm font-bold text-primary-fixed">{String(idx + 1).padStart(2, '0')}</span>
                   <span className="text-sm font-semibold leading-snug text-on-surface">{stage.name}</span>
                 </a>
               </li>
@@ -78,11 +78,11 @@ export default async function Services({ params }: PageProps) {
                 <li
                   key={stage.name}
                   id={`stage-${idx + 1}`}
-                  className="grid scroll-mt-28 gap-8 rounded-3xl border border-outline-variant bg-white p-7 md:p-9 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14"
+                  className="grid scroll-mt-28 gap-8 rounded-3xl border border-outline-variant bg-surface-container p-7 md:p-9 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14"
                 >
                   <div>
                     <div className="mb-5 flex items-center gap-4">
-                      <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                      <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary-fixed">
                         <Icon size={24} />
                       </span>
                       <span className="font-headline text-4xl font-extrabold text-outline">{String(idx + 1).padStart(2, '0')}</span>
@@ -113,7 +113,7 @@ export default async function Services({ params }: PageProps) {
         </div>
       </section>
 
-      <section className="border-y border-outline-variant/60 bg-white py-20 md:py-28">
+      <section className="border-y border-outline-variant/60 bg-surface-container-low py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading eyebrow={index.collaboration.eyebrow} title={index.collaboration.heading} className="mb-14" />
           <div className="grid gap-6 lg:grid-cols-2">
@@ -154,7 +154,7 @@ export default async function Services({ params }: PageProps) {
         </div>
       </section>
 
-      <section className="bg-white py-20 md:py-28">
+      <section className="bg-surface-container-low py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <CTABanner
             heading={index.cta.heading}

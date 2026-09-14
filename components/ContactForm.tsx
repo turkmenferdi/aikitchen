@@ -41,7 +41,7 @@ interface ContactFormProps {
 }
 
 const inputClass =
-  'w-full rounded-xl border border-outline-variant bg-white px-4 py-3 text-on-surface placeholder:text-outline transition-colors focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/10';
+  'w-full rounded-xl border border-outline-variant bg-surface-container px-4 py-3 text-on-surface placeholder:text-outline transition-colors focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/10';
 
 export function ContactForm({ dictionary, defaultTopic = '' }: ContactFormProps) {
   const t = dictionary.contact.form;

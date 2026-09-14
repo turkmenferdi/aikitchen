@@ -12,12 +12,12 @@ export default function NotFound() {
   ];
 
   return (
-    <section className="bg-white">
+    <section className="bg-surface-container-low">
       <div className="mx-auto max-w-3xl px-4 py-24 text-center sm:px-6 md:py-32 lg:px-8">
-        <span className="mx-auto mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+        <span className="mx-auto mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary-fixed">
           <SearchX size={30} />
         </span>
-        <p className="mb-3 font-headline text-sm font-bold uppercase tracking-[0.14em] text-primary">404</p>
+        <p className="mb-3 font-headline text-sm font-bold uppercase tracking-[0.14em] text-primary-fixed">404</p>
         <h1 lang="tr" className="mb-2 text-4xl font-extrabold tracking-tight text-on-surface md:text-5xl">
           Aradığınız sayfayı bulamadık
         </h1>
@@ -45,7 +45,7 @@ export default function NotFound() {
                 className="group flex items-center justify-between rounded-2xl border border-outline-variant bg-surface px-5 py-4 font-semibold text-on-surface hover:border-primary/40"
               >
                 <span lang="tr">{link.tr}</span>
-                <ArrowRight size={16} className="text-primary transition-transform group-hover:translate-x-1" />
+                <ArrowRight size={16} className="text-primary-fixed transition-transform group-hover:translate-x-1" />
               </Link>
             </li>
           ))}

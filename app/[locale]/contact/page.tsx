@@ -38,14 +38,14 @@ export default async function Contact({ params, searchParams }: PageProps) {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-white">
+      <section className="relative overflow-hidden bg-surface-container-low">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(50%_60%_at_0%_0%,rgba(79,70,229,0.08),transparent_70%)]"
         />
         <div className="relative mx-auto grid max-w-7xl gap-12 px-4 pb-20 pt-14 sm:px-6 md:pt-20 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 lg:px-8">
           <div>
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-primary">{contact.hero.eyebrow}</p>
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-primary-fixed">{contact.hero.eyebrow}</p>
             <h1 className="mb-6 text-[2.3rem] font-extrabold leading-[1.1] tracking-tight text-on-surface sm:text-5xl">{contact.hero.title}</h1>
             <p className="mb-10 text-lg leading-relaxed text-on-surface-variant md:text-xl">{contact.hero.description}</p>
 
@@ -65,7 +65,7 @@ export default async function Contact({ params, searchParams }: PageProps) {
             </ol>
           </div>
 
-          <div className="rounded-3xl border border-outline-variant bg-white p-6 shadow-[0_24px_60px_-28px_rgba(15,18,51,0.3)] md:p-9">
+          <div className="rounded-3xl border border-outline-variant bg-surface-container p-6 shadow-[0_24px_60px_-28px_rgba(0,0,0,0.3)] md:p-9">
             <h2 className="mb-6 text-2xl font-bold text-on-surface">{contact.formTitle}</h2>
             <ContactForm dictionary={dictionary} defaultTopic={defaultTopic} />
           </div>
@@ -80,14 +80,14 @@ export default async function Contact({ params, searchParams }: PageProps) {
               <a
                 key={channel.email}
                 href={`mailto:${channel.email}`}
-                className="group flex flex-col rounded-2xl border border-outline-variant bg-white p-6 transition-colors hover:border-primary/40"
+                className="group flex flex-col rounded-2xl border border-outline-variant bg-surface-container p-6 transition-colors hover:border-primary/40"
               >
-                <span className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                <span className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary-fixed">
                   <Mail size={20} />
                 </span>
                 <p className="mb-1 text-lg font-bold text-on-surface">{channel.label}</p>
                 <p className="mb-4 text-on-surface-variant">{channel.description}</p>
-                <p className="mt-auto break-all font-semibold text-primary group-hover:underline">{channel.email}</p>
+                <p className="mt-auto break-all font-semibold text-primary-fixed group-hover:underline">{channel.email}</p>
               </a>
             ))}
           </div>

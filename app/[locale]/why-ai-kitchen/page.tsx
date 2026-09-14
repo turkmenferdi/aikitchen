@@ -35,9 +35,9 @@ export default async function WhyAiKitchen({ params }: PageProps) {
 
   return (
     <>
-      <section className="border-b border-outline-variant/60 bg-white">
+      <section className="border-b border-outline-variant/60 bg-surface-container-low">
         <div className="mx-auto max-w-7xl px-4 pb-16 pt-14 sm:px-6 md:pb-20 md:pt-20 lg:px-8">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-primary">{why.hero.eyebrow}</p>
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-primary-fixed">{why.hero.eyebrow}</p>
           <h1 className="mb-6 max-w-4xl text-[2.3rem] font-extrabold leading-[1.1] tracking-tight text-on-surface sm:text-5xl">{why.hero.title}</h1>
           <p className="max-w-3xl text-lg leading-relaxed text-on-surface-variant md:text-xl">{why.intro}</p>
         </div>
@@ -49,13 +49,13 @@ export default async function WhyAiKitchen({ params }: PageProps) {
             {why.items.map((item, idx) => {
               const Icon = itemIcons[idx % itemIcons.length];
               return (
-                <article key={item.title} className="flex flex-col rounded-3xl border border-outline-variant bg-white p-7">
-                  <span className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                <article key={item.title} className="flex flex-col rounded-3xl border border-outline-variant bg-surface-container p-7">
+                  <span className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary-fixed">
                     <Icon size={24} />
                   </span>
                   <h2 className="mb-3 text-xl font-bold text-on-surface">{item.title}</h2>
                   <p className="mb-6 leading-relaxed text-on-surface-variant">{item.description}</p>
-                  <p className="mt-auto inline-flex w-fit items-center gap-2 rounded-lg bg-primary/5 px-3 py-2 text-sm font-semibold text-primary">
+                  <p className="mt-auto inline-flex w-fit items-center gap-2 rounded-lg bg-primary/5 px-3 py-2 text-sm font-semibold text-primary-fixed">
                     <Check size={16} />
                     {item.benefit}
                   </p>
@@ -66,7 +66,7 @@ export default async function WhyAiKitchen({ params }: PageProps) {
         </div>
       </section>
 
-      <section className="border-y border-outline-variant/60 bg-white py-20 md:py-28">
+      <section className="border-y border-outline-variant/60 bg-surface-container-low py-20 md:py-28">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <SectionHeading title={why.comparison.heading} className="mb-12" />
           <div className="overflow-x-auto rounded-2xl border border-outline-variant">
@@ -75,7 +75,7 @@ export default async function WhyAiKitchen({ params }: PageProps) {
                 <tr className="bg-surface-container-low">
                   <th scope="col" className="px-6 py-4 text-sm font-semibold text-on-surface-variant">{why.comparison.head[0]}</th>
                   <th scope="col" className="px-6 py-4 text-sm font-semibold text-on-surface-variant">{why.comparison.head[1]}</th>
-                  <th scope="col" className="bg-primary/5 px-6 py-4 text-sm font-semibold text-primary">{why.comparison.head[2]}</th>
+                  <th scope="col" className="bg-primary/5 px-6 py-4 text-sm font-semibold text-primary-fixed">{why.comparison.head[2]}</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-outline-variant">
@@ -90,7 +90,7 @@ export default async function WhyAiKitchen({ params }: PageProps) {
                     </td>
                     <td className="bg-primary/5 px-6 py-5 align-top font-medium text-on-surface">
                       <span className="flex gap-2.5">
-                        <Check size={18} className="mt-0.5 flex-shrink-0 text-primary" />
+                        <Check size={18} className="mt-0.5 flex-shrink-0 text-primary-fixed" />
                         {row.aiKitchen}
                       </span>
                     </td>
@@ -102,7 +102,7 @@ export default async function WhyAiKitchen({ params }: PageProps) {
         </div>
       </section>
 
-      <section className="bg-white py-20 md:py-28">
+      <section className="bg-surface-container-low py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <CTABanner
             heading={why.cta.heading}

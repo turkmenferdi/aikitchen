@@ -85,7 +85,7 @@ export default async function RootLayout({ children, params }: LayoutProps) {
         />
       </head>
       <body className="bg-surface text-on-surface">
-        <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:shadow-lg">
+        <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-surface-container focus:px-4 focus:py-2 focus:shadow-lg">
           {validLocale === 'tr' ? 'İçeriğe geç' : 'Skip to content'}
         </a>
         <Navbar dictionary={dictionary} locale={validLocale} />

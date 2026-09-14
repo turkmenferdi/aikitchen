@@ -27,7 +27,7 @@ export function CTABanner({ heading, description, primaryCTA, secondaryCTA }: CT
         <h2 className="mb-4 text-3xl font-bold leading-tight text-white md:text-4xl">{heading}</h2>
         {description && <p className="mb-9 text-lg leading-relaxed text-white/80">{description}</p>}
         <div className={`flex flex-col justify-center gap-3 sm:flex-row ${description ? '' : 'mt-8'}`}>
-          <Link href={primaryCTA.href} className={buttonClass('primary', 'lg', '!bg-white !text-ink !shadow-none hover:!bg-primary-container')}>
+          <Link href={primaryCTA.href} className={buttonClass('primary', 'lg', '!bg-white !text-ink !shadow-none hover:!bg-indigo-100')}>
             {primaryCTA.text}
             <ArrowRight size={18} />
           </Link>
