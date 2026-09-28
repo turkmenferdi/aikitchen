@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>TurboHUB White Paper · AI Kitchen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #12163f;
+    --text: #3a3f66;
+    --muted: #6b7096;
+    --indigo: #4f46e5;
+    --violet: #7c3aed;
+    --soft: #f4f4fb;
+    --line: #e3e4f0;
+    --tint: #eef0ff;
+    --check: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><circle cx='8' cy='8' r='7' fill='none' stroke='%234f46e5' stroke-width='1.3'/><path d='M5 8.2l2 2 4-4.2' fill='none' stroke='%234f46e5' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    --cross: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><circle cx='8' cy='8' r='7' fill='none' stroke='%23e5484d' stroke-width='1.3'/><path d='M5.6 5.6l4.8 4.8M10.4 5.6l-4.8 4.8' stroke='%23e5484d' stroke-width='1.5' stroke-linecap='round'/></svg>");
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  @page { size: A4; margin: 0; }
+  html, body { background: #fff; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--text);
+    font-size: 11.5px;
+    line-height: 1.6;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  h1, h2, h3, h4, .m { font-family: 'Manrope', system-ui, sans-serif; }
+
+  .page {
+    width: 210mm;
+    height: 297mm;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+    padding: 30mm 18mm 24mm;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  /* Running header and footer */
+  .running {
+    position: absolute; top: 11mm; left: 18mm; right: 18mm;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 9.5px; color: var(--muted);
+  }
+  .brand { display: flex; align-items: center; gap: 8px; font-family: 'Manrope'; font-weight: 700; color: var(--ink); font-size: 11px; }
+  .badge {
+    width: 20px; height: 20px; border-radius: 6px;
+    background: linear-gradient(135deg, #8b5cf6, #4f46e5);
+    color: #fff; font-family: 'Manrope'; font-size: 8.5px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .foot {
+    position: absolute; bottom: 10mm; left: 18mm; right: 18mm;
+    border-top: 1px solid var(--line); padding-top: 8px;
+    display: flex; justify-content: space-between;
+    font-size: 9.5px; color: var(--muted);
+  }
+
+  /* Section headings */
+  .num { font-family: 'Manrope'; font-weight: 800; color: var(--indigo); font-size: 13px; letter-spacing: .08em; }
+  h1 { font-size: 30px; line-height: 1.15; color: var(--ink); font-weight: 800; letter-spacing: -.01em; margin-top: 6px; }
+  .bar { width: 56px; height: 4px; border-radius: 2px; background: linear-gradient(90deg, var(--indigo), var(--violet)); margin: 14px 0 18px; }
+  .lead { font-size: 14px; line-height: 1.6; color: #2b3060; }
+  h3 { font-size: 16px; color: var(--ink); font-weight: 700; margin: 24px 0 12px; }
+  h4 { font-size: 13px; color: var(--ink); font-weight: 700; }
+  .note { font-size: 9.5px; color: var(--muted); line-height: 1.5; }
+  .card { background: var(--soft); border-radius: 14px; padding: 16px 18px; }
+  .label { font-family: 'Manrope'; font-size: 9.5px; font-weight: 800; letter-spacing: .12em; color: var(--indigo); }
+
+  ul.check, ul.cross { list-style: none; }
+  ul.check li, ul.cross li { position: relative; padding-left: 22px; margin-bottom: 6px; }
+  ul.check li::before, ul.cross li::before {
+    content: ''; position: absolute; left: 0; top: 2px; width: 14px; height: 14px;
+    background-size: 14px 14px; background-repeat: no-repeat;
+  }
+  ul.check li::before { background-image: var(--check); }
+  ul.cross li::before { background-image: var(--cross); }
+
+  /* Gradient stat cards */
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .gstat {
+    border-radius: 14px; padding: 18px 18px 16px; color: #fff;
+    background: linear-gradient(120deg, #25309a, #6d28d9);
+  }
+  .gstat .v { font-family: 'Manrope'; font-weight: 800; font-size: 25px; line-height: 1.15; }
+  .gstat .l { font-size: 10.5px; opacity: .9; margin-top: 6px; line-height: 1.45; }
+
+  /* Cover */
+  .cover {
+    padding: 22mm 20mm;
+    color: #fff;
+    background:
+      radial-gradient(ellipse at 100% 0%, rgba(124, 58, 237, .55), transparent 55%),
+      radial-gradient(ellipse at 0% 100%, rgba(59, 72, 229, .55), transparent 50%),
+      #070918;
+  }
+  .cover .top { display: flex; justify-content: space-between; align-items: center; }
+  .cover .brand { color: #fff; font-size: 20px; gap: 12px; }
+  .cover .badge { width: 44px; height: 44px; border-radius: 12px; font-size: 16px; }
+  .pill { border: 1px solid rgba(165, 180, 252, .6); border-radius: 999px; padding: 7px 18px; font-family: 'Manrope'; font-weight: 700; font-size: 10.5px; letter-spacing: .12em; color: #c7d2fe; }
+  .cover .grid { position: absolute; top: 58mm; right: -18mm; transform: rotate(-8deg); }
+  .cover .hero { position: absolute; left: 20mm; right: 20mm; top: 128mm; }
+  .cover .eyebrow { font-family: 'Manrope'; font-weight: 700; font-size: 11px; letter-spacing: .14em; color: #a5b4fc; }
+  .cover .title { font-family: 'Manrope'; font-weight: 800; font-size: 76px; line-height: 1; margin-top: 18px; letter-spacing: -.02em; }
+  .cover .subtitle { font-family: 'Manrope'; font-weight: 700; font-size: 29px; line-height: 1.25; margin-top: 22px; max-width: 150mm; }
+  .cover .desc { font-size: 15px; line-height: 1.55; color: #c7cbef; margin-top: 18px; max-width: 135mm; }
+  .cover .bottom {
+    position: absolute; left: 20mm; right: 20mm; bottom: 22mm;
+    border-top: 1px solid rgba(255, 255, 255, .22); padding-top: 14px;
+    display: flex; justify-content: space-between; font-size: 11px; color: #b3b8dc;
+  }
+  .cover .bottom strong { display: block; color: #fff; font-size: 13px; margin-top: 3px; font-weight: 600; }
+  .cover .bottom .r { text-align: right; }
+
+  /* Page 2 */
+  .summary { display: grid; grid-template-columns: 1fr 64mm; gap: 12mm; }
+  .summary p + p { margin-top: 10px; }
+  .toc { background: var(--soft); border-radius: 16px; padding: 18px 18px 8px; }
+  .toc .label { margin-bottom: 8px; }
+  .toc .row { display: grid; grid-template-columns: 22px 1fr 14px; gap: 6px; padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 11px; color: var(--ink); line-height: 1.4; }
+  .toc .row:last-child { border-bottom: none; }
+  .toc .row .n { font-family: 'Manrope'; font-weight: 800; color: var(--indigo); }
+  .toc .row .p { text-align: right; color: var(--muted); }
+  .fit { margin-top: 22px; }
+  .fit ul { display: grid; grid-template-columns: 1fr 1fr; column-gap: 20px; row-gap: 6px; margin-top: 12px; }
+  .fit h4 { font-size: 15px; }
+
+  /* Page 3 */
+  .kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 22px; }
+  .kpi { border: 1px solid var(--line); border-top: 3px solid var(--indigo); border-radius: 12px; padding: 16px 16px 18px; }
+  .kpi .v { font-family: 'Manrope'; font-weight: 800; font-size: 30px; color: var(--ink); line-height: 1.1; }
+  .kpi .k { font-weight: 700; color: var(--indigo); font-size: 10.5px; margin-top: 6px; }
+  .kpi .d { font-size: 10.5px; color: var(--muted); margin-top: 6px; line-height: 1.5; }
+  .costs .item { display: grid; grid-template-columns: 44px 1fr; background: var(--soft); border-radius: 12px; padding: 14px 18px; margin-bottom: 10px; }
+  .costs .item .n { font-family: 'Manrope'; font-weight: 800; font-size: 20px; color: #a5b4fc; }
+  .costs .item h4 { margin-bottom: 4px; }
+  .callout { border-left: 4px solid var(--violet); background: #f1eefd; border-radius: 0 12px 12px 0; padding: 14px 18px; font-weight: 600; color: var(--ink); font-size: 12px; margin-top: 16px; }
+
+  /* Page 4 */
+  .flow { display: grid; grid-template-columns: 1fr 18px 1.15fr 18px 1fr; align-items: stretch; margin-top: 22px; gap: 6px; }
+  .flow .arrow { display: flex; align-items: center; justify-content: center; color: var(--indigo); font-size: 16px; }
+  .col-src { background: var(--soft); border: 1px solid var(--line); border-radius: 14px; padding: 16px 14px; }
+  .col-src .item, .col-out .item { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; font-size: 10.5px; color: var(--ink); margin-top: 7px; }
+  .col-hub { background: linear-gradient(160deg, #26208f, #6d28d9); border-radius: 14px; padding: 16px 14px; color: #fff; }
+  .col-hub .label { color: #c7d2fe; }
+  .col-hub .name { font-family: 'Manrope'; font-weight: 800; font-size: 20px; margin: 8px 0 4px; }
+  .col-hub .item { background: rgba(255, 255, 255, .13); border: 1px solid rgba(255, 255, 255, .22); border-radius: 8px; padding: 7px 10px; font-size: 10.5px; margin-top: 7px; }
+  .col-out { border: 1.5px solid var(--indigo); border-radius: 14px; padding: 16px 14px; }
+  .col-out .item { background: var(--tint); border-color: #d9dcfb; }
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .steps .s { border-top: 2px solid var(--line); padding-top: 10px; }
+  .steps .s .n { font-family: 'Manrope'; font-weight: 800; color: var(--indigo); font-size: 11px; }
+  .steps .s h4 { margin: 4px 0 4px; }
+  .steps .s p { font-size: 10.5px; color: var(--muted); line-height: 1.5; }
+  .duo { display: grid; grid-template-columns: 1.1fr 1fr; gap: 14px; margin-top: 22px; }
+  .qbox { border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
+  .qbox h4 { font-size: 14px; margin-bottom: 10px; }
+  .quote { border-left: 3px solid #a5b4fc; padding: 2px 0 2px 12px; font-size: 12px; color: var(--ink); margin-bottom: 10px; font-weight: 500; }
+  .duo .card h4 { font-size: 14px; margin-bottom: 8px; }
+
+  /* Page 5 */
+  .cmp { margin-top: 18px; }
+  .cmp .hdr, .cmp .r { display: grid; grid-template-columns: 30mm 1fr 1fr; }
+  .cmp .hdr { font-family: 'Manrope'; font-weight: 800; font-size: 9.5px; letter-spacing: .12em; color: var(--muted); border-bottom: 2px solid var(--ink); padding-bottom: 8px; }
+  .cmp .hdr div { padding: 0 12px; }
+  .cmp .hdr .t { color: var(--indigo); }
+  .cmp .r { border-bottom: 1px solid var(--line); }
+  .cmp .r > div { padding: 12px; }
+  .cmp .r .d { font-family: 'Manrope'; font-weight: 700; color: var(--ink); font-size: 12.5px; }
+  .cmp .r .after { background: #f3f5ff; }
+  .cmp ul li { font-size: 11px; margin-bottom: 5px; }
+  .benefits { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 14px; }
+  .benefits h4 { margin-bottom: 4px; }
+  .benefits p { font-size: 10.5px; color: var(--muted); line-height: 1.5; }
+
+  /* Page 6 */
+  .models { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 20px; }
+  .model { border: 1px solid var(--line); border-radius: 14px; padding: 16px 16px 12px; display: flex; flex-direction: column; }
+  .model .n { font-family: 'Manrope'; font-weight: 800; color: var(--indigo); font-size: 11px; }
+  .model h4 { font-size: 15px; margin: 8px 0 6px; line-height: 1.3; }
+  .model .d { font-size: 10.5px; color: var(--muted); line-height: 1.5; min-height: 64px; }
+  .model hr { border: none; border-top: 1px solid var(--line); margin: 12px 0; }
+  .model li { font-size: 10.5px; }
+  .principles { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .principle { display: grid; grid-template-columns: 34px 1fr; gap: 12px; background: var(--soft); border-radius: 12px; padding: 14px 16px; }
+  .shield { width: 34px; height: 34px; border-radius: 9px; background: linear-gradient(135deg, #6d5bf3, #4f46e5); display: flex; align-items: center; justify-content: center; }
+  .principle h4 { margin-bottom: 3px; }
+  .principle p { font-size: 10.5px; color: var(--muted); line-height: 1.5; }
+  .kvkk { margin-top: 12px; font-size: 10.5px; color: var(--text); background: #f1eefd; border-radius: 10px; padding: 10px 14px; }
+
+  /* Page 7 */
+  table.spec { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 10.5px; }
+  table.spec th { background: var(--ink); color: #fff; font-family: 'Manrope'; font-weight: 700; font-size: 9px; letter-spacing: .1em; text-align: left; padding: 9px 10px; }
+  table.spec th:first-child { border-radius: 10px 0 0 0; }
+  table.spec th:last-child { border-radius: 0 10px 0 0; }
+  table.spec td { padding: 9px 10px; border-bottom: 1px solid var(--line); color: var(--ink); vertical-align: top; }
+  table.spec tr:nth-child(even) td { background: #fafafe; }
+  table.spec td:first-child { font-weight: 700; }
+  .specs2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .dl .row { display: grid; grid-template-columns: 28mm 1fr; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 10.5px; }
+  .dl .row .k { font-weight: 700; color: var(--ink); }
+  .dl h3 { margin-top: 18px; }
+  .pricing { margin-top: 16px; background: #f1eefd; border-radius: 12px; padding: 12px 16px; font-weight: 600; color: var(--ink); font-size: 11.5px; }
+
+  /* Page 8 */
+  .timeline { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 24px; }
+  .timeline::before { content: ''; position: absolute; top: 18px; left: 18px; right: 25%; height: 3px; background: linear-gradient(90deg, var(--indigo), var(--violet)); }
+  .timeline .t { position: relative; }
+  .timeline .dot { width: 38px; height: 38px; border-radius: 50%; border: 3px solid var(--indigo); background: #fff; display: flex; align-items: center; justify-content: center; font-family: 'Manrope'; font-weight: 800; color: var(--indigo); font-size: 13px; }
+  .timeline h4 { margin: 12px 0 4px; font-size: 14px; }
+  .timeline p { font-size: 10.5px; color: var(--muted); line-height: 1.5; }
+  .about { margin-top: 26px; }
+  .about h4 { font-size: 15px; margin-bottom: 6px; }
+  .cta {
+    margin-top: 18px; border-radius: 18px; padding: 24px 24px; color: #fff;
+    background: linear-gradient(120deg, #1d2280, #5b21b6 70%, #7c3aed);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: center;
+  }
+  .cta h2 { font-size: 22px; font-weight: 800; }
+  .cta p { color: #d4d7f5; font-size: 12px; margin-top: 8px; line-height: 1.6; }
+  .contact { display: flex; gap: 14px; align-items: center; background: rgba(255, 255, 255, .09); border: 1px solid rgba(255, 255, 255, .2); border-radius: 14px; padding: 16px; }
+  .avatar { width: 50px; height: 50px; border-radius: 50%; flex: none; background: linear-gradient(135deg, #a78bfa, #6d28d9); display: flex; align-items: center; justify-content: center; font-family: 'Manrope'; font-weight: 800; font-size: 16px; }
+  .contact .nm { font-family: 'Manrope'; font-weight: 700; font-size: 15px; }
+  .contact .rl { font-size: 10px; color: #c7cbef; }
+  .contact .em { font-size: 11px; margin-top: 6px; }
+  .disclaimer { position: absolute; left: 18mm; right: 18mm; bottom: 20mm; font-size: 9px; color: var(--muted); line-height: 1.5; }
+</style>
+</head>
+<body>
+
+<!-- 1 · Kapak -->
+<section class="page cover">
+  <div class="top">
+    <div class="brand"><div class="badge">AK</div>AI Kitchen</div>
+    <div class="pill">WHITE PAPER</div>
+  </div>
+  <svg class="grid" width="460" height="540" viewBox="0 0 460 540" aria-hidden="true">
+    <defs>
+      <pattern id="sq" width="52" height="52" patternUnits="userSpaceOnUse">
+        <rect x="5" y="5" width="42" height="42" rx="9" fill="#8b7cf6"/>
+      </pattern>
+      <radialGradient id="fade" cx="52%" cy="46%" r="58%">
+        <stop offset="0" stop-color="#fff" stop-opacity=".5"/>
+        <stop offset=".6" stop-color="#fff" stop-opacity=".18"/>
+        <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+      </radialGradient>
+      <mask id="m"><rect width="460" height="540" fill="url(#fade)"/></mask>
+    </defs>
+    <rect width="460" height="540" fill="url(#sq)" mask="url(#m)"/>
+  </svg>
+  <div class="hero">
+    <div class="eyebrow">WHITE PAPER · YAPAY ZEKÂ İLE YÖNETİM ANALİTİĞİ</div>
+    <div class="title">TurboHUB</div>
+    <div class="subtitle">Rapor Hazırlamaya Değil, Karar Vermeye Zaman Ayırın</div>
+    <div class="desc">Dağınık kurumsal verilerden dakikalar içinde yönetim cevapları</div>
+  </div>
+  <div class="bottom">
+    <div>Hazırlayan<strong>AI Kitchen</strong></div>
+    <div class="r">Eylül 2026<strong>aikitchen.com.tr</strong></div>
+  </div>
+</section>
+
+<!-- 2 · Yönetici Özeti -->
+<section class="page">
+  <div class="running"><div class="brand"><div class="badge">AK</div>AI Kitchen</div><div>TurboHUB · White Paper</div></div>
+  <h1>Yönetici Özeti</h1>
+  <div class="bar"></div>
+  <div class="summary">
+    <div>
+      <p class="lead">Yönetim kararları çoğu zaman verinin hazırlanmasını bekler. Birçok şirkette muhasebe, ERP, bordro, CRM, depo yönetimi ve Excel dosyaları birbirinden ayrı çalışır. Bu yüzden yöneticinin tek bir sorusu, analistler için günler süren bir veri toplama ve mutabakat işine dönüşür.</p>
+      <p>TurboHUB, mevcut sistemlerin üzerine kurulan ve düzenli olarak güncellenen bir veri katmanıdır. Farklı kaynaklardaki verileri tek ve tutarlı bir yapıda birleştirir. Kullanıcılar sorularını doğal dilde sorar; sistem cevabı dakikalar içinde tablo ve rapor olarak hazırlar.</p>
+      <p>Bu doküman; sorunun kaynağını, TurboHUB’ın çalışma şeklini, departmanlara etkisini, kurulum seçeneklerini ve altyapı gereksinimlerini karar vericiler ve BT ekipleri için özetler.</p>
+    </div>
+    <div class="toc">
+      <div class="label">İÇİNDEKİLER</div>
+      <div class="row"><span class="n"></span><span>Yönetici Özeti</span><span class="p">2</span></div>
+      <div class="row"><span class="n">01</span><span>Sorun: Dağınık Veri ve Görünmeyen Raporlama Maliyeti</span><span class="p">3</span></div>
+      <div class="row"><span class="n">02</span><span>Çözüm: TurboHUB Nasıl Çalışır?</span><span class="p">4</span></div>
+      <div class="row"><span class="n">03</span><span>Departmanlara Etkisi</span><span class="p">5</span></div>
+      <div class="row"><span class="n">04</span><span>Kurulum Seçenekleri ve Veri Güvenliği</span><span class="p">6</span></div>
+      <div class="row"><span class="n">05</span><span>Donanım ve Altyapı Gereksinimleri</span><span class="p">7</span></div>
+      <div class="row"><span class="n">06</span><span>Uygulama Adımları</span><span class="p">8</span></div>
+    </div>
+  </div>
+
+  <h3>Öne çıkan hedefler</h3>
+  <div class="stats">
+    <div class="gstat"><div class="v">5+ gün → 2 dk</div><div class="l">Rapor talebinden cevaba geçen süre</div></div>
+    <div class="gstat"><div class="v">2–4 dk</div><div class="l">BT desteği olmadan yeni bir rapor kırılımı</div></div>
+    <div class="gstat"><div class="v">2+ analist</div><div class="l">Rutin işlerden kurtulan tam zamanlı analist kapasitesi</div></div>
+  </div>
+  <p class="note" style="margin-top:10px">Rakamlar, TurboHUB ürün materyallerinde belirtilen hedef değerlerdir. Gerçek sonuçlar veri kaynaklarına, veri kalitesine ve proje kapsamına göre değişir.</p>
+
+  <div class="card fit">
+    <h4>TurboHUB kimler için uygun?</h4>
+    <ul class="check">
+      <li>Yönetim raporlarını birden fazla sistemden veri toplayarak hazırlayan şirketler</li>
+      <li>Rapor taleplerinin BT ekibinde biriktiği kurumlar</li>
+      <li>Finans ve analiz ekiplerinin zamanının büyük bölümünü veri hazırlamaya ayırdığı yapılar</li>
+      <li>Verisini kurum dışına çıkarmadan yapay zekâ kullanmak isteyen kurumlar</li>
+    </ul>
+  </div>
+  <div class="foot"><span>TurboHUB White Paper · Eylül 2026</span><span>aikitchen.com.tr</span><span>2 / 8</span></div>
+</section>
+
+<!-- 3 · Sorun -->
+<section class="page">
+  <div class="running"><div class="brand"><div class="badge">AK</div>AI Kitchen</div><div>TurboHUB · White Paper</div></div>
+  <div class="num">01</div>
+  <h1>Sorun: Dağınık Veri ve Görünmeyen Raporlama Maliyeti</h1>
+  <div class="bar"></div>
+  <p class="lead">Yönetim raporlarını BI araçlarıyla veya Excel’le hazırlayan şirketlerde asıl darboğaz analiz değil, analizden önceki veri hazırlama aşamasıdır.</p>
+
+  <div class="kpis">
+    <div class="kpi"><div class="v">5–7</div><div class="k">farklı kaynak</div><div class="d">Muhasebe, bordro, CRM, depo yönetimi, dış servisler ve Excel dosyaları arasında elle yapılan mutabakat</div></div>
+    <div class="kpi"><div class="v">%5–15</div><div class="k">veri farkı</div><div class="d">Aynı göstergenin farklı sistemlerde aldığı farklı değerler</div></div>
+    <div class="kpi"><div class="v">3–5 iş günü</div><div class="k">her ay</div><div class="d">Analiz ve yorum yerine mutabakata harcanan süre</div></div>
+  </div>
+
+  <h3>Üç görünmeyen maliyet</h3>
+  <div class="costs">
+    <div class="item"><div class="n">01</div><div><h4>BT Departmanı</h4><p>Altyapıyı geliştirmek yerine sürekli rapor hazırlama ve özelleştirme işleriyle uğraşır. Her yeni kırılım yeni bir talep, 2–3 haftalık bekleme ve büyüyen bir iş listesi demektir.</p></div></div>
+    <div class="item"><div class="n">02</div><div><h4>Analistler ve Finans Yöneticileri</h4><p>Zamanlarının %70–80’ini analize değil; farklı kaynaklardan veri çekmeye, karşılaştırmaya ve tutarsızlıkları gidermeye ayırır.</p></div></div>
+    <div class="item"><div class="n">03</div><div><h4>Muhasebe Departmanı</h4><p>Yasal kayıt için gerekmediği hâlde, yalnızca yönetim raporları için belgelere ek analiz kodları girer. Bu hem iş yükünü hem de hata riskini artırır.</p></div></div>
+  </div>
+  <div class="callout">Sonuç: Şirketin en değerli analiz kapasitesi veriyi yorumlamak yerine hazırlamakla geçer ve kararlar gecikir.</div>
+  <div class="foot"><span>TurboHUB White Paper · Eylül 2026</span><span>aikitchen.com.tr</span><span>3 / 8</span></div>
+</section>
+
+<!-- 4 · Çözüm -->
+<section class="page">
+  <div class="running"><div class="brand"><div class="badge">AK</div>AI Kitchen</div><div>TurboHUB · White Paper</div></div>
+  <div class="num">02</div>
+  <h1>Çözüm: TurboHUB Nasıl Çalışır?</h1>
+  <div class="bar"></div>
+  <p class="lead">TurboHUB mevcut sistemlerinizi değiştirmez. Onların üzerine kurulan, düzenli olarak güncellenen bir veri katmanı ve bu katmana doğal dilde soru sorabileceğiniz bir yapay zekâ arayüzü sunar.</p>
+
+  <div class="flow">
+    <div class="col-src">
+      <div class="label">KAYNAK SİSTEMLER</div>
+      <div class="item">Muhasebe / ERP</div>
+      <div class="item">Bordro</div>
+      <div class="item">CRM</div>
+      <div class="item">Depo yönetimi</div>
+      <div class="item">Veritabanları ve veri ambarları</div>
+      <div class="item">Excel dosyaları</div>
+    </div>
+    <div class="arrow">→</div>
+    <div class="col-hub">
+      <div class="label">TURBOHUB VERİ KATMANI</div>
+      <div class="name">TurboHUB</div>
+      <div class="item">Düzenli olarak güncellenen veri</div>
+      <div class="item">Yapay zekâ desteğiyle eşleştirme ve birleştirme</div>
+      <div class="item">Tüm raporlarda aynı iş kuralları</div>
+    </div>
+    <div class="arrow">→</div>
+    <div class="col-out">
+      <div class="label">YÖNETİCİ ARAYÜZÜ</div>
+      <div class="item">Doğal dilde soru</div>
+      <div class="item">Tablo ve rapor olarak cevap</div>
+      <div class="item">Dakikalar içinde</div>
+    </div>
+  </div>
+
+  <h3>Dört adımda çalışma şekli</h3>
+  <div class="steps">
+    <div class="s"><div class="n">01</div><h4>Soru</h4><p>Kullanıcı sorusunu doğal dilde yazar. SQL veya rapor tasarımı bilgisi gerekmez.</p></div>
+    <div class="s"><div class="n">02</div><h4>Güncel veri</h4><p>TurboHUB, kaynak sistemlerden gelen veriyi düzenli olarak günceller.</p></div>
+    <div class="s"><div class="n">03</div><h4>Birleştirme</h4><p>Farklı kaynaklardaki kayıtlar yapay zekâ desteğiyle eşleştirilir ve tek yapıda birleştirilir.</p></div>
+    <div class="s"><div class="n">04</div><h4>Cevap</h4><p>Sistem, karşılaştırılabilir ve karar almaya hazır bir tablo veya rapor üretir.</p></div>
+  </div>
+
+  <div class="duo">
+    <div class="qbox">
+      <h4>Örnek yönetici soruları</h4>
+      <div class="quote">“Geçen ayın gelirini cari hesap bazında göster.”</div>
+      <div class="quote">“Bu çeyrekte bütçeden en çok sapan maliyet kalemleri hangileri?”</div>
+      <p class="note">Sorular örnektir. Hangi kırılımların kullanılabileceği, bağlanan veri kaynaklarına göre belirlenir.</p>
+    </div>
+    <div class="card">
+      <h4>Açıklama alanlarından ve belgelerden analiz</h4>
+      <p>TurboHUB, analiz için gereken bilgiyi yalnızca yapılandırılmış alanlardan değil; açıklama alanlarından ve ilişkili belgelerden de çıkarabilir. Böylece muhasebe ekibinin yalnızca raporlama için ek kod girmesine gerek kalmaz.</p>
+    </div>
+  </div>
+  <div class="foot"><span>TurboHUB White Paper · Eylül 2026</span><span>aikitchen.com.tr</span><span>4 / 8</span></div>
+</section>
+
+<!-- 5 · Departmanlara Etkisi -->
+<section class="page">
+  <div class="running"><div class="brand"><div class="badge">AK</div>AI Kitchen</div><div>TurboHUB · White Paper</div></div>
+  <div class="num">03</div>
+  <h1>Departmanlara Etkisi</h1>
+  <div class="bar"></div>
+  <p class="lead">TurboHUB, görünmeyen maliyetin oluştuğu üç noktada çalışma şeklini değiştirir.</p>
+
+  <div class="cmp">
+    <div class="hdr"><div>DEPARTMAN</div><div>BUGÜN</div><div class="t">TURBOHUB İLE</div></div>
+    <div class="r">
+      <div class="d">BT Departmanı</div>
+      <div><ul class="cross"><li>Her yeni rapor kırılımı için BT’ye talep açılır</li><li>Özelleştirme için 2–3 hafta beklenir</li><li>İş birimlerinden gelen talepler birikir</li></ul></div>
+      <div class="after"><ul class="check"><li>BT desteği olmadan 2–4 dakikada yeni rapor kırılımı</li><li>Tüm raporlarda aynı iş kuralları</li></ul></div>
+    </div>
+    <div class="r">
+      <div class="d">Analistler ve Finans</div>
+      <div><ul class="cross"><li>Her ay 3–5 gün elle konsolidasyon</li><li>Uzun süren tutarsızlık mutabakatı</li><li>Zamanın %70–80’i rutin işlere gider</li></ul></div>
+      <div class="after"><ul class="check"><li>Doğal dilde soru, dakikalar içinde cevap</li><li>1,5–2 tam zamanlı analistin kapasitesi açığa çıkar</li></ul></div>
+    </div>
+    <div class="r">
+      <div class="d">Muhasebe</div>
+      <div><ul class="cross"><li>Belgelere elle ek analiz kodu girilir</li><li>Veri giriş yükü artar</li><li>Hata riski yükselir</li></ul></div>
+      <div class="after"><ul class="check"><li>Açıklama alanlarından ve belgelerden yapay zekâ ile analiz</li><li>Ekip yasal yükümlülüklerine odaklanır</li></ul></div>
+    </div>
+  </div>
+
+  <h3>Temel iş faydaları</h3>
+  <div class="stats">
+    <div class="gstat"><div class="v">5+ gün → 2 dk</div><div class="l">Rapor talebinden cevaba geçen süre</div></div>
+    <div class="gstat"><div class="v">2–4 dk</div><div class="l">BT desteği olmadan yeni bir rapor kırılımı</div></div>
+    <div class="gstat"><div class="v">2+ analist</div><div class="l">Rutin işlerden kurtulan tam zamanlı analist kapasitesi</div></div>
+  </div>
+  <div class="benefits">
+    <div><h4>Kişilere bağımlılık azalır</h4><p>Raporlama bilgisi tek tek çalışanlarda kalmaz; iş kuralları sistemde tutulur.</p></div>
+    <div><h4>Kararlar hızlanır</h4><p>Bir günlük gecikmenin kâr kaybı anlamına geldiği durumlarda cevap dakikalar içinde gelir.</p></div>
+    <div><h4>Kolay kullanım</h4><p>Kullanıcılar sorularını doğal dilde sorar; SQL veya rapor tasarımı bilgisi gerekmez.</p></div>
+  </div>
+  <p class="note" style="margin-top:14px">Rakamlar, TurboHUB ürün materyallerinde belirtilen hedef değerlerdir. Gerçek sonuçlar veri kaynaklarına, veri kalitesine ve proje kapsamına göre değişir.</p>
+  <div class="foot"><span>TurboHUB White Paper · Eylül 2026</span><span>aikitchen.com.tr</span><span>5 / 8</span></div>
+</section>
+
+<!-- 6 · Kurulum ve Güvenlik -->
+<section class="page">
+  <div class="running"><div class="brand"><div class="badge">AK</div>AI Kitchen</div><div>TurboHUB · White Paper</div></div>
+  <div class="num">04</div>
+  <h1>Kurulum Seçenekleri ve Veri Güvenliği</h1>
+  <div class="bar"></div>
+  <p class="lead">TurboHUB, şirketin güvenlik politikalarına ve altyapı olanaklarına göre üç farklı modelle devreye alınabilir.</p>
+
+  <div class="models">
+    <div class="model">
+      <div class="n">01</div><h4>Kurum içi<br>(on-premise)</h4>
+      <p class="d">Şirketin kendi fiziksel sunucularına veya sanal makinelerine kurulur.</p>
+      <hr>
+      <ul class="check"><li>Veri şirketin altyapısında kalır</li><li>Yerel dil modelleriyle (LLM) çalışabilir</li><li>Konteyner tabanlı kurulum; sanallaştırma desteği gerekir</li></ul>
+    </div>
+    <div class="model">
+      <div class="n">02</div><h4>Donanım ve<br>yazılım paketi</h4>
+      <p class="d">Uygun sunucu yoksa TurboHUB, kurulumu ve ayarları yapılmış özel donanımla teslim edilir.</p>
+      <hr>
+      <ul class="check"><li>NVIDIA DGX Spark tabanlı kompakt yapay zekâ sistemi</li><li>Şirketin altyapısına yerleştirilir</li><li>Hızlı devreye alma</li></ul>
+    </div>
+    <div class="model">
+      <div class="n">03</div><h4>Bulut<br>(SaaS)</h4>
+      <p class="d">Kurum içinde barındırma mümkün değilse, şirkete ayrılmış sunucularda hizmet olarak sunulur.</p>
+      <hr>
+      <ul class="check"><li>GPU’lu sunucuda yerel dil modeli</li><li>veya GPU’suz sunucu ve bulut dil modeli aboneliği</li><li>Kapasite ihtiyaca göre belirlenir</li></ul>
+    </div>
+  </div>
+
+  <h3>Veri güvenliği ilkeleri</h3>
+  <div class="principles">
+    <div class="principle"><div class="shield"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M8 1.5l5 2v4c0 3.2-2.1 5.8-5 7-2.9-1.2-5-3.8-5-7v-4z" fill="none" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.8 8l1.5 1.5 3-3" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><h4>Veri egemenliği</h4><p>Kurum içi kurulumda ve donanım paketinde veri şirketin altyapısından çıkmaz.</p></div></div>
+    <div class="principle"><div class="shield"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M8 1.5l5 2v4c0 3.2-2.1 5.8-5 7-2.9-1.2-5-3.8-5-7v-4z" fill="none" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.8 8l1.5 1.5 3-3" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><h4>Yerel yapay zekâ modelleri</h4><p>Dil modelleri şirket içinde çalıştırılabilir. Hassas verilerin üçüncü taraf bulut servislerine gönderilmesi gerekmez.</p></div></div>
+    <div class="principle"><div class="shield"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M8 1.5l5 2v4c0 3.2-2.1 5.8-5 7-2.9-1.2-5-3.8-5-7v-4z" fill="none" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.8 8l1.5 1.5 3-3" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><h4>Mevcut sistemlere dokunmadan</h4><p>TurboHUB kaynak sistemlerin üzerine kurulur; muhasebe ve ERP süreçlerini değiştirmez.</p></div></div>
+    <div class="principle"><div class="shield"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M8 1.5l5 2v4c0 3.2-2.1 5.8-5 7-2.9-1.2-5-3.8-5-7v-4z" fill="none" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.8 8l1.5 1.5 3-3" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><h4>Proje başında belirlenen erişim kuralları</h4><p>Erişim yetkileri, bağlanacak kaynaklar ve veri kapsamı proje başında şirketin BT ve güvenlik ekipleriyle birlikte belirlenir.</p></div></div>
+  </div>
+  <p class="kvkk"><strong>KVKK notu:</strong> Bulut dil modeli seçildiğinde soru ve ilgili bağlam model sağlayıcısına iletilir. Bu seçenek, şirketin KVKK değerlendirmesine göre kullanılmalıdır.</p>
+  <div class="foot"><span>TurboHUB White Paper · Eylül 2026</span><span>aikitchen.com.tr</span><span>6 / 8</span></div>
+</section>
+
+<!-- 7 · Donanım -->
+<section class="page">
+  <div class="running"><div class="brand"><div class="badge">AK</div>AI Kitchen</div><div>TurboHUB · White Paper</div></div>
+  <div class="num">05</div>
+  <h1>Donanım ve Altyapı Gereksinimleri</h1>
+  <div class="bar"></div>
+  <p class="lead">Aşağıdaki yapılandırmalar yol gösterici niteliktedir. Kesin boyutlandırma; kullanıcı sayısı, veri hacmi ve seçilen dil modeline göre kapsam belirleme aşamasında yapılır.</p>
+
+  <h3>Kurum içi kurulum profilleri</h3>
+  <table class="spec">
+    <tr><th>PROFİL</th><th>KULLANICI</th><th>İŞLEMCİ</th><th>BELLEK</th><th>DEPOLAMA</th><th>GPU SEÇENEKLERİ</th></tr>
+    <tr><td>Minimum</td><td>1–2</td><td>Intel Core i7 (12. nesil ve üzeri)</td><td>128 GB</td><td>4 TB SSD</td><td>NVIDIA RTX 3060 / 4090 / 5090</td></tr>
+    <tr><td>Pilot ve test</td><td>1–10</td><td>Intel Core i9 (14. nesil)</td><td>128 GB</td><td>8 TB SSD</td><td>NVIDIA Tesla P40 24 GB / A40 48 GB / A100 80 GB</td></tr>
+    <tr><td>Kurumsal</td><td>100+</td><td>Intel Xeon Platinum</td><td>512 GB</td><td>16 TB SSD</td><td>NVIDIA A100 80 GB / H100 80 GB / H200 141 GB / 4× L40 48 GB</td></tr>
+  </table>
+  <p class="note" style="margin-top:8px">Tüm profillerde PCIe 5.0 ve DDR5 desteği önerilir. Konteyner tabanlı kurulum için fiziksel sunucunun veya sanal makinenin sanallaştırmayı desteklemesi gerekir.</p>
+
+  <div class="specs2">
+    <div class="dl">
+      <h3>Referans sunucu mimarileri</h3>
+      <div class="row"><span class="k">Orta ölçek</span><span>2U sunucu · 2× Intel Xeon (18 çekirdek) · 512 GB DDR5 · 4× 960 GB SSD (RAID) · 2× NVIDIA L40S 48 GB · 10/25 GbE ağ · yedekli güç kaynağı</span></div>
+      <div class="row"><span class="k">Yüksek ölçek</span><span>6U sunucu · 2× Intel Xeon Platinum (64 çekirdek) · 2 TB DDR5 · 5× 3,84 TB NVMe (RAID) · NVIDIA HGX H200 8-GPU (141 GB) · 10/25 GbE ağ · yedekli güç kaynağı</span></div>
+      <h3>Donanım ve yazılım paketi</h3>
+      <div class="row"><span class="k">Tekli sistem</span><span>1× NVIDIA DGX Spark kompakt yapay zekâ bilgisayarı</span></div>
+      <div class="row"><span class="k">İkili küme</span><span>2× NVIDIA DGX Spark, 200G QSFP56 bağlantıyla; 405 milyar parametreye kadar modeller</span></div>
+    </div>
+    <div class="dl">
+      <h3>Bulut (SaaS) sunucu profilleri</h3>
+      <div class="row"><span class="k">GPU’lu · geniş bağlam</span><span>NVIDIA RTX PRO 6000 96 GB · AMD Ryzen 9 9950X (16 çekirdek) · 192 GB DDR5 · 2× 2 TB NVMe</span></div>
+      <div class="row"><span class="k">GPU’lu · yüksek yük</span><span>4× NVIDIA A100 40 GB · 2× Intel Xeon Gold (48 çekirdek) · 256 GB ECC · NVMe + SSD</span></div>
+      <div class="row"><span class="k">GPU’suz · standart</span><span>AMD Ryzen 9 9950X (16 çekirdek) · 192 GB DDR5 ECC · 1 TB + 2× 1,92 TB NVMe · bulut dil modeliyle</span></div>
+      <div class="row"><span class="k">GPU’suz · yüksek performans</span><span>2× Intel Xeon 6710E (128 çekirdek) · 256 GB DDR5 ECC · 2× 1,92 TB NVMe · bulut dil modeliyle</span></div>
+    </div>
+  </div>
+  <div class="pricing">Fiyatlandırma; lisans kapsamı, kurulum modeli ve donanım yapılandırmasına göre projeye özel teklif olarak hazırlanır.</div>
+  <div class="foot"><span>TurboHUB White Paper · Eylül 2026</span><span>aikitchen.com.tr</span><span>7 / 8</span></div>
+</section>
+
+<!-- 8 · Uygulama Adımları -->
+<section class="page">
+  <div class="running"><div class="brand"><div class="badge">AK</div>AI Kitchen</div><div>TurboHUB · White Paper</div></div>
+  <div class="num">06</div>
+  <h1>Uygulama Adımları</h1>
+  <div class="bar"></div>
+  <p class="lead">TurboHUB, riski düşük ve sonuçları ölçülebilen adımlarla devreye alınır.</p>
+
+  <div class="timeline">
+    <div class="t"><div class="dot">1</div><h4>Demo</h4><p>15 dakikalık canlı gösterimde sistemin kullanımı ve şirketinize olası etkisi değerlendirilir.</p></div>
+    <div class="t"><div class="dot">2</div><h4>Kapsam belirleme</h4><p>Öncelikli yönetim soruları, bağlanacak kaynaklar, kurulum modeli ve güvenlik gereksinimleri netleştirilir.</p></div>
+    <div class="t"><div class="dot">3</div><h4>Pilot</h4><p>Sınırlı bir kullanıcı grubu ve seçili kaynaklarla pilot ortam kurulur; sonuçlar mevcut raporlarla karşılaştırılır.</p></div>
+    <div class="t"><div class="dot">4</div><h4>Yaygınlaştırma</h4><p>Kaynaklar ve kullanıcılar genişletilir; altyapı üretim ölçeğine göre boyutlandırılır.</p></div>
+  </div>
+
+  <div class="card about">
+    <h4>AI Kitchen hakkında</h4>
+    <p>AI Kitchen; RPA, belge otomasyonu, veri işleme ve yapay zekâ destekli iş akışlarıyla şirketlerin tekrarlanan süreçlerini otomatikleştirir. TurboHUB ile bu yaklaşımı yönetim raporlamasına taşır ve karar vericilerin ihtiyaç duydukları veriye dakikalar içinde ulaşmasını sağlar.</p>
+  </div>
+
+  <div class="cta">
+    <div>
+      <h2>Bir demoyla başlayalım</h2>
+      <p>15 dakikada TurboHUB’ın nasıl kullanıldığını ve şirketinize sağlayabileceği katkıyı gösterelim.</p>
+    </div>
+    <div class="contact">
+      <div class="avatar">ET</div>
+      <div>
+        <div class="nm">Elena Türkmen</div>
+        <div class="rl">TurboHUB İletişim · AI Kitchen</div>
+        <div class="em">elena.turkmen@aikitchen.com.tr<br>aikitchen.com.tr</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="disclaimer">Bu doküman bilgilendirme amaçlıdır. Belirtilen performans değerleri ve donanım yapılandırmaları yol gösterici niteliktedir; kesin kapsam, sonuçlar ve fiyatlandırma proje bazında belirlenir. © 2026 AI Kitchen. Tüm hakları saklıdır.</p>
+  <div class="foot"><span>TurboHUB White Paper · Eylül 2026</span><span>aikitchen.com.tr</span><span>8 / 8</span></div>
+</section>
+
+</body>
+</html>

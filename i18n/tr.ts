@@ -869,10 +869,10 @@ export const tr = {
     whitepaper: {
       heading: 'TurboHUB White Paper',
       description:
-        'Sorunu, TurboHUB’ın çalışma prensibini, departman bazında etkisini, kurulum modellerini ve altyapı gereksinimlerini anlatan 8 sayfalık doküman.',
+        'Yönetim raporlamasındaki veri hazırlama sorununu, TurboHUB’ın çalışma şeklini, departmanlara etkisini, kurulum seçeneklerini ve altyapı gereksinimlerini anlatan 8 sayfalık doküman.',
       cta: 'PDF’i İndirin',
       file: '/whitepapers/TurboHUB_White_Paper_TR.pdf',
-      meta: 'PDF · Türkçe',
+      meta: 'PDF · Türkçe · 8 sayfa',
     },
     problem: {
       eyebrow: 'Şirketlerin bize anlattıkları',
@@ -886,7 +886,7 @@ export const tr = {
     costs: {
       heading: 'Üç tür verimsiz maliyet',
       description:
-        'Yönetim raporlamasında BI veya Excel kullanan şirketler, veri hazırlama aşamasında — analitiğin “ilk kilometresinde” — sistematik verimsizliklerle karşılaşıyor.',
+        'Yönetim raporlarını BI araçlarıyla veya Excel’le hazırlayan şirketlerde asıl darboğaz analiz değil, analizden önceki veri hazırlama aşamasıdır.',
       problemLabel: 'Bugün',
       solutionLabel: 'TurboHUB ile',
       items: [
@@ -953,11 +953,11 @@ export const tr = {
       heading: 'Temel iş faydaları',
       items: [
         { value: '5+ gün → 2 dk', label: 'Talepten rapora geçen sürede kısalma' },
-        { value: '%100', label: 'Rapor özelleştirme maliyetlerinin ortadan kalkması' },
-        { value: '2+ FTE', label: 'Açığa çıkan analist kapasitesi' },
+        { value: '2–4 dk', label: 'BT desteği olmadan yeni bir rapor kırılımı' },
+        { value: '2+ analist', label: 'Rutin işlerden kurtulan tam zamanlı analist kapasitesi' },
       ],
       note:
-        'TurboHUB, uzun veri hazırlama süreçlerini ve tek tek çalışanların uzmanlığına bağımlılığı ortadan kaldırır. Sistemi kullanmak için özel beceri veya eğitim gerekmez.',
+        'TurboHUB, uzun veri hazırlama süreçlerini ve tek tek çalışanların uzmanlığına bağımlılığı azaltır. Kullanıcılar sorularını doğal dilde sorar; SQL veya rapor tasarımı bilgisi gerekmez.',
       disclaimer:
         'Rakamlar TurboHUB ürün materyallerine dayanmaktadır. Gerçek sonuçlar veri kaynaklarınıza, veri kalitenize ve proje kapsamına göre değişir.',
     },
